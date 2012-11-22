@@ -3,7 +3,7 @@ layout: post
 title: "commons-logging in OSGI Environments"
 description: ""
 category: 
-tags: [ OSGI, Java, commons-logging, commons-httpclient ]
+tags: [ OSGI, Java, commons-logging, commons-httpclient, Pax Logging ]
 ---
 {% include JB/setup %}
 
