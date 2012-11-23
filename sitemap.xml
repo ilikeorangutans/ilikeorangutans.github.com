@@ -5,12 +5,12 @@ layout: nil
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{% for page in site.pages %}
 	<url>
-		<loc>{{ page.url }}</loc>
+		<loc>{{ site.production_url }}{{ page.url }}</loc>
 		<changefreq>monthly</changefreq>
 	</url>{% endfor %}
 	{% for post in posts_collate %}
 	<url>
-		<loc>{{ post.url }}</loc>
+		<loc>{{ site.production_url }}{{ post.url }}</loc>
 		<changefreq>monthly</changefreq>
 	</url>{% endfor %}
 </urlset>
