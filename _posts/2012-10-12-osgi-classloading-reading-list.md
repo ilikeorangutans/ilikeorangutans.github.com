@@ -3,7 +3,7 @@ layout: post
 title: "OSGI Classloading Reading List"
 description: ""
 category: 
-tags: [ Java, OSGI ]
+tags: [ Java, OSGI, Reading List ]
 ---
 {% include JB/setup %}
 
