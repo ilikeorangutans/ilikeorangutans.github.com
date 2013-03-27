@@ -3,7 +3,7 @@ layout: post
 title: "OSGI, Guice, and Peaberry: first steps"
 description: ""
 category: 
-tags: [OSGI, Guice, Peaberry]
+tags: [OSGI, Guice, Peaberry, Java]
 ---
 {% include JB/setup %}
 
