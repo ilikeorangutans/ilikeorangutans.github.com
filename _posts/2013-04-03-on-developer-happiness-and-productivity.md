@@ -3,7 +3,7 @@ layout: post
 title: "On Developer Happiness and Productivity"
 description: ""
 category: 
-tags: []
+tags: [ Productivity, Happiness, Software Development ]
 ---
 {% include JB/setup %}
 
