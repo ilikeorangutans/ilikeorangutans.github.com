@@ -38,7 +38,7 @@ In order to "fix" any of the symptoms, you need highly motivated people, but the
 
 **If you notice any of the above symptoms in your project, you should quit and find a new job. If you are in charge of the project, you'll want to pull the handbrake and radically restructure your team, or the project will fail tragically. **
 
-With my past experiences I've been thinking a lot about how to make software development projects successful. And I feel there's many many ways to make your developers happy. Happy developers are good. At the end of the day it's not hard:
+With my past experiences I've been thinking a lot about how to make software development projects successful. And I feel there's many many ways to make your developers happy. Happy developers are productive. At the end of the day it's not hard:
 
 * Make sure you listen to your developers. If your developers tell you they are bored by their work, frustrated with tools or process, that's a warning sign. Work with them to find a solution to their problems.
 * Give your developers a chance to change things. If developers notice that the current process is too complicated and could be streamlined, put them in a room with the project managers. They'll be happy to improve the process. 
