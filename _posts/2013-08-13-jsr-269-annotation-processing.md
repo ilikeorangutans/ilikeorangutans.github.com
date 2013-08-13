@@ -3,7 +3,7 @@ layout: post
 title: "JSR-269 Annotation Processing"
 description: ""
 category: 
-tags: [ Java, Annotation, JSR-269 ]
+tags: [ Java, Annotation, JSR-269, Reading List ]
 ---
 {% include JB/setup %}
 
