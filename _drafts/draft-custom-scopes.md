@@ -1,20 +1,27 @@
 ---
 layout: post
-title: "Writing and Testing Custom Guice Scopes"
+title: Writing and Testing Custom Guice Scopes
 description: ""
-category: 
-tags: [ Guice, Java, Custom Scope, Junit, Unit Testing, Apache Sling ]
+category: null
+tags: 
+  - Guice
+  - Java
+  - Custom Scope
+  - Junit
+  - Unit Testing
+  - Apache Sling
 published: false
 ---
+
 {% include JB/setup %}
 
-I'm a big fan of [Google Guice](https://code.google.com/p/google-guice/) and use it quite a lot. Recently I spent some time writing a new custom scope for Guice. The issue to solve was that our project runs on Adobe CQ and Apache Sling. After adding the Guice injectors to the mix, it became apparent that ``@RequestScoped`` was insufficient for our needs. We needed a scope that contained only a single component, something like ``@ComponentScoped``. Long story short, a custom scope had to be written and I thought that would be an opportunity to deepen my knowledge of Guice.
+I'm a big fan of [Google Guice](https://code.google.com/p/google-guice/) and use it quite a lot. Recently I spent some time writing a new custom scope for Guice. The issue to solve was that our project runs on Adobe CQ and Apache Sling. After adding the Guice injectors to the mix, it became apparent that ``@RequestScoped`` was insufficient for our needs. We needed a scope that contained only a single component, something like ``@ComponentScoped``. Long story short, we needed a custom scope and I thought that would be a great opportunity to dig really deep into Guice.
 
 I studied the [custom component sample](https://code.google.com/p/google-guice/wiki/CustomScopes) in the Guice docs and the fundamental steps are straight forward enough, and they'll help you write your own scope. There were some pitfalls along the way that took me quite a while to figure out. The resulting implementation is not as sophisticated as I've seen in other places, however, I needed to note some specific things that I ran into.
 
 ### Create Scope Annotation
 
-Trivial:
+The annotation is used to sort objects into specific scopes. Implementation is trivial:
 
 {% highlight java linenos %}
 import com.google.inject.ScopeAnnotation;
@@ -120,11 +127,54 @@ There isn't anything surprising about this scope. It essentially wraps a Map and
 
 ### Module to Bind Your Scope
 
-The scope by itself is doesn't do much; you still need to tell 
+In order for Guice to know about your scope, you'll have to bind it in a module. I created a custom module for my scope:
+
+{% highlight java linenos %}
+public class ComponentModule extends AbstractModule {
+	@Override
+	protected void configure() {
+		ComponentScope componentScope = new ComponentScope();
+		bindScope(ComponentScoped.class, componentScope);
+		bind(ComponentScope.class)        				
+        	.annotatedWith(Names.named(ComponentScope.SCOPE_NAME))
+        	.toInstance(componentScope);
+	}
+}
+{% endhighlight %}
+
+Nothing surprising here. We create our own instance of the ComponentScope, and use the ``bindScope()`` method to bind the annotation to the scope object. 
+
+In the next line we bind the scope object itself in the module. That way we can obtain the scope instance we just created by querying the injector. 
 
 ### Testing the Custom Scope
 
-Testing a custom scope is surprisingly simple, but I made some silly mistakes initially. 
+Testing a custom scope is surprisingly simple, but I made some silly mistakes initially. But let's start with the testing code. A scope is just a plain java object. You enter by calling the ``enter()`` method (or whatever you called it) and you exit it by callling ``exit()``. All you need then is a injector to do the setup.
+
+Here's the unit test I ended up with. The GuineaPig class is just a test class that I use in this unit test. 
+
+{% highlight java linenos %}
+public class ComponentScopeTest {
+
+	Injector injector = Guice.createInjector(new ComponentModule(), new AbstractModule() {
+		@Override
+		protected void configure() {
+			bind(GuineaPig.class).in(ComponentScoped.class);
+		}
+	});
+
+	ComponentScope scope = injector.getInstance(Key.get(ComponentScope.class, Names.named(ComponentScope.SCOPE_NAME)));
+
+	@Test
+    public void testScope() throws Exception {
+		scope.enter();  
+		GuineaPig piggy = injector.getInstance(GuineaPig.class);
+        assertThat(piggy, notNullValue());
+        scope.exit();
+    }
+}
+{% endhighlight %}
+
+
 
 ### Integrating With Servlet Filters
 
@@ -141,4 +191,4 @@ This took me quite a while to properly figure out, longer than I'd like to admit
 
 | A scope is a condition for reusing injected objects, instead of creating a new one each time.  
 
-With that in mind, it suddenly makes sense what the ``unscoped`` object is, and how to get objects into 
+With that in mind, it suddenly makes sense what the ``unscoped`` object is, and how to get objects into
