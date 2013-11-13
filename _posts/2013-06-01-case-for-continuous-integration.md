@@ -141,7 +141,7 @@ I've heard many variations of this, but the theme is always the same: "*We can't
 
 The theme is always that the team is afraid of putting something out there, that shouldn't be out there yet. This leads to all kinds of paradox behaviour and situations:
 
-> We'll need to QA this now [a month before it's live], but we can only test the current branch.
+> We'll need to QA this now \[a month before it's live\], but we can only test the current branch.
  
 But then the code sits on the branch for a month, is unmaintained, and only merged on the day it's supposed to go out. We've seen what last minute merges and deploys look like...
 
