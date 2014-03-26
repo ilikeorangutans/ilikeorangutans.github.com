@@ -3,7 +3,7 @@ layout: post
 title: "Apache Sling Resource Resolver Rules in a Nutshell"
 description: ""
 category: 
-tags: [ Apache Sling, JCR, OSGI, Regexp ]
+tags: [ Apache Sling, JCR, OSGI, Regexp, CQ5, Adobe WEM ]
 ---
 {% include JB/setup %}
 
