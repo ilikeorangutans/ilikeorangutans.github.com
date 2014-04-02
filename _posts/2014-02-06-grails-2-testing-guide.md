@@ -153,6 +153,27 @@ you provide all the necessary fields.
 Testing controllers is straightforward, but requires lots of mocking as they rely on many different things: services, command objects, domain objects, etc. 
 
 
+### Unit Test Gotchas
+
+This is a growing list of pain points and their solutions
+
+#### ConverterException: Unconvertable Object of class XXX
+
+So you're writing a unit test for some service or other class, and after mocking everything out and putting the `@TestMixin(GrailsUnitTestMixin)` on your test, it blows up with an exception like this:
+
+	Caused by: org.codehaus.groovy.grails.web.converters.exceptions.ConverterException: Unconvertable 	Object of class: com.foobar.domain.MyDomainClass
+		at grails.converters.JSON.value(JSON.java:199)
+		at grails.converters.JSON.render(JSON.java:133)
+		... 41 more
+		
+The reason for this is that the `GrailsUnitTestMixin` does not initialize the converter subsystem. To get them working, add the `ControllerUnitTestMixin` mixin which will set up all the regular converters. Example:
+
+{% highlight groovy %}
+@TestMixin([GrailsUnitTestMixin, ControllerUnitTestMixin])
+class ContactUsFormJobSpec extends Specification {
+{% endhighlight %}
+
+
 #### Testing Content Negotiation
 
 Grails allows automatic content negotiation using the [withFormat](http://grails.org/doc/2.3.4/ref/Controllers/withFormat.html) block. However, setting the format in unit tests is something I keep tripping over. To set a specific response type use `response.format`:
