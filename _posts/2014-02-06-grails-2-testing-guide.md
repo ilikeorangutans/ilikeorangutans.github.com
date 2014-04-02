@@ -166,7 +166,7 @@ So you're writing a unit test for some service or other class, and after mocking
 		at grails.converters.JSON.render(JSON.java:133)
 		... 41 more
 		
-The reason for this is that the `GrailsUnitTestMixin` does not initialize the converter subsystem. To get them working, add the `ControllerUnitTestMixin` mixin which will set up all the regular converters. Example:
+The reason for this is that the `GrailsUnitTestMixin` does not initialize the converter subsystem. To get them working, add the `ControllerUnitTestMixin` mixin which will set up all the regular converters. See [this thread](http://grails.1312388.n4.nabble.com/Error-using-as-JSON-converter-in-a-service-in-a-unit-test-tp4637433p4637457.html). Example:
 
 {% highlight groovy %}
 @TestMixin([GrailsUnitTestMixin, ControllerUnitTestMixin])
