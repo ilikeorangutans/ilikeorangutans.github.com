@@ -62,5 +62,5 @@ So far the visualization is rather simple. Bubbles for controllers and octagons 
 - Support different languages and frameworks. I was able to implement this tool very easily because Grails' service and controller naming follows an entirely name based convention. That makes finding service definitions trivial. I would love to extend this tool to support different languages and frameworks. 
 - Have more ideas? Drop me an email or a comment! :)
 
-The source code for the app is rather messy, and I'll clean it up in the next couple of days and upload it. 
+The source code for the app is rather messy, but you can find it on [github.com/ilikeorangutans/grails-service-visualizer](https://github.com/ilikeorangutans/grails-service-visualizer).
 
