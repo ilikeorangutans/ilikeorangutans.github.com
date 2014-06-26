@@ -173,6 +173,22 @@ The reason for this is that the `GrailsUnitTestMixin` does not initialize the co
 class ContactUsFormJobSpec extends Specification {
 {% endhighlight %}
 
+#### groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors()...
+
+This error happened a few times to me:
+
+	|  groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors() is applicable for argument types: (com.foo.RainbowColor) values: [RainbowColor{id=null, name=Orange}]
+	Possible solutions: getColors()
+		at com.foo.RainbowServiceSpec.test
+	error(RainbowServiceSpec.groovy:179)
+
+This happens when you write a unit test and mock only one of the domain classes, but not the other one. In the above example only `Rainbow` was mocked. Fix this by mocking all classes:
+
+{% highlight groovy %}
+@TestFor(RainbowService)
+@Mock([Rainbow, RainbowColor])
+public class RainbowSpec extends Specification {}
+{% endhighlight %}
 
 #### Testing Content Negotiation
 
