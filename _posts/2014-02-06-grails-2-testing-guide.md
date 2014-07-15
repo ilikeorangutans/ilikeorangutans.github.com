@@ -173,6 +173,11 @@ The reason for this is that the `GrailsUnitTestMixin` does not initialize the co
 class ContactUsFormJobSpec extends Specification {
 {% endhighlight %}
 
+
+#### conversion
+
+non-domain classes like errors can't be converted to JSON
+
 #### groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors()...
 
 This error happened a few times to me:
@@ -188,6 +193,20 @@ This happens when you write a unit test and mock only one of the domain classes,
 @TestFor(RainbowService)
 @Mock([Rainbow, RainbowColor])
 public class RainbowSpec extends Specification {}
+{% endhighlight %}
+
+#### GroovyCastException: Cannot cast object 'com.foo.Rainbow@2f7af3' with class 'com.foo.Rainbow' to class 'grails.converters.JSON'
+
+This seems to happen because the converters are not properly set up in certain unit tests. So lines like this will fail with the above exception:
+
+{% highlight groovy %}
+render rainbow as JSON
+{% endhighlight %}
+
+Best fix I've found takes away some of the readability of the code, but appears to work reliably:
+
+{% highlight groovy %}
+render new JSON(rainbow)
 {% endhighlight %}
 
 #### Testing Content Negotiation
