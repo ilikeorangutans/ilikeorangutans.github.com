@@ -219,11 +219,6 @@ The reason for this is that the `GrailsUnitTestMixin` does not initialize the co
 class ContactUsFormJobSpec extends Specification {
 {% endhighlight %}
 
-
-#### conversion
-
-non-domain classes like errors can't be converted to JSON
-
 #### groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors()...
 
 This error happened a few times to me:
