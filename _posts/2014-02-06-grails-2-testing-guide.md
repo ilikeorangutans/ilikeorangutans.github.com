@@ -143,7 +143,6 @@ class MyControllerSpec extends Specification {
 }
 {% endhighlight %}
 
-
 **Note**: if you create test data with mocked domain objects, the constraints on the domain class *do* apply, even when using ``mockDomain()``! I've tripped over this a few times. If your mocked domain objects don't show up, make sure
 you provide all the necessary fields. 
 
@@ -152,6 +151,53 @@ you provide all the necessary fields.
 
 Testing controllers is straightforward, but requires lots of mocking as they rely on many different things: services, command objects, domain objects, etc. 
 
+
+### Testing Closures
+
+Methods that accept closures as parameters are a staple in Grails development. For example, the mail plugin uses the following syntax: 
+
+{% highlight groovy %}
+mailService.sendMail {
+	from 'bazinga@test.com'
+	to 'bingo@test.com'
+	subject 'Amazing Stuff'
+	text "Send me your bank data and we'll make millions!"
+}
+{% endhighlight %}
+
+If you're mocking mailService the question is how to validate the values passed into the closure are correct. The solution is to create a [delegate for the closure](http://stackoverflow.com/questions/10715919/how-to-mock-domain-specific-closures-in-spock) that captures the values which then can be verified:
+
+{% highlight groovy %}
+class MailVerifier {
+	String to, from, subject, text
+	
+	void to(String to) { this.to = to }
+	void from(String from) { this.from = from }
+	void subject(String subject) { this.subject = subject }
+	void text(String text) { this.text = text }
+}
+{% endhighlight %}
+
+In your test, you have to set the `MailVerifier` as the Closure's delegate (example uses Spock):
+
+{% highlight groovy %}
+
+MailVerifier mv = new MailVerifier()
+MailService mailService = Mock(MailService)
+1 * mailService.sendMail(!null) >> { Closure c -> 
+	c.delegate = mv // Set delegate
+	c() // Execute closure
+}
+
+when:
+
+doSomethingThatSendsMail('foo@bar.com', '...', )
+
+then: 
+
+mv.to == 'foo@bar.com'
+
+{% endhighlight %}
 
 ### Unit Test Gotchas
 
