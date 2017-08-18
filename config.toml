@@ -1,0 +1,31 @@
+baseURL = "https://ilikeorangutans.github.io"
+disablePathToLower = true
+languageCode = "en-us"
+title = "Jakob Külzer's Blog"
+author = "Jakob Külzer"
+copyright = "&copy; 2017 Jakob Külzer"
+theme = "blackburn"
+publishDir = "docs"
+
+paginate = 10
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+  subtitle = "Stay awhile and listen..."
+
+[social]
+  linkedin = "jakobkuelzer/"
+  github = "ilikeorangutans"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    url = "/"
+  [[menu.main]]
+    name = "Tags"
+    pre = "<i class='fa fa-tags fa-fw'></i>"
+    url = "/tags"
