@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scr on Jakob Külzer&#39;s Blog</title>
+    <link>https://ilikeorangutans.github.io/tags/scr/</link>
+    <description>Recent content in Scr on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jakob Külzer</copyright>
+    <lastBuildDate>Wed, 06 Feb 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/scr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Type Incompatibility With Maven SCR Plugin</title>
+      <link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
+      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;quot;foo&amp;quot;, value = &amp;quot;bar&amp;quot;)) public class NissanAutoDataUrlGenerator implements ManagedService { }  The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
+    </item>
+    
+  </channel>
+</rss>

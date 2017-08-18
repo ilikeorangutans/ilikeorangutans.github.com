@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Golang Reading and Notes for April 2014 &middot; Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Golang Reading and Notes for April 2014</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>27 Apr 2014, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/go">Go</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/golang">Golang</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/reading-list">Reading List</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<p>Last week I attended the <a href="http://golang.meetup.com/cities/ca/on/toronto/">Toronto Golang Usergroup Meetup</a> and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?</p>
+
+<h3 id="notes">Notes</h3>
+
+<ul>
+<li><p>Casting in Go is slightly different than in C related languages. Instead of a cast, you perform <a href="http://golang.org/doc/effective_go.html#interface_conversions">a type conversion</a>:</p>
+
+<pre><code>var myVariable SomeGenericType = ...
+
+casted, ok := myVariable.(MoreSpecificType)
+// ok is a bool     
+if ok {
+    // Type conversion successful 
+} else {
+    // myVariable does not implement MoreSpecificType
+}
+</code></pre></li>
+
+<li><p>The <code>range</code> keyword when used with two return values does not return references, but rather copies. This had me struggle for a while as my code was not behaving as I thought it would. I had a slice of structs and was happily iterating over it:</p>
+
+<pre><code>type Foo struct {
+    a string
+}
+
+func main() {
+    foos := []Foo{
+        Foo{a: &quot;horray&quot;},
+        Foo{a: &quot;yeay&quot;},
+    }
+
+    for i, value := range foos {
+        // This works because we directly access the struct stored 
+        foos[i].a = &quot;Changing the value&quot; within the slice
+
+        // Won't work because value is a *copy* of the struct found in 
+        value.a = &quot;this won't work&quot; the slice
+    }
+
+    for _, value := range foos {
+        println(value.a) 
+    }
+}
+</code></pre></li>
+</ul>
+
+<p><a href="http://play.golang.org/p/j4tZAKppMn">Executable snippet here</a>. In retrospect it makes sense, Go always passes copies to functions. But initially I was puzzled as my loops wouldn&rsquo;t properly update my structs.</p>
+
+<p>If you&rsquo;re using reference types, that issue doesn&rsquo;t arise though. Reference types deserve a post on their own, which I will write soon.</p>
+
+<h3 id="go-reading-list">Go Reading List</h3>
+
+<ul>
+<li><a href="http://blog.erlware.org/2014/04/27/some-thoughts-on-go-and-erlang/">Comparing Go and Erlang</a>: some interesting thoughts on shortcomings of Go, including that Go offers <code>nil</code>. This is an argument I&rsquo;ve read about quite a few times now and is always along the lines of &ldquo;<em>Modern languages should not have a nil/null</em>&rdquo;. In addition this article</li>
+<li><a href="http://peter.bourgon.org/go-in-production/">Go Best Practices for Production Environments</a>: lots of experience from the guys at <a href="https://soundcloud.com/">Soundcloud</a> about how they&rsquo;re using Go. Covers development environment, logging, dependency management, and builds &amp; deploys.</li>
+<li>By Peter Bourgon, the author of the previous post, a presentation <a href="http://peter.bourgon.org/go-do/#1">Go Do</a> on why Go.</li>
+<li>Blog post introducing <a href="http://www.sjwhitworth.com/machine-learning-in-go-using-golearn/">Go Learn</a>, a machine learning library in Go.</li>
+<li><a href="http://www.onebigfluke.com/2014/04/gos-power-is-in-emergent-behavior.html">Go&rsquo;s power is in emergent behavior</a></li>
+</ul>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/">Grails 2 Testing Guide</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/">Maven Release Plugin and Git 1.9</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

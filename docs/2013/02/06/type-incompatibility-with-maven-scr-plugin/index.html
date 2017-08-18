@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Type Incompatibility With Maven SCR Plugin &middot; Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Type Incompatibility With Maven SCR Plugin</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>06 Feb 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/osgi">OSGI</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/maven">Maven</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/scr">SCR</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  <p>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:</p>
+
+<pre><code>[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List
+</code></pre>
+
+<p>I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@Service</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f92672">{</span> <span style="color: #f8f8f2">MyService</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">ManagedService</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span> <span style="color: #f92672">})</span>
+<span style="color: #a6e22e">@Component</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">immediate</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">)</span>
+<span style="color: #a6e22e">@Properties</span><span style="color: #f92672">(</span><span style="color: #a6e22e">@Property</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;foo&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;bar&quot;</span><span style="color: #f92672">))</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">NissanAutoDataUrlGenerator</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">ManagedService</span> <span style="color: #f92672">{</span> <span style="color: #f92672">}</span>
+</pre></div>
+
+
+<p>The mistake is that the <code>@Properties</code> annotation takes an array as it&rsquo;s parameter. Eclipse does not mark the above as an error, however, the Maven plugin is not happy about it. Here&rsquo;s the correct code:</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@Service</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f92672">{</span> <span style="color: #f8f8f2">MyService</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">ManagedService</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span> <span style="color: #f92672">})</span>
+<span style="color: #a6e22e">@Component</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">immediate</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">)</span>
+<span style="color: #a6e22e">@Properties</span><span style="color: #f92672">({</span> <span style="color: #a6e22e">@Property</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;foo&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;bar&quot;</span><span style="color: #f92672">)</span> <span style="color: #f92672">}</span> <span style="color: #f92672">)</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">NissanAutoDataUrlGenerator</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">ManagedService</span> <span style="color: #f92672">{</span> <span style="color: #f92672">}</span>
+</pre></div>
+</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/">Google Guice and Scope Mixing</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/">OSGI, Guice, and Peaberry: first steps</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

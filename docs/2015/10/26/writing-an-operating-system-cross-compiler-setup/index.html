@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Been toying with writing my own operating system kernel. Here are some notes on setting up the gcc cross compiler.">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Writing an Operating System - Environment Setup &middot; Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Writing an Operating System - Environment Setup</h1>
+  <h2>Been toying with writing my own operating system kernel. Here are some notes on setting up the gcc cross compiler.</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>26 Oct 2015, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/kernel">Kernel</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/c">C</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/gcc">GCC</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/binutils">Binutils</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/make">make</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/osdev">osdev</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/cross-compile">cross compile</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<p>I&rsquo;ve been reading <a href="http://littleosbook.github.io/">The little book about OS development</a> and <a href="http://wiki.osdev.org/">wiki.osdev.org</a> and took some notes along the line. Here&rsquo;s what I wrote on environment setup.</p>
+
+<h1 id="environment-setup">Environment setup</h1>
+
+<p>You&rsquo;ll need a cross compile toolchain consisting of <a href="https://www.gnu.org/software/binutils/">GNU Binutils</a> and <a href="https://gcc.gnu.org/">gcc</a>. The <a href="http://wiki.osdev.org/GCC_Cross-Compiler">osdev wiki</a> has a great page on setting up a cross compilation toolchain.</p>
+
+<p>It took me a few times because I didn&rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, <code>gcc-4.2</code> and <code>gcc-build</code> for example. Then, for building gcc, make sure the newly built binutils are on your path.</p>
+
+<p>And finally, when building gcc, make sure you run <code>make all-gcc</code>, <code>make all-target-libgcc</code>, <code>make install-gcc</code>, and <code>make install-target-libgcc</code> instead of just <code>make all</code> like I did.</p>
+
+<p>Also, running make with <code>-j 4</code> or any value larger than 1 greatly sped up the build on my machine. Multicore for the win!</p>
+
+<p>Once you&rsquo;ve built both binutils and gcc you&rsquo;re ready to start building your kernel!</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/">gorename and invalid expression</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ilikeorangutans.github.io/2016/04/30/factorio-modding-notes/">Factorio Modding Notes</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ilikeorangutans.github.io/2016/04/30/factorio-modding-notes/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

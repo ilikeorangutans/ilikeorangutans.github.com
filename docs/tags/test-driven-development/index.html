@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Test Driven Development &middot; Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Jakob Külzer&#39;s Blog" href="https://ilikeorangutans.github.io/tags/test-driven-development/index.xml" />
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://ilikeorangutans.github.io/tags/test-driven-development/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Test Driven Development</h1>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/">Grails 2 Testing Guide</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>06 Feb 2014, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/grails">Grails</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/grails-2.3.x">Grails-2.3.x</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/unit-testing">Unit Testing</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/spock">Spock</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/groovy">Groovy</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/test-driven-development">Test Driven Development</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/integration-testing">Integration Testing</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Note: I&rsquo;m still working on this post, but I already use it as a reference so there&rsquo;ll be more content over time.
+I&rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.
+  </p>
+
+  
+  <footer>
+    <a href="/2014/02/06/grails-2-testing-guide/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>

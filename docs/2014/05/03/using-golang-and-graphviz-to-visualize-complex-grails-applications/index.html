@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Using Golang and Graphviz to Visualize Complex Grails Applications &middot; Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Using Golang and Graphviz to Visualize Complex Grails Applications</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>03 May 2014, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/golang">Golang</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/go">Go</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/grails">Grails</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/graphviz">Graphviz</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/visualization">Visualization</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<p>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use <a href="http://www.graphviz.org/">Graphviz</a> to help me get a better overview of our applications.</p>
+
+<h3 id="meet-graphviz">Meet Graphviz</h3>
+
+<p>I discovered my love for the <a href="http://www.graphviz.org/content/dot-language">dot language</a> when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on. In a nutshell, it lets you specify a graph with nodes and edges plus some extra attributes for labels, shapes etc. It&rsquo;s really a concise little language:</p>
+
+<pre><code>digraph MyGraph {
+    A -&gt; B -&gt; D
+    A -&gt; C
+}
+</code></pre>
+
+<p>Graphviz comes with a handful of tools that allow you to render these graph definitions into different output formats, including PDF, PNG, or SVG. The short sample graph from above would look like this:</p>
+
+<p><img src="/assets/images/graphviz-sample.png" alt="Sample Graph" /></p>
+
+<p>It&rsquo;s a fantastic tool to document flows and all kind of graph like structures.</p>
+
+<h3 id="using-golang-to-generate-graphviz-files">Using Golang to Generate Graphviz Files</h3>
+
+<p>When I was working on the grails applications in question, I always had trouble understanding the complex service structure. There&rsquo;s a lot of them, and they all depend on other services. And that complicates making changes and is a potential source of mistakes.</p>
+
+<p>Looking at the services and their dependencies I realized it was a graph and that with a little bit of work I could get a Graph definition in the dot language. I decided to go with Go, just to have some fun and get my mind off Groovy and Java and luckily there is already a full fledged <a href="https://code.google.com/p/gographviz/">graphviz Go implementation</a> which made things easy.</p>
+
+<p>The actual Go app is quite straightforward and very hackish. Given a start directory, it traverses all subdirectories and finds all <code>.groovy</code> files that are either controllers or services which are added as Nodes in the graph. Then it scans each line for service definitions which are luckily name based. This involves a fair bit of string processing and has lots of flaws. Once a service definition is found, it is added as an edge to the graph. Repeat until everything has been processed and write out the <code>.dot</code> file, run it through <code>dot</code>, and enjoy the visualization.</p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Here are the scrubbed graphs from two of the apps I&rsquo;m working on. They are huge, so click the link to get the full resolution version. Don&rsquo;t mind the silly names, I had to scrub a lot of the original names.</p>
+
+<p><img src="/assets/images/sample-app-01.png" alt="Sample Graph" />
+<a href="/assets/images/sample-app-01.png">App A Full Resolution[PNG 558K]</a></p>
+
+<p><img src="/assets/images/sample-app-02.png" alt="Sample Graph" />
+<a href="/assets/images/sample-app-02.png">App B Full Resolution[PNG 393K]</a></p>
+
+<h3 id="analysis">Analysis</h3>
+
+<p>Looking at the generated Graphs, several things quickly became apparent. First of all, it&rsquo;s very easy to see what services have the most afferent dependencies. This by itself makes it easy to spot crucial pieces of code that provide shared functionality to many other components.</p>
+
+<p>But even more so, the layering of the services becomes apparent. Graphviz orders the nodes vertically based on the number of afferent and efferent dependencies. And at the bottom of the graph, you have all the services with only afferent dependencies which form the foundational layer of your application. This is the code that everything in your app relies on, either directly or transitively.</p>
+
+<h3 id="further-ideas">Further Ideas</h3>
+
+<p>Visualizing application structures is an incredibly useful, especially when working on complex and complicated systems. The above script took me less than an hour to write and the return is tremendous. I can now easily determine what to work on, what change could potentially affect other parts of the systems, and I can finally see the architecture of the application.</p>
+
+<p>So far the visualization is rather simple. Bubbles for controllers and octagons for services. But there&rsquo;s so much more that could be done:</p>
+
+<ul>
+<li>Calculate the transitive number of dependencies a component has and adjust the size of the visual representation based on that. For example, a service used only by a single controller would be fairly small. Another service, used by twenty other services would be much bigger and more prominent. Fairly easy to implement.</li>
+<li>Use afferent and <a href="http://en.wikipedia.org/wiki/Efferent_coupling">efferent</a> coupling to calculate the <a href="http://en.wikipedia.org/wiki/Software_package_metrics">instability</a> of services. Originally a metric for packages, this could probably applied to services as well. Could be visualized with border thickness of shapes.</li>
+<li>Support different types of artifacts and give them different shapes. Right now I&rsquo;m thinking quartz jobs which play a fairly important role in our application.</li>
+<li>Parse code instead of string searching. Right now I&rsquo;m simply scanning each source file line by line and search for certain patterns. This works reasonably well, but with some apps I get unwanted values. Sometimes from comments, sometimes other values. If I were to actually parse the source into an AST, all these issues would disappear. It would also allow a host of other interesting things, like:</li>
+<li>Calculate the <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic Complexity</a> for each component and use that to colour code the visual representation. Low complexity could be a green tint, high values would be red.</li>
+<li>Support different languages and frameworks. I was able to implement this tool very easily because Grails&rsquo; service and controller naming follows an entirely name based convention. That makes finding service definitions trivial. I would love to extend this tool to support different languages and frameworks.</li>
+<li>Have more ideas? Drop me an email or a comment! :)</li>
+</ul>
+
+<p>The source code for the app is rather messy, but you can find it on <a href="https://github.com/ilikeorangutans/grails-service-visualizer">github.com/ilikeorangutans/grails-service-visualizer</a>.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/">Maven Release Plugin and Git 1.9</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/">gorename and invalid expression</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.27-DEV" />
+
+  <title>Jakob Külzer&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Jakob Külzer&#39;s Blog" href="https://ilikeorangutans.github.io/index.xml" />
+  
+
+  
+
+  <link rel="shortcut icon" href="https://ilikeorangutans.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://ilikeorangutans.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/jakobkuelzer/" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/ilikeorangutans" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017 Jakob Külzer</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Jakob Külzer&#39;s Blog</h1>
+  <h2>Stay awhile and listen...</h2>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/">JSR-269 Annotation Processing</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>13 Aug 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/annotation">Annotation</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/jsr-269">JSR-269</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/reading-list">Reading List</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  I&rsquo;ve been contemplating compile time bytecode manipulation for the Object Mapper Framework for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered Project Lombok and reading about JSR-269, which was introduced with Java 1.6. It&rsquo;s an API that allows you to plug custom annotation processors into javac.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/08/13/jsr-269-annotation-processing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/07/28/switched-from-eclipse-to-intellij/">Switched from Eclipse to IntelliJ</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>28 Jul 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/eclipse">Eclipse</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/intellij">IntelliJ</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Over the years I have always been fan and user of the Eclipse platform. I liked the openness, the available plugins, and many of its features, including the CTRL-1 hotkey that does everything, and a few other things. However, over time Eclipse got slower and slower, more unstable, and after a while just a pain to use, especially when using more than one screen. I decided to give IntelliJ another try, as I&rsquo;ve done a few times before.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/07/28/switched-from-eclipse-to-intellij/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better/">Making Eclipse&#39;s Method Stubs Better and other things</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>26 Jun 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/eclipse">Eclipse</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Just downloaded Eclipse Kepler and I&rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/06/26/making-eclipses-method-stubs-better/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/06/01/case-for-continuous-integration/">The Case for Continuous Integration</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Jun 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/continuous-integration">Continuous Integration</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/software-development">Software Development</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/unit-testing">Unit Testing</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  In my career as a software developer, I&rsquo;ve come to appreciate the principles of Continuous Integration (CI). It forces you to do the hard things early and often and thus helps you reduce risk during development. It forces you to write tests, and be responsible about what you check in. All in all, good qualities and something that every development team should aspire to. Or so I thought. Reality is different, and so far almost every development team I have interacted with is deadly afraid of doing CI.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/06/01/case-for-continuous-integration/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/">The Problem with LinkedIn&#39;s Skills Endorsment</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Apr 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/linkedin">LinkedIn</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  A while ago LinkedIn introduced what looked like a really cool feature, an easy way to &ldquo;endorse&rdquo; skills of your contacts. It&rsquo;s really easy to go in and click &ldquo;Endorse&rdquo; on a bunch of skills. However, one thing that kept surprising me was who endorsed what skills. For example, just today I had a ex-coworker from over 4 years ago endorse me for Hibernate. Which by itself is a nice gesture, only thing is, he&rsquo;s an art director.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/04/04/the-problem-with-linkedins-skills-endorsment/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/">On Developer Happiness and Productivity</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>03 Apr 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/productivity">Productivity</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/happiness">Happiness</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/software-development">Software Development</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  I&rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&rsquo;s jump to the core of things.
+ A happy developer is a productive developer.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/04/03/on-developer-happiness-and-productivity/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/">Date Arithmetics in XSLT 2</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>02 Apr 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/xslt">XSLT</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/xml">XML</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/xpath">XPATH</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Now here&rsquo;s something I didn&rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&rsquo;s how it works.
+First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&rsquo;s a few other formats, but these are the ones that probably cover all use cases.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/04/02/date-arithmetics-in-xslt-2/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/">OSGI, Guice, and Peaberry: first steps</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>27 Feb 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/osgi">OSGI</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/guice">Guice</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/peaberry">Peaberry</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/java">Java</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Introduction I&rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
+However, getting Peaberry to work was not trivial, mostly because there aren&rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&rsquo;s a lot of information in very little space.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/02/27/osgi-guice-and-peaberry-first-steps/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/">Type Incompatibility With Maven SCR Plugin</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>06 Feb 2013, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/osgi">OSGI</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/maven">Maven</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/scr">SCR</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &quot;foo&quot;, value = &quot;bar&quot;)) public class NissanAutoDataUrlGenerator implements ManagedService { }  The mistake is that the @Properties annotation takes an array as it&rsquo;s parameter.
+  </p>
+
+  
+  <footer>
+    <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/">Google Guice and Scope Mixing</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>11 Dec 2012, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/guice">Guice</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/dependency-injection">Dependency Injection</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://ilikeorangutans.github.iotags/java">Java</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  </header>
+
+  <p>
+  I&rsquo;ve been working on a small Java application I wrote a few years ago for some bug fixes and in the process of making it better, I introduced Google Guice, my favourite dependency injection framework. On of the great features of Guice is that it supports different scopes for injection. Per default, Guice will return a new object for every request. But sometimes you want to objects to be created a bit less liberally, for example, you want a certain object to be created only once.
+  </p>
+
+  
+  <footer>
+    <a href="/2012/12/11/google-guice-and-scope-mixing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <a href="/"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;2 / 3&nbsp;</span>
+  
+  <a href="/page/3/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="https://ilikeorangutans.github.iojs/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

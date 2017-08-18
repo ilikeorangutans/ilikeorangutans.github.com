@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modding on Jakob Külzer&#39;s Blog</title>
+    <link>https://ilikeorangutans.github.io/tags/modding/</link>
+    <description>Recent content in Modding on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jakob Külzer</copyright>
+    <lastBuildDate>Sat, 30 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/modding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Factorio Modding Notes</title>
+      <link>https://ilikeorangutans.github.io/2016/04/30/factorio-modding-notes/</link>
+      <pubDate>Sat, 30 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ilikeorangutans.github.io/2016/04/30/factorio-modding-notes/</guid>
+      <description>  printing information to player via player.print(), you can get for _,player in ipairs(game.players) do ... Lua gotcha: functions have to be defined before calling them. So setting scripi to get hot reloading of control.lua you need to install the mod as a dir, not a zip  Useful Links  Lua Events events you can subscribe to  </description>
+    </item>
+    
+  </channel>
+</rss>
