@@ -18,7 +18,7 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system---environment-setup/</loc>
+    <loc>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</loc>
     <lastmod>2015-10-26T13:59:40-04:00</lastmod>
   </url>
   
@@ -33,7 +33,7 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-1.9/</loc>
+    <loc>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</loc>
     <lastmod>2014-04-29T13:59:40-04:00</lastmod>
   </url>
   
@@ -63,7 +63,7 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/2013/07/28/switched-from-eclipse-to-intellij/</loc>
+    <loc>http://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</loc>
     <lastmod>2013-07-28T13:59:40-04:00</lastmod>
   </url>
   
@@ -78,7 +78,7 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsement/</loc>
+    <loc>http://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</loc>
     <lastmod>2013-04-04T13:59:40-04:00</lastmod>
   </url>
   
@@ -138,7 +138,7 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi-india/</loc>
+    <loc>http://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
   </url>
   
@@ -520,13 +520,13 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/categories/travel/</loc>
+    <loc>http://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/tags/travel/</loc>
+    <loc>http://ilikeorangutans.github.io/categories/travel/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
     <priority>0</priority>
   </url>
