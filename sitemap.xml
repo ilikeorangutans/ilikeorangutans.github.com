@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/about/</loc>
+    <lastmod>2018-03-28T13:56:38-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</loc>
+    <lastmod>2016-05-22T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system---environment-setup/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</loc>
+    <lastmod>2015-10-23T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</loc>
+    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-1.9/</loc>
+    <lastmod>2014-04-29T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</loc>
+    <lastmod>2014-04-27T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</loc>
+    <lastmod>2013-11-12T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</loc>
+    <lastmod>2013-08-15T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</loc>
+    <lastmod>2013-08-13T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/07/28/switched-from-eclipse-to-intellij/</loc>
+    <lastmod>2013-07-28T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</loc>
+    <lastmod>2013-06-26T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</loc>
+    <lastmod>2013-06-01T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsement/</loc>
+    <lastmod>2013-04-04T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</loc>
+    <lastmod>2013-04-03T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</loc>
+    <lastmod>2013-04-02T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</loc>
+    <lastmod>2013-02-27T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</loc>
+    <lastmod>2013-02-06T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</loc>
+    <lastmod>2012-12-11T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</loc>
+    <lastmod>2012-12-04T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rules-in-a-nutshell/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</loc>
+    <lastmod>2012-11-14T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</loc>
+    <lastmod>2012-10-23T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</loc>
+    <lastmod>2012-10-12T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi-india/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/adobe-wem/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/annotation/</loc>
+    <lastmod>2013-08-13T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/apache-sling/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/authorization/</loc>
+    <lastmod>2013-08-15T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/binutils/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/blog/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/c/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/commons-httpclient/</loc>
+    <lastmod>2012-11-14T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/commons-logging/</loc>
+    <lastmod>2012-11-14T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/continuous-integration/</loc>
+    <lastmod>2013-06-01T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/cq5/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/cross-compile/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/dependency-injection/</loc>
+    <lastmod>2012-12-11T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/eclipse/</loc>
+    <lastmod>2013-07-28T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/first-impression/</loc>
+    <lastmod>2013-11-12T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/gcc/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/git/</loc>
+    <lastmod>2014-04-29T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/go/</loc>
+    <lastmod>2016-05-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/golang/</loc>
+    <lastmod>2016-05-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/google-app-engine/</loc>
+    <lastmod>2016-05-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/grails/</loc>
+    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/grails-2.3.x/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/graphviz/</loc>
+    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/groovy/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/guice/</loc>
+    <lastmod>2013-02-27T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/happiness/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/india/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/integration-testing/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/intellij/</loc>
+    <lastmod>2013-07-28T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/</loc>
+    <lastmod>2018-03-28T13:56:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/java/</loc>
+    <lastmod>2013-08-13T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/jcr/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/jekyll/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/jsr-269/</loc>
+    <lastmod>2013-08-13T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/jvm/</loc>
+    <lastmod>2012-12-04T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/kernel/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/linkedin/</loc>
+    <lastmod>2013-04-04T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/make/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/maven/</loc>
+    <lastmod>2014-04-29T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/maven-release-plugin/</loc>
+    <lastmod>2014-04-29T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/new-delhi/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/oauth/</loc>
+    <lastmod>2013-08-15T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/osdev/</loc>
+    <lastmod>2015-10-26T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/osgi/</loc>
+    <lastmod>2013-02-27T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/panorama/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/pax-logging/</loc>
+    <lastmod>2012-11-14T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/peaberry/</loc>
+    <lastmod>2013-02-27T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/personal-development/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/posts/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/productivity/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/reading-list/</loc>
+    <lastmod>2014-04-27T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/refactoring/</loc>
+    <lastmod>2015-10-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/regexp/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/rugged-manifesto/</loc>
+    <lastmod>2012-12-04T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/scr/</loc>
+    <lastmod>2013-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/security/</loc>
+    <lastmod>2013-08-15T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/social-media/</loc>
+    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/software-development/</loc>
+    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/software-engineering/</loc>
+    <lastmod>2012-12-04T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/spock/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/</loc>
+    <lastmod>2012-11-20T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/test-driven-development/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/travel/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/categories/travel/</loc>
+    <lastmod>2012-06-22T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/unit-testing/</loc>
+    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/visualization/</loc>
+    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/xml/</loc>
+    <lastmod>2013-04-02T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/xpath/</loc>
+    <lastmod>2013-04-02T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/xslt/</loc>
+    <lastmod>2013-04-02T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/zsh/</loc>
+    <lastmod>2015-10-23T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

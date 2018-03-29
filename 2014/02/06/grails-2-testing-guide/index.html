@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <title>Grails 2 Testing Guide</title>
+  <meta name="description" content="Grails 2 Testing Guide">
+  <meta name="author" content="Jakob Külzer">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <noscript>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://ilikeorangutans.github.io/css/fonts.css">
+  </noscript>
+  
+  
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*!
+normalize.css v^3.0 | MIT License | git.io/normalize
+Copyright (c) Nicolas Gallagher and Jonathan Neal
+*/
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}table{border-collapse:collapse;border-spacing:0}.hidden,[hidden]{display:none!important}.pure-img{max-width:100%;height:auto;display:block}
+  </style>
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:normal}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;zoom:1;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;padding:.5em 0}.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar{display:none}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-disabled,.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected .pure-menu-link,.pure-menu-selected .pure-menu-link:visited{color:#000}
+
+  </style>
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-g{letter-spacing:-.31em;text-rendering:optimizespeed;font-family:FreeSans,Arimo,"Droid Sans",Helvetica,Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){table .pure-g{display:block}}.opera-only :-o-prefocus,.pure-g{word-spacing:-.43em}.pure-u,.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-g [class*=pure-u]{font-family:sans-serif}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}
+  </style>
+  
+  
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+@media screen and (min-width:35.5em){.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-1-12,.pure-u-sm-1-2,.pure-u-sm-1-24,.pure-u-sm-1-3,.pure-u-sm-1-4,.pure-u-sm-1-5,.pure-u-sm-1-6,.pure-u-sm-1-8,.pure-u-sm-10-24,.pure-u-sm-11-12,.pure-u-sm-11-24,.pure-u-sm-12-24,.pure-u-sm-13-24,.pure-u-sm-14-24,.pure-u-sm-15-24,.pure-u-sm-16-24,.pure-u-sm-17-24,.pure-u-sm-18-24,.pure-u-sm-19-24,.pure-u-sm-2-24,.pure-u-sm-2-3,.pure-u-sm-2-5,.pure-u-sm-20-24,.pure-u-sm-21-24,.pure-u-sm-22-24,.pure-u-sm-23-24,.pure-u-sm-24-24,.pure-u-sm-3-24,.pure-u-sm-3-4,.pure-u-sm-3-5,.pure-u-sm-3-8,.pure-u-sm-4-24,.pure-u-sm-4-5,.pure-u-sm-5-12,.pure-u-sm-5-24,.pure-u-sm-5-5,.pure-u-sm-5-6,.pure-u-sm-5-8,.pure-u-sm-6-24,.pure-u-sm-7-12,.pure-u-sm-7-24,.pure-u-sm-7-8,.pure-u-sm-8-24,.pure-u-sm-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-sm-1-24{width:4.1667%}.pure-u-sm-1-12,.pure-u-sm-2-24{width:8.3333%}.pure-u-sm-1-8,.pure-u-sm-3-24{width:12.5%}.pure-u-sm-1-6,.pure-u-sm-4-24{width:16.6667%}.pure-u-sm-1-5{width:20%}.pure-u-sm-5-24{width:20.8333%}.pure-u-sm-1-4,.pure-u-sm-6-24{width:25%}.pure-u-sm-7-24{width:29.1667%}.pure-u-sm-1-3,.pure-u-sm-8-24{width:33.3333%}.pure-u-sm-3-8,.pure-u-sm-9-24{width:37.5%}.pure-u-sm-2-5{width:40%}.pure-u-sm-10-24,.pure-u-sm-5-12{width:41.6667%}.pure-u-sm-11-24{width:45.8333%}.pure-u-sm-1-2,.pure-u-sm-12-24{width:50%}.pure-u-sm-13-24{width:54.1667%}.pure-u-sm-14-24,.pure-u-sm-7-12{width:58.3333%}.pure-u-sm-3-5{width:60%}.pure-u-sm-15-24,.pure-u-sm-5-8{width:62.5%}.pure-u-sm-16-24,.pure-u-sm-2-3{width:66.6667%}.pure-u-sm-17-24{width:70.8333%}.pure-u-sm-18-24,.pure-u-sm-3-4{width:75%}.pure-u-sm-19-24{width:79.1667%}.pure-u-sm-4-5{width:80%}.pure-u-sm-20-24,.pure-u-sm-5-6{width:83.3333%}.pure-u-sm-21-24,.pure-u-sm-7-8{width:87.5%}.pure-u-sm-11-12,.pure-u-sm-22-24{width:91.6667%}.pure-u-sm-23-24{width:95.8333%}.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-24-24,.pure-u-sm-5-5{width:100%}}@media screen and (min-width:48em){.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-1-12,.pure-u-md-1-2,.pure-u-md-1-24,.pure-u-md-1-3,.pure-u-md-1-4,.pure-u-md-1-5,.pure-u-md-1-6,.pure-u-md-1-8,.pure-u-md-10-24,.pure-u-md-11-12,.pure-u-md-11-24,.pure-u-md-12-24,.pure-u-md-13-24,.pure-u-md-14-24,.pure-u-md-15-24,.pure-u-md-16-24,.pure-u-md-17-24,.pure-u-md-18-24,.pure-u-md-19-24,.pure-u-md-2-24,.pure-u-md-2-3,.pure-u-md-2-5,.pure-u-md-20-24,.pure-u-md-21-24,.pure-u-md-22-24,.pure-u-md-23-24,.pure-u-md-24-24,.pure-u-md-3-24,.pure-u-md-3-4,.pure-u-md-3-5,.pure-u-md-3-8,.pure-u-md-4-24,.pure-u-md-4-5,.pure-u-md-5-12,.pure-u-md-5-24,.pure-u-md-5-5,.pure-u-md-5-6,.pure-u-md-5-8,.pure-u-md-6-24,.pure-u-md-7-12,.pure-u-md-7-24,.pure-u-md-7-8,.pure-u-md-8-24,.pure-u-md-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-md-1-24{width:4.1667%}.pure-u-md-1-12,.pure-u-md-2-24{width:8.3333%}.pure-u-md-1-8,.pure-u-md-3-24{width:12.5%}.pure-u-md-1-6,.pure-u-md-4-24{width:16.6667%}.pure-u-md-1-5{width:20%}.pure-u-md-5-24{width:20.8333%}.pure-u-md-1-4,.pure-u-md-6-24{width:25%}.pure-u-md-7-24{width:29.1667%}.pure-u-md-1-3,.pure-u-md-8-24{width:33.3333%}.pure-u-md-3-8,.pure-u-md-9-24{width:37.5%}.pure-u-md-2-5{width:40%}.pure-u-md-10-24,.pure-u-md-5-12{width:41.6667%}.pure-u-md-11-24{width:45.8333%}.pure-u-md-1-2,.pure-u-md-12-24{width:50%}.pure-u-md-13-24{width:54.1667%}.pure-u-md-14-24,.pure-u-md-7-12{width:58.3333%}.pure-u-md-3-5{width:60%}.pure-u-md-15-24,.pure-u-md-5-8{width:62.5%}.pure-u-md-16-24,.pure-u-md-2-3{width:66.6667%}.pure-u-md-17-24{width:70.8333%}.pure-u-md-18-24,.pure-u-md-3-4{width:75%}.pure-u-md-19-24{width:79.1667%}.pure-u-md-4-5{width:80%}.pure-u-md-20-24,.pure-u-md-5-6{width:83.3333%}.pure-u-md-21-24,.pure-u-md-7-8{width:87.5%}.pure-u-md-11-12,.pure-u-md-22-24{width:91.6667%}.pure-u-md-23-24{width:95.8333%}.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-24-24,.pure-u-md-5-5{width:100%}}@media screen and (min-width:64em){.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-1-12,.pure-u-lg-1-2,.pure-u-lg-1-24,.pure-u-lg-1-3,.pure-u-lg-1-4,.pure-u-lg-1-5,.pure-u-lg-1-6,.pure-u-lg-1-8,.pure-u-lg-10-24,.pure-u-lg-11-12,.pure-u-lg-11-24,.pure-u-lg-12-24,.pure-u-lg-13-24,.pure-u-lg-14-24,.pure-u-lg-15-24,.pure-u-lg-16-24,.pure-u-lg-17-24,.pure-u-lg-18-24,.pure-u-lg-19-24,.pure-u-lg-2-24,.pure-u-lg-2-3,.pure-u-lg-2-5,.pure-u-lg-20-24,.pure-u-lg-21-24,.pure-u-lg-22-24,.pure-u-lg-23-24,.pure-u-lg-24-24,.pure-u-lg-3-24,.pure-u-lg-3-4,.pure-u-lg-3-5,.pure-u-lg-3-8,.pure-u-lg-4-24,.pure-u-lg-4-5,.pure-u-lg-5-12,.pure-u-lg-5-24,.pure-u-lg-5-5,.pure-u-lg-5-6,.pure-u-lg-5-8,.pure-u-lg-6-24,.pure-u-lg-7-12,.pure-u-lg-7-24,.pure-u-lg-7-8,.pure-u-lg-8-24,.pure-u-lg-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-lg-1-24{width:4.1667%}.pure-u-lg-1-12,.pure-u-lg-2-24{width:8.3333%}.pure-u-lg-1-8,.pure-u-lg-3-24{width:12.5%}.pure-u-lg-1-6,.pure-u-lg-4-24{width:16.6667%}.pure-u-lg-1-5{width:20%}.pure-u-lg-5-24{width:20.8333%}.pure-u-lg-1-4,.pure-u-lg-6-24{width:25%}.pure-u-lg-7-24{width:29.1667%}.pure-u-lg-1-3,.pure-u-lg-8-24{width:33.3333%}.pure-u-lg-3-8,.pure-u-lg-9-24{width:37.5%}.pure-u-lg-2-5{width:40%}.pure-u-lg-10-24,.pure-u-lg-5-12{width:41.6667%}.pure-u-lg-11-24{width:45.8333%}.pure-u-lg-1-2,.pure-u-lg-12-24{width:50%}.pure-u-lg-13-24{width:54.1667%}.pure-u-lg-14-24,.pure-u-lg-7-12{width:58.3333%}.pure-u-lg-3-5{width:60%}.pure-u-lg-15-24,.pure-u-lg-5-8{width:62.5%}.pure-u-lg-16-24,.pure-u-lg-2-3{width:66.6667%}.pure-u-lg-17-24{width:70.8333%}.pure-u-lg-18-24,.pure-u-lg-3-4{width:75%}.pure-u-lg-19-24{width:79.1667%}.pure-u-lg-4-5{width:80%}.pure-u-lg-20-24,.pure-u-lg-5-6{width:83.3333%}.pure-u-lg-21-24,.pure-u-lg-7-8{width:87.5%}.pure-u-lg-11-12,.pure-u-lg-22-24{width:91.6667%}.pure-u-lg-23-24{width:95.8333%}.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-24-24,.pure-u-lg-5-5{width:100%}}@media screen and (min-width:80em){.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-1-12,.pure-u-xl-1-2,.pure-u-xl-1-24,.pure-u-xl-1-3,.pure-u-xl-1-4,.pure-u-xl-1-5,.pure-u-xl-1-6,.pure-u-xl-1-8,.pure-u-xl-10-24,.pure-u-xl-11-12,.pure-u-xl-11-24,.pure-u-xl-12-24,.pure-u-xl-13-24,.pure-u-xl-14-24,.pure-u-xl-15-24,.pure-u-xl-16-24,.pure-u-xl-17-24,.pure-u-xl-18-24,.pure-u-xl-19-24,.pure-u-xl-2-24,.pure-u-xl-2-3,.pure-u-xl-2-5,.pure-u-xl-20-24,.pure-u-xl-21-24,.pure-u-xl-22-24,.pure-u-xl-23-24,.pure-u-xl-24-24,.pure-u-xl-3-24,.pure-u-xl-3-4,.pure-u-xl-3-5,.pure-u-xl-3-8,.pure-u-xl-4-24,.pure-u-xl-4-5,.pure-u-xl-5-12,.pure-u-xl-5-24,.pure-u-xl-5-5,.pure-u-xl-5-6,.pure-u-xl-5-8,.pure-u-xl-6-24,.pure-u-xl-7-12,.pure-u-xl-7-24,.pure-u-xl-7-8,.pure-u-xl-8-24,.pure-u-xl-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-xl-1-24{width:4.1667%}.pure-u-xl-1-12,.pure-u-xl-2-24{width:8.3333%}.pure-u-xl-1-8,.pure-u-xl-3-24{width:12.5%}.pure-u-xl-1-6,.pure-u-xl-4-24{width:16.6667%}.pure-u-xl-1-5{width:20%}.pure-u-xl-5-24{width:20.8333%}.pure-u-xl-1-4,.pure-u-xl-6-24{width:25%}.pure-u-xl-7-24{width:29.1667%}.pure-u-xl-1-3,.pure-u-xl-8-24{width:33.3333%}.pure-u-xl-3-8,.pure-u-xl-9-24{width:37.5%}.pure-u-xl-2-5{width:40%}.pure-u-xl-10-24,.pure-u-xl-5-12{width:41.6667%}.pure-u-xl-11-24{width:45.8333%}.pure-u-xl-1-2,.pure-u-xl-12-24{width:50%}.pure-u-xl-13-24{width:54.1667%}.pure-u-xl-14-24,.pure-u-xl-7-12{width:58.3333%}.pure-u-xl-3-5{width:60%}.pure-u-xl-15-24,.pure-u-xl-5-8{width:62.5%}.pure-u-xl-16-24,.pure-u-xl-2-3{width:66.6667%}.pure-u-xl-17-24{width:70.8333%}.pure-u-xl-18-24,.pure-u-xl-3-4{width:75%}.pure-u-xl-19-24{width:79.1667%}.pure-u-xl-4-5{width:80%}.pure-u-xl-20-24,.pure-u-xl-5-6{width:83.3333%}.pure-u-xl-21-24,.pure-u-xl-7-8{width:87.5%}.pure-u-xl-11-12,.pure-u-xl-22-24{width:91.6667%}.pure-u-xl-23-24{width:95.8333%}.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-24-24,.pure-u-xl-5-5{width:100%}}
+  </style>
+  
+
+  
+  <style type="text/css" media="screen">
+    html {
+	min-height:100%;
+	width:100%;
+	position:relative;
+}
+
+body {
+	background-color: rgb(252,252,252);
+	color: #484848;
+}
+
+.nav-menu {
+  margin-top: 5px;
+  padding-bottom: 5px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.pure-menu-heading {
+  text-transform: none;
+  font-size: large;
+}
+
+.header {
+	text-align: left;
+	color: #484848;
+	margin-bottom: .5em;
+}
+
+.header ul li {
+		height: auto;
+}
+
+.header ul li a {
+	font-weight: bold;
+	color: #484848;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header {
+	font-weight: bold;
+	color: #484848;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.site-title {
+	color: #484848;
+  text-transform: none;
+  font-weight: normal;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pull-right {
+	float: right;
+}
+
+.posts-name {
+	text-transform: capitalize;
+	font-weight: bold;
+	padding-left: 1em;
+	margin-top: 1em;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.posts {
+	font-family: verdana,arial,helvetica,sans-serif;
+	list-style-type:none;
+	padding-left: 1em;
+}
+
+.posts li p {
+	margin-top: 0;
+}
+
+.posts li {
+	margin-bottom: 1em;
+}
+
+.posts li a {
+	color:#369;
+	text-decoration:none;
+}
+
+.post-list {
+  font-size: large;
+}
+
+.footnote {
+	font-family: verdana,arial,helvetica,sans-serif;
+	color:#888;
+	font-size:x-small;
+	margin-bottom:0;
+}
+
+.footnote a {
+	color: #888 !important
+}
+
+.footnote a:hover{
+	text-decoration:underline;
+	color:#369;
+}
+
+.footer {
+	position:absolute;
+	z-index:2;
+	height:auto;
+	width:100%;
+	bottom:0;
+}
+
+.footer-content {
+	border-top: 1px solid #e3e3e3;
+	font-size: 80%;
+	color: #bbb;
+}
+
+.footer-content a {
+	color: #bbb;
+}
+
+.footer-content ul {
+	height: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+	padding-left: 0;
+}
+
+#gototop-btn {
+	display: inline-block;
+}
+
+#foot-name {
+  color: #484848;
+	text-transform: none;
+}
+
+#foot-copyright {
+	padding-left: 1em;
+	padding-bottom: 0.5em;
+	margin: 0;
+}
+
+.post {
+	font-family: proxima-nova,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+	color:#484848;
+	letter-spacing:normal;
+	padding-left: .5em;
+}
+
+.post h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+	letter-spacing:normal;
+}
+
+.post-content {
+	z-index:9;
+	overflow:auto;
+	padding:0;
+	padding-bottom:3em;
+	font-size:16px;
+	line-height:1.4;
+}
+
+.post-content img {
+	max-width: 100%;
+	height: auto;
+}
+
+.post-content code {
+  background-color: #EEE;
+}
+
+.post code {
+  background-color: #EEE;
+}
+
+.post a {
+	color:#c05b4d;
+	text-decoration: none;
+}
+
+.post a:hover {
+	color:#a5473a;
+	text-decoration: underline;
+}
+
+.post h1 {
+	font-size:28px;
+}
+
+.post h2 {
+	font-size:25px;
+}
+
+.post h3 {
+	font-size:23px;
+}
+
+.post h4 {
+	font-size:21px;
+}
+
+.post h5 {
+	font-size:19px;
+}
+
+.post h6 {
+	font-size:18px;
+}
+
+.post-title{
+		margin-top: 0;
+		margin-bottom: 2em;
+}
+
+.post-title h1 {
+	font-weight:bold;
+	font-size:39px;
+	line-height: 40px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@media screen and (max-width:767px){
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+	#toggle-btn {
+		display: inline-block;
+		float: right;
+		padding: .5em 1em;
+		text-decoration: none;
+		color: #484848;
+		font-weight: bold;
+	}
+	#toggle-content li {
+		clear: both;
+		height: auto;
+		background-color: rgb(249,249,249);
+	}
+	#toggle-home {
+		display: inline-block;
+	}
+}
+
+@media screen and (min-width:768px){
+	.mobile {
+		display:none;
+	}
+	.desktop {
+		display: block;
+	}
+}
+
+  </style>
+  
+  <style type="text/css" media="screen"> 
+    
+      .hljs{display:block;overflow-x:auto;padding:0.5em;color:#000;background:#f8f8ff}.hljs-comment,.hljs-quote{color:#408080;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-subst{color:#954121}.hljs-number{color:#40a070}.hljs-string,.hljs-doctag{color:#219161}.hljs-selector-id,.hljs-selector-class,.hljs-section,.hljs-type{color:#19469d}.hljs-params{color:#00f}.hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-variable,.hljs-template-variable{color:#008080}.hljs-regexp,.hljs-link{color:#b68}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+    
+  </style>
+
+  
+  <link rel="shortcut icon" 
+   
+    href="http://ilikeorangutans.github.io/img/favicon.ico"
+  
+  type="image/x-icon">
+
+  
+  
+
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  
+  
+</head>
+<body>
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+    <div class="pure-u-11-12 pure-u-md-2-3">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="http://ilikeorangutans.github.io/" class="site-title pure-menu-heading">Jakob Külzer&#39;s Blog</a>
+            <ul class="pure-menu-list pull-right">
+				
+                <li class="pure-menu-item">
+                    <a href="http://ilikeorangutans.github.io/about/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="site-title pure-menu-heading" id="toggle-home">Jakob Külzer&#39;s Blog</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+				
+                <li class="pure-menu-item">
+                    <a href="http://ilikeorangutans.github.io/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-md-1-6"></div>
+  <div class="pure-u-11-12 pure-u-md-2-3">
+    <div class="post">
+
+      <div class="post-title">
+        <p class="footnote">
+        <time class="">02-06-2014</time>
+        
+        
+        |
+        
+        
+        tags: [ <a href="http://ilikeorangutans.github.io/tags/grails">Grails</a> <a href="http://ilikeorangutans.github.io/tags/grails-2.3.x">Grails-2.3.x</a> <a href="http://ilikeorangutans.github.io/tags/unit-testing">Unit Testing</a> <a href="http://ilikeorangutans.github.io/tags/spock">Spock</a> <a href="http://ilikeorangutans.github.io/tags/groovy">Groovy</a> <a href="http://ilikeorangutans.github.io/tags/test-driven-development">Test Driven Development</a> <a href="http://ilikeorangutans.github.io/tags/integration-testing">Integration Testing</a> ]
+        
+
+        
+
+        
+        </p>
+        <h1>Grails 2 Testing Guide</h1>
+      </div>
+
+      <div class="post-content">
+        
+
+<p><strong>Note: I&rsquo;m still working on this post, but I already use it as a reference so there&rsquo;ll be more content over time.</strong></p>
+
+<p>I&rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out. The Grails docs on <a href="http://grails.org/doc/latest/guide/testing.html">testing</a> are comprehensive, but long. Here&rsquo;s my cheat sheet.</p>
+
+<h2 id="general">General</h2>
+
+<h3 id="tests-assertions">Tests &amp; Assertions</h3>
+
+<p>Tests without assertions are mostly pointless. Learn to write effective assertions. <a href="https://code.google.com/p/hamcrest/wiki/Tutorial">Hamcrest matchers</a> are there to help you. If you&rsquo;re writing <a href="http://spockframework.org">Spock</a> tests, you don&rsquo;t even need to write any explicit asserts.</p>
+
+<h3 id="use-appropriate-test-type">Use Appropriate Test Type</h3>
+
+<p><em>Unit tests</em> are small, self contained, and quick. Whenever you want to test a single method or class, a unit test is usually the way to go. If you find yourself writing a unit test that relies on something else, you&rsquo;ll either want to make it an integration test or mock the collaborators. Using mocks you can precisely control what conditions your code runs under. You can control return values, exceptions, number of interactions, etc.
+In Grails, unit tests go under <code>test/unit</code>.</p>
+
+<p><em>Integration tests</em> are more sophisticated. They actually spin up the runtime environment with all its services, dependency injection, etc to provide a full system. Therefore they are slower than unit tests, but give you a better understanding how your components interact. I like to think of integration tests as tests that take an entire slice of the system and test the interactions between the involved classes. Integration tests go under <code>test/integration</code>.</p>
+
+<h3 id="disabling-tests">Disabling Tests</h3>
+
+<p>Whenever you need to disable a test, use the approriate annotation. Commenting out a test is not an acceptable solution. In GroovyUnit or regular JUnit tests, use <code>@org.junit.Ignore</code> and in Spock tests <code>@spock.lang.Ignore</code>. Notice that both annotations take a String parameter that communicates why this test was disabled. Use it to make it clear why a given test was disabled.</p>
+
+<pre><code class="language-groovy">	@Ignore(&quot;do not need to test this right now&quot;)
+	void &quot;test for a method&quot;() {
+		// ...
+	}
+</code></pre>
+
+<h3 id="never-mix-test-constructs">Never Mix Test Constructs</h3>
+
+<p>Between unit and integration tests there are huge differences. <strong>Never mix constructs meant for unit tests with integration tests</strong>.</p>
+
+<h3 id="groovyunit-or-spock">GroovyUnit or Spock</h3>
+
+<p>Personally I find Spock tests much more expressive than GroovyUnit tests. Quick sample:</p>
+
+<pre><code class="language-groovy">class FooSpecification extends Specification {
+	void &quot;test for a method&quot;() {
+		setup: // implicit, no need to declare this:
+
+		// Everything after this statement will be treated as an assertion
+		expect:
+
+		add(2 + 2) == 4
+	}
+}
+</code></pre>
+
+<p>Check out the <a href="http://docs.spockframework.org/en/latest/">Spock docs</a>, <a href="https://code.google.com/p/spock/wiki/Examples">samples</a></p>
+
+<h2 id="unit-tests">Unit Tests</h2>
+
+<p>Unit tests are tests where you want to test only a very specific piece of code, a single unit. That means that all dependencies of that code will have to be mocked or stubbed. The test setup is the same for all unit tests and starts by annotating your unit test with the <code>@TestFor</code> annotation. This tells Grails what class you want to test and what variables to create.</p>
+
+<pre><code class="language-groovy">@TestFor(MyController)
+class MyControllerSpec extends Specification {
+
+	void &quot;test something&quot;() {
+		// Grails automatically created a controller field for us:
+		controller.doSomething()
+	}
+
+}
+</code></pre>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Grails&rsquo; config is usually accessed via an injected instance of <code>GrailsApplication</code> using the <code>config</code> property. Grails injects <code>GrailsApplication</code> into unit tests, so you can access it directly:</p>
+
+<pre><code class="language-groovy">@TestMixin(GrailsUnitTestMixin)
+class MySpec extends Specification {
+
+	void &quot;test something with config&quot;() {
+		// grailsApplication gets automatically injected
+		grailsApplication.config.myConfigValue
+	}
+
+}
+</code></pre>
+
+<h3 id="mocks">Mocks</h3>
+
+<p>During a unit test Grails will not create and inject any dependencies for you so it&rsquo;s up to you to do so. There&rsquo;s plenty of things your code interacts with and this section breaks down how to mock these things.</p>
+
+<h4 id="mocking-logging">Mocking Logging</h4>
+
+<p>Almost all loggers in Grails artifacts are injected automatically at runtime. However In unit tests you&rsquo;ll have to tell the framework explicitly what you want logging for.</p>
+
+<p>TODO: Mock() - what does it do?</p>
+
+<h4 id="mocking-domain-classes">Mocking Domain Classes</h4>
+
+<p>Mocking domain classes is a quick and easy way to provide your test code with input. Mocking domain classes is easy, either you provide a <code>@grails.test.mixin.Mock</code> annotation with the domain classes you need, or you use the
+<code>mockDomain()</code> method which is added to your test by the <code>GrailsUnitTestMixin</code>. One nice thing about the mocked domain objects is that they support most Gorm operations, including criteria and dynamic finders.</p>
+
+<p>If you need to provide your test with data through mocks you can either just create the objects and save them or you can pass i</p>
+
+<p>Example:</p>
+
+<pre><code class="language-groovy">@TestFor(MyController)
+@Mock([ AddressBook ])
+class MyControllerSpec extends Specification {
+
+	void setup() {
+		// Explicitly create a new mocked domain object:
+		AddressBook addressbook = new AddressBook(name: 'Personal Addressbook')
+		addressBook.save()
+
+		// Or provide an entry as a list.
+		mockDomain(Entry, [
+			[ firstName: 'Hans', lastName: 'Dampf', addressBook: addressBook ],
+			[ firstName: 'Dr', lastName: 'Evil', addressBook: addressBook ]
+		)
+	}
+
+	void &quot;test something&quot;() {
+		// You can now use most Gorm related features, like get:
+		AddressBook.get(1)
+
+		// Dynamic finders:
+		Entry.findByFirstName('Hans')
+
+		// or Criteria:
+		Entry.withCriteria {
+			eq('lastName', 'Evil')
+		}
+	}
+}
+</code></pre>
+
+<p><strong>Note</strong>: if you create test data with mocked domain objects, the constraints on the domain class <em>do</em> apply, even when using <code>mockDomain()</code>! I&rsquo;ve tripped over this a few times. If your mocked domain objects don&rsquo;t show up, make sure
+you provide all the necessary fields.</p>
+
+<h3 id="testing-controllers">Testing Controllers</h3>
+
+<p>Testing controllers is straightforward, but requires lots of mocking as they rely on many different things: services, command objects, domain objects, etc.</p>
+
+<h3 id="testing-closures">Testing Closures</h3>
+
+<p>Methods that accept closures as parameters are a staple in Grails development. For example, the mail plugin uses the following syntax:</p>
+
+<pre><code class="language-groovy">mailService.sendMail {
+	from 'bazinga@test.com'
+	to 'bingo@test.com'
+	subject 'Amazing Stuff'
+	text &quot;Send me your bank data and we'll make millions!&quot;
+}
+</code></pre>
+
+<p>If you&rsquo;re mocking mailService the question is how to validate the values passed into the closure are correct. The solution is to create a <a href="http://stackoverflow.com/questions/10715919/how-to-mock-domain-specific-closures-in-spock">delegate for the closure</a> that captures the values which then can be verified:</p>
+
+<pre><code class="language-groovy">class MailVerifier {
+	String to, from, subject, text
+
+	void to(String to) { this.to = to }
+	void from(String from) { this.from = from }
+	void subject(String subject) { this.subject = subject }
+	void text(String text) { this.text = text }
+}
+</code></pre>
+
+<p>In your test, you have to set the <code>MailVerifier</code> as the Closure&rsquo;s delegate (example uses Spock):</p>
+
+<pre><code class="language-groovy">MailVerifier mv = new MailVerifier()
+MailService mailService = Mock(MailService)
+1 * mailService.sendMail(!null) &gt;&gt; { Closure c -&gt;
+	c.delegate = mv // Set delegate
+	c() // Execute closure
+}
+
+when:
+
+doSomethingThatSendsMail('foo@bar.com', '...', )
+
+then:
+
+mv.to == 'foo@bar.com'
+</code></pre>
+
+<h3 id="unit-test-gotchas">Unit Test Gotchas</h3>
+
+<p>This is a growing list of pain points and their solutions</p>
+
+<h4 id="converterexception-unconvertable-object-of-class-xxx">ConverterException: Unconvertable Object of class XXX</h4>
+
+<p>So you&rsquo;re writing a unit test for some service or other class, and after mocking everything out and putting the <code>@TestMixin(GrailsUnitTestMixin)</code> on your test, it blows up with an exception like this:</p>
+
+<pre><code>Caused by: org.codehaus.groovy.grails.web.converters.exceptions.ConverterException: Unconvertable   Object of class: com.foobar.domain.MyDomainClass
+    at grails.converters.JSON.value(JSON.java:199)
+    at grails.converters.JSON.render(JSON.java:133)
+    ... 41 more
+</code></pre>
+
+<p>The reason for this is that the <code>GrailsUnitTestMixin</code> does not initialize the converter subsystem. To get them working, add the <code>ControllerUnitTestMixin</code> mixin which will set up all the regular converters. See <a href="http://grails.1312388.n4.nabble.com/Error-using-as-JSON-converter-in-a-service-in-a-unit-test-tp4637433p4637457.html">this thread</a>. Example:</p>
+
+<pre><code class="language-groovy">@TestMixin([GrailsUnitTestMixin, ControllerUnitTestMixin])
+class ContactUsFormJobSpec extends Specification {
+</code></pre>
+
+<h4 id="groovy-lang-missingmethodexception-no-signature-of-method-com-foo-rainbow-addtocolors">groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors()&hellip;</h4>
+
+<p>This error happened a few times to me:</p>
+
+<pre><code>|  groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors() is applicable for argument types: (com.foo.RainbowColor) values: [RainbowColor{id=null, name=Orange}]
+Possible solutions: getColors()
+    at com.foo.RainbowServiceSpec.test
+error(RainbowServiceSpec.groovy:179)
+</code></pre>
+
+<p>This happens when you write a unit test and mock only one of the domain classes, but not the other one. In the above example only <code>Rainbow</code> was mocked. Fix this by mocking all classes:</p>
+
+<pre><code class="language-groovy">@TestFor(RainbowService)
+@Mock([Rainbow, RainbowColor])
+public class RainbowSpec extends Specification {}
+</code></pre>
+
+<h4 id="groovycastexception-cannot-cast-object-com-foo-rainbow-2f7af3-with-class-com-foo-rainbow-to-class-grails-converters-json">GroovyCastException: Cannot cast object &lsquo;com.foo.Rainbow@2f7af3&rsquo; with class &lsquo;com.foo.Rainbow&rsquo; to class &lsquo;grails.converters.JSON&rsquo;</h4>
+
+<p>This seems to happen because the converters are not properly set up in certain unit tests. So lines like this will fail with the above exception:</p>
+
+<pre><code>render rainbow as JSON
+</code></pre>
+
+<p>Best fix I&rsquo;ve found takes away some of the readability of the code, but appears to work reliably:</p>
+
+<pre><code>render new JSON(rainbow)
+</code></pre>
+
+<h4 id="testing-content-negotiation">Testing Content Negotiation</h4>
+
+<p>Grails allows automatic content negotiation using the <a href="http://grails.org/doc/2.3.4/ref/Controllers/withFormat.html">withFormat</a> block. However, setting the format in unit tests is something I keep tripping over. To set a specific response type use <code>response.format</code>:</p>
+
+<pre><code class="language-groovy">@TestFor(MyController)
+class MyControllerSpec {
+	void &quot;test response&quot;() {
+		response.format = 'xml'
+		controller.action()
+		expect:
+		response.contentType == 'application/xml'
+	}
+}
+</code></pre>
+
+<p>Note that the value to use with <code>response.format</code> is <em>not</em> the mime type, it is the name of what is set in <code>grails-app/conf/Config.groovy</code> in the mime type settings. For example:</p>
+
+<pre><code>grails.mime.types = [
+		all: '*/*',
+		json: ['application/json', 'text/json'],
+		xml: ['text/xml', 'application/xml']
+]
+</code></pre>
+
+<p>If you wanted an XML response, you&rsquo;d use <code>response.format = 'xml'</code> and <em>not</em> <code>response.format = 'application/xml'</code>.</p>
+
+<hr />
+
+<h2 id="integration-tests">Integration Tests</h2>
+
+<h3 id="testing-services">Testing Services</h3>
+
+<p>Services are really straightforward to test. You can even get Grails to automatically inject the service into your test:</p>
+
+<pre><code class="language-groovy">class MyServiceSpecification extends Specification {
+
+	MyService myService // Grails will inject the service
+
+	void &quot;test my service method&quot;() {
+		String result = myService.doMoreWork()
+
+		expect:
+
+		result == 'awesome'
+	}
+}
+</code></pre>
+
+<p>Grails will inject everything that is known to it into your integration test, including services or Grail&rsquo;s application context.</p>
+
+<h3 id="integration-testing-services">Integration Testing Services</h3>
+
+<p>Writing integration tests for services is very straightforward. You can get the instance injected directly into your test:</p>
+
+<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
+
+	MyService myService // Injected by grails
+
+	void &quot;test method on service ...&quot;() {
+		service.myMethod()
+		// ...
+	}
+}
+</code></pre>
+
+<h3 id="integration-testing-controllers">Integration Testing Controllers</h3>
+
+<p>Integration testing controllers is just one step away from a full functional test, but has the advantage you don&rsquo;t need to deal with the HTTP details. Unlike a real functional test you don&rsquo;t require actual HTTP clients but you talk to the controller directly. Running the test in the same VM as the application under test also has the added benefit that you can look directly into the application to verify the correct behaviour, e.g. check if necessarey database tables have been created.</p>
+
+<h4 id="dependencies">Dependencies</h4>
+
+<p>Unlike services, controllers cannot be injected into integration tests so you&rsquo;ll have to create them. If your controller relies on a service, you&rsquo;ll have to manually inject it. You can get the service by getting it injected into your test:</p>
+
+<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
+
+	MyService myService // We'll need this service for the controller
+
+	MyController controller
+
+	void setup() {
+		// We have to create our own controller instance:
+		controller = new MyController()
+		// Manual dependency injection:
+		controller.myService = myService
+	}
+}
+</code></pre>
+
+<h4 id="request-and-response">Request and Response</h4>
+
+<p>During integration tests Grails will automatically set mocked <a href="http://grails.org/doc/latest/api/org/codehaus/groovy/grails/plugins/testing/GrailsMockHttpServletRequest.html">request</a> and <a href="http://grails.org/doc/latest/api/org/codehaus/groovy/grails/plugins/testing/GrailsMockHttpServletResponse.html">response</a> objects on your controllers. To set request parameters, assign values to <code>controller.params.myParam</code>.</p>
+
+<p>If your controllers use content type negotiation, you&rsquo;ll have to set the expected content type on the <code>controller.response.format</code> field. Setting <code>controller.params.format</code> will <em>not</em> work and caused me all kinds of unexpected behaviour.</p>
+
+<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
+
+	void setup() { }
+
+	void &quot;test my controller action&quot;() {
+		// Set request parameters:
+		controller.params.productId = '42'
+
+		// Set a content type:
+		controller.response.format = 'json'
+
+		// Call the controller action under test:
+		controller.myAction()
+
+		expect:
+
+		controller.response.status == 200
+		controller.response.contentAsString == '{&quot;productId&quot;:42,&quot;name&quot;:&quot;cake&quot;}'
+	}
+}
+</code></pre>
+
+<h2 id="other-references">Other References</h2>
+
+<h3 id="grails-1-3">Grails 1.3</h3>
+
+<p>Use this fantastic <a href="http://zanthrash.com/grailstesting/UnitTestingCheatSheet.pdf">testing cheatsheet for Grails 1.3.x.</a>.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+<div class="footer pure-g">
+  <div class="pure-u-1-24 pure-u-md-1-6"></div>
+  <div class="pure-u-11-12 pure-u-md-2-3">
+    <div class="footer-content">
+      <div class="pure-menu pure-menu-horizontal">
+        <ul>
+          
+          <li class="pure-menu-item" id="foot-name">© Jakob Külzer</li>
+          
+
+          
+          <li class="pure-menu-item">
+            <a href="mailto:jakob.kuelzer@gmail.com" class="pure-menu-link">Email</a>
+          </li>
+          
+
+          
+          <li class="pure-menu-item">
+            <a href="https://github.com/ilikeorangutans" class="pure-menu-link">GitHub</a>
+          </li>
+          
+
+          
+
+          
+
+        </ul>
+        <a href="#" class="pure-menu-link pull-right" id="gototop-btn">↑↑</a>
+        <a href="" class="pure-menu-link pull-right">RSS</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="pure-u-1-24 pure-u-md-1-6"></div>
+</div>
+
+
+
+  <script src="http://ilikeorangutans.github.io/highlight/highlight.min.js"></script>
+   
+  <script>hljs.initHighlighting();</script>
+
+
+<script type="text/javascript">
+  go();
+  window.addEventListener('resize', go);
+  function go(){
+    var d=document.querySelector(".desktop")
+    if(document.documentElement.clientWidth > 768) {
+      d.style.display="";
+    } else {
+      d.style.display="none";
+    }
+  }
+</script>
+<script type="text/javascript">
+  var a=document.querySelector("#toggle-btn"),b=document.querySelector("#toggle-content");a.addEventListener("click",function(){""==b.style.display?(b.style.display="none",a.innerHTML="☰"):(b.style.display="",a.innerHTML="X")});</script>
+
+
+</body>
+</html>
+
