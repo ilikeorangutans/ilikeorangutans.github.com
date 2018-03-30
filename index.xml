@@ -8,10 +8,22 @@
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <lastBuildDate>Wed, 28 Mar 2018 13:56:38 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 11:27:01 -0400</lastBuildDate>
     
 	<atom:link href="http://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inspiration and Action</title>
+      <link>http://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
+      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
+      <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
+ We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
+&amp;ndash; Frank Tibolt
+ I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
+    </item>
     
     <item>
       <title>About</title>

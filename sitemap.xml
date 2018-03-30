@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</loc>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ilikeorangutans.github.io/about/</loc>
     <lastmod>2018-03-28T13:56:38-04:00</lastmod>
   </url>
@@ -323,7 +328,7 @@
   
   <url>
     <loc>http://ilikeorangutans.github.io/</loc>
-    <lastmod>2018-03-28T13:56:38-04:00</lastmod>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,13 +442,13 @@
   
   <url>
     <loc>http://ilikeorangutans.github.io/posts/</loc>
-    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://ilikeorangutans.github.io/tags/productivity/</loc>
-    <lastmod>2017-08-23T13:59:40-04:00</lastmod>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -491,7 +496,7 @@
   
   <url>
     <loc>http://ilikeorangutans.github.io/tags/software-development/</loc>
-    <lastmod>2014-05-03T13:59:40-04:00</lastmod>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -515,7 +520,7 @@
   
   <url>
     <loc>http://ilikeorangutans.github.io/tags/test-driven-development/</loc>
-    <lastmod>2014-02-06T13:59:40-04:00</lastmod>
+    <lastmod>2018-03-30T11:27:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
