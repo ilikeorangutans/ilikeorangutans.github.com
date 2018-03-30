@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zsh on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/zsh/</link>
+    <description>Recent content in Zsh on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Fri, 23 Oct 2015 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gorename and invalid expression</title>
+      <link>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
+      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
+      <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
+The issue comes up when trying to use gorename:
+$ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression  Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
+    </item>
+    
+  </channel>
+</rss>

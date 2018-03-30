@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gcc on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/gcc/</link>
+    <description>Recent content in Gcc on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Mon, 26 Oct 2015 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/gcc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing an Operating System - Environment Setup</title>
+      <link>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</guid>
+      <description>I&amp;rsquo;ve been reading The little book about OS development and wiki.osdev.org and took some notes along the line. Here&amp;rsquo;s what I wrote on environment setup.
+Environment setup You&amp;rsquo;ll need a cross compile toolchain consisting of GNU Binutils and gcc. The osdev wiki has a great page on setting up a cross compilation toolchain.
+It took me a few times because I didn&amp;rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, gcc-4.</description>
+    </item>
+    
+  </channel>
+</rss>

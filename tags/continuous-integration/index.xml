@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Continuous Integration on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/continuous-integration/</link>
+    <description>Recent content in Continuous Integration on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Sat, 01 Jun 2013 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Case for Continuous Integration</title>
+      <link>http://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</link>
+      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</guid>
+      <description>In my career as a software developer, I&amp;rsquo;ve come to appreciate the principles of Continuous Integration (CI). It forces you to do the hard things early and often and thus helps you reduce risk during development. It forces you to write tests, and be responsible about what you check in. All in all, good qualities and something that every development team should aspire to. Or so I thought. Reality is different, and so far almost every development team I have interacted with is deadly afraid of doing CI.</description>
+    </item>
+    
+  </channel>
+</rss>

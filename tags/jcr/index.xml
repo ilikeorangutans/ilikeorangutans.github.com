@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jcr on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/jcr/</link>
+    <description>Recent content in Jcr on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Tue, 20 Nov 2012 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/jcr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache Sling Resource Resolver Rules in a Nutshell</title>
+      <link>http://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</guid>
+      <description>If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules. In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual resources. For example, if a request for /foo/bar is coming in the resolver will resolve that to a corresponding node in the JCR. However, sometimes it is not desireable to expose the internal structure of the repository or the required external structure cannot be represented using the JCR.</description>
+    </item>
+    
+  </channel>
+</rss>

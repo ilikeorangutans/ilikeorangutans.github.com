@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/security/</link>
+    <description>Recent content in Security on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Thu, 15 Aug 2013 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thoughts on Authorization Schemes</title>
+      <link>http://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>
+      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid>
+      <description>Today I was experimenting with some new tools (Prose) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:
+Android has a similar screen when you install an app, IOS probably has one as well.</description>
+    </item>
+    
+  </channel>
+</rss>

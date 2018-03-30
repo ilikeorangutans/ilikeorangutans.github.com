@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven Release Plugin on Jakob Külzer&#39;s Blog</title>
+    <link>http://ilikeorangutans.github.io/tags/maven-release-plugin/</link>
+    <description>Recent content in Maven Release Plugin on Jakob Külzer&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <lastBuildDate>Tue, 29 Apr 2014 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://ilikeorangutans.github.io/tags/maven-release-plugin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven Release Plugin and Git 1.9</title>
+      <link>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link>
+      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid>
+      <description>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
+Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.
+Solution Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</description>
+    </item>
+    
+  </channel>
+</rss>
