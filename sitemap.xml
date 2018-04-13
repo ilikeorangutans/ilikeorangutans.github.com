@@ -148,6 +148,11 @@
   </url>
   
   <url>
+    <loc>http://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</loc>
+    <lastmod>2011-01-02T12:36:58-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ilikeorangutans.github.io/tags/adobe-wem/</loc>
     <lastmod>2012-11-20T13:59:40-04:00</lastmod>
     <priority>0</priority>
@@ -233,6 +238,12 @@
   <url>
     <loc>http://ilikeorangutans.github.io/tags/eclipse/</loc>
     <lastmod>2013-07-28T13:59:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/firewall/</loc>
+    <lastmod>2011-01-02T12:36:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -393,6 +404,18 @@
   </url>
   
   <url>
+    <loc>http://ilikeorangutans.github.io/tags/nat/</loc>
+    <lastmod>2011-01-02T12:36:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ilikeorangutans.github.io/tags/networking/</loc>
+    <lastmod>2011-01-02T12:36:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://ilikeorangutans.github.io/tags/new-delhi/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
     <priority>0</priority>
@@ -513,6 +536,12 @@
   </url>
   
   <url>
+    <loc>http://ilikeorangutans.github.io/tags/ssh/</loc>
+    <lastmod>2011-01-02T12:36:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://ilikeorangutans.github.io/tags/</loc>
     <lastmod>2012-11-20T13:59:40-04:00</lastmod>
     <priority>0</priority>
@@ -525,13 +554,13 @@
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/categories/travel/</loc>
+    <loc>http://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ilikeorangutans.github.io/tags/travel/</loc>
+    <loc>http://ilikeorangutans.github.io/categories/travel/</loc>
     <lastmod>2012-06-22T13:59:40-04:00</lastmod>
     <priority>0</priority>
   </url>

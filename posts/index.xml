@@ -290,5 +290,17 @@ Full version: India Gate Panorama!
 Full version: Delhi Rooftop Panorama!</description>
     </item>
     
+    <item>
+      <title>SSH (Remote) Tunnels</title>
+      <link>http://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</link>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</guid>
+      <description>Just figured out how SSH remote tunnels work and wanted to write it down.
+Nomenclature:
+ [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
+$ ssh -L REMOTEPORT:client:CLIENTPORT user@server  Now, that by opening a tunnel in this way:</description>
+    </item>
+    
   </channel>
 </rss>
