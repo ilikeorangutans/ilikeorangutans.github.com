@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jvm on Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/tags/jvm/</link>
+    <link>https://ilikeorangutans.github.io/tags/jvm/</link>
     <description>Recent content in Jvm on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,15 +10,15 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Tue, 04 Dec 2012 13:59:40 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Reading List: JVM Internals, Rugged Software, and 12 Factor Apps</title>
-      <link>http://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
+      <link>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
       <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
       <description>Recently I&amp;rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the Rugged Manifesto as it emphasizes how software is crucial in our world and the responsibilities that come with it. Another great guide is Twelve-Factor App, a list of 12 principles on how to effectively implement and operate applications. And last but not least, Understanding JVM Internals, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.</description>
     </item>
     

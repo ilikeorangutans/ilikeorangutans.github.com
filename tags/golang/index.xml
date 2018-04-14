@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/tags/golang/</link>
+    <link>https://ilikeorangutans.github.io/tags/golang/</link>
     <description>Recent content in Golang on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,25 +10,25 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Sun, 22 May 2016 13:59:40 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Appengine, Go, and Vendoring</title>
-      <link>http://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</link>
+      <link>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</link>
       <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
+      <guid>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
       <description>I&amp;rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:
 2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go  I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
     </item>
     
     <item>
       <title>gorename and invalid expression</title>
-      <link>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
+      <link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
       <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
+      <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
       <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
 The issue comes up when trying to use gorename:
 $ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression  Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
@@ -36,20 +36,20 @@ $ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &
     
     <item>
       <title>Using Golang and Graphviz to Visualize Complex Grails Applications</title>
-      <link>http://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
+      <link>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
       <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
       <description>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use Graphviz to help me get a better overview of our applications.
 Meet Graphviz I discovered my love for the dot language when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on.</description>
     </item>
     
     <item>
       <title>Golang Reading and Notes for April 2014</title>
-      <link>http://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
+      <link>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
       <pubDate>Sun, 27 Apr 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
 Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
 var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.</description>
@@ -57,10 +57,10 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
     
     <item>
       <title>First impressions: Go</title>
-      <link>http://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
+      <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
       <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
       <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.
 So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:
 Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>

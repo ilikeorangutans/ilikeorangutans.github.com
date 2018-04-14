@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intellij on Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/tags/intellij/</link>
+    <link>https://ilikeorangutans.github.io/tags/intellij/</link>
     <description>Recent content in Intellij on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,15 +10,15 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Switched from Eclipse to IntelliJ</title>
-      <link>http://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
+      <link>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
       <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
       <description>Over the years I have always been fan and user of the Eclipse platform. I liked the openness, the available plugins, and many of its features, including the CTRL-1 hotkey that does everything, and a few other things. However, over time Eclipse got slower and slower, more unstable, and after a while just a pain to use, especially when using more than one screen. I decided to give IntelliJ another try, as I&amp;rsquo;ve done a few times before.</description>
     </item>
     

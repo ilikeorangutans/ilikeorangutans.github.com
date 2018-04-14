@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xpath on Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/tags/xpath/</link>
+    <link>https://ilikeorangutans.github.io/tags/xpath/</link>
     <description>Recent content in Xpath on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,15 +10,15 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Tue, 02 Apr 2013 13:59:40 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Date Arithmetics in XSLT 2</title>
-      <link>http://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
+      <link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
       <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
       <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.
 First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
     </item>

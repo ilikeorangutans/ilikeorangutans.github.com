@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/</link>
+    <link>https://ilikeorangutans.github.io/</link>
     <description>Recent content on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,15 +10,15 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Fri, 30 Mar 2018 11:27:01 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Inspiration and Action</title>
-      <link>http://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
+      <link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
       <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
+      <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
       <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
  We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
 &amp;ndash; Frank Tibolt
@@ -27,39 +27,39 @@
     
     <item>
       <title>About</title>
-      <link>http://ilikeorangutans.github.io/about/</link>
+      <link>https://ilikeorangutans.github.io/about/</link>
       <pubDate>Wed, 28 Mar 2018 13:56:38 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/about/</guid>
+      <guid>https://ilikeorangutans.github.io/about/</guid>
       <description>Hi, my name is Jakob and this is my blog. I write about things that I find interesting and about things that I think about. And sometimes just things that took me a long while to figure out.
 If you want to reach out to me find my email address at the bottom of the page. A lot of the stuff I experiment with ends up on Github, link also at the bottom.</description>
     </item>
     
     <item>
       <title>On Wasted Time</title>
-      <link>http://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
+      <link>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
       <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
+      <guid>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
       <description>Recently I&amp;rsquo;ve been feeling&amp;hellip; unaccomplished. Despite all my achievements, acquired skills, and successes I&amp;rsquo;ve had a thought gnawing at the back of my mind. I realized, after looking at my extensive list of side and toy projects, that none of them are making any progress. In some of them I invested lots of time, others are just ideas, barely sketches. But they all have in common that I grew tired of working on them.</description>
     </item>
     
     <item>
       <title>Google Appengine, Go, and Vendoring</title>
-      <link>http://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</link>
+      <link>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</link>
       <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
+      <guid>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
       <description>I&amp;rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:
 2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go  I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
     </item>
     
     <item>
       <title>Writing an Operating System - Environment Setup</title>
-      <link>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</link>
+      <link>https://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</link>
       <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</guid>
+      <guid>https://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</guid>
       <description>I&amp;rsquo;ve been reading The little book about OS development and wiki.osdev.org and took some notes along the line. Here&amp;rsquo;s what I wrote on environment setup.
 Environment setup You&amp;rsquo;ll need a cross compile toolchain consisting of GNU Binutils and gcc. The osdev wiki has a great page on setting up a cross compilation toolchain.
 It took me a few times because I didn&amp;rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, gcc-4.</description>
@@ -67,10 +67,10 @@ It took me a few times because I didn&amp;rsquo;t read the instructions properly
     
     <item>
       <title>gorename and invalid expression</title>
-      <link>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
+      <link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
       <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
+      <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
       <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
 The issue comes up when trying to use gorename:
 $ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression  Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
@@ -78,20 +78,20 @@ $ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &
     
     <item>
       <title>Using Golang and Graphviz to Visualize Complex Grails Applications</title>
-      <link>http://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
+      <link>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
       <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
       <description>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use Graphviz to help me get a better overview of our applications.
 Meet Graphviz I discovered my love for the dot language when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on.</description>
     </item>
     
     <item>
       <title>Maven Release Plugin and Git 1.9</title>
-      <link>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link>
+      <link>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link>
       <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid>
       <description>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
 Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.
 Solution Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</description>
@@ -99,10 +99,10 @@ Solution Git&amp;rsquo;s output format changed slightly in one of the recent ver
     
     <item>
       <title>Golang Reading and Notes for April 2014</title>
-      <link>http://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
+      <link>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
       <pubDate>Sun, 27 Apr 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
 Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
 var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.</description>
@@ -110,20 +110,20 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
     
     <item>
       <title>Grails 2 Testing Guide</title>
-      <link>http://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link>
+      <link>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link>
       <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid>
+      <guid>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid>
       <description>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.
 I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.</description>
     </item>
     
     <item>
       <title>First impressions: Go</title>
-      <link>http://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
+      <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
       <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
       <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.
 So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:
 Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
@@ -131,95 +131,95 @@ Language The go language is full of nice surprises. I haven&amp;rsquo;t seen eve
     
     <item>
       <title>Thoughts on Authorization Schemes</title>
-      <link>http://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>
+      <link>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>
       <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid>
       <description>Today I was experimenting with some new tools (Prose) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:
 Android has a similar screen when you install an app, IOS probably has one as well.</description>
     </item>
     
     <item>
       <title>JSR-269 Annotation Processing</title>
-      <link>http://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link>
+      <link>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link>
       <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</guid>
       <description>I&amp;rsquo;ve been contemplating compile time bytecode manipulation for the Object Mapper Framework for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered Project Lombok and reading about JSR-269, which was introduced with Java 1.6. It&amp;rsquo;s an API that allows you to plug custom annotation processors into javac.</description>
     </item>
     
     <item>
       <title>Switched from Eclipse to IntelliJ</title>
-      <link>http://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
+      <link>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
       <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
       <description>Over the years I have always been fan and user of the Eclipse platform. I liked the openness, the available plugins, and many of its features, including the CTRL-1 hotkey that does everything, and a few other things. However, over time Eclipse got slower and slower, more unstable, and after a while just a pain to use, especially when using more than one screen. I decided to give IntelliJ another try, as I&amp;rsquo;ve done a few times before.</description>
     </item>
     
     <item>
       <title>Making Eclipse&#39;s Method Stubs Better and other things</title>
-      <link>http://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</link>
+      <link>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</link>
       <pubDate>Wed, 26 Jun 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</guid>
       <description>Just downloaded Eclipse Kepler and I&amp;rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&amp;rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad.</description>
     </item>
     
     <item>
       <title>The Case for Continuous Integration</title>
-      <link>http://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</link>
+      <link>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</link>
       <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</guid>
       <description>In my career as a software developer, I&amp;rsquo;ve come to appreciate the principles of Continuous Integration (CI). It forces you to do the hard things early and often and thus helps you reduce risk during development. It forces you to write tests, and be responsible about what you check in. All in all, good qualities and something that every development team should aspire to. Or so I thought. Reality is different, and so far almost every development team I have interacted with is deadly afraid of doing CI.</description>
     </item>
     
     <item>
       <title>The Problem with LinkedIn&#39;s Skills Endorsement</title>
-      <link>http://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</link>
+      <link>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</link>
       <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</guid>
       <description>A while ago LinkedIn introduced what looked like a really cool feature, an easy way to &amp;ldquo;endorse&amp;rdquo; skills of your contacts. It&amp;rsquo;s really easy to go in and click &amp;ldquo;Endorse&amp;rdquo; on a bunch of skills. However, one thing that kept surprising me was who endorsed what skills. For example, just today I had a ex-coworker from over 4 years ago endorse me for Hibernate. Which by itself is a nice gesture, only thing is, he&amp;rsquo;s an art director.</description>
     </item>
     
     <item>
       <title>On Developer Happiness and Productivity</title>
-      <link>http://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</link>
+      <link>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</link>
       <pubDate>Wed, 03 Apr 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid>
       <description>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.
  A happy developer is a productive developer.</description>
     </item>
     
     <item>
       <title>Date Arithmetics in XSLT 2</title>
-      <link>http://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
+      <link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
       <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
       <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.
 First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
     </item>
     
     <item>
       <title>OSGI, Guice, and Peaberry: first steps</title>
-      <link>http://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>
+      <link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>
       <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid>
       <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
 However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
     </item>
     
     <item>
       <title>Type Incompatibility With Maven SCR Plugin</title>
-      <link>http://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
+      <link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
       <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
+      <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
       <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
 [ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
 @Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
@@ -227,74 +227,74 @@ However, getting Peaberry to work was not trivial, mostly because there aren&amp
     
     <item>
       <title>Google Guice and Scope Mixing</title>
-      <link>http://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</link>
+      <link>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</link>
       <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</guid>
       <description>I&amp;rsquo;ve been working on a small Java application I wrote a few years ago for some bug fixes and in the process of making it better, I introduced Google Guice, my favourite dependency injection framework. On of the great features of Guice is that it supports different scopes for injection. Per default, Guice will return a new object for every request. But sometimes you want to objects to be created a bit less liberally, for example, you want a certain object to be created only once.</description>
     </item>
     
     <item>
       <title>Reading List: JVM Internals, Rugged Software, and 12 Factor Apps</title>
-      <link>http://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
+      <link>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
       <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
       <description>Recently I&amp;rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the Rugged Manifesto as it emphasizes how software is crucial in our world and the responsibilities that come with it. Another great guide is Twelve-Factor App, a list of 12 principles on how to effectively implement and operate applications. And last but not least, Understanding JVM Internals, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.</description>
     </item>
     
     <item>
       <title>Apache Sling Resource Resolver Rules in a Nutshell</title>
-      <link>http://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</link>
+      <link>https://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</link>
       <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</guid>
       <description>If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules. In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual resources. For example, if a request for /foo/bar is coming in the resolver will resolve that to a corresponding node in the JCR. However, sometimes it is not desireable to expose the internal structure of the repository or the required external structure cannot be represented using the JCR.</description>
     </item>
     
     <item>
       <title>commons-logging in OSGI Environments</title>
-      <link>http://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</link>
+      <link>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</link>
       <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</guid>
       <description>While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the Commons OSGI status page, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why.</description>
     </item>
     
     <item>
       <title>OSGI Bootstrapping</title>
-      <link>http://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</link>
+      <link>https://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</link>
       <pubDate>Tue, 23 Oct 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</guid>
       <description>I&amp;rsquo;ve been working with OSGI based technology for a while now and it&amp;rsquo;s a great piece of technology. However, so far I&amp;rsquo;ve only worked with OSGI technology that runs in existing instances of the framework. A running framework is easy to deal with, but how do you get to this point? I spent some time today playing with that, and it took me a while to put it all together. So naturally, I&amp;rsquo;ll have to record my findings here.</description>
     </item>
     
     <item>
       <title>OSGI Classloading Reading List</title>
-      <link>http://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</link>
+      <link>https://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</link>
       <pubDate>Fri, 12 Oct 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</guid>
       <description>I&amp;rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&amp;rsquo;m starting to fully understand and leverage OSGI and I&amp;rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.
 In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules.</description>
     </item>
     
     <item>
       <title>Horray for Jekyll</title>
-      <link>http://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</link>
+      <link>https://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</link>
       <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</guid>
       <description>So I finally got around to play with Jekyll, a static site generator for websites. I was initially sceptical whether a static site generator would be up for running a blog, but after playing with it for a bit, I&amp;rsquo;m in love with this concept. The ability to write my posts in vim (MacVim that is) and version them with Git makes me very happy. As much as I like Wordpress, it&amp;rsquo;s getting more and more sluggish (on my old server at least) and every time I&amp;rsquo;m logging in to it, I spend half an hour installing updates and patches.</description>
     </item>
     
     <item>
       <title>Panoramas from Delhi, India</title>
-      <link>http://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</link>
+      <link>https://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</link>
       <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</guid>
+      <guid>https://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</guid>
       <description>I spent some time in India and at a few spots I took enough pictures to create panoramas. Make sure you click the links to the full version and zoom to the original size of the image. They&amp;rsquo;re huge and you can scroll around for a bit and discover nice details.
 Full version: India Gate Panorama!
 Full version: Delhi Rooftop Panorama!</description>
@@ -302,10 +302,10 @@ Full version: Delhi Rooftop Panorama!</description>
     
     <item>
       <title>SSH (Remote) Tunnels</title>
-      <link>http://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</link>
+      <link>https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</link>
       <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</guid>
+      <guid>https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</guid>
       <description>Just figured out how SSH remote tunnels work and wanted to write it down.
 Nomenclature:
  [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:

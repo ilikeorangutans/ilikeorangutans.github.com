@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Social Media on Jakob Külzer&#39;s Blog</title>
-    <link>http://ilikeorangutans.github.io/tags/social-media/</link>
+    <link>https://ilikeorangutans.github.io/tags/social-media/</link>
     <description>Recent content in Social Media on Jakob Külzer&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
@@ -10,15 +10,15 @@
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <lastBuildDate>Wed, 23 Aug 2017 13:59:40 -0400</lastBuildDate>
     
-	<atom:link href="http://ilikeorangutans.github.io/tags/social-media/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/social-media/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>On Wasted Time</title>
-      <link>http://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
+      <link>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
       <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>http://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
+      <guid>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
       <description>Recently I&amp;rsquo;ve been feeling&amp;hellip; unaccomplished. Despite all my achievements, acquired skills, and successes I&amp;rsquo;ve had a thought gnawing at the back of my mind. I realized, after looking at my extensive list of side and toy projects, that none of them are making any progress. In some of them I invested lots of time, others are just ideas, barely sketches. But they all have in common that I grew tired of working on them.</description>
     </item>
     
