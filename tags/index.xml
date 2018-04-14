@@ -32,11 +32,29 @@
     </item>
     
     <item>
+      <title>Antlr</title>
+      <link>https://ilikeorangutans.github.io/tags/antlr/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/antlr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Apache Sling</title>
       <link>https://ilikeorangutans.github.io/tags/apache-sling/</link>
       <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/apache-sling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ast</title>
+      <link>https://ilikeorangutans.github.io/tags/ast/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/ast/</guid>
       <description></description>
     </item>
     
@@ -91,6 +109,15 @@
       <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/commons-logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compiler</title>
+      <link>https://ilikeorangutans.github.io/tags/compiler/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/compiler/</guid>
       <description></description>
     </item>
     
@@ -221,6 +248,15 @@
     </item>
     
     <item>
+      <title>Grammar</title>
+      <link>https://ilikeorangutans.github.io/tags/grammar/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/grammar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Graphviz</title>
       <link>https://ilikeorangutans.github.io/tags/graphviz/</link>
       <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
@@ -338,6 +374,15 @@
     </item>
     
     <item>
+      <title>Lexer</title>
+      <link>https://ilikeorangutans.github.io/tags/lexer/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/lexer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Linkedin</title>
       <link>https://ilikeorangutans.github.io/tags/linkedin/</link>
       <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate>
@@ -433,6 +478,15 @@
       <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/panorama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parser</title>
+      <link>https://ilikeorangutans.github.io/tags/parser/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/parser/</guid>
       <description></description>
     </item>
     
