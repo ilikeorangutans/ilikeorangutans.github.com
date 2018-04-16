@@ -158,14 +158,31 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/adobe-wem/</loc>
     <lastmod>2018-03-28T22:41:17-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/air/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/annotation/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/ant/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -217,6 +234,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/cms/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/commons-httpclient/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -231,6 +254,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/compiler/</loc>
     <lastmod>2018-04-13T23:31:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/content-management/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -345,6 +374,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/happiness/</loc>
     <lastmod>2018-03-28T22:54:09-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/imagemagik/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -541,6 +576,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/saxon/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/scr/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -619,6 +660,18 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/web-development/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/xhtml/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/xml/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -633,6 +686,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/xslt/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/xslt2.0/</loc>
+    <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
   </url>
   
