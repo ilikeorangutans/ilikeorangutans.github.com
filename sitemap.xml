@@ -9,7 +9,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/about/</loc>
-    <lastmod>2018-03-28T21:39:38-04:00</lastmod>
+    <lastmod>2018-05-21T16:53:38-04:00</lastmod>
   </url>
   
   <url>
@@ -135,6 +135,11 @@
   <url>
     <loc>https://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/posts/</loc>
+    <lastmod>2018-05-21T22:22:47-04:00</lastmod>
   </url>
   
   <url>
@@ -378,6 +383,11 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/</loc>
+    <lastmod>2018-05-21T22:22:47-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/imagemagik/</loc>
     <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
@@ -398,12 +408,6 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/intellij/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ilikeorangutans.github.io/</loc>
-    <lastmod>2018-03-30T12:01:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -540,12 +544,6 @@
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/posts/</loc>
-    <lastmod>2018-03-30T12:01:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ilikeorangutans.github.io/tags/productivity/</loc>
     <lastmod>2018-03-30T12:01:13-04:00</lastmod>
     <priority>0</priority>
@@ -626,7 +624,6 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/</loc>
     <lastmod>2018-03-28T22:41:17-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

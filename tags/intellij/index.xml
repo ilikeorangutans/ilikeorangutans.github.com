@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intellij on Jakob Külzer&#39;s Blog</title>
+    <title>Intellij on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/intellij/</link>
-    <description>Recent content in Intellij on Jakob Külzer&#39;s Blog</description>
+    <description>Recent content in Intellij on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
     <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/tags/intellij/index.xml" rel="self" type="application/rss+xml" />

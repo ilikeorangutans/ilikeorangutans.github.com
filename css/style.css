@@ -1,0 +1,14 @@
+a, .btn.btn-link {
+  color: #2978a0;
+}
+
+body {
+  background-color: #fbfbff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}

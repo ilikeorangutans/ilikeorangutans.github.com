@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Grails 2.3.x on Jakob Külzer&#39;s Blog</title>
+    <title>Grails 2.3.x on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/grails-2.3.x/</link>
-    <description>Recent content in Grails 2.3.x on Jakob Külzer&#39;s Blog</description>
+    <description>Recent content in Grails 2.3.x on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
     <lastBuildDate>Thu, 06 Feb 2014 13:59:40 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/tags/grails-2.3.x/index.xml" rel="self" type="application/rss+xml" />

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jakob Külzer&#39;s Blog</title>
+    <title>Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/</link>
-    <description>Recent content on Jakob Külzer&#39;s Blog</description>
+    <description>Recent content on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <lastBuildDate>Fri, 30 Mar 2018 11:27:01 -0400</lastBuildDate>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Mon, 21 May 2018 22:22:47 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -31,7 +32,7 @@
       <pubDate>Wed, 28 Mar 2018 13:56:38 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/about/</guid>
-      <description>Hi, my name is Jakob and this is my blog. I write about things that I find interesting and about things that I think about. And sometimes just things that took me a long while to figure out.
+      <description>Hi, my name is Jakob and this is my website and blog. I write about things that I find interesting and about things that I think about. And sometimes just things that took me a long while to figure out.
 If you want to reach out to me find my email address at the bottom of the page. A lot of the stuff I experiment with ends up on Github, link also at the bottom.</description>
     </item>
     
