@@ -72,13 +72,58 @@
     <main class="container grid-lg content">
       
 <h1>
-    refactoring
+    Refactoring
 </h1>
 
-    <a href="/2015/10/23/gorename-and-invalid-expression/">
-        gorename and invalid expression
-        https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/
-    </a>
+<p>
+    &larrhk; <a href="/tags">all tags</a>
+</p>
+
+<p>Pages tagged with "refactoring":</p>
+
+    <article class="mb-2">
+    <div class="divider"></div>
+    <div class="tile">
+        <div class="tile-content">
+            <p class="tile-title h4">
+                <a href="/2015/10/23/gorename-and-invalid-expression/">
+                    gorename and invalid expression
+                </a>
+            </p>
+            <p class="tile-subtitle">
+                23 Oct 2015, tagged:
+                
+                
+                
+                    <a href="/tags/golang" class="">
+                        Golang, 
+                    </a>
+                
+                    <a href="/tags/go" class="">
+                        Go, 
+                    </a>
+                
+                    <a href="/tags/zsh" class="">
+                        zsh, 
+                    </a>
+                
+                    <a href="/tags/refactoring" class="">
+                        Refactoring
+                    </a>
+                
+            </p>
+            <p class="tile-subtitle">
+                This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
+The issue comes up when trying to use gorename:
+$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType' gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression  Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
+            </p>
+            <p class="tile-action">
+                <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>
+            </p>
+        </div>
+    </div>
+</article>
+
 
 
 
