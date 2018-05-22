@@ -15,6 +15,16 @@
     
     
     <item>
+      <title>A New Theme</title>
+      <link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</guid>
+      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.
+If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
+    </item>
+    
+    <item>
       <title>Inspiration and Action</title>
       <link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
       <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
