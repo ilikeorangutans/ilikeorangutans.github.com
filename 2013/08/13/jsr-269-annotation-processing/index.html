@@ -69,8 +69,35 @@
     
     <main class="container grid-lg content">
       
-    <div class="columns">
+    <div class="columns mb-2">
         <div class="column">
+            <p class="text-gray">
+                13 Aug 2013
+
+
+, tagged:
+
+
+    <a href="/tags/java" class="">
+        Java, 
+    </a>
+
+    <a href="/tags/annotation" class="">
+        Annotation, 
+    </a>
+
+    <a href="/tags/jsr-269" class="">
+        JSR-269, 
+    </a>
+
+    <a href="/tags/reading-list" class="">
+        Reading List
+    </a>
+
+
+
+            </p>
+            <div class="divider"></div>
             <h1>JSR-269 Annotation Processing</h1>
             <p>I&rsquo;ve been contemplating compile time bytecode manipulation for the <a href="http://www.objectmapper.org/">Object Mapper Framework</a> for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered <a href="http://projectlombok.org/">Project Lombok</a> and reading about <a href="http://jcp.org/en/jsr/detail?id=269">JSR-269</a>, which was introduced with Java 1.6. It&rsquo;s an API that allows you to plug custom annotation processors into javac.</p>
 
@@ -86,6 +113,7 @@
 
 <p>It&rsquo;s an interesting concept and I got a simple processor to work. Next steps will be to experiment with bytecode weaving/generation and see if I can pregenerate proxies with this.</p>
 
+            <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
