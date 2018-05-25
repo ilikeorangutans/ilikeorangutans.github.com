@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>First Impression on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
+    <description>Recent content in First Impression on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 12 Nov 2013 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/first-impression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First impressions: Go</title>
+      <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
+      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
+      <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.
+So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:
+Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
+    </item>
+    
+  </channel>
+</rss>

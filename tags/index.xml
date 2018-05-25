@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/</link>
+    <description>Recent content in Tags on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 20 Nov 2012 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adobe Wem</title>
+      <link>https://ilikeorangutans.github.io/tags/adobe-wem/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/adobe-wem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Air</title>
+      <link>https://ilikeorangutans.github.io/tags/air/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/air/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Annotation</title>
+      <link>https://ilikeorangutans.github.io/tags/annotation/</link>
+      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/annotation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ant</title>
+      <link>https://ilikeorangutans.github.io/tags/ant/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/ant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Antlr</title>
+      <link>https://ilikeorangutans.github.io/tags/antlr/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/antlr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache Sling</title>
+      <link>https://ilikeorangutans.github.io/tags/apache-sling/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/apache-sling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ast</title>
+      <link>https://ilikeorangutans.github.io/tags/ast/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/ast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Authorization</title>
+      <link>https://ilikeorangutans.github.io/tags/authorization/</link>
+      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/authorization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binutils</title>
+      <link>https://ilikeorangutans.github.io/tags/binutils/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/binutils/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://ilikeorangutans.github.io/tags/blog/</link>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://ilikeorangutans.github.io/tags/c/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cms</title>
+      <link>https://ilikeorangutans.github.io/tags/cms/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/cms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Commons Httpclient</title>
+      <link>https://ilikeorangutans.github.io/tags/commons-httpclient/</link>
+      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/commons-httpclient/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Commons Logging</title>
+      <link>https://ilikeorangutans.github.io/tags/commons-logging/</link>
+      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/commons-logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compiler</title>
+      <link>https://ilikeorangutans.github.io/tags/compiler/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/compiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Content Management</title>
+      <link>https://ilikeorangutans.github.io/tags/content-management/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/content-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration</title>
+      <link>https://ilikeorangutans.github.io/tags/continuous-integration/</link>
+      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cq5</title>
+      <link>https://ilikeorangutans.github.io/tags/cq5/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/cq5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross Compile</title>
+      <link>https://ilikeorangutans.github.io/tags/cross-compile/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/cross-compile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://ilikeorangutans.github.io/tags/dependency-injection/</link>
+      <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/dependency-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eclipse</title>
+      <link>https://ilikeorangutans.github.io/tags/eclipse/</link>
+      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/eclipse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firewall</title>
+      <link>https://ilikeorangutans.github.io/tags/firewall/</link>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/firewall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First Impression</title>
+      <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
+      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/first-impression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gcc</title>
+      <link>https://ilikeorangutans.github.io/tags/gcc/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/gcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://ilikeorangutans.github.io/tags/git/</link>
+      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://ilikeorangutans.github.io/tags/go/</link>
+      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://ilikeorangutans.github.io/tags/golang/</link>
+      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google App Engine</title>
+      <link>https://ilikeorangutans.github.io/tags/google-app-engine/</link>
+      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/google-app-engine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grails</title>
+      <link>https://ilikeorangutans.github.io/tags/grails/</link>
+      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/grails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grails 2.3.x</title>
+      <link>https://ilikeorangutans.github.io/tags/grails-2.3.x/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/grails-2.3.x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grammar</title>
+      <link>https://ilikeorangutans.github.io/tags/grammar/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/grammar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphviz</title>
+      <link>https://ilikeorangutans.github.io/tags/graphviz/</link>
+      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/graphviz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Groovy</title>
+      <link>https://ilikeorangutans.github.io/tags/groovy/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/groovy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guice</title>
+      <link>https://ilikeorangutans.github.io/tags/guice/</link>
+      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/guice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Happiness</title>
+      <link>https://ilikeorangutans.github.io/tags/happiness/</link>
+      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/happiness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://ilikeorangutans.github.io/tags/hugo/</link>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imagemagik</title>
+      <link>https://ilikeorangutans.github.io/tags/imagemagik/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/imagemagik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>India</title>
+      <link>https://ilikeorangutans.github.io/tags/india/</link>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/india/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Integration Testing</title>
+      <link>https://ilikeorangutans.github.io/tags/integration-testing/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/integration-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellij</title>
+      <link>https://ilikeorangutans.github.io/tags/intellij/</link>
+      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/intellij/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ilikeorangutans.github.io/tags/java/</link>
+      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jcr</title>
+      <link>https://ilikeorangutans.github.io/tags/jcr/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/jcr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>https://ilikeorangutans.github.io/tags/jekyll/</link>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jsr 269</title>
+      <link>https://ilikeorangutans.github.io/tags/jsr-269/</link>
+      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/jsr-269/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jvm</title>
+      <link>https://ilikeorangutans.github.io/tags/jvm/</link>
+      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kernel</title>
+      <link>https://ilikeorangutans.github.io/tags/kernel/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lexer</title>
+      <link>https://ilikeorangutans.github.io/tags/lexer/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/lexer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linkedin</title>
+      <link>https://ilikeorangutans.github.io/tags/linkedin/</link>
+      <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/linkedin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Make</title>
+      <link>https://ilikeorangutans.github.io/tags/make/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/make/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>https://ilikeorangutans.github.io/tags/maven/</link>
+      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven Release Plugin</title>
+      <link>https://ilikeorangutans.github.io/tags/maven-release-plugin/</link>
+      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/maven-release-plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nat</title>
+      <link>https://ilikeorangutans.github.io/tags/nat/</link>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/nat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://ilikeorangutans.github.io/tags/networking/</link>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New Delhi</title>
+      <link>https://ilikeorangutans.github.io/tags/new-delhi/</link>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/new-delhi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oauth</title>
+      <link>https://ilikeorangutans.github.io/tags/oauth/</link>
+      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/oauth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osdev</title>
+      <link>https://ilikeorangutans.github.io/tags/osdev/</link>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/osdev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osgi</title>
+      <link>https://ilikeorangutans.github.io/tags/osgi/</link>
+      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/osgi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Panorama</title>
+      <link>https://ilikeorangutans.github.io/tags/panorama/</link>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/panorama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parser</title>
+      <link>https://ilikeorangutans.github.io/tags/parser/</link>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/parser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pax Logging</title>
+      <link>https://ilikeorangutans.github.io/tags/pax-logging/</link>
+      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/pax-logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peaberry</title>
+      <link>https://ilikeorangutans.github.io/tags/peaberry/</link>
+      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/peaberry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://ilikeorangutans.github.io/tags/personal/</link>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal Development</title>
+      <link>https://ilikeorangutans.github.io/tags/personal-development/</link>
+      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/personal-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://ilikeorangutans.github.io/tags/productivity/</link>
+      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reading List</title>
+      <link>https://ilikeorangutans.github.io/tags/reading-list/</link>
+      <pubDate>Sun, 27 Apr 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/reading-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>https://ilikeorangutans.github.io/tags/refactoring/</link>
+      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/refactoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regexp</title>
+      <link>https://ilikeorangutans.github.io/tags/regexp/</link>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/regexp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rugged Manifesto</title>
+      <link>https://ilikeorangutans.github.io/tags/rugged-manifesto/</link>
+      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/rugged-manifesto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Saxon</title>
+      <link>https://ilikeorangutans.github.io/tags/saxon/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/saxon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scr</title>
+      <link>https://ilikeorangutans.github.io/tags/scr/</link>
+      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/scr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://ilikeorangutans.github.io/tags/security/</link>
+      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Social Media</title>
+      <link>https://ilikeorangutans.github.io/tags/social-media/</link>
+      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/social-media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Development</title>
+      <link>https://ilikeorangutans.github.io/tags/software-development/</link>
+      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/software-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>https://ilikeorangutans.github.io/tags/software-engineering/</link>
+      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spock</title>
+      <link>https://ilikeorangutans.github.io/tags/spock/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/spock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://ilikeorangutans.github.io/tags/ssh/</link>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test Driven Development</title>
+      <link>https://ilikeorangutans.github.io/tags/test-driven-development/</link>
+      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/test-driven-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel</title>
+      <link>https://ilikeorangutans.github.io/tags/travel/</link>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://ilikeorangutans.github.io/tags/unit-testing/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualization</title>
+      <link>https://ilikeorangutans.github.io/tags/visualization/</link>
+      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://ilikeorangutans.github.io/tags/web-development/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xhtml</title>
+      <link>https://ilikeorangutans.github.io/tags/xhtml/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/xhtml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>https://ilikeorangutans.github.io/tags/xml/</link>
+      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/xml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xpath</title>
+      <link>https://ilikeorangutans.github.io/tags/xpath/</link>
+      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/xpath/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xslt</title>
+      <link>https://ilikeorangutans.github.io/tags/xslt/</link>
+      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/xslt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xslt2.0</title>
+      <link>https://ilikeorangutans.github.io/tags/xslt2.0/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/xslt2.0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>https://ilikeorangutans.github.io/tags/zsh/</link>
+      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

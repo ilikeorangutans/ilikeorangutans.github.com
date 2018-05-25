@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pax Logging on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/pax-logging/</link>
+    <description>Recent content in Pax Logging on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Wed, 14 Nov 2012 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/pax-logging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>commons-logging in OSGI Environments</title>
+      <link>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</link>
+      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</guid>
+      <description>While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the Commons OSGI status page, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why.</description>
+    </item>
+    
+  </channel>
+</rss>

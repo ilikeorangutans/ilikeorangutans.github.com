@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linkedin on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/linkedin/</link>
+    <description>Recent content in Linkedin on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Thu, 04 Apr 2013 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/linkedin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Problem with LinkedIn&#39;s Skills Endorsement</title>
+      <link>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</link>
+      <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</guid>
+      <description>A while ago LinkedIn introduced what looked like a really cool feature, an easy way to &amp;ldquo;endorse&amp;rdquo; skills of your contacts. It&amp;rsquo;s really easy to go in and click &amp;ldquo;Endorse&amp;rdquo; on a bunch of skills. However, one thing that kept surprising me was who endorsed what skills. For example, just today I had a ex-coworker from over 4 years ago endorse me for Hibernate. Which by itself is a nice gesture, only thing is, he&amp;rsquo;s an art director.</description>
+    </item>
+    
+  </channel>
+</rss>

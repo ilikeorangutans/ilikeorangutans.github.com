@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ant on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/ant/</link>
+    <description>Recent content in Ant on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Sun, 03 Jan 2010 11:37:30 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/ant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a CMS with XML, XSLT, Ant, and ImageMagik</title>
+      <link>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</link>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</guid>
+      <description>Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Engineering on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/software-engineering/</link>
+    <description>Recent content in Software Engineering on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 04 Dec 2012 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reading List: JVM Internals, Rugged Software, and 12 Factor Apps</title>
+      <link>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
+      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
+      <description>Recently I&amp;rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the Rugged Manifesto as it emphasizes how software is crucial in our world and the responsibilities that come with it. Another great guide is Twelve-Factor App, a list of 12 principles on how to effectively implement and operate applications. And last but not least, Understanding JVM Internals, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.</description>
+    </item>
+    
+  </channel>
+</rss>

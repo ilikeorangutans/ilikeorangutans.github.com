@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration Testing on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/integration-testing/</link>
+    <description>Recent content in Integration Testing on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Thu, 06 Feb 2014 13:59:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/integration-testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Grails 2 Testing Guide</title>
+      <link>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid>
+      <description>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.
+I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.</description>
+    </item>
+    
+  </channel>
+</rss>
