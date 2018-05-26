@@ -7,6 +7,12 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Google Appengine, Go, and Vendoring">
+    <meta property="og:description" content="I&rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:
+2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &quot;syscall&quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go  I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&rsquo;t want you tu use.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 

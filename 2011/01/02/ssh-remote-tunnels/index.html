@@ -7,6 +7,14 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="SSH (Remote) Tunnels">
+    <meta property="og:description" content="Just figured out how SSH remote tunnels work and wanted to write it down.
+Nomenclature:
+ [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
+$ ssh -L REMOTEPORT:client:CLIENTPORT user@server  Now, that by opening a tunnel in this way:">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 

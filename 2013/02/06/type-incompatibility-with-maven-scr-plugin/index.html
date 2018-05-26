@@ -7,6 +7,13 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Type Incompatibility With Maven SCR Plugin">
+    <meta property="og:description" content="Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &#34;foo&#34;, value = &#34;bar&#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&rsquo;s parameter.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 

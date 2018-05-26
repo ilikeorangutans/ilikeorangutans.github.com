@@ -7,6 +7,13 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Maven Release Plugin and Git 1.9">
+    <meta property="og:description" content="Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
+Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.
+Solution Git&rsquo;s output format changed slightly in one of the recent versions and Maven&rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 

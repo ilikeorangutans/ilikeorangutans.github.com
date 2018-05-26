@@ -7,6 +7,13 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="gorename and invalid expression">
+    <meta property="og:description" content="This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
+The issue comes up when trying to use gorename:
+$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 

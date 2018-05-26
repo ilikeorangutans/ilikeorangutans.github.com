@@ -7,6 +7,13 @@
     </title>
 
     <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Golang Reading and Notes for April 2014">
+    <meta property="og:description" content="Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
+Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
 
