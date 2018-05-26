@@ -102,17 +102,11 @@
             <p>This took me longer to figure out than I care to admit, so here&rsquo;s the solution.</p>
 
 <p>The issue comes up when trying to use <a href="https://godoc.org/golang.org/x/tools/cmd/gorename">gorename</a>:</p>
-
-<pre><code class="language-console">$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType'
-gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39;
+gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression</code></pre></div>
 <p>Even though the <code>from</code> query looks normal, <code>gorename</code> just refuses to work. However the issue is not so much with <code>gorename</code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</p>
-
-<pre><code class="language-console">$ gorename -from '&quot;github.com/ilikeorangutans/foo&quot;.MyType' -to 'MyBetterType'
-Renamed 15 occurrences in 5 files in 1 package.
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ gorename -from &#39;&#34;github.com/ilikeorangutans/foo&#34;.MyType&#39; -to &#39;MyBetterType&#39;
+Renamed 15 occurrences in 5 files in 1 package.</code></pre></div>
 <p>Notice the single quotes around the entire <code>from</code> parameter.</p>
 
             <div class="divider"></div>

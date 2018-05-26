@@ -117,7 +117,7 @@
             <p class="tile-subtitle">
                 This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType' gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression  Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
+$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
             </p>
             <p class="tile-action">
                 <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>

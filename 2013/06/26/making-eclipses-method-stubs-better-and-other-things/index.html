@@ -106,19 +106,13 @@ private static final Logger LOGGER = LoggerFactory.getLogger(${enclosing_type}.c
 <h3 id="method-stubs">Method Stubs</h3>
 
 <p>Per default Eclipse creates method stubs that look like this:</p>
-
-<pre><code class="language-java">@Override
-public Object myFunction() {
-  // TODO Auto-generated method stub
-  // return null;
-}
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Override</span>
+<span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">myFunction</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+  <span style="color:#09f;font-style:italic">// TODO Auto-generated method stub
+</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// return null;
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span></code></pre></div>
 <p>This is convenient, but can be cause for bugs because you just get null. More than once I&rsquo;ve been stung by this. So I decided a better way to deal with this is to replace the template with the following:</p>
-
-<pre><code class="language-java">throw new UnsupportedOperationException(&quot;${enclosing_method}()&quot;);
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnsupportedOperationException<span style="color:#555">(</span><span style="color:#c30">&#34;${enclosing_method}()&#34;</span><span style="color:#555">);</span></code></pre></div>
 <p>Instead of returning a default value, the method stubs will now throw an exception. Forgot to implement it? No problem, you&rsquo;ll find out very quickly. It&rsquo;s debatable whether <code>UnsupportedOperationException</code> is the appropriate type for this, but in my opinion it works quite well.</p>
 
             <div class="divider"></div>

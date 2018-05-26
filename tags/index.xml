@@ -242,7 +242,7 @@
     <item>
       <title>Go</title>
       <link>https://ilikeorangutans.github.io/tags/go/</link>
-      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/go/</guid>
       <description></description>
@@ -251,7 +251,7 @@
     <item>
       <title>Golang</title>
       <link>https://ilikeorangutans.github.io/tags/golang/</link>
-      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/golang/</guid>
       <description></description>
@@ -501,6 +501,15 @@
     </item>
     
     <item>
+      <title>Null</title>
+      <link>https://ilikeorangutans.github.io/tags/null/</link>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/null/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Oauth</title>
       <link>https://ilikeorangutans.github.io/tags/oauth/</link>
       <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
@@ -636,6 +645,15 @@
     </item>
     
     <item>
+      <title>Scala</title>
+      <link>https://ilikeorangutans.github.io/tags/scala/</link>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/scala/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scr</title>
       <link>https://ilikeorangutans.github.io/tags/scr/</link>
       <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate>
@@ -665,7 +683,7 @@
     <item>
       <title>Software Development</title>
       <link>https://ilikeorangutans.github.io/tags/software-development/</link>
-      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/software-development/</guid>
       <description></description>
@@ -713,6 +731,15 @@
       <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typescript</title>
+      <link>https://ilikeorangutans.github.io/tags/typescript/</link>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/typescript/</guid>
       <description></description>
     </item>
     

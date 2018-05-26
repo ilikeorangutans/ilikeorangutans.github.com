@@ -101,35 +101,35 @@
 
 <p>This opens a sleigh of different problems. For example, Servlets are kind of singletons, yet they need access to request scoped objects. And a session scoped object might need access to an a business service in the singleton scope. Luckily, Guice has an solution for that. Instead of injecting the dependency directly, Guice allows you to inject a <a href="http://google-guice.googlecode.com/git/javadoc/com/google/inject/Provider.html">Provider</a>, that is an object that <em>provides</em> other objects. Now, the provider is smart enough to decide when to create a new object or reuse the same one, effectively decoupling the injection target and source and their scopes. Creating a provider is straightforward. For example, to provide instances of <code>MyObject</code> in request scope, you&rsquo;d create the following class:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.google.inject.Provider<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> com.google.inject.servlet.RequestScoped<span style="color:#f92672">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">com.google.inject.Provider</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">com.google.inject.servlet.RequestScoped</span><span style="color:#555">;</span>
 
-<span style="color:#a6e22e">@RequestScoped</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProvider</span> <span style="color:#66d9ef">implements</span> Provider<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> MyObject <span style="color:#a6e22e">get</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		<span style="color:#75715e">// Create an instance of MyObject...
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> myObject<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#99f">@RequestScoped</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyProvider</span> <span style="color:#069;font-weight:bold">implements</span> Provider<span style="color:#555">&lt;</span>MyObject<span style="color:#555">&gt;</span> <span style="color:#555">{</span>
+	<span style="color:#069;font-weight:bold">public</span> MyObject <span style="color:#c0f">get</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// Create an instance of MyObject...
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#069;font-weight:bold">return</span> myObject<span style="color:#555">;</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <p>To use request scoped instances of <code>MyObject</code> in a singleton scoped service, you&rsquo;d implement something like this class:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.google.inject.Provider<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.inject.Inject<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.inject.Singleton<span style="color:#f92672">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">com.google.inject.Provider</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">javax.inject.Inject</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">javax.inject.Singleton</span><span style="color:#555">;</span>
 
-<span style="color:#a6e22e">@Singleton</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyService</span> <span style="color:#f92672">{</span>
+<span style="color:#99f">@Singleton</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyService</span> <span style="color:#555">{</span>
 
-	<span style="color:#a6e22e">@Inject</span>
-	<span style="color:#66d9ef">private</span> Provider<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;</span> myObjectProvider<span style="color:#f92672">;</span>
+	<span style="color:#99f">@Inject</span>
+	<span style="color:#069;font-weight:bold">private</span> Provider<span style="color:#555">&lt;</span>MyObject<span style="color:#555">&gt;</span> myObjectProvider<span style="color:#555">;</span>
 
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doServiceThings</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		MyObject myObject <span style="color:#f92672">=</span> myObjectProvider<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-		<span style="color:#75715e">// do things...
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">doServiceThings</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		MyObject myObject <span style="color:#555">=</span> myObjectProvider<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">// do things...
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#555">}</span>
 
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#555">}</span></code></pre></div>
 
 <p>Notice how we inject <code>Provider&lt;MyObject&gt;</code> instead of <code>MyProvider</code> (this is a mistake I made initially). And in order to get an instance of <code>MyObject</code>, we call <code>provider.get()</code>. The service will always get the appropriate object for the current request (or whatever scope in question). A consequence of this is that the service has to be threadsafe in order to deal with concurrent requests. This applies for all objects that have to deal with objects from a narrower scope.</p>
 

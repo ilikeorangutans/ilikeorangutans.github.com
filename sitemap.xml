@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</loc>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</loc>
     <lastmod>2018-05-21T23:37:41-04:00</lastmod>
   </url>
@@ -329,13 +334,13 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/go/</loc>
-    <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/golang/</loc>
-    <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -507,6 +512,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/null/</loc>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/oauth/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -597,6 +608,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/scala/</loc>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/scr/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -616,7 +633,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/software-development/</loc>
-    <lastmod>2018-03-30T12:01:13-04:00</lastmod>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -650,14 +667,20 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
+    <lastmod>2018-03-28T22:50:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
-    <lastmod>2018-03-28T22:50:25-04:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/tags/typescript/</loc>
+    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -117,29 +117,29 @@
 <li>In your activator, create a Injector with your own module and <code>Peaberry.osgiModule(bundleContext)</code>.</li>
 </ul>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Activator</span> <span style="color:#66d9ef">implements</span> BundleActivator <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Activator</span> <span style="color:#069;font-weight:bold">implements</span> BundleActivator <span style="color:#555">{</span>
 
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>BundleContext context<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Injector injector <span style="color:#f92672">=</span> Guice<span style="color:#f92672">.</span><span style="color:#a6e22e">createInjector</span><span style="color:#f92672">(</span>Peaberry<span style="color:#f92672">.</span><span style="color:#a6e22e">osgiModule</span><span style="color:#f92672">(</span>context<span style="color:#f92672">),</span> <span style="color:#66d9ef">new</span> MyModule<span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">start</span><span style="color:#555">(</span>BundleContext context<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> Exception <span style="color:#555">{</span>
+		Injector injector <span style="color:#555">=</span> Guice<span style="color:#555">.</span><span style="color:#309">createInjector</span><span style="color:#555">(</span>Peaberry<span style="color:#555">.</span><span style="color:#309">osgiModule</span><span style="color:#555">(</span>context<span style="color:#555">),</span> <span style="color:#069;font-weight:bold">new</span> MyModule<span style="color:#555">());</span>
+	<span style="color:#555">}</span>
 
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#555">}</span></code></pre></div>
 
 <ul>
 <li>once you have your injector, you can inject into the activator:</li>
 </ul>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">		injector<span style="color:#f92672">.</span><span style="color:#a6e22e">injectMembers</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">		injector<span style="color:#555">.</span><span style="color:#309">injectMembers</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">);</span></code></pre></div>
 
 <ul>
 <li>Bundle local objects can be created using regular modules:</li>
 </ul>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyModule</span> <span style="color:#66d9ef">extends</span> AbstractModule <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		bind<span style="color:#f92672">(</span>DemoService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">to</span><span style="color:#f92672">(</span>DemoServiceImpl<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
+	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		bind<span style="color:#555">(</span>DemoService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">to</span><span style="color:#555">(</span>DemoServiceImpl<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">);</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <h2 id="services">Services</h2>
 
@@ -149,44 +149,44 @@
 
 <p>Bind them to a special proxy using regular guice syntax:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import static</span> org.ops4j.peaberry.Peaberry.service<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.osgi.service.cm.ConfigurationAdmin<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> com.google.inject.AbstractModule<span style="color:#f92672">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.Peaberry.service</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.osgi.service.cm.ConfigurationAdmin</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">com.google.inject.AbstractModule</span><span style="color:#555">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoModule</span> <span style="color:#66d9ef">extends</span> AbstractModule <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		bind<span style="color:#f92672">(</span>ConfigurationAdmin<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toProvider</span><span style="color:#f92672">(</span>service<span style="color:#f92672">(</span>ConfigurationAdmin<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">single</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DemoModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
+	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		bind<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">single</span><span style="color:#555">());</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <p>This example binds the OSGI ConfigurationAdmin service. Notice how we&rsquo;re binding <code>ConfigurationAdmin</code> to a provider, using the <code>Peaberry.service()</code> method. Because OSGI services are highly dynamic and Guice injectors are immutable, the creators of Peaberry did something smart and created providers that are proxies for the services. And depending if you want only a single instance of the service, or all the registered services for a type, you can use either <code>Peaberry.service().single()</code> or <code>Peaberry.service().multiple()</code>:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoModule</span> <span style="color:#66d9ef">extends</span> AbstractModule <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		bind<span style="color:#f92672">(</span>ConfigurationAdmin<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toProvider</span><span style="color:#f92672">(</span>service<span style="color:#f92672">(</span>ConfigurationAdmin<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">single</span><span style="color:#f92672">());</span>
-		bind<span style="color:#f92672">(</span>SomeService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toProvider</span><span style="color:#f92672">(</span>service<span style="color:#f92672">(</span>SomeService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">multiple</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DemoModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
+	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		bind<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">single</span><span style="color:#555">());</span>
+		bind<span style="color:#555">(</span>SomeService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>SomeService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">multiple</span><span style="color:#555">());</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span> <span style="color:#f92672">{</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Consumer</span> <span style="color:#555">{</span>
 
-	<span style="color:#75715e">/**
-</span><span style="color:#75715e">	 * Single service
-</span><span style="color:#75715e">	 */</span>
-	<span style="color:#a6e22e">@Inject</span>
-	<span style="color:#66d9ef">private</span> ConfigurationAdmin configurationAdmin<span style="color:#f92672">;</span>
+	<span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">	 * Single service
+</span><span style="color:#09f;font-style:italic">	 */</span>
+	<span style="color:#99f">@Inject</span>
+	<span style="color:#069;font-weight:bold">private</span> ConfigurationAdmin configurationAdmin<span style="color:#555">;</span>
 
-	<span style="color:#75715e">/**
-</span><span style="color:#75715e">	 * Multiple services are injected as an Iterable.
-</span><span style="color:#75715e">	 */</span>
-	<span style="color:#a6e22e">@Inject</span>
-	<span style="color:#66d9ef">private</span> Iterable<span style="color:#f92672">&lt;</span>SomeService<span style="color:#f92672">&gt;</span> services<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span></code></pre></div>
+	<span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">	 * Multiple services are injected as an Iterable.
+</span><span style="color:#09f;font-style:italic">	 */</span>
+	<span style="color:#99f">@Inject</span>
+	<span style="color:#069;font-weight:bold">private</span> Iterable<span style="color:#555">&lt;</span>SomeService<span style="color:#555">&gt;</span> services<span style="color:#555">;</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <p>You can reference bound OSGI services in your bundle using <code>@Inject</code>, like any other field:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#a6e22e">@Inject</span>
-	<span style="color:#66d9ef">private</span> ConfigurationAdmin configurationAdmin<span style="color:#f92672">;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#99f">@Inject</span>
+	<span style="color:#069;font-weight:bold">private</span> ConfigurationAdmin configurationAdmin<span style="color:#555">;</span></code></pre></div>
 
 <h3 id="publish-objects-from-guice-as-osgi-services">Publish objects from Guice as OSGI services</h3>
 
@@ -194,30 +194,30 @@
 
 <p>You can use peaberry to export a service to OSGI by creating the following binding:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import static</span> org.ops4j.peaberry.Peaberry.service<span style="color:#f92672">;</span>
-<span style="color:#f92672">import static</span> org.ops4j.peaberry.util.TypeLiterals.export<span style="color:#f92672">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.Peaberry.service</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.util.TypeLiterals.export</span><span style="color:#555">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoModule</span> <span style="color:#66d9ef">extends</span> AbstractModule <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-		bind<span style="color:#f92672">(</span>export<span style="color:#f92672">(</span>DemoService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">toProvider</span><span style="color:#f92672">(</span>service<span style="color:#f92672">(</span>DemoServiceImpl<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">export</span><span style="color:#f92672">());</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DemoModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
+	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		bind<span style="color:#555">(</span>export<span style="color:#555">(</span>DemoService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">)).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>DemoServiceImpl<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">export</span><span style="color:#555">());</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <p>And injecting a member of type <code>Export&lt;YourServiceType&gt;</code> for example on your activator:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Activator</span> <span style="color:#66d9ef">implements</span> BundleActivator <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Activator</span> <span style="color:#069;font-weight:bold">implements</span> BundleActivator <span style="color:#555">{</span>
 
-	<span style="color:#75715e">/**
-</span><span style="color:#75715e">	 * As soon as this member gets injected, the service will be exported
-</span><span style="color:#75715e">	 */</span>
-	<span style="color:#a6e22e">@Inject</span>
-	Export<span style="color:#f92672">&lt;</span>DemoService<span style="color:#f92672">&gt;</span> exportedDemoService<span style="color:#f92672">;</span>
+	<span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">	 * As soon as this member gets injected, the service will be exported
+</span><span style="color:#09f;font-style:italic">	 */</span>
+	<span style="color:#99f">@Inject</span>
+	Export<span style="color:#555">&lt;</span>DemoService<span style="color:#555">&gt;</span> exportedDemoService<span style="color:#555">;</span>
 
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>BundleContext context<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-		Injector injector <span style="color:#f92672">=</span> Guice<span style="color:#f92672">.</span><span style="color:#a6e22e">createInjector</span><span style="color:#f92672">(</span>Peaberry<span style="color:#f92672">.</span><span style="color:#a6e22e">osgiModule</span><span style="color:#f92672">(</span>context<span style="color:#f92672">),</span> <span style="color:#66d9ef">new</span> DemoModule<span style="color:#f92672">());</span>
-		injector<span style="color:#f92672">.</span><span style="color:#a6e22e">injectMembers</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">start</span><span style="color:#555">(</span>BundleContext context<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> Exception <span style="color:#555">{</span>
+		Injector injector <span style="color:#555">=</span> Guice<span style="color:#555">.</span><span style="color:#309">createInjector</span><span style="color:#555">(</span>Peaberry<span style="color:#555">.</span><span style="color:#309">osgiModule</span><span style="color:#555">(</span>context<span style="color:#555">),</span> <span style="color:#069;font-weight:bold">new</span> DemoModule<span style="color:#555">());</span>
+		injector<span style="color:#555">.</span><span style="color:#309">injectMembers</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">);</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 
 <h2 id="outstanding-questions">Outstanding Questions</h2>
 

@@ -133,13 +133,10 @@ In Grails, unit tests go under <code>test/unit</code>.</p>
 <h3 id="disabling-tests">Disabling Tests</h3>
 
 <p>Whenever you need to disable a test, use the approriate annotation. Commenting out a test is not an acceptable solution. In GroovyUnit or regular JUnit tests, use <code>@org.junit.Ignore</code> and in Spock tests <code>@spock.lang.Ignore</code>. Notice that both annotations take a String parameter that communicates why this test was disabled. Use it to make it clear why a given test was disabled.</p>
-
-<pre><code class="language-groovy">	@Ignore(&quot;do not need to test this right now&quot;)
-	void &quot;test for a method&quot;() {
-		// ...
-	}
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">	<span style="color:#99f">@Ignore</span><span style="color:#555">(</span><span style="color:#c30">&#34;do not need to test this right now&#34;</span><span style="color:#555">)</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test for a method&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#555">}</span></code></pre></div>
 <h3 id="never-mix-test-constructs">Never Mix Test Constructs</h3>
 
 <p>Between unit and integration tests there are huge differences. <strong>Never mix constructs meant for unit tests with integration tests</strong>.</p>
@@ -147,51 +144,42 @@ In Grails, unit tests go under <code>test/unit</code>.</p>
 <h3 id="groovyunit-or-spock">GroovyUnit or Spock</h3>
 
 <p>Personally I find Spock tests much more expressive than GroovyUnit tests. Quick sample:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">FooSpecification</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test for a method&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#99f">setup:</span> <span style="color:#09f;font-style:italic">// implicit, no need to declare this:
+</span><span style="color:#09f;font-style:italic"></span>
+		<span style="color:#09f;font-style:italic">// Everything after this statement will be treated as an assertion
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#99f">expect:</span>
 
-<pre><code class="language-groovy">class FooSpecification extends Specification {
-	void &quot;test for a method&quot;() {
-		setup: // implicit, no need to declare this:
-
-		// Everything after this statement will be treated as an assertion
-		expect:
-
-		add(2 + 2) == 4
-	}
-}
-</code></pre>
-
+		add<span style="color:#555">(</span><span style="color:#f60">2</span> <span style="color:#555">+</span> <span style="color:#f60">2</span><span style="color:#555">)</span> <span style="color:#555">==</span> <span style="color:#f60">4</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <p>Check out the <a href="http://docs.spockframework.org/en/latest/">Spock docs</a>, <a href="https://code.google.com/p/spock/wiki/Examples">samples</a></p>
 
 <h2 id="unit-tests">Unit Tests</h2>
 
 <p>Unit tests are tests where you want to test only a very specific piece of code, a single unit. That means that all dependencies of that code will have to be mocked or stubbed. The test setup is the same for all unit tests and starts by annotating your unit test with the <code>@TestFor</code> annotation. This tells Grails what class you want to test and what variables to create.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestFor</span><span style="color:#555">(</span>MyController<span style="color:#555">)</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpec</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">@TestFor(MyController)
-class MyControllerSpec extends Specification {
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test something&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// Grails automatically created a controller field for us:
+</span><span style="color:#09f;font-style:italic"></span>		controller<span style="color:#555">.</span><span style="color:#309">doSomething</span><span style="color:#555">()</span>
+	<span style="color:#555">}</span>
 
-	void &quot;test something&quot;() {
-		// Grails automatically created a controller field for us:
-		controller.doSomething()
-	}
-
-}
-</code></pre>
-
+<span style="color:#555">}</span></code></pre></div>
 <h3 id="configuration">Configuration</h3>
 
 <p>Grails&rsquo; config is usually accessed via an injected instance of <code>GrailsApplication</code> using the <code>config</code> property. Grails injects <code>GrailsApplication</code> into unit tests, so you can access it directly:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestMixin</span><span style="color:#555">(</span>GrailsUnitTestMixin<span style="color:#555">)</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MySpec</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">@TestMixin(GrailsUnitTestMixin)
-class MySpec extends Specification {
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test something with config&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// grailsApplication gets automatically injected
+</span><span style="color:#09f;font-style:italic"></span>		grailsApplication<span style="color:#555">.</span><span style="color:#309">config</span><span style="color:#555">.</span><span style="color:#309">myConfigValue</span>
+	<span style="color:#555">}</span>
 
-	void &quot;test something with config&quot;() {
-		// grailsApplication gets automatically injected
-		grailsApplication.config.myConfigValue
-	}
-
-}
-</code></pre>
-
+<span style="color:#555">}</span></code></pre></div>
 <h3 id="mocks">Mocks</h3>
 
 <p>During a unit test Grails will not create and inject any dependencies for you so it&rsquo;s up to you to do so. There&rsquo;s plenty of things your code interacts with and this section breaks down how to mock these things.</p>
@@ -210,38 +198,35 @@ class MySpec extends Specification {
 <p>If you need to provide your test with data through mocks you can either just create the objects and save them or you can pass i</p>
 
 <p>Example:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestFor</span><span style="color:#555">(</span>MyController<span style="color:#555">)</span>
+<span style="color:#99f">@Mock</span><span style="color:#555">([</span> AddressBook <span style="color:#555">])</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpec</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">@TestFor(MyController)
-@Mock([ AddressBook ])
-class MyControllerSpec extends Specification {
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setup</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// Explicitly create a new mocked domain object:
+</span><span style="color:#09f;font-style:italic"></span>		AddressBook addressbook <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#c0f">AddressBook</span><span style="color:#555">(</span><span style="color:#99f">name:</span> <span style="color:#c30">&#39;Personal Addressbook&#39;</span><span style="color:#555">)</span>
+		addressBook<span style="color:#555">.</span><span style="color:#309">save</span><span style="color:#555">()</span>
 
-	void setup() {
-		// Explicitly create a new mocked domain object:
-		AddressBook addressbook = new AddressBook(name: 'Personal Addressbook')
-		addressBook.save()
+		<span style="color:#09f;font-style:italic">// Or provide an entry as a list.
+</span><span style="color:#09f;font-style:italic"></span>		mockDomain<span style="color:#555">(</span>Entry<span style="color:#555">,</span> <span style="color:#555">[</span>
+			<span style="color:#555">[</span> <span style="color:#99f">firstName:</span> <span style="color:#c30">&#39;Hans&#39;</span><span style="color:#555">,</span> <span style="color:#99f">lastName:</span> <span style="color:#c30">&#39;Dampf&#39;</span><span style="color:#555">,</span> <span style="color:#99f">addressBook:</span> addressBook <span style="color:#555">],</span>
+			<span style="color:#555">[</span> <span style="color:#99f">firstName:</span> <span style="color:#c30">&#39;Dr&#39;</span><span style="color:#555">,</span> <span style="color:#99f">lastName:</span> <span style="color:#c30">&#39;Evil&#39;</span><span style="color:#555">,</span> <span style="color:#99f">addressBook:</span> addressBook <span style="color:#555">]</span>
+		<span style="color:#555">)</span>
+	<span style="color:#555">}</span>
 
-		// Or provide an entry as a list.
-		mockDomain(Entry, [
-			[ firstName: 'Hans', lastName: 'Dampf', addressBook: addressBook ],
-			[ firstName: 'Dr', lastName: 'Evil', addressBook: addressBook ]
-		)
-	}
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test something&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// You can now use most Gorm related features, like get:
+</span><span style="color:#09f;font-style:italic"></span>		AddressBook<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span><span style="color:#f60">1</span><span style="color:#555">)</span>
 
-	void &quot;test something&quot;() {
-		// You can now use most Gorm related features, like get:
-		AddressBook.get(1)
+		<span style="color:#09f;font-style:italic">// Dynamic finders:
+</span><span style="color:#09f;font-style:italic"></span>		Entry<span style="color:#555">.</span><span style="color:#309">findByFirstName</span><span style="color:#555">(</span><span style="color:#c30">&#39;Hans&#39;</span><span style="color:#555">)</span>
 
-		// Dynamic finders:
-		Entry.findByFirstName('Hans')
-
-		// or Criteria:
-		Entry.withCriteria {
-			eq('lastName', 'Evil')
-		}
-	}
-}
-</code></pre>
-
+		<span style="color:#09f;font-style:italic">// or Criteria:
+</span><span style="color:#09f;font-style:italic"></span>		Entry<span style="color:#555">.</span><span style="color:#309">withCriteria</span> <span style="color:#555">{</span>
+			eq<span style="color:#555">(</span><span style="color:#c30">&#39;lastName&#39;</span><span style="color:#555">,</span> <span style="color:#c30">&#39;Evil&#39;</span><span style="color:#555">)</span>
+		<span style="color:#555">}</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <p><strong>Note</strong>: if you create test data with mocked domain objects, the constraints on the domain class <em>do</em> apply, even when using <code>mockDomain()</code>! I&rsquo;ve tripped over this a few times. If your mocked domain objects don&rsquo;t show up, make sure
 you provide all the necessary fields.</p>
 
@@ -252,45 +237,36 @@ you provide all the necessary fields.</p>
 <h3 id="testing-closures">Testing Closures</h3>
 
 <p>Methods that accept closures as parameters are a staple in Grails development. For example, the mail plugin uses the following syntax:</p>
-
-<pre><code class="language-groovy">mailService.sendMail {
-	from 'bazinga@test.com'
-	to 'bingo@test.com'
-	subject 'Amazing Stuff'
-	text &quot;Send me your bank data and we'll make millions!&quot;
-}
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">mailService<span style="color:#555">.</span><span style="color:#309">sendMail</span> <span style="color:#555">{</span>
+	from <span style="color:#c30">&#39;bazinga@test.com&#39;</span>
+	to <span style="color:#c30">&#39;bingo@test.com&#39;</span>
+	subject <span style="color:#c30">&#39;Amazing Stuff&#39;</span>
+	text <span style="color:#c30">&#34;Send me your bank data and we&#39;ll make millions!&#34;</span>
+<span style="color:#555">}</span></code></pre></div>
 <p>If you&rsquo;re mocking mailService the question is how to validate the values passed into the closure are correct. The solution is to create a <a href="http://stackoverflow.com/questions/10715919/how-to-mock-domain-specific-closures-in-spock">delegate for the closure</a> that captures the values which then can be verified:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MailVerifier</span> <span style="color:#555">{</span>
+	String to<span style="color:#555">,</span> from<span style="color:#555">,</span> subject<span style="color:#555">,</span> text
 
-<pre><code class="language-groovy">class MailVerifier {
-	String to, from, subject, text
-
-	void to(String to) { this.to = to }
-	void from(String from) { this.from = from }
-	void subject(String subject) { this.subject = subject }
-	void text(String text) { this.text = text }
-}
-</code></pre>
-
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">to</span><span style="color:#555">(</span>String to<span style="color:#555">)</span> <span style="color:#555">{</span> <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">to</span> <span style="color:#555">=</span> to <span style="color:#555">}</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">from</span><span style="color:#555">(</span>String from<span style="color:#555">)</span> <span style="color:#555">{</span> <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">from</span> <span style="color:#555">=</span> from <span style="color:#555">}</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">subject</span><span style="color:#555">(</span>String subject<span style="color:#555">)</span> <span style="color:#555">{</span> <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">subject</span> <span style="color:#555">=</span> subject <span style="color:#555">}</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">text</span><span style="color:#555">(</span>String text<span style="color:#555">)</span> <span style="color:#555">{</span> <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">text</span> <span style="color:#555">=</span> text <span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <p>In your test, you have to set the <code>MailVerifier</code> as the Closure&rsquo;s delegate (example uses Spock):</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">MailVerifier mv <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#c0f">MailVerifier</span><span style="color:#555">()</span>
+MailService mailService <span style="color:#555">=</span> Mock<span style="color:#555">(</span>MailService<span style="color:#555">)</span>
+<span style="color:#f60">1</span> <span style="color:#555">*</span> mailService<span style="color:#555">.</span><span style="color:#309">sendMail</span><span style="color:#555">(!</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">)</span> <span style="color:#555">&gt;&gt;</span> <span style="color:#555">{</span> Closure c <span style="color:#555">-&gt;</span>
+	c<span style="color:#555">.</span><span style="color:#309">delegate</span> <span style="color:#555">=</span> mv <span style="color:#09f;font-style:italic">// Set delegate
+</span><span style="color:#09f;font-style:italic"></span>	c<span style="color:#555">()</span> <span style="color:#09f;font-style:italic">// Execute closure
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
 
-<pre><code class="language-groovy">MailVerifier mv = new MailVerifier()
-MailService mailService = Mock(MailService)
-1 * mailService.sendMail(!null) &gt;&gt; { Closure c -&gt;
-	c.delegate = mv // Set delegate
-	c() // Execute closure
-}
+<span style="color:#99f">when:</span>
 
-when:
+doSomethingThatSendsMail<span style="color:#555">(</span><span style="color:#c30">&#39;foo@bar.com&#39;</span><span style="color:#555">,</span> <span style="color:#c30">&#39;...&#39;</span><span style="color:#555">,</span> <span style="color:#555">)</span>
 
-doSomethingThatSendsMail('foo@bar.com', '...', )
+<span style="color:#99f">then:</span>
 
-then:
-
-mv.to == 'foo@bar.com'
-</code></pre>
-
+mv<span style="color:#555">.</span><span style="color:#309">to</span> <span style="color:#555">==</span> <span style="color:#c30">&#39;foo@bar.com&#39;</span></code></pre></div>
 <h3 id="unit-test-gotchas">Unit Test Gotchas</h3>
 
 <p>This is a growing list of pain points and their solutions</p>
@@ -306,11 +282,8 @@ mv.to == 'foo@bar.com'
 </code></pre>
 
 <p>The reason for this is that the <code>GrailsUnitTestMixin</code> does not initialize the converter subsystem. To get them working, add the <code>ControllerUnitTestMixin</code> mixin which will set up all the regular converters. See <a href="http://grails.1312388.n4.nabble.com/Error-using-as-JSON-converter-in-a-service-in-a-unit-test-tp4637433p4637457.html">this thread</a>. Example:</p>
-
-<pre><code class="language-groovy">@TestMixin([GrailsUnitTestMixin, ControllerUnitTestMixin])
-class ContactUsFormJobSpec extends Specification {
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestMixin</span><span style="color:#555">([</span>GrailsUnitTestMixin<span style="color:#555">,</span> ControllerUnitTestMixin<span style="color:#555">])</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ContactUsFormJobSpec</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span></code></pre></div>
 <h4 id="groovy-lang-missingmethodexception-no-signature-of-method-com-foo-rainbow-addtocolors">groovy.lang.MissingMethodException: No signature of method: com.foo.Rainbow.addToColors()&hellip;</h4>
 
 <p>This error happened a few times to me:</p>
@@ -322,12 +295,9 @@ error(RainbowServiceSpec.groovy:179)
 </code></pre>
 
 <p>This happens when you write a unit test and mock only one of the domain classes, but not the other one. In the above example only <code>Rainbow</code> was mocked. Fix this by mocking all classes:</p>
-
-<pre><code class="language-groovy">@TestFor(RainbowService)
-@Mock([Rainbow, RainbowColor])
-public class RainbowSpec extends Specification {}
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestFor</span><span style="color:#555">(</span>RainbowService<span style="color:#555">)</span>
+<span style="color:#99f">@Mock</span><span style="color:#555">([</span>Rainbow<span style="color:#555">,</span> RainbowColor<span style="color:#555">])</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">RainbowSpec</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{}</span></code></pre></div>
 <h4 id="groovycastexception-cannot-cast-object-com-foo-rainbow-2f7af3-with-class-com-foo-rainbow-to-class-grails-converters-json">GroovyCastException: Cannot cast object &lsquo;com.foo.Rainbow@2f7af3&rsquo; with class &lsquo;com.foo.Rainbow&rsquo; to class &lsquo;grails.converters.JSON&rsquo;</h4>
 
 <p>This seems to happen because the converters are not properly set up in certain unit tests. So lines like this will fail with the above exception:</p>
@@ -343,18 +313,15 @@ public class RainbowSpec extends Specification {}
 <h4 id="testing-content-negotiation">Testing Content Negotiation</h4>
 
 <p>Grails allows automatic content negotiation using the <a href="http://grails.org/doc/2.3.4/ref/Controllers/withFormat.html">withFormat</a> block. However, setting the format in unit tests is something I keep tripping over. To set a specific response type use <code>response.format</code>:</p>
-
-<pre><code class="language-groovy">@TestFor(MyController)
-class MyControllerSpec {
-	void &quot;test response&quot;() {
-		response.format = 'xml'
-		controller.action()
-		expect:
-		response.contentType == 'application/xml'
-	}
-}
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#99f">@TestFor</span><span style="color:#555">(</span>MyController<span style="color:#555">)</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpec</span> <span style="color:#555">{</span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test response&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		response<span style="color:#555">.</span><span style="color:#309">format</span> <span style="color:#555">=</span> <span style="color:#c30">&#39;xml&#39;</span>
+		controller<span style="color:#555">.</span><span style="color:#309">action</span><span style="color:#555">()</span>
+		<span style="color:#99f">expect:</span>
+		response<span style="color:#555">.</span><span style="color:#309">contentType</span> <span style="color:#555">==</span> <span style="color:#c30">&#39;application/xml&#39;</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <p>Note that the value to use with <code>response.format</code> is <em>not</em> the mime type, it is the name of what is set in <code>grails-app/conf/Config.groovy</code> in the mime type settings. For example:</p>
 
 <pre><code>grails.mime.types = [
@@ -373,38 +340,32 @@ class MyControllerSpec {
 <h3 id="testing-services">Testing Services</h3>
 
 <p>Services are really straightforward to test. You can even get Grails to automatically inject the service into your test:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyServiceSpecification</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">class MyServiceSpecification extends Specification {
+	MyService myService <span style="color:#09f;font-style:italic">// Grails will inject the service
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test my service method&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		String result <span style="color:#555">=</span> myService<span style="color:#555">.</span><span style="color:#309">doMoreWork</span><span style="color:#555">()</span>
 
-	MyService myService // Grails will inject the service
+		<span style="color:#99f">expect:</span>
 
-	void &quot;test my service method&quot;() {
-		String result = myService.doMoreWork()
-
-		expect:
-
-		result == 'awesome'
-	}
-}
-</code></pre>
-
+		result <span style="color:#555">==</span> <span style="color:#c30">&#39;awesome&#39;</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <p>Grails will inject everything that is known to it into your integration test, including services or Grail&rsquo;s application context.</p>
 
 <h3 id="integration-testing-services">Integration Testing Services</h3>
 
 <p>Writing integration tests for services is very straightforward. You can get the instance injected directly into your test:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpecification</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
-
-	MyService myService // Injected by grails
-
-	void &quot;test method on service ...&quot;() {
-		service.myMethod()
-		// ...
-	}
-}
-</code></pre>
-
+	MyService myService <span style="color:#09f;font-style:italic">// Injected by grails
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test method on service ...&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		service<span style="color:#555">.</span><span style="color:#309">myMethod</span><span style="color:#555">()</span>
+		<span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <h3 id="integration-testing-controllers">Integration Testing Controllers</h3>
 
 <p>Integration testing controllers is just one step away from a full functional test, but has the advantage you don&rsquo;t need to deal with the HTTP details. Unlike a real functional test you don&rsquo;t require actual HTTP clients but you talk to the controller directly. Running the test in the same VM as the application under test also has the added benefit that you can look directly into the application to verify the correct behaviour, e.g. check if necessarey database tables have been created.</p>
@@ -412,50 +373,44 @@ class MyControllerSpec {
 <h4 id="dependencies">Dependencies</h4>
 
 <p>Unlike services, controllers cannot be injected into integration tests so you&rsquo;ll have to create them. If your controller relies on a service, you&rsquo;ll have to manually inject it. You can get the service by getting it injected into your test:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpecification</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
-
-	MyService myService // We'll need this service for the controller
-
+	MyService myService <span style="color:#09f;font-style:italic">// We&#39;ll need this service for the controller
+</span><span style="color:#09f;font-style:italic"></span>
 	MyController controller
 
-	void setup() {
-		// We have to create our own controller instance:
-		controller = new MyController()
-		// Manual dependency injection:
-		controller.myService = myService
-	}
-}
-</code></pre>
-
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setup</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// We have to create our own controller instance:
+</span><span style="color:#09f;font-style:italic"></span>		controller <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#c0f">MyController</span><span style="color:#555">()</span>
+		<span style="color:#09f;font-style:italic">// Manual dependency injection:
+</span><span style="color:#09f;font-style:italic"></span>		controller<span style="color:#555">.</span><span style="color:#309">myService</span> <span style="color:#555">=</span> myService
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <h4 id="request-and-response">Request and Response</h4>
 
 <p>During integration tests Grails will automatically set mocked <a href="http://grails.org/doc/latest/api/org/codehaus/groovy/grails/plugins/testing/GrailsMockHttpServletRequest.html">request</a> and <a href="http://grails.org/doc/latest/api/org/codehaus/groovy/grails/plugins/testing/GrailsMockHttpServletResponse.html">response</a> objects on your controllers. To set request parameters, assign values to <code>controller.params.myParam</code>.</p>
 
 <p>If your controllers use content type negotiation, you&rsquo;ll have to set the expected content type on the <code>controller.response.format</code> field. Setting <code>controller.params.format</code> will <em>not</em> work and caused me all kinds of unexpected behaviour.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyControllerSpecification</span> <span style="color:#069;font-weight:bold">extends</span> Specification <span style="color:#555">{</span>
 
-<pre><code class="language-groovy">class MyControllerSpecification extends Specification {
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setup</span><span style="color:#555">()</span> <span style="color:#555">{</span> <span style="color:#555">}</span>
 
-	void setup() { }
+	<span style="color:#078;font-weight:bold">void</span> <span style="color:#c30">&#34;test my controller action&#34;</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// Set request parameters:
+</span><span style="color:#09f;font-style:italic"></span>		controller<span style="color:#555">.</span><span style="color:#309">params</span><span style="color:#555">.</span><span style="color:#309">productId</span> <span style="color:#555">=</span> <span style="color:#c30">&#39;42&#39;</span>
 
-	void &quot;test my controller action&quot;() {
-		// Set request parameters:
-		controller.params.productId = '42'
+		<span style="color:#09f;font-style:italic">// Set a content type:
+</span><span style="color:#09f;font-style:italic"></span>		controller<span style="color:#555">.</span><span style="color:#309">response</span><span style="color:#555">.</span><span style="color:#309">format</span> <span style="color:#555">=</span> <span style="color:#c30">&#39;json&#39;</span>
 
-		// Set a content type:
-		controller.response.format = 'json'
+		<span style="color:#09f;font-style:italic">// Call the controller action under test:
+</span><span style="color:#09f;font-style:italic"></span>		controller<span style="color:#555">.</span><span style="color:#309">myAction</span><span style="color:#555">()</span>
 
-		// Call the controller action under test:
-		controller.myAction()
+		<span style="color:#99f">expect:</span>
 
-		expect:
-
-		controller.response.status == 200
-		controller.response.contentAsString == '{&quot;productId&quot;:42,&quot;name&quot;:&quot;cake&quot;}'
-	}
-}
-</code></pre>
-
+		controller<span style="color:#555">.</span><span style="color:#309">response</span><span style="color:#555">.</span><span style="color:#309">status</span> <span style="color:#555">==</span> <span style="color:#f60">200</span>
+		controller<span style="color:#555">.</span><span style="color:#309">response</span><span style="color:#555">.</span><span style="color:#309">contentAsString</span> <span style="color:#555">==</span> <span style="color:#c30">&#39;{&#34;productId&#34;:42,&#34;name&#34;:&#34;cake&#34;}&#39;</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
 <h2 id="other-references">Other References</h2>
 
 <h3 id="grails-1-3">Grails 1.3</h3>
