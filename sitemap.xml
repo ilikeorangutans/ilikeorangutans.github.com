@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/projects/</loc>
+    <lastmod>2018-05-29T22:00:51-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/projects/harbormaster/</loc>
     <lastmod>2018-05-29T22:00:51-04:00</lastmod>
   </url>
@@ -584,12 +589,6 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/productivity/</loc>
     <lastmod>2018-03-30T12:01:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ilikeorangutans.github.io/projects/</loc>
-    <lastmod>2018-05-29T22:00:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
