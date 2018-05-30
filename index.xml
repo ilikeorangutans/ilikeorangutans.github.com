@@ -15,6 +15,24 @@
     
     
     <item>
+      <title>OMF</title>
+      <link>https://ilikeorangutans.github.io/projects/omf/</link>
+      <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/projects/omf/</guid>
+      <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetivie data access tasks seemed the obvious choice.</description>
+    </item>
+    
+    <item>
+      <title>Harbormaster</title>
+      <link>https://ilikeorangutans.github.io/projects/harbormaster/</link>
+      <pubDate>Tue, 29 May 2018 15:50:06 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/projects/harbormaster/</guid>
+      <description>Harbormaster is a tool I wrote because I found the Azkaban web UI too cumbersome and slow for day to day operations. In particular I found checking status of recurring jobs slow, and getting logs was annoying because they&amp;rsquo;re loaded via AJAX, so curling and piping to other tools was not possible either.</description>
+    </item>
+    
+    <item>
       <title>null, Software Design, and Scala&#39;s Option</title>
       <link>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</link>
       <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
