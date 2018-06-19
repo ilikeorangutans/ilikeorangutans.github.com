@@ -123,6 +123,15 @@
     </item>
     
     <item>
+      <title>Code Smells</title>
+      <link>https://ilikeorangutans.github.io/tags/code-smells/</link>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/code-smells/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Commons Httpclient</title>
       <link>https://ilikeorangutans.github.io/tags/commons-httpclient/</link>
       <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
@@ -519,6 +528,24 @@
     </item>
     
     <item>
+      <title>Object Oriented Design</title>
+      <link>https://ilikeorangutans.github.io/tags/object-oriented-design/</link>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/object-oriented-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oop</title>
+      <link>https://ilikeorangutans.github.io/tags/oop/</link>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Osdev</title>
       <link>https://ilikeorangutans.github.io/tags/osdev/</link>
       <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
@@ -611,7 +638,7 @@
     <item>
       <title>Refactoring</title>
       <link>https://ilikeorangutans.github.io/tags/refactoring/</link>
-      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/refactoring/</guid>
       <description></description>
@@ -647,7 +674,7 @@
     <item>
       <title>Scala</title>
       <link>https://ilikeorangutans.github.io/tags/scala/</link>
-      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/scala/</guid>
       <description></description>

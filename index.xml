@@ -15,6 +15,15 @@
     
     
     <item>
+      <title>Give Me Smarter Objects</title>
+      <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
+      <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
+    </item>
+    
+    <item>
       <title>OMF</title>
       <link>https://ilikeorangutans.github.io/projects/omf/</link>
       <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate>
