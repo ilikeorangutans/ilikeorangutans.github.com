@@ -9,10 +9,19 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sat, 26 May 2018 12:13:10 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jun 2018 22:58:46 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Book Arrival: Working Effectivly With Legacy Code</title>
+      <link>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</link>
+      <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</guid>
+      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:  Working Effectivly with Legacy Code by Michael C. Feathers   </description>
+    </item>
     
     <item>
       <title>null, Software Design, and Scala&#39;s Option</title>
