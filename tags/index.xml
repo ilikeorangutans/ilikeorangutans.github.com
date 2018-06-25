@@ -33,6 +33,15 @@
     </item>
     
     <item>
+      <title>Android</title>
+      <link>https://ilikeorangutans.github.io/tags/android/</link>
+      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Annotation</title>
       <link>https://ilikeorangutans.github.io/tags/annotation/</link>
       <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
@@ -204,6 +213,15 @@
     </item>
     
     <item>
+      <title>Dart</title>
+      <link>https://ilikeorangutans.github.io/tags/dart/</link>
+      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/dart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dependency Injection</title>
       <link>https://ilikeorangutans.github.io/tags/dependency-injection/</link>
       <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate>
@@ -233,9 +251,18 @@
     <item>
       <title>First Impression</title>
       <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
-      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
+      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/first-impression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flutter</title>
+      <link>https://ilikeorangutans.github.io/tags/flutter/</link>
+      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/flutter/</guid>
       <description></description>
     </item>
     

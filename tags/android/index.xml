@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>First Impression on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
-    <description>Recent content in First Impression on Jakob Külzer</description>
+    <title>Android on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/android/</link>
+    <description>Recent content in Android on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
@@ -11,7 +11,7 @@
     <copyright>Jakob Külzer</copyright>
     <lastBuildDate>Sun, 24 Jun 2018 16:23:34 -0400</lastBuildDate>
     
-	<atom:link href="https://ilikeorangutans.github.io/tags/first-impression/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ilikeorangutans.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,17 +21,6 @@
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid>
       <description>Google recently announced availability of 1.0 preview  of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
-    </item>
-    
-    <item>
-      <title>First impressions: Go</title>
-      <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
-      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
-      <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.
-So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:
-Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
     </item>
     
   </channel>
