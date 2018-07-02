@@ -20,7 +20,7 @@
       <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/projects/omf/</guid>
-      <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetivie data access tasks seemed the obvious choice.</description>
+      <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetitive data access tasks seemed the obvious choice.</description>
     </item>
     
     <item>

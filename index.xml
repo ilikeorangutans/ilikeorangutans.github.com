@@ -15,6 +15,15 @@
     
     
     <item>
+      <title>Notes on Working Effectively With Legacy Code</title>
+      <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>
+      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</guid>
+      <description>I recently received my copy of Working Effectivly With Legacy Code and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to work with not only legacy systems, but really, any kind of system.</description>
+    </item>
+    
+    <item>
       <title>First Impressions of Flutter</title>
       <link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link>
       <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
@@ -47,7 +56,7 @@
       <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/projects/omf/</guid>
-      <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetivie data access tasks seemed the obvious choice.</description>
+      <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetitive data access tasks seemed the obvious choice.</description>
     </item>
     
     <item>

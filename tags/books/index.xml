@@ -9,10 +9,19 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 22:58:46 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jul 2018 12:02:03 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/tags/books/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes on Working Effectively With Legacy Code</title>
+      <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>
+      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</guid>
+      <description>I recently received my copy of Working Effectivly With Legacy Code and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to work with not only legacy systems, but really, any kind of system.</description>
+    </item>
     
     <item>
       <title>Book Arrival: Working Effectivly With Legacy Code</title>
