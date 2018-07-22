@@ -116,7 +116,7 @@
     <item>
       <title>Books</title>
       <link>https://ilikeorangutans.github.io/tags/books/</link>
-      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate>
+      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/books/</guid>
       <description></description>
@@ -213,6 +213,15 @@
     </item>
     
     <item>
+      <title>Csv</title>
+      <link>https://ilikeorangutans.github.io/tags/csv/</link>
+      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dart</title>
       <link>https://ilikeorangutans.github.io/tags/dart/</link>
       <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
@@ -281,6 +290,15 @@
       <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gnuplot</title>
+      <link>https://ilikeorangutans.github.io/tags/gnuplot/</link>
+      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/gnuplot/</guid>
       <description></description>
     </item>
     
