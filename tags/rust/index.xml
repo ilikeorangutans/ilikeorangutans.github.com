@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/rust/</link>
+    <description>Recent content in Rust on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 20 Nov 2018 23:32:47 -0500</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Arrival: The Rust Programming Language</title>
+      <link>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</link>
+      <pubDate>Tue, 20 Nov 2018 23:32:47 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</guid>
+      <description>My copy of The Rust Programming Language arrived this week and I&amp;rsquo;m excited to dig deeper into Rust. Ever since I read that Rust works without a garbage collector and yet doesn&amp;rsquo;t require the programmer to manually allocate memory my interest has been piqued. I&amp;rsquo;ve dug a little into the first chapter, and I like it so far. The syntax of the language is not exotic, it has matching which I find very nice, and the build tool seems reasonable.</description>
+    </item>
+    
+  </channel>
+</rss>

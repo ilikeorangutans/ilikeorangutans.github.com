@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</loc>
+    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/2018/07/21/gnuplot---my-new-favorite-tool/</loc>
     <lastmod>2018-07-21T23:31:12-04:00</lastmod>
   </url>
@@ -285,7 +290,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/books/</loc>
-    <lastmod>2018-07-21T23:31:12-04:00</lastmod>
+    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -696,6 +701,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/rust/</loc>
+    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/saxon/</loc>
     <lastmod>2018-04-15T20:26:54-04:00</lastmod>
     <priority>0</priority>
@@ -767,13 +778,13 @@
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
+    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
+    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>

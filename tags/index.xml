@@ -116,7 +116,7 @@
     <item>
       <title>Books</title>
       <link>https://ilikeorangutans.github.io/tags/books/</link>
-      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
+      <pubDate>Tue, 20 Nov 2018 23:32:47 -0500</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/books/</guid>
       <description></description>
@@ -713,6 +713,15 @@
       <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/rugged-manifesto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://ilikeorangutans.github.io/tags/rust/</link>
+      <pubDate>Tue, 20 Nov 2018 23:32:47 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/rust/</guid>
       <description></description>
     </item>
     
