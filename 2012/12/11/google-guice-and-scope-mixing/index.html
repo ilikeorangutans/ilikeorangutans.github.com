@@ -3,9 +3,6 @@
   <head>
         <meta charset="utf-8">
     <title>
-      
-        Google Guice and Scope Mixing &mdash;
-      
       Jakob Külzer
     </title>
 
@@ -22,7 +19,6 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
   </head>
   <body>
     
@@ -35,19 +31,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="mr-2 ml-2">
+        <a href="/" class="btn btn-link">
           Home
         </a>
       
-        <a href="/posts/" class="mr-2 ml-2">
+        <a href="/posts/" class="btn btn-link">
           Blog
         </a>
       
-        <a href="/projects/" class="mr-2 ml-2">
+        <a href="/projects/" class="btn btn-link">
           Projects
         </a>
       
-        <a href="/about/" class="mr-2 ml-2">
+        <a href="/about/" class="btn btn-link">
           About
         </a>
       
@@ -62,19 +58,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="mr-2 ml-1">
+        <a href="/" class="btn btn-link">
           Home
         </a>
       
-        <a href="/posts/" class="mr-2 ml-1">
+        <a href="/posts/" class="btn btn-link">
           Blog
         </a>
       
-        <a href="/projects/" class="mr-2 ml-1">
+        <a href="/projects/" class="btn btn-link">
           Projects
         </a>
       
-        <a href="/about/" class="mr-2 ml-1">
+        <a href="/about/" class="btn btn-link">
           About
         </a>
       
@@ -110,7 +106,6 @@
 
             </p>
             <div class="divider"></div>
-            
             <h1>Google Guice and Scope Mixing</h1>
             <p>I&rsquo;ve been working on a small Java application I wrote a few years ago for some bug fixes and in the process of making it better, I introduced <a href="https://code.google.com/p/google-guice/">Google Guice</a>, my favourite dependency injection framework. On of the great features of Guice is that it supports different <a href="https://code.google.com/p/google-guice/wiki/Scopes">scopes for injection</a>. Per default, Guice will return a new object for every request. But sometimes you want to objects to be created a bit less liberally, for example, you want a certain object to be created only once. Guice has a <code>@Singleton</code> scope for that. Want an object to be created once for a request? Guice and <a href="https://code.google.com/p/google-guice/wiki/Servlets">guice-servlet</a> offers <code>@RequestScoped</code> and <code>SessionScoped</code>. But there&rsquo;s more, need JUnit per test scope? <a href="https://code.google.com/p/guiceberry/">Guiceberry</a> has exactly that: <code>@TestScoped</code> that will make sure every test gets exactly one object.</p>
 

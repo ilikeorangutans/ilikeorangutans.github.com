@@ -15,12 +15,12 @@
     
     
     <item>
-      <title>Book Arrival: The Rust Programming Language</title>
-      <link>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</link>
-      <pubDate>Tue, 20 Nov 2018 23:32:47 -0500</pubDate>
+      <title>Slow Ruby Syntax Highlighting in Vim</title>
+      <link>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</link>
+      <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</guid>
-      <description>My copy of The Rust Programming Language arrived this week and I&amp;rsquo;m excited to dig deeper into Rust. Ever since I read that Rust works without a garbage collector and yet doesn&amp;rsquo;t require the programmer to manually allocate memory my interest has been piqued. I&amp;rsquo;ve dug a little into the first chapter, and I like it so far. The syntax of the language is not exotic, it has matching which I find very nice, and the build tool seems reasonable.</description>
+      <guid>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</guid>
+      <description>I recently switched back from MacVim to terminal (alacritty) Vim because I&amp;rsquo;m trying to step up my tmux game after reading the excellent tmux 2 book from the Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine Vim uses by default in combination with the Ruby syntax highlighter.</description>
     </item>
     
     <item>
@@ -66,6 +66,24 @@
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
       <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
+    </item>
+    
+    <item>
+      <title>Inheritance and Composition</title>
+      <link>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</link>
+      <pubDate>Thu, 14 Jun 2018 15:58:21 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</guid>
+      <description>I recently attended an OOP workshop by Sandi Metz and among the wonderful things I took away from it were some great conversations and discussions with coworkers about the content of the course. One of these discussions centred around the concept of inheritance and composition, and how they differ and when to use. I struggled explaining it well but came up with a better explanation later on, on the subway.</description>
+    </item>
+    
+    <item>
+      <title>Privacy and This Blog</title>
+      <link>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</link>
+      <pubDate>Wed, 30 May 2018 12:51:56 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</guid>
+      <description>This blog does not have Google Analytics. It doesn&amp;rsquo;t have any tracking at all. The only thing that might do some tracking are the Disqus conversations at the bottom. I don&amp;rsquo;t know who reads my blog, I don&amp;rsquo;t know where my readers are from, or how they came to be on my site. And I did this intentionally. Reflecting on privacy and how it&amp;rsquo;s generally being eroded made me realize how I hate being tracked across websites.</description>
     </item>
     
     <item>

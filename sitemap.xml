@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ilikeorangutans.github.io/2018/11/20/book-arrival-the-rust-programming-language/</loc>
-    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</loc>
+    <lastmod>2019-03-23T17:32:51-04:00</lastmod>
   </url>
   
   <url>
@@ -30,6 +30,16 @@
   <url>
     <loc>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</loc>
     <lastmod>2018-06-18T22:46:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</loc>
+    <lastmod>2018-06-14T15:58:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</loc>
+    <lastmod>2018-05-30T12:51:56-04:00</lastmod>
   </url>
   
   <url>
@@ -284,13 +294,13 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/blog/</loc>
-    <lastmod>2018-05-21T23:37:41-04:00</lastmod>
+    <lastmod>2018-05-30T12:51:56-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/books/</loc>
-    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
+    <lastmod>2018-07-21T23:31:12-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -671,6 +681,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/privacy/</loc>
+    <lastmod>2018-05-30T12:51:56-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/productivity/</loc>
     <lastmod>2018-03-30T12:01:13-04:00</lastmod>
     <priority>0</priority>
@@ -695,14 +711,14 @@
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/rugged-manifesto/</loc>
-    <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/tags/ruby/</loc>
+    <lastmod>2019-03-23T17:32:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/rust/</loc>
-    <lastmod>2018-11-20T23:43:15-05:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/tags/rugged-manifesto/</loc>
+    <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -763,6 +779,7 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/</loc>
     <lastmod>2018-03-28T22:41:17-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -778,13 +795,19 @@
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
-    <lastmod>2018-03-28T22:50:25-04:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/tags/tmux/</loc>
+    <lastmod>2019-03-23T17:32:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
+    <lastmod>2018-03-28T22:50:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -798,6 +821,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/unit-testing/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/vim/</loc>
+    <lastmod>2019-03-23T17:32:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
