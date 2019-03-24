@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</loc>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</loc>
     <lastmod>2019-03-23T17:32:51-04:00</lastmod>
   </url>
@@ -300,7 +305,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/books/</loc>
-    <lastmod>2018-07-21T23:31:12-04:00</lastmod>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -372,6 +377,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/csv/</loc>
     <lastmod>2018-07-21T23:31:12-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/cucumber/</loc>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -693,6 +704,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/ray-tracer/</loc>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/reading-list/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
     <priority>0</priority>
@@ -719,6 +736,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/rugged-manifesto/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/rust/</loc>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -790,7 +813,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/test-driven-development/</loc>
-    <lastmod>2018-07-02T12:06:44-04:00</lastmod>
+    <lastmod>2019-03-24T10:21:14-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -15,6 +15,15 @@
     
     
     <item>
+      <title>Book Arrival: The Ray Tracer Challenge</title>
+      <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
+      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</guid>
+      <description>I was browsing the Pragmatic Bookshelf and this book caught my eye: writing a ray tracer from ground up with a test driven approach? This sounds like a fantastic challenge to me. I always was interested in ray tracers but always thought it too complicated a topic to do it myself. However, test driven development has helped me work on some complex and terrible code bases, so this feels reassuring to me.</description>
+    </item>
+    
+    <item>
       <title>Slow Ruby Syntax Highlighting in Vim</title>
       <link>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</link>
       <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate>
