@@ -15,6 +15,16 @@
     
     
     <item>
+      <title>awk Cheat Sheet</title>
+      <link>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</link>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</guid>
+      <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.
+Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;quot;;&amp;quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;quot;An empty line&amp;quot; } END { # Instructions run after the main loop }  Invoke awk with a script like so:</description>
+    </item>
+    
+    <item>
       <title>Book Arrival: The Ray Tracer Challenge</title>
       <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
       <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate>

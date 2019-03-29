@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cheat Sheet on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/cheat-sheet/</link>
+    <description>Recent content in Cheat Sheet on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 26 Mar 2019 11:36:48 -0400</lastBuildDate>
+    
+	<atom:link href="https://ilikeorangutans.github.io/tags/cheat-sheet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>awk Cheat Sheet</title>
+      <link>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</link>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</guid>
+      <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.
+Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;quot;;&amp;quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;quot;An empty line&amp;quot; } END { # Instructions run after the main loop }  Invoke awk with a script like so:</description>
+    </item>
+    
+  </channel>
+</rss>

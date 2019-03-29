@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</loc>
+    <lastmod>2019-03-29T14:40:05-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</loc>
     <lastmod>2019-03-24T10:21:14-04:00</lastmod>
   </url>
@@ -292,6 +297,12 @@
   </url>
   
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/awk/</loc>
+    <lastmod>2019-03-29T14:40:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/tags/binutils/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
@@ -317,6 +328,12 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/cheat-sheet/</loc>
+    <lastmod>2019-03-29T14:40:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -824,13 +841,13 @@
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
+    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/travel/</loc>
+    <loc>https://ilikeorangutans.github.io/categories/travel/</loc>
     <lastmod>2018-03-28T22:50:25-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -844,6 +861,12 @@
   <url>
     <loc>https://ilikeorangutans.github.io/tags/unit-testing/</loc>
     <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ilikeorangutans.github.io/tags/unix/</loc>
+    <lastmod>2019-03-29T14:40:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   

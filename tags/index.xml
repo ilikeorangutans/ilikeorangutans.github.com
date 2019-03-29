@@ -96,6 +96,15 @@
     </item>
     
     <item>
+      <title>Awk</title>
+      <link>https://ilikeorangutans.github.io/tags/awk/</link>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/awk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Binutils</title>
       <link>https://ilikeorangutans.github.io/tags/binutils/</link>
       <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
@@ -128,6 +137,15 @@
       <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheat Sheet</title>
+      <link>https://ilikeorangutans.github.io/tags/cheat-sheet/</link>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/cheat-sheet/</guid>
       <description></description>
     </item>
     
@@ -893,6 +911,15 @@
       <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>https://ilikeorangutans.github.io/tags/unix/</link>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/unix/</guid>
       <description></description>
     </item>
     

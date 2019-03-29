@@ -92,6 +92,55 @@
   
     
   
+    <article class="mb-2">
+    <div class="divider"></div>
+    <div class="tile">
+        <div class="tile-content">
+            <p class="tile-title h4">
+                <a href="/2019/03/26/awk-cheat-sheet/">
+                    awk Cheat Sheet
+                </a>
+            </p>
+            <p class="tile-subtitle">
+                26 Mar 2019
+
+
+, tagged:
+
+
+    <a href="/tags/awk" class="">
+        awk, 
+    </a>
+
+    <a href="/tags/unix" class="">
+        unix, 
+    </a>
+
+    <a href="/tags/cheat-sheet" class="">
+        cheat sheet
+    </a>
+
+
+
+            </p>
+            <p class="tile-subtitle">
+                I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&rsquo;s time for a cheat sheet.
+Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &quot;;&quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &quot;An empty line&quot; } END { # Instructions run after the main loop }  Invoke awk with a script like so:
+            </p>
+            <p class="tile-action">
+                <a href="/2019/03/26/awk-cheat-sheet/" class="btn-primary">read more &rarr;</a>
+            </p>
+        </div>
+    </div>
+</article>
+
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -140,54 +189,6 @@
             </p>
             <p class="tile-action">
                 <a href="/2019/03/24/book-arrival-the-ray-tracer-challenge/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
-    </div>
-</article>
-
-  
-    
-  
-    
-  
-    
-  
-    <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2019/03/21/slow-ruby-syntax-highlighting-in-vim/">
-                    Slow Ruby Syntax Highlighting in Vim
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                21 Mar 2019
-
-
-, tagged:
-
-
-    <a href="/tags/vim" class="">
-        vim, 
-    </a>
-
-    <a href="/tags/tmux" class="">
-        tmux, 
-    </a>
-
-    <a href="/tags/ruby" class="">
-        ruby
-    </a>
-
-
-
-            </p>
-            <p class="tile-subtitle">
-                I recently switched back from MacVim to terminal (alacritty) Vim because I&rsquo;m trying to step up my tmux game after reading the excellent tmux 2 book from the Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine Vim uses by default in combination with the Ruby syntax highlighter.
-            </p>
-            <p class="tile-action">
-                <a href="/2019/03/21/slow-ruby-syntax-highlighting-in-vim/" class="btn-primary">read more &rarr;</a>
             </p>
         </div>
     </div>
