@@ -99,6 +99,48 @@
     <div class="tile">
         <div class="tile-content">
             <p class="tile-title h4">
+                <a href="/2019/08/23/zsh-autocompletion-caveat/">
+                    zsh Autocompletion Caveat
+                </a>
+            </p>
+            <p class="tile-subtitle">
+                23 Aug 2019
+
+
+, tagged:
+
+
+    <a href="/tags/zsh" class="">
+        zsh, 
+    </a>
+
+    <a href="/tags/go" class="">
+        Go, 
+    </a>
+
+    <a href="/tags/golang" class="">
+        Golang
+    </a>
+
+
+
+            </p>
+            <p class="tile-subtitle">
+                I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;&amp; compinit and everything works as expected.
+            </p>
+            <p class="tile-action">
+                <a href="/2019/08/23/zsh-autocompletion-caveat/" class="btn-primary">read more &rarr;</a>
+            </p>
+        </div>
+    </div>
+</article>
+
+        
+        <article class="mb-2">
+    <div class="divider"></div>
+    <div class="tile">
+        <div class="tile-content">
+            <p class="tile-title h4">
                 <a href="/2019/03/26/awk-cheat-sheet/">
                     awk Cheat Sheet
                 </a>
@@ -181,48 +223,6 @@ Structure of an awk script # Comments begin with a pound sign BEGIN { # Instruct
             </p>
             <p class="tile-action">
                 <a href="/2019/03/24/book-arrival-the-ray-tracer-challenge/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
-    </div>
-</article>
-
-        
-        <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2019/03/21/slow-ruby-syntax-highlighting-in-vim/">
-                    Slow Ruby Syntax Highlighting in Vim
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                21 Mar 2019
-
-
-, tagged:
-
-
-    <a href="/tags/vim" class="">
-        vim, 
-    </a>
-
-    <a href="/tags/tmux" class="">
-        tmux, 
-    </a>
-
-    <a href="/tags/ruby" class="">
-        ruby
-    </a>
-
-
-
-            </p>
-            <p class="tile-subtitle">
-                I recently switched back from MacVim to terminal (alacritty) Vim because I&rsquo;m trying to step up my tmux game after reading the excellent tmux 2 book from the Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine Vim uses by default in combination with the Ruby syntax highlighter.
-            </p>
-            <p class="tile-action">
-                <a href="/2019/03/21/slow-ruby-syntax-highlighting-in-vim/" class="btn-primary">read more &rarr;</a>
             </p>
         </div>
     </div>

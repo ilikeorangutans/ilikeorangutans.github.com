@@ -9,10 +9,19 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sat, 26 May 2018 12:13:10 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 23 Aug 2019 14:21:43 -0400</lastBuildDate>
     
 	<atom:link href="https://ilikeorangutans.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>zsh Autocompletion Caveat</title>
+      <link>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</link>
+      <pubDate>Fri, 23 Aug 2019 14:21:43 -0400</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</guid>
+      <description>I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;amp;&amp;amp; compinit and everything works as expected.</description>
+    </item>
     
     <item>
       <title>null, Software Design, and Scala&#39;s Option</title>

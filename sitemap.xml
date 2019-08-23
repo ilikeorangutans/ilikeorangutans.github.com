@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</loc>
+    <lastmod>2019-08-23T14:32:19-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</loc>
     <lastmod>2019-03-29T14:40:05-04:00</lastmod>
   </url>
@@ -459,13 +464,13 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/go/</loc>
-    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
+    <lastmod>2019-08-23T14:32:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/golang/</loc>
-    <lastmod>2018-05-26T14:49:36-04:00</lastmod>
+    <lastmod>2019-08-23T14:32:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -920,7 +925,7 @@
   
   <url>
     <loc>https://ilikeorangutans.github.io/tags/zsh/</loc>
-    <lastmod>2018-03-28T21:05:46-04:00</lastmod>
+    <lastmod>2019-08-23T14:32:19-04:00</lastmod>
     <priority>0</priority>
   </url>
   
