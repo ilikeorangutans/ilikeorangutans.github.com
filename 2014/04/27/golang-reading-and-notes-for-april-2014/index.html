@@ -3,14 +3,17 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Golang Reading and Notes for April 2014 &mdash;
+      
       Jakob Külzer
     </title>
 
     <meta name="author" value="Jakob Külzer">
     <meta property="og:title" content="Golang Reading and Notes for April 2014">
     <meta property="og:description" content="Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.">
+Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/">
 
@@ -21,6 +24,7 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -108,60 +112,54 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
 
             </p>
             <div class="divider"></div>
-            <h1>Golang Reading and Notes for April 2014</h1>
             
-
-<p>Last week I attended the <a href="http://golang.meetup.com/cities/ca/on/toronto/">Toronto Golang Usergroup Meetup</a> and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?</p>
-
+            <h1>Golang Reading and Notes for April 2014</h1>
+            <p>Last week I attended the <a href="http://golang.meetup.com/cities/ca/on/toronto/">Toronto Golang Usergroup Meetup</a> and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?</p>
 <h3 id="notes">Notes</h3>
-
 <ul>
-<li><p>Casting in Go is slightly different than in C related languages. Instead of a cast, you perform <a href="http://golang.org/doc/effective_go.html#interface_conversions">a type conversion</a>:</p>
+<li>
+<p>Casting in Go is slightly different than in C related languages. Instead of a cast, you perform <a href="http://golang.org/doc/effective_go.html#interface_conversions">a type conversion</a>:</p>
+<pre><code>  var myVariable SomeGenericType = ...
 
-<pre><code>var myVariable SomeGenericType = ...
+  casted, ok := myVariable.(MoreSpecificType)
+  // ok is a bool
+  if ok {
+      // Type conversion successful
+  } else {
+      // myVariable does not implement MoreSpecificType
+  }
+</code></pre>
+</li>
+<li>
+<p>The <code>range</code> keyword when used with two return values does not return references, but rather copies. This had me struggle for a while as my code was not behaving as I thought it would. I had a slice of structs and was happily iterating over it:</p>
+<pre><code>  type Foo struct {
+      a string
+  }
 
-casted, ok := myVariable.(MoreSpecificType)
-// ok is a bool
-if ok {
-    // Type conversion successful
-} else {
-    // myVariable does not implement MoreSpecificType
-}
-</code></pre></li>
+  func main() {
+      foos := []Foo{
+          Foo{a: &quot;horray&quot;},
+          Foo{a: &quot;yeay&quot;},
+      }
 
-<li><p>The <code>range</code> keyword when used with two return values does not return references, but rather copies. This had me struggle for a while as my code was not behaving as I thought it would. I had a slice of structs and was happily iterating over it:</p>
+      for i, value := range foos {
+          // This works because we directly access the struct stored
+          foos[i].a = &quot;Changing the value&quot; within the slice
 
-<pre><code>type Foo struct {
-    a string
-}
+          // Won't work because value is a *copy* of the struct found in
+          value.a = &quot;this won't work&quot; the slice
+      }
 
-func main() {
-    foos := []Foo{
-        Foo{a: &quot;horray&quot;},
-        Foo{a: &quot;yeay&quot;},
-    }
-
-    for i, value := range foos {
-        // This works because we directly access the struct stored
-        foos[i].a = &quot;Changing the value&quot; within the slice
-
-        // Won't work because value is a *copy* of the struct found in
-        value.a = &quot;this won't work&quot; the slice
-    }
-
-    for _, value := range foos {
-        println(value.a)
-    }
-}
-</code></pre></li>
-</ul>
-
+      for _, value := range foos {
+          println(value.a)
+      }
+  }
+</code></pre>
 <p><a href="http://play.golang.org/p/j4tZAKppMn">Executable snippet here</a>. In retrospect it makes sense, Go always passes copies to functions. But initially I was puzzled as my loops wouldn&rsquo;t properly update my structs.</p>
-
 <p>If you&rsquo;re using reference types, that issue doesn&rsquo;t arise though. Reference types deserve a post on their own, which I will write soon.</p>
-
+</li>
+</ul>
 <h3 id="go-reading-list">Go Reading List</h3>
-
 <ul>
 <li><a href="http://blog.erlware.org/2014/04/27/some-thoughts-on-go-and-erlang/">Comparing Go and Erlang</a>: some interesting thoughts on shortcomings of Go, including that Go offers <code>nil</code>. This is an argument I&rsquo;ve read about quite a few times now and is always along the lines of &ldquo;<em>Modern languages should not have a nil/null</em>&rdquo;. In addition this article</li>
 <li><a href="http://peter.bourgon.org/go-in-production/">Go Best Practices for Production Environments</a>: lots of experience from the guys at <a href="https://soundcloud.com/">Soundcloud</a> about how they&rsquo;re using Go. Covers development environment, logging, dependency management, and builds &amp; deploys.</li>
@@ -174,7 +172,7 @@ func main() {
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

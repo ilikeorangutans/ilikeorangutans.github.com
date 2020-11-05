@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Book Arrival: The Ray Tracer Challenge</title>
       <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>

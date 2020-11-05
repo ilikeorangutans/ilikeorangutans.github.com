@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        OSGI Classloading Reading List &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@ In OSGI classloading is very restricted, similar to what happens in enterprisy J
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@ In OSGI classloading is very restricted, similar to what happens in enterprisy J
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@ In OSGI classloading is very restricted, similar to what happens in enterprisy J
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -107,13 +111,11 @@ In OSGI classloading is very restricted, similar to what happens in enterprisy J
 
             </p>
             <div class="divider"></div>
+            
             <h1>OSGI Classloading Reading List</h1>
             <p>I&rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&rsquo;m starting to fully understand and leverage OSGI and I&rsquo;m trying to keep my framework <a href="https://github.com/ilikeorangutans/omf">Object Mapper</a> as compatible with OSGI as I can.</p>
-
 <p>In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules. In order to use a class outside of a bundle you&rsquo;ll have to explicitly declare its package as exported. There are many benefits to this strict architecture, clean architectures, reusable components and the ability to update bundles at runtime are probably the most important ones.</p>
-
 <p>The downside of this strict model is that frameworks that rely on byte code generation will have a hard time making classes available. There are many techniques I was completely unaware of, and here are some excellent references I am reading:</p>
-
 <ul>
 <li><a href="http://rinswind.blogspot.ca/2009/07/osgi-go-forth-and-extend.html">OSGI Extender Pattern</a></li>
 <li><a href="http://www.infoq.com/articles/code-generation-with-osgi">Code Generation with OSGI</a></li>
@@ -125,7 +127,7 @@ In OSGI classloading is very restricted, similar to what happens in enterprisy J
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

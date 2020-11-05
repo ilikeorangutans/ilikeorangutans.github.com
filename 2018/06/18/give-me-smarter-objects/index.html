@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Give Me Smarter Objects &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -114,6 +118,7 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>Give Me Smarter Objects</h1>
             <p>A coding exercise I do once in a while is writing <a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship</a>. It&rsquo;s a
 fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
@@ -121,23 +126,21 @@ candidate as part of the interview process. It&rsquo;s always exciting to see wh
 doing the exercise and I contemplated on the <em>primitive obsession</em> code smell that always seems to creep into my code
 and saw a beautiful way to apply the <em>extract class</em> refactoring that very succinctly shows how nice object oriented
 programming can be.</p>
-
 <p>When implementing Battleship one inevitably reaches the point where it has to be decided how the orientation of a ship
 on the board is being represented in the code. Most programmers naturally decide to use a Boolean flag, after all a ship
 can only be either horizontal or vertical. In Scala this could look like this:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#069;font-weight:bold">case</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Ship</span><span style="color:#555">(</span>orientation<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Boolean</span><span style="color:#555">)</span></code></pre></div>
-<p>Later on when decisions have to be made based on the orientation, you&rsquo;d go use an <code>if</code> block like so:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#069;font-weight:bold">case</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Ship</span><span style="color:#555">(</span>orientation<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Boolean</span><span style="color:#555">)</span>
+</code></pre></div><p>Later on when decisions have to be made based on the orientation, you&rsquo;d go use an <code>if</code> block like so:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">  <span style="color:#069;font-weight:bold">if</span> ship<span style="color:#555">.</span>orientation <span style="color:#555">{</span>
     <span style="color:#09f;font-style:italic">// Do stuff with a horizontal ship
 </span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span> <span style="color:#069;font-weight:bold">else</span> <span style="color:#555">{</span>
     <span style="color:#09f;font-style:italic">// Do stuff with a vertical ship
-</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span></code></pre></div>
-<p>This reads a bit awkward, particularly because it&rsquo;s not clear what <code>orientation == true</code> even means. This <em>could</em> be
+</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span>
+</code></pre></div><p>This reads a bit awkward, particularly because it&rsquo;s not clear what <code>orientation == true</code> even means. This <em>could</em> be
 improved by renaming <code>orientation</code> to <code>horizontal</code> or <code>vertical</code>. In the end this makes it only marginally
 better, because whoever inquires what the orientation is will then have to invoke appropriate functionality based on
 the result. That sucks because we&rsquo;re leaking implementation details &ndash; the caller will have to understand the meaning of
 the value returned. What we really want is the orientation to do whatever it does for us.</p>
-
 <p>After thinking about what orientation in this game implies, we realize that it is entirely about picking a direction,
 and that could be described as producing a next coordinate based on a given coordinate. In other words, given an
 orientation, I could send it a message with a coordinate and it would return me a new coordinate that is in the
@@ -147,8 +150,9 @@ direction of the orientation. In Scala it could look like this:</p>
 <span style="color:#069;font-weight:bold">val</span> c1 <span style="color:#069;font-weight:bold">=</span> <span style="color:#0a8;font-weight:bold">Coordinate</span><span style="color:#555">(</span><span style="color:#f60">3</span><span style="color:#555">,</span> <span style="color:#f60">5</span><span style="color:#555">)</span> <span style="color:#09f;font-style:italic">// =&gt; x=3,y=5
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">val</span> orientation <span style="color:#069;font-weight:bold">=</span> <span style="color:#0a8;font-weight:bold">Orientation</span><span style="color:#555">.</span>vertical
 <span style="color:#069;font-weight:bold">val</span> c2 <span style="color:#069;font-weight:bold">=</span> orientation<span style="color:#555">.</span>next<span style="color:#555">(</span>c1<span style="color:#555">)</span> <span style="color:#09f;font-style:italic">// =&gt; x=3,y=6
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">...</span></code></pre></div>
-<p>This example shows nicely how a client of Orientation doesn&rsquo;t need to understand any of the details of how orientation
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">...</span>
+
+</code></pre></div><p>This example shows nicely how a client of Orientation doesn&rsquo;t need to understand any of the details of how orientation
 impacts the coordinate calculation. It just asks the orientation to do it. And to complete the picture, let&rsquo;s take a
 look at how we could implement orientation. The naive approach would be to pull the boolean into a separate class,
 like so:</p>
@@ -160,8 +164,8 @@ like so:</p>
       coordinate<span style="color:#555">.</span>copy<span style="color:#555">(</span>coordinate<span style="color:#555">.</span>y <span style="color:#555">+</span> <span style="color:#f60">1</span><span style="color:#555">)</span>
     <span style="color:#555">}</span>
   <span style="color:#555">}</span>
-<span style="color:#555">}</span></code></pre></div>
-<p>Not bad, but we can do better. Every <code>if-else</code> block is your code telling you that there is a hidden class hierarchy in
+<span style="color:#555">}</span>
+</code></pre></div><p>Not bad, but we can do better. Every <code>if-else</code> block is your code telling you that there is a hidden class hierarchy in
 your code that just waits to be unearthed. In this case we can very easily embed the value of the boolean in the class
 hierarchy by introducting one class that represents the horizontal orientation and one that implements the vertical one:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Horizontal</span> <span style="color:#069;font-weight:bold">extends</span> <span style="color:#0a8;font-weight:bold">Orientation</span> <span style="color:#555">{</span>
@@ -179,15 +183,14 @@ hierarchy by introducting one class that represents the horizontal orientation a
 <span style="color:#09f;font-style:italic">// The sealed trait ensures that scala recognizes only Horizontal and Vertical as Orientations
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">sealed</span> <span style="color:#069;font-weight:bold">trait</span> <span style="color:#0a8;font-weight:bold">Orientation</span> <span style="color:#555">{</span>
   <span style="color:#069;font-weight:bold">def</span> next<span style="color:#555">(</span>coordinate<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span><span style="color:#555">)</span><span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span>
-<span style="color:#555">}</span></code></pre></div>
-<p>Much better. Now we have very specific, easy to understand, and almost fool-proof classes representing this concept that
+<span style="color:#555">}</span>
+</code></pre></div><p>Much better. Now we have very specific, easy to understand, and almost fool-proof classes representing this concept that
 we named <code>Orientation</code>. To some programmers this seems weird, overly complicated, and wasteful even. Which path to
 choose comes down to cost. The object oriented approach as outlined above consists of more classes, more (explicit)
 concepts, and took considerably more effort to implement than our first approach. But the object oriented code makes up for
 the cost by providing better readability &ndash; and we all know that as programmers we mostly don&rsquo;t write code, we read code
 &ndash; and improved maintainability. It might be slightly less efficient, but each building block is so simple that it&rsquo;s
 almost impossible to introduce a bug. In most cases: worth it.</p>
-
 <p>Be on the watch for primitive obsession, a code smell named so by
 <a href="https://martinfowler.com/books/refactoring.html">Refactoring</a>, where you pass around &ldquo;primitive&rdquo; types and the act on
 their value. These are prime candidates to apply the <em>extract class</em> refactoring, also conveniently describe in
@@ -197,7 +200,7 @@ Refactoring. You will be rewarded with easier to understand and composable code.
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

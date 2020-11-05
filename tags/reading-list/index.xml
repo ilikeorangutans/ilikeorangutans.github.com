@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reading List on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 27 Apr 2014 13:59:40 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/reading-list/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 27 Apr 2014 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/reading-list/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Reading and Notes for April 2014</title>
       <link>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
@@ -21,8 +17,8 @@
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.</description>
+Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.</description>
     </item>
     
     <item>

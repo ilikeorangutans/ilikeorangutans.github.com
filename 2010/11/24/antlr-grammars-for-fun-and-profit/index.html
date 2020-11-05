@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Antlr Grammars for Fun and Profit &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -118,57 +122,34 @@
 
             </p>
             <div class="divider"></div>
-            <h1>Antlr Grammars for Fun and Profit</h1>
             
-
-<p>Recently at work I had to work on files in our legacy system. Those files, being part of a proprietary product, are unknown to any editor or pretty printer that you can find. And most of them are not formatted nicely, if at all. Being a lazy developer I really love eclipse&rsquo;s code formatting features, because, hey, it takes away a lot of tedious and annoying formatting. Also, I think properly formatted files are easier to understand, maintain and fix. In fact, as I recently tweeted, I go as far as saying that I&rsquo;m not particularly good in spotting problems, I just format everything which helps me to understand better.</p>
-
+            <h1>Antlr Grammars for Fun and Profit</h1>
+            <p>Recently at work I had to work on files in our legacy system. Those files, being part of a proprietary product, are unknown to any editor or pretty printer that you can find. And most of them are not formatted nicely, if at all. Being a lazy developer I really love eclipse&rsquo;s code formatting features, because, hey, it takes away a lot of tedious and annoying formatting. Also, I think properly formatted files are easier to understand, maintain and fix. In fact, as I recently tweeted, I go as far as saying that I&rsquo;m not particularly good in spotting problems, I just format everything which helps me to understand better.</p>
 <p>But back to the actual problem: I had a lot of these files to look through and no tool to help me format them. So my first approach was to simply hack together a simple Java app (Yes, Java. Not Perl. Just felt like it. ;) , doing some String manipulation and indent it. However I quickly realized that my simple formatter was thrown off by multiple elements in on line. The basic format is something like this:</p>
-
 <pre><code># comment
 \group {
     \optionOne &quot;value&quot;
     \optionTwo 3.1415
     \subgroup { ... }
 }
-</code></pre>
-
-<p>Nothing to fancy. However my simple app was thrown off by something like this:</p>
-
+</code></pre><p>Nothing to fancy. However my simple app was thrown off by something like this:</p>
 <pre><code>\group { \anotherGroup { ...
-</code></pre>
-
-<p>So I realized, yes, that&rsquo;s easy. I just need to tokenize the input stream, and when I&rsquo;m at that, I can actually check for syntactically correct input. Then I remembered from my compiler classes in university that building lexers and parsers was not fun. Interesting, but just not fun. Then I remembered reading about <a href="http://www.antlr.org/">ANLTR</a>. A tool that builds lexers and parsers from a grammar. Something I always wanted to use but never found a reason to. And formatting these files, just gave me a really good reason dive in.</p>
-
+</code></pre><p>So I realized, yes, that&rsquo;s easy. I just need to tokenize the input stream, and when I&rsquo;m at that, I can actually check for syntactically correct input. Then I remembered from my compiler classes in university that building lexers and parsers was not fun. Interesting, but just not fun. Then I remembered reading about <a href="http://www.antlr.org/">ANLTR</a>. A tool that builds lexers and parsers from a grammar. Something I always wanted to use but never found a reason to. And formatting these files, just gave me a really good reason dive in.</p>
 <h2 id="lexers-and-parsers-in-a-nutshell">Lexers and Parsers in a Nutshell</h2>
-
 <p>If you are not familiar with the terms Lexers and Parsers, here&rsquo;s a quick rundown. Both terms are usually closely associated with compilers, because they solve a big part of the problems a compiler has to solve. A lexer, short for Lexical Analyser, is a program that splits an input stream based on certain rules into smaller chunks, called tokens. They are usually implemented using a regular language (<a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy">Chomsky 3</a> to be precise) and can &ldquo;recognize&rdquo; simple constructs. For example, a hypothetical lexer for Java might read the following input:</p>
-
 <pre><code>int i;
 i = 1 + 2;
-</code></pre>
-
-<p>and produce the following tokens (in this notation that I just made up - please note that the tokens are UPPERCASE):</p>
-
+</code></pre><p>and produce the following tokens (in this notation that I just made up - please note that the tokens are UPPERCASE):</p>
 <pre><code>[ INT ] [ WHITESPACE] [ IDENTIFIER('i') ] [ SEMICOLON ] [ NEWLINE ] [ IDENTIFIER('i') ] [ WHITESPACE ] [ ASSIGNMENT ] ...
-</code></pre>
-
-<p>Notice how every &ldquo;piece&rdquo; get&rsquo;s its own token. Comparing the tokens and the original input, it is obvious that  working with tokens is already so much easier that working with the raw text. So, now that we have tokens, what does the parser actually do? In very generic terms, the parser takes the tokens and &ldquo;understands&rdquo; the token stream. Or at least, he&rsquo;ll try to. Most parsers spend most of their lives trying to understand input and then failing because of some syntactic error. For example, you forgot a bracket in your program, or a semicolon. Take the slightly modified code from the first sample:</p>
-
+</code></pre><p>Notice how every &ldquo;piece&rdquo; get&rsquo;s its own token. Comparing the tokens and the original input, it is obvious that  working with tokens is already so much easier that working with the raw text. So, now that we have tokens, what does the parser actually do? In very generic terms, the parser takes the tokens and &ldquo;understands&rdquo; the token stream. Or at least, he&rsquo;ll try to. Most parsers spend most of their lives trying to understand input and then failing because of some syntactic error. For example, you forgot a bracket in your program, or a semicolon. Take the slightly modified code from the first sample:</p>
 <pre><code>inmt i
 i = 1  2;
-</code></pre>
-
-<p>Wow. Lot&rsquo;s of input that doesn&rsquo;t make sense, right? &ldquo;<em>The word <code>inmt</code> is not a valid type identifier!</em>&rdquo; you say! &ldquo;<em>And the semicolons! Where are they?</em>&rdquo; The experienced and weathered developer will scream in disgust: &ldquo;<em>This is invalid input</em>&rdquo;! And this is where the parser comes in. A parser has a formal description of what the incoming token stream should look like. This formal description is called a grammar. A grammar is usually described in forms of &ldquo;productions&rdquo; which look like this very simplified sample (another notation I made up but heavily influenced by <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>):</p>
-
+</code></pre><p>Wow. Lot&rsquo;s of input that doesn&rsquo;t make sense, right? &ldquo;<em>The word <code>inmt</code> is not a valid type identifier!</em>&rdquo; you say! &ldquo;<em>And the semicolons! Where are they?</em>&rdquo; The experienced and weathered developer will scream in disgust: &ldquo;<em>This is invalid input</em>&rdquo;! And this is where the parser comes in. A parser has a formal description of what the incoming token stream should look like. This formal description is called a grammar. A grammar is usually described in forms of &ldquo;productions&rdquo; which look like this very simplified sample (another notation I made up but heavily influenced by <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>):</p>
 <pre><code>assignment -&gt; IDENTIFIER ASSIGN expression;
 expression -&gt; IDENTIFIER | addition | multiplication;
 addition -&gt; VALUE + VALUE;
 ...
-</code></pre>
-
-<p>So, these productions map a generic concept to a more concrete concept. When the parser starts, it will match the first rule against the input, and slowly working it&rsquo;s way down to the most precise rules he can find (or not, if the input doesn&rsquo;t match the grammar). By consulting the grammar, the parser always knows what the input can contain. Usually the parser takes every production that matches and puts all of the input into a tree, the so called AST (Abstract Syntax Tree), a tree like representation of the input. For our initial sample, the (simplified) AST could look like this:</p>
-
+</code></pre><p>So, these productions map a generic concept to a more concrete concept. When the parser starts, it will match the first rule against the input, and slowly working it&rsquo;s way down to the most precise rules he can find (or not, if the input doesn&rsquo;t match the grammar). By consulting the grammar, the parser always knows what the input can contain. Usually the parser takes every production that matches and puts all of the input into a tree, the so called AST (Abstract Syntax Tree), a tree like representation of the input. For our initial sample, the (simplified) AST could look like this:</p>
 <pre><code>           .- variable(i)
           /
 program -|                  .- variable(i)
@@ -178,16 +159,10 @@ program -|                  .- variable(i)
                             `- addition -|
                                           \
                                            `- NUMERAL(2)
-</code></pre>
-
-<p>So, from this (simplified) AST you can see the structure of the program, right away. It is almost the pure essence of the meaning of the input code. Quite a useful and flexible mechanism. After the parser finished parsing the input tree and assuming the input was correct according to the grammar, the parser spits out a complete AST for the input. And with the AST, you can do a lot of fun and awesome things. To close the circle to my introduction, you can easily output a nicely formatted version of the input file without having to worry you might break the file. It can act as a verifier, testing whether you forgot some important input (semicolons, brackets, single or double quotes come to mind) or even translate it into something different.</p>
-
+</code></pre><p>So, from this (simplified) AST you can see the structure of the program, right away. It is almost the pure essence of the meaning of the input code. Quite a useful and flexible mechanism. After the parser finished parsing the input tree and assuming the input was correct according to the grammar, the parser spits out a complete AST for the input. And with the AST, you can do a lot of fun and awesome things. To close the circle to my introduction, you can easily output a nicely formatted version of the input file without having to worry you might break the file. It can act as a verifier, testing whether you forgot some important input (semicolons, brackets, single or double quotes come to mind) or even translate it into something different.</p>
 <p>So now you should have a really basic understanding of what a lexer and a parser does. There&rsquo;s a lot more to this highly interesting field. I can recommend the ANTLR Reference Guide or any of the dragon books about compilers (For some reason compiler books almost always have a dragon on them. Some say, it is because of the inherent complexity of compilers&hellip; which is probably true).</p>
-
 <h2 id="antlr">ANTLR</h2>
-
 <p>Back to my formatter/verifier for proprietary input. ANLTR takes off a lot of work from the developer because it will generate a complete lexer and parser (LL(*) parser to be precise) from a grammar for you. So all I had to do was to write a grammar for the proprietary format. Of course I don&rsquo;t want to keep that from you:</p>
-
 <pre><code>grammar MyGrammar;
 
 options {
@@ -212,30 +187,20 @@ option	:	'/' (DIGITS | CHARS)+ (ident | group);
 ident	:	STRING | DIGITS;
 group	:	GROUPSTART entry* GROUPEND;
 comment	:	'#' (CHARS | DIGITS | EXTRACHARS )*;
-</code></pre>
-
-<p>In total it&rsquo;s a 33 lines with generous white space, a few comments and extra options I removed here. There&rsquo;s a few extra lines to load the input, and a single class that outputs a formatted file based on the generated AST. Everything else has been generated by ANTLR.</p>
-
+</code></pre><p>In total it&rsquo;s a 33 lines with generous white space, a few comments and extra options I removed here. There&rsquo;s a few extra lines to load the input, and a single class that outputs a formatted file based on the generated AST. Everything else has been generated by ANTLR.</p>
 <p>And suddenly I could verify and format ALL of our files using this tool. Awesome, isn&rsquo;t it?</p>
-
 <h2 id="final-thoughts">Final Thoughts</h2>
-
 <p>The learning curve for an approach like this is steep. Grammars are nothing that you can pick up over night, it will require some effort to understand them and the pitfalls you can encounter (left recursive grammars, ambiguous grammars, etc etc) but the payoffs are enormous. Instead of manually formatting and manually counting opening and closing brackets in every file that I open, I can now run a simple one-liner that&rsquo;ll find all files and verify them for me:</p>
-
 <pre><code>$ find ./ -iname '*.xxx' -exec verifier {} \;
-</code></pre>
-
-<p>Done. All files. We have a few hundred of those, so there&rsquo;s some significant time savings in this little project. Also, developers are more willing to work with them now, as this little tool will always tell them if they screwed up the syntax or not.</p>
-
+</code></pre><p>Done. All files. We have a few hundred of those, so there&rsquo;s some significant time savings in this little project. Also, developers are more willing to work with them now, as this little tool will always tell them if they screwed up the syntax or not.</p>
 <p>All in all, I found this little exercise quite transforming. I was somewhat scared of parsers and compilers, just because it&rsquo;s hard to build them in a good way. But now, given the power of ANTLR and the grammar driven approach, I start to see new solutions for a lot of problems.</p>
-
 <p>Therefore my advice: go and learn about grammars and play with ANTLR. It can make your life so much easier.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

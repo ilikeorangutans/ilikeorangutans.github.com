@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switched from Eclipse to IntelliJ</title>
       <link>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>

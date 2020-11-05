@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jsr 269 on Jakob Külzer</title>
+    <title>JSR-269 on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/jsr-269/</link>
-    <description>Recent content in Jsr 269 on Jakob Külzer</description>
+    <description>Recent content in JSR-269 on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Tue, 13 Aug 2013 13:59:40 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/jsr-269/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 Aug 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/jsr-269/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JSR-269 Annotation Processing</title>
       <link>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link>

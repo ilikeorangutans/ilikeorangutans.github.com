@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+    <title>
+      
+        Vim Digraph &mdash;
+      
+      Jakob Külzer
+    </title>
+
+    <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Vim Digraph">
+    <meta property="og:description" content="Was writing a few posts for my food blog and needed to type some some &ldquo;special&rdquo; characters like é. When on a Mac that&rsquo;s really simple because the keymap supports typing compound keys. But I&rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&rsquo;s digraph support. The documentation is quite good but I&rsquo;ll cherry pick some combos because otherwise I&rsquo;ll forget.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/2020/11/05/vim-digraph/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
+
+    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
+  </head>
+  <body>
+    
+    <div class="container grid-lg">
+  <header class="navbar hide-sm">
+    <section class="navbar-section">
+      <a href="/" class="navbar-brand">
+        Jakob Külzer
+      </a>
+    </section>
+    <section class="navbar-section">
+      
+        <a href="/" class="mr-2 ml-2">
+          Home
+        </a>
+      
+        <a href="/posts/" class="mr-2 ml-2">
+          Blog
+        </a>
+      
+        <a href="/projects/" class="mr-2 ml-2">
+          Projects
+        </a>
+      
+        <a href="/about/" class="mr-2 ml-2">
+          About
+        </a>
+      
+    </section>
+  </header>
+
+  <header class="show-sm columns">
+    <div class="column col-12">
+      <a href="/" class="navbar-brand">
+        Jakob Külzer
+      </a>
+    </div>
+    <div class="column col-12">
+      
+        <a href="/" class="mr-2 ml-1">
+          Home
+        </a>
+      
+        <a href="/posts/" class="mr-2 ml-1">
+          Blog
+        </a>
+      
+        <a href="/projects/" class="mr-2 ml-1">
+          Projects
+        </a>
+      
+        <a href="/about/" class="mr-2 ml-1">
+          About
+        </a>
+      
+    </div>
+  </header>
+</div>
+<div class="divider"></div>
+    
+    <main class="container grid-lg content">
+      
+    <div class="columns mb-2">
+        <div class="column">
+            <p class="text-gray">
+                05 Nov 2020
+
+
+, tagged:
+
+
+    <a href="/tags/vim" class="">
+        vim
+    </a>
+
+
+
+            </p>
+            <div class="divider"></div>
+            
+            <h1>Vim Digraph</h1>
+            <p>Was writing a few posts for my <a href="http://food.hannah-and-jakob.ca">food blog</a> and needed to type some some &ldquo;special&rdquo; characters like <em>é</em>. When on a Mac that&rsquo;s really simple because the keymap supports typing compound keys. But I&rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&rsquo;s digraph support. The <a href="https://vimhelp.org/digraph.txt.html#digraph.txt">documentation</a> is quite good but I&rsquo;ll cherry pick some combos because otherwise I&rsquo;ll forget.</p>
+<p>The basic key combination is <code>CTRL-K &lt;base letter&gt; &lt;char&gt;</code>.
+For example, <code>CTRL-K u :</code> results in <code>ü</code>.</p>
+<table>
+<thead>
+<tr>
+<th>base letter</th>
+<th>char</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a/o/u</td>
+<td>:</td>
+<td>ä/ö/ü</td>
+</tr>
+<tr>
+<td>s</td>
+<td>s</td>
+<td>ß</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2/3/4</td>
+<td>½/⅓/¼</td>
+</tr>
+<tr>
+<td>a</td>
+<td>~</td>
+<td>ã</td>
+</tr>
+<tr>
+<td>c</td>
+<td>,</td>
+<td>ç</td>
+</tr>
+<tr>
+<td>=</td>
+<td>e</td>
+<td>€</td>
+</tr>
+<tr>
+<td>c</td>
+<td>O</td>
+<td>©</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<pre><code>      | -    | ±
+</code></pre>
+</li>
+</ul>
+<p>N           | O    | ¬
+M           | y    | µ</p>
+<ul>
+<li>
+<pre><code>      | X    | ×
+</code></pre>
+</li>
+</ul>
+<p>S           | *    | Σ</p>
+<p>This is super useful and I can&rsquo;t believe I never knew about this.</p>
+
+            <div class="divider"></div>
+        </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </main>
+    
+    <div class="divider"></div>
+<div class="container grid-lg mb-2">
+    <footer class="navbar text-gray">
+        <section class="navbar-section">
+            &copy; 2018 Jakob Külzer
+        </section>
+        <section class="navbar-center">
+            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
+            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
+            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
+            <a href="/index.xml" class="btn btn-link">RSS</a>
+        </section>
+        <section class="navbar-section"></section>
+    </footer>
+</div>
+
+    
+  </body>
+</html>

@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Refactoring &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -89,7 +93,7 @@
     &larrhk; <a href="/tags">all tags</a>
 </p>
 
-<p>Pages tagged with "refactoring":</p>
+<p>Pages tagged with "Refactoring":</p>
 
     <article class="mb-2">
     <div class="divider"></div>
@@ -97,6 +101,7 @@
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2018/06/18/give-me-smarter-objects/">
+                    
                     Give Me Smarter Objects
                 </a>
             </p>
@@ -147,6 +152,7 @@
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2015/10/23/gorename-and-invalid-expression/">
+                    
                     gorename and invalid expression
                 </a>
             </p>
@@ -179,7 +185,7 @@
             <p class="tile-subtitle">
                 This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
+$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType' gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
             </p>
             <p class="tile-action">
                 <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>

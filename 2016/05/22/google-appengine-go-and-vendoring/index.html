@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Google Appengine, Go, and Vendoring &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -107,27 +111,23 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>Google Appengine, Go, and Vendoring</h1>
             <p>I&rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:</p>
-
 <pre><code>2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &quot;syscall&quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go
 </code></pre>
-
 <p>I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&rsquo;t want you tu use. Sadly these errors don&rsquo;t show up during normal <code>goapp build</code> or <code>goapp test</code> cycles, but only when you want to deploy or start a local devserver.</p>
-
 <p>The solution turned out to be surprisingly simple: add the <code>vendor</code> directory to the <code>nobuild_files</code>, like so:</p>
-
 <pre><code>nobuild_files:
 - vendor
 </code></pre>
-
 <p>Now both builds and deploys run perfectly.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

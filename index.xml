@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jakob Külzer</title>
@@ -8,11 +8,25 @@
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 21 May 2018 22:22:47 -0400</lastBuildDate>
+    <copyright>Jakob Külzer</copyright><atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Digraph</title>
+      <link>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</link>
+      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</guid>
+      <description>Was writing a few posts for my food blog and needed to type some some &amp;ldquo;special&amp;rdquo; characters like é. When on a Mac that&amp;rsquo;s really simple because the keymap supports typing compound keys. But I&amp;rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&amp;rsquo;s digraph support. The documentation is quite good but I&amp;rsquo;ll cherry pick some combos because otherwise I&amp;rsquo;ll forget.</description>
+    </item>
     
-	<atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Building Docker Containers for ARM with buildx</title>
+      <link>https://ilikeorangutans.github.io/2020/01/03/building-docker-containers-for-arm-with-buildx/</link>
+      <pubDate>Fri, 03 Jan 2020 22:58:33 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2020/01/03/building-docker-containers-for-arm-with-buildx/</guid>
+      <description>I&amp;rsquo;ve spent some time over the holidays building a Kubernetes cluster running on raspberry pis. One issue I ran into was that not all docker images I wanted to run were available for arm/linux. Luckily there&amp;rsquo;s a useful tool called buildx that extends Docker to build containers for different platforms and architectures using quemu and binfmt. ARM has a blog post that details the steps needed to build images.
+The steps are:</description>
+    </item>
     
     <item>
       <title>zsh Autocompletion Caveat</title>
@@ -30,7 +44,7 @@
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</guid>
       <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.
-Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;quot;;&amp;quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;quot;An empty line&amp;quot; } END { # Instructions run after the main loop }  Invoke awk with a script like so:</description>
+Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;quot;;&amp;quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;quot;An empty line&amp;quot; } END { # Instructions run after the main loop } Invoke awk with a script like so:</description>
     </item>
     
     <item>
@@ -53,10 +67,10 @@ Structure of an awk script # Comments begin with a pound sign BEGIN { # Instruct
     
     <item>
       <title>gnuplot - My New Favorite Tool</title>
-      <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot---my-new-favorite-tool/</link>
+      <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</link>
       <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot---my-new-favorite-tool/</guid>
+      <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</guid>
       <description>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data. Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&amp;rsquo;t really scale well. The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the GNU project.</description>
     </item>
     
@@ -84,7 +98,7 @@ Structure of an awk script # Comments begin with a pound sign BEGIN { # Instruct
       <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</guid>
-      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:  Working Effectivly with Legacy Code by Michael C. Feathers   </description>
+      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:</description>
     </item>
     
     <item>
@@ -94,24 +108,6 @@ Structure of an awk script # Comments begin with a pound sign BEGIN { # Instruct
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
       <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
-    </item>
-    
-    <item>
-      <title>Inheritance and Composition</title>
-      <link>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</link>
-      <pubDate>Thu, 14 Jun 2018 15:58:21 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</guid>
-      <description>I recently attended an OOP workshop by Sandi Metz and among the wonderful things I took away from it were some great conversations and discussions with coworkers about the content of the course. One of these discussions centred around the concept of inheritance and composition, and how they differ and when to use. I struggled explaining it well but came up with a better explanation later on, on the subway.</description>
-    </item>
-    
-    <item>
-      <title>Privacy and This Blog</title>
-      <link>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</link>
-      <pubDate>Wed, 30 May 2018 12:51:56 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</guid>
-      <description>This blog does not have Google Analytics. It doesn&amp;rsquo;t have any tracking at all. The only thing that might do some tracking are the Disqus conversations at the bottom. I don&amp;rsquo;t know who reads my blog, I don&amp;rsquo;t know where my readers are from, or how they came to be on my site. And I did this intentionally. Reflecting on privacy and how it&amp;rsquo;s generally being eroded made me realize how I hate being tracked across websites.</description>
     </item>
     
     <item>
@@ -160,7 +156,7 @@ If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo
       <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
       <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
  We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
-&amp;ndash; Frank Tibolt
+  &amp;ndash; Frank Tibolt
  I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
     </item>
     
@@ -212,7 +208,7 @@ It took me a few times because I didn&amp;rsquo;t read the instructions properly
       <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
       <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
+$ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
     </item>
     
     <item>
@@ -243,8 +239,8 @@ Solution Git&amp;rsquo;s output format changed slightly in one of the recent ver
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.</description>
+Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.</description>
     </item>
     
     <item>
@@ -448,7 +444,7 @@ Full version: Delhi Rooftop Panorama!</description>
       <description>Just figured out how SSH remote tunnels work and wanted to write it down.
 Nomenclature:
  [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
-$ ssh -L REMOTEPORT:client:CLIENTPORT user@server  Now, that by opening a tunnel in this way:</description>
+$ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:</description>
     </item>
     
     <item>

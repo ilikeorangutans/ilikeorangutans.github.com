@@ -1,18 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim on Jakob Külzer</title>
+    <title>vim on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/vim/</link>
-    <description>Recent content in Vim on Jakob Külzer</description>
+    <description>Recent content in vim on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Thu, 21 Mar 2019 12:07:08 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 05 Nov 2020 13:54:51 -0500</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Digraph</title>
+      <link>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</link>
+      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</guid>
+      <description>Was writing a few posts for my food blog and needed to type some some &amp;ldquo;special&amp;rdquo; characters like é. When on a Mac that&amp;rsquo;s really simple because the keymap supports typing compound keys. But I&amp;rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&amp;rsquo;s digraph support. The documentation is quite good but I&amp;rsquo;ll cherry pick some combos because otherwise I&amp;rsquo;ll forget.</description>
+    </item>
     
     <item>
       <title>Slow Ruby Syntax Highlighting in Vim</title>

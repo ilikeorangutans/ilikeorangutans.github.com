@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Development on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 02 Jul 2018 12:02:03 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 02 Jul 2018 12:02:03 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes on Working Effectively With Legacy Code</title>
       <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>
@@ -29,7 +25,7 @@
       <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</guid>
-      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:  Working Effectivly with Legacy Code by Michael C. Feathers   </description>
+      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:</description>
     </item>
     
     <item>
@@ -50,7 +46,7 @@ What is null? Most programming languages have the concept of null (or nil) that 
       <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
       <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
  We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
-&amp;ndash; Frank Tibolt
+  &amp;ndash; Frank Tibolt
  I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
     </item>
     

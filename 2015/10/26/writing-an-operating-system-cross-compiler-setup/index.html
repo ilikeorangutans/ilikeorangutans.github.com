@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Writing an Operating System - Environment Setup &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -21,6 +24,7 @@ It took me a few times because I didn&rsquo;t read the instructions properly. It
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@ It took me a few times because I didn&rsquo;t read the instructions properly. It
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@ It took me a few times because I didn&rsquo;t read the instructions properly. It
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -124,28 +128,21 @@ It took me a few times because I didn&rsquo;t read the instructions properly. It
 
             </p>
             <div class="divider"></div>
-            <h1>Writing an Operating System - Environment Setup</h1>
             
-
-<p>I&rsquo;ve been reading <a href="http://littleosbook.github.io/">The little book about OS development</a> and <a href="http://wiki.osdev.org/">wiki.osdev.org</a> and took some notes along the line. Here&rsquo;s what I wrote on environment setup.</p>
-
+            <h1>Writing an Operating System - Environment Setup</h1>
+            <p>I&rsquo;ve been reading <a href="http://littleosbook.github.io/">The little book about OS development</a> and <a href="http://wiki.osdev.org/">wiki.osdev.org</a> and took some notes along the line. Here&rsquo;s what I wrote on environment setup.</p>
 <h3 id="environment-setup">Environment setup</h3>
-
 <p>You&rsquo;ll need a cross compile toolchain consisting of <a href="https://www.gnu.org/software/binutils/">GNU Binutils</a> and <a href="https://gcc.gnu.org/">gcc</a>. The <a href="http://wiki.osdev.org/GCC_Cross-Compiler">osdev wiki</a> has a great page on setting up a cross compilation toolchain.</p>
-
 <p>It took me a few times because I didn&rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, <code>gcc-4.2</code> and <code>gcc-build</code> for example. Then, for building gcc, make sure the newly built binutils are on your path.</p>
-
 <p>And finally, when building gcc, make sure you run <code>make all-gcc</code>, <code>make all-target-libgcc</code>, <code>make install-gcc</code>, and <code>make install-target-libgcc</code> instead of just <code>make all</code> like I did.</p>
-
 <p>Also, running make with <code>-j 4</code> or any value larger than 1 greatly sped up the build on my machine. Multicore for the win!</p>
-
 <p>Once you&rsquo;ve built both binutils and gcc you&rsquo;re ready to start building your kernel!</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

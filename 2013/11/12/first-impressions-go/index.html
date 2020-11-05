@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        First impressions: Go &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -21,6 +24,7 @@ Language The go language is full of nice surprises. I haven&rsquo;t seen everyth
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@ Language The go language is full of nice surprises. I haven&rsquo;t seen everyth
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@ Language The go language is full of nice surprises. I haven&rsquo;t seen everyth
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -108,17 +112,12 @@ Language The go language is full of nice surprises. I haven&rsquo;t seen everyth
 
             </p>
             <div class="divider"></div>
-            <h1>First impressions: Go</h1>
             
-
-<p>Ever since Google release <a href="http://www.golang.org/">Go</a> I&rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.</p>
-
+            <h1>First impressions: Go</h1>
+            <p>Ever since Google release <a href="http://www.golang.org/">Go</a> I&rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.</p>
 <p>So far I&rsquo;m really impressed. This is a quick list of things I&rsquo;ve noticed:</p>
-
 <h3 id="language">Language</h3>
-
 <p>The go language is full of nice surprises. I haven&rsquo;t seen everything, but just a few things that really impressed me:</p>
-
 <ul>
 <li>Semicolons are optional!</li>
 <li>Type inference with the <code>:=</code> operator!</li>
@@ -127,39 +126,33 @@ Language The go language is full of nice surprises. I haven&rsquo;t seen everyth
 A lot of the functions in the class library seem to return tuples, one value being the actual result and the other a status/error code.</li>
 <li>It feels very C-like but comes with garbage collection!</li>
 <li>Declaring but not using variables is an error!</li>
-<li>Maps are part of the language, and their declaration requires the last element to be trailed by a comma: <code>map[string]int { &quot;a&quot;:1, &quot;b&quot;:2, }</code></li>
+<li>Maps are part of the language, and their declaration requires the last element to be trailed by a comma: <code>map[string]int { &quot;a&quot;:1, &quot;b&quot;:2, } </code></li>
 <li>Go has slices, something like an array but different.</li>
 <li>Reasonable to string conversion for all built in types</li>
 <li>The <a href="http://golang.org/pkg/">package library</a> is huge! Need a MIME multipart parser? All there. Need to deal with PNG&rsquo;s or JPEGs? Go got you covered. Need to start a simple HTTP server with like two lines of code? <a href="http://golang.org/doc/articles/wiki/#tmp_3">Here you go.</a></li>
 </ul>
-
 <h3 id="tooling">Tooling</h3>
-
 <ul>
-<li><p>Go&rsquo;s compiler is fast. And calling it just a compiler is an understatement. The <code>go</code> tool does so many useful things:</p>
-
+<li>
+<p>Go&rsquo;s compiler is fast. And calling it just a compiler is an understatement. The <code>go</code> tool does so many useful things:</p>
 <ul>
 <li>It acts as a build tool. Point it to a directory and it will build everything in it</li>
-<li>Also, it&rsquo;ll format your source code: <code>go fmt</code></li>
+<li>Also, it&rsquo;ll format your source code: <code>go fmt </code></li>
 <li>Dependencies will magically be downloaded. (Note to self: until I figure out how this works, it&rsquo;s Magic!)</li>
-</ul></li>
-
-<li><p>godoc. It&rsquo;s fantastic. Run godoc -http:6060 and you have your own webserver that servers the go documentation.</p></li>
 </ul>
-
+</li>
+<li>
+<p>godoc. It&rsquo;s fantastic. Run godoc -http:6060 and you have your own webserver that servers the go documentation.</p>
+</li>
+</ul>
 <h3 id="build-output">Build Output</h3>
-
 <ul>
 <li>Binaries are statically linked per default. A Hello World program is a whooping 1MB, but I guess it pays off in deployment scenarios.</li>
 <li>I built a simple wiki following the instructions on the go website, and the runtime memory consumption of the entire app, including the HTTP server was 3.3MB.</li>
 </ul>
-
 <h3 id="summary">Summary</h3>
-
 <p>All in all I&rsquo;ve only scratched the surface, but what I&rsquo;ve seen is really impressive. The Go language itself seems very powerful and has some interesting mechanisms and I hope I can find more time to play with it.</p>
-
 <h3 id="see-also">See also</h3>
-
 <ul>
 <li><a href="http://www.miek.nl/projects/learninggo/">Learning Go</a> Free book on learning go. Reading it right now and it&rsquo;s quite good!</li>
 </ul>
@@ -168,7 +161,7 @@ A lot of the functions in the class library seem to return tuples, one value bei
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

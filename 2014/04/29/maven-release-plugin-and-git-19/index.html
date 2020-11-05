@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Maven Release Plugin and Git 1.9 &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -21,6 +24,7 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -108,29 +112,22 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
 
             </p>
             <div class="divider"></div>
-            <h1>Maven Release Plugin and Git 1.9</h1>
             
-
-<p>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.</p>
-
+            <h1>Maven Release Plugin and Git 1.9</h1>
+            <p>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.</p>
 <h3 id="symptoms">Symptoms</h3>
-
 <p>Maven release plugin successfully completes the <code>release:prepare</code> goal, creates the tag, but fails to commit the changed <code>pom.xml</code>.</p>
-
 <h3 id="solution">Solution</h3>
-
 <p>Git&rsquo;s output format changed slightly in one of the recent versions and Maven&rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</p>
-
 <pre><code>    git config --add status.displayCommentPrefix true
 </code></pre>
-
 <p><a href="http://jira.codehaus.org/browse/SCM-740?focusedCommentId=341325&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-341325">As per SCM-740</a></p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

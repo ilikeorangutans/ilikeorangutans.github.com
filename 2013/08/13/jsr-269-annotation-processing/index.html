@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        JSR-269 Annotation Processing &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -110,11 +114,10 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>JSR-269 Annotation Processing</h1>
             <p>I&rsquo;ve been contemplating compile time bytecode manipulation for the <a href="http://www.objectmapper.org/">Object Mapper Framework</a> for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered <a href="http://projectlombok.org/">Project Lombok</a> and reading about <a href="http://jcp.org/en/jsr/detail?id=269">JSR-269</a>, which was introduced with Java 1.6. It&rsquo;s an API that allows you to plug custom annotation processors into javac.</p>
-
 <p>After experimenting and reading a bit, here is my reading list:</p>
-
 <ul>
 <li><a href="http://www.zdnet.com/writing-and-processing-custom-annotations-part-1-2039352825/">ZDNet</a> has a good tutorial (<a href="http://www.zdnet.com/writing-and-processing-custom-annotations-part-2-2039357034/">Part 2</a>, <a href="http://www.zdnet.com/writing-and-processing-custom-annotations-part-3-2039362483/">Part 3</a>)</li>
 <li><a href="http://www.javabeat.net/2007/06/java-6-0-features-part-2-pluggable-annotation-processing-api/">JavaBeat</a> tutorial</li>
@@ -122,14 +125,13 @@
 <li><a href="http://cdivilly.wordpress.com/2010/03/16/maven-and-jsr-269-annotation-processors/">cdivilly</a> helps getting around the paradox situation when you try to build a JSR-269 processor with Maven (long story short: in order for the compiler to pickup the processor, you need a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html">service</a> descriptor in <code>META-INF/services</code>; however, if you have that file on the Maven classpath, which you usually do in <code>src/main/resources</code>, the compilerwill try to use the processor it&rsquo;s supposed to compile&hellip; obviously, that won&rsquo;t work too well)</li>
 <li><a href="http://deors.wordpress.com/2011/09/26/annotation-types/">dr. macphail</a> has another great tutorial (<a href="http://deors.wordpress.com/2011/10/08/annotation-processors/">Part 2</a>, <a href="http://deors.wordpress.com/2011/10/31/annotation-generators/">Part 3</a>)</li>
 </ul>
-
 <p>It&rsquo;s an interesting concept and I got a simple processor to work. Next steps will be to experiment with bytecode weaving/generation and see if I can pregenerate proxies with this.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

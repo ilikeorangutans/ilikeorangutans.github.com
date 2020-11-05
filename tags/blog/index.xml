@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Jakob Külzer</title>
+    <title>blog on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/blog/</link>
-    <description>Recent content in Blog on Jakob Külzer</description>
+    <description>Recent content in blog on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 30 May 2018 12:51:56 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Privacy and This Blog</title>
-      <link>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</link>
-      <pubDate>Wed, 30 May 2018 12:51:56 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/05/30/privacy-and-this-blog/</guid>
-      <description>This blog does not have Google Analytics. It doesn&amp;rsquo;t have any tracking at all. The only thing that might do some tracking are the Disqus conversations at the bottom. I don&amp;rsquo;t know who reads my blog, I don&amp;rsquo;t know where my readers are from, or how they came to be on my site. And I did this intentionally. Reflecting on privacy and how it&amp;rsquo;s generally being eroded made me realize how I hate being tracked across websites.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 21 May 2018 22:58:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A New Theme</title>
       <link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link>

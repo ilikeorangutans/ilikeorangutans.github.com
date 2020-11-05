@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Go &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -89,7 +93,7 @@
     &larrhk; <a href="/tags">all tags</a>
 </p>
 
-<p>Pages tagged with "go":</p>
+<p>Pages tagged with "Go":</p>
 
     <article class="mb-2">
     <div class="divider"></div>
@@ -97,6 +101,7 @@
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2019/08/23/zsh-autocompletion-caveat/">
+                    
                     zsh Autocompletion Caveat
                 </a>
             </p>
@@ -139,6 +144,7 @@
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2018/05/26/null-software-design-and-scalas-option/">
+                    
                     null, Software Design, and Scala&#39;s Option
                 </a>
             </p>
@@ -194,6 +200,7 @@ What is null? Most programming languages have the concept of null (or nil) that 
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2016/05/22/google-appengine-go-and-vendoring/">
+                    
                     Google Appengine, Go, and Vendoring
                 </a>
             </p>
@@ -237,6 +244,7 @@ What is null? Most programming languages have the concept of null (or nil) that 
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2015/10/23/gorename-and-invalid-expression/">
+                    
                     gorename and invalid expression
                 </a>
             </p>
@@ -269,7 +277,7 @@ What is null? Most programming languages have the concept of null (or nil) that 
             <p class="tile-subtitle">
                 This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
+$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType' gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
             </p>
             <p class="tile-action">
                 <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>
@@ -285,6 +293,7 @@ $ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBett
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/">
+                    
                     Using Golang and Graphviz to Visualize Complex Grails Applications
                 </a>
             </p>
@@ -340,6 +349,7 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2014/04/27/golang-reading-and-notes-for-april-2014/">
+                    
                     Golang Reading and Notes for April 2014
                 </a>
             </p>
@@ -367,8 +377,8 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
             </p>
             <p class="tile-subtitle">
                 Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.
+Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.
             </p>
             <p class="tile-action">
                 <a href="/2014/04/27/golang-reading-and-notes-for-april-2014/" class="btn-primary">read more &rarr;</a>
@@ -384,6 +394,7 @@ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType)
         <div class="tile-content">
             <p class="tile-title h4">
                 <a href="/2013/11/12/first-impressions-go/">
+                    
                     First impressions: Go
                 </a>
             </p>

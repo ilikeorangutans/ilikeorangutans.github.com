@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xhtml on Jakob Külzer</title>
+    <title>XHTML on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/xhtml/</link>
-    <description>Recent content in Xhtml on Jakob Külzer</description>
+    <description>Recent content in XHTML on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 03 Jan 2010 11:37:30 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/xhtml/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 03 Jan 2010 11:37:30 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/xhtml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a CMS with XML, XSLT, Ant, and ImageMagik</title>
       <link>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</link>

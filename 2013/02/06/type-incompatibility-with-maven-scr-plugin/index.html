@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Type Incompatibility With Maven SCR Plugin &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -21,6 +24,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -108,31 +112,27 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>Type Incompatibility With Maven SCR Plugin</h1>
             <p>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:</p>
-
 <pre><code>[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List
 </code></pre>
-
 <p>I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Service</span><span style="color:#555">(</span>value <span style="color:#555">=</span> <span style="color:#555">{</span> MyService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> ManagedService<span style="color:#555">.</span><span style="color:#309">class</span> <span style="color:#555">})</span>
 <span style="color:#99f">@Component</span><span style="color:#555">(</span>immediate <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">)</span>
 <span style="color:#99f">@Properties</span><span style="color:#555">(</span><span style="color:#99f">@Property</span><span style="color:#555">(</span>name <span style="color:#555">=</span> <span style="color:#c30">&#34;foo&#34;</span><span style="color:#555">,</span> value <span style="color:#555">=</span> <span style="color:#c30">&#34;bar&#34;</span><span style="color:#555">))</span>
 <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">NissanAutoDataUrlGenerator</span> <span style="color:#069;font-weight:bold">implements</span> ManagedService <span style="color:#555">{</span> <span style="color:#555">}</span></code></pre></div>
-
 <p>The mistake is that the <code>@Properties</code> annotation takes an array as it&rsquo;s parameter. Eclipse does not mark the above as an error, however, the Maven plugin is not happy about it. Here&rsquo;s the correct code:</p>
-
-<p><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Service</span><span style="color:#555">(</span>value <span style="color:#555">=</span> <span style="color:#555">{</span> MyService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> ManagedService<span style="color:#555">.</span><span style="color:#309">class</span> <span style="color:#555">})</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Service</span><span style="color:#555">(</span>value <span style="color:#555">=</span> <span style="color:#555">{</span> MyService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> ManagedService<span style="color:#555">.</span><span style="color:#309">class</span> <span style="color:#555">})</span>
 <span style="color:#99f">@Component</span><span style="color:#555">(</span>immediate <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">)</span>
 <span style="color:#99f">@Properties</span><span style="color:#555">({</span> <span style="color:#99f">@Property</span><span style="color:#555">(</span>name <span style="color:#555">=</span> <span style="color:#c30">&#34;foo&#34;</span><span style="color:#555">,</span> value <span style="color:#555">=</span> <span style="color:#c30">&#34;bar&#34;</span><span style="color:#555">)</span> <span style="color:#555">}</span> <span style="color:#555">)</span>
-<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">NissanAutoDataUrlGenerator</span> <span style="color:#069;font-weight:bold">implements</span> ManagedService <span style="color:#555">{</span> <span style="color:#555">}</span></code></pre></div></p>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">NissanAutoDataUrlGenerator</span> <span style="color:#069;font-weight:bold">implements</span> ManagedService <span style="color:#555">{</span> <span style="color:#555">}</span></code></pre></div>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

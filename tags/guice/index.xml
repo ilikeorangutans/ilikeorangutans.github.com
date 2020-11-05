@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guice on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 27 Feb 2013 13:59:40 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/guice/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Feb 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/guice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OSGI, Guice, and Peaberry: first steps</title>
       <link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>

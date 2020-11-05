@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        OSGI Bootstrapping &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -102,22 +106,18 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>OSGI Bootstrapping</h1>
             <p>I&rsquo;ve been working with OSGI based technology for a while now and it&rsquo;s a great piece of technology. However, so far I&rsquo;ve only worked with OSGI technology that runs in existing instances of the framework. A running framework is easy to deal with, but how do you get to this point? I spent some time today playing with that, and it took me a while to put it all together. So naturally, I&rsquo;ll have to record my findings here.</p>
-
 <p>Section 4.2.1 of the <a href="http://www.osgi.org/Release4/Download">OSGI specification (version 4.3.0)</a> explains the process in minute detail. Here&rsquo;s a short rundown of how it works:</p>
-
 <ul>
 <li>Every framework implementation must provide a <code>org.osgi.framework.launch.FrameworkFactory</code> that produces instances of the framework. There&rsquo;s several different ways to retrieve the actual class to be used. It could be hardcoded, retrieved via command line parameter or via Java service loader</li>
 <li>Once you have your FrameworkFactory instance, it&rsquo;s as easy as calling <code>frameworkFactory.newFramework(Map&lt;String, String&gt; configuration)</code>. The <code>configuration</code> Map is a bunch of key-value pairs with configuration parameters for the framework (and the implementation). From what I gather, all the OSGI specific keys are defined in <code>org.osgi.framework.Constants</code>. One example is the <code>Constants.FRAMEWORK_STORAGE</code> key, that defines where the framework is supposed to store its bundles.</li>
 <li>The <code>newFramework()</code> method will create a instance of <code>org.osgi.framework.launch.Framework</code>, representing the entire OSGI runtime. You&rsquo;ll have to initialize it by calling <code>init()</code> and then start it with <code>start()</code>. Once <code>start()</code> returns, your framework should be up and running.</li>
 <li>In order to avoid the framework being shut down right away, it makes sense to call <code>waitForStop(int timeout)</code>, a synchronuous method that will block until the framework is shut down.</li>
 </ul>
-
 <p>That should be enough to get your framework started.</p>
-
 <p>Other useful links:</p>
-
 <ul>
 <li><a href="http://felix.apache.org/site/apache-felix-framework-launching-and-embedding.html">Apache Felix Embedding and Launching</a>: how to embed and launch Apache Felix</li>
 <li><a href="http://felix.apache.org/site/apache-felix-framework-configuration-properties.html">Apache Felix Framework properties</a>: nice summary of OSGI framework and Felix properties</li>
@@ -128,7 +128,7 @@
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

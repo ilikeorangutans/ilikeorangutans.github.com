@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Notes on Working Effectively With Legacy Code &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -110,79 +114,61 @@
 
             </p>
             <div class="divider"></div>
-            <h1>Notes on Working Effectively With Legacy Code</h1>
             
-
-<p>I <a href="https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/">recently received</a> my copy
+            <h1>Notes on Working Effectively With Legacy Code</h1>
+            <p>I <a href="https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/">recently received</a> my copy
 of <a href="https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code">Working Effectivly With Legacy Code</a>
 and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably
 to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But
 regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to
 work with not only legacy systems, but really, any kind of system.</p>
-
 <p>In this post I&rsquo;ve compiled my learnings from the book and my own musings on the topic, mostly as an exercise to myself,
 but you might find it useful as well.</p>
-
 <h2 id="what-is-legacy-code">What is Legacy Code?</h2>
-
 <p>In order to discuss how to deal with legacy code, we have to define what it actually is. We&rsquo;ve all dealt with it at one
 point and we all hated it: that code base that you inherited from a different team and that&rsquo;s now yours to maintain and
 fix bugs in. They all have in common that they are a mess: branching structures that remind you of spaghetti, excessive
 global state, few to no tests, and worst of all, every change takes forever and has unintended consequences that you
 usually pay dearly for with late nights or being paged at 3am. This quote from the book nicely captures how it feels to
 work with legacy code:</p>
-
 <blockquote>
 <p>In poorly structured code, the move from figuring things out to making changes feels like jumping off a cliff to avoid
 a tiger.</p>
 </blockquote>
-
 <p>By now the general theme should be obvious: this code is everything you don&rsquo;t want it to be: tightly coupled, context
 dependent, convoluted, and hard to understand. And because of these qualities, changes are avoided as much as possible,
 and when you have to change something, you just change as little as possible. And because you make only few and small
 changes, &ldquo;fixing&rdquo; things is limited to squashing only the worst bugs or adding features your client is threatening to
 leave you for.</p>
-
 <p>It&rsquo;s a vicious cycle. The code is broken and painful to change, and because it&rsquo;s painful to change, you don&rsquo;t want to
 change it, so every change is just another hack that makes the mess bigger.</p>
-
 <h2 id="two-ways-of-making-changes">Two Ways of Making Changes</h2>
-
 <p>The book outlines two fundamental ways of making changes to code. The one named <em>Edit and Pray</em> is the one you&rsquo;ll find
 employed frequently in legacy code bases. You spend lots of time trying to figure out how things work prior to making a
 change. Once you make the change, you can only pray you didn&rsquo;t break anything. But the only way to find out is to deploy
 to production and subsequent debugging sessions&hellip;</p>
-
 <p>The alternative is called <em>Cover and Modify</em>. Before you make changes, you &ldquo;cover&rdquo; the code with a safety blanket/net.
 The safety net will tell you if your modifications break expectations or if your changes leak out into unexpected parts
 of the application. Obviously, this safety blanket are tests.</p>
-
 <p>Tests are mostly seen as a way to confirm correctness of code. But there&rsquo;s an aspect to tests that is often ignored:
 tests also detect change. And this is exactly what we need for dealing with legacy code. We need to know if we
 unexpectedly (or not) changed something that will hurt us when we deploy to production. This is the goal of the book:
 instead of <em>edit and pray</em>, we want to safely make changes in a controlled way.</p>
-
 <h2 id="seams">Seams</h2>
-
 <p>One useful concept to discuss changes to code is that of a <em>seam</em>. In the book it&rsquo;s defined as a point where you can
 alter the behaviour of a unit of code without editing this location itself. The location that lets you change that
 behaviour is the seams <em>enabling point</em>.The enabling point is where you can control what behaviour is used for a given
 seam.</p>
-
 <p>The concept of a seam and its corresponding enabling point might seem trivial to most developers, because for the most
 part this is what we do anyways. But I like that it gives me vocabulary to describe this concept. It&rsquo;s more concise than
 the phrases I usually would have used, for example &ldquo;swapping functionality&rdquo; or &ldquo;abstracting something away&rdquo; etc, because
 it not only describes the changed in behaviour but also the <em>what</em> decides on the behaviour.</p>
-
 <p>The book lists some possible seams and enabling points, some of which are obvious, like <em>object seams</em> which come more
 naturally to developers using object oriented languages and some that I would have never thought of, like <em>preprocesser
 seams</em> or <em>link seams</em>, just because I haven&rsquo;t worked in any languages that perform these operations as separate steps
 in a long time.</p>
-
 <p>With the growing popularity of functional languages I&rsquo;ve added function seams to my mental list of seam types.</p>
-
 <h2 id="testing-untested-code">Testing Untested Code</h2>
-
 <p>In order to safely make changes to a code base we need tests. The challenge here is that legacy code often doesn&rsquo;t come
 with tests. Worse, it&rsquo;s often <em>untestable</em>. Whenever you try to write a test for a unit, you&rsquo;ll stumble over the
 countless dependencies, usually implicit, that your code runs on. You won&rsquo;t be able to instantiate the class you want to
@@ -191,16 +177,12 @@ that are hard to create, hard to control, or have undesired side effects. Genera
 the harder it is to test</strong>. And even if we have a low number of dependencies, if they are not cleanly encapsulated,
 violate the <a href="https://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a> or the <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov Substitution
 Principle</a>, we&rsquo;re going to have a bad day.</p>
-
 <p>Therefore we have to reduce the number and improve the quality of our dependencies.</p>
-
 <p>But given an untestable, highly dependent unit of code, we have a problem: <em>we cannot safely change code without tests,
 but in order to add tests we have to change the code</em>. Luckily the book outlines several strategies and recipes for the
 first step. Like <em>edit and pray</em> these steps require some faith, but once you&rsquo;ve added tests in a few spots, things will
 get easier. Tested pieces will emerge as safe islands in the ocean of bad code.</p>
-
 <p>To enable <em>structured</em> and <em>controlled</em> changes the book offers a <em>Legacy Code Change Algorithm</em>:</p>
-
 <ol>
 <li>Identify change points &ndash; what code actually has to be modified?</li>
 <li>Find test points &ndash; how can you test this change of behaviour? This can be tricky to figure out in badly structured
@@ -212,9 +194,7 @@ consideration I decided to flip the order, following Kent Beck&rsquo;s refactori
 this may be hard), then make the easy change</em>&rdquo;. I believe that once you have your test harness in place, there&rsquo;s almost
 no reason to not improve the structure of the code, unless you are really strapped for time.</li>
 </ol>
-
 <h2 id="recipes-recipes-recipes">Recipes, Recipes, Recipes</h2>
-
 <p>The remainder of the book describes different common situations in legacy applications, for example &ldquo;This class is too
 big and I don&rsquo;t want it to get any bigger&rdquo; or &ldquo;Varieties of monsters&rdquo;, and recipes to address these changes. These I
 find harder to summarize because they heavily depend on the context and code samples. They are consequent applications
@@ -222,15 +202,12 @@ of the legacy code change algorithm and I might do another post on specific reci
 <a href="https://gist.github.com/jeremy-w/6774525">greatly condensed summary</a> that covers some of them and a <a href="http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation">68 page
 presentation deck by Michael Feathers
 himself</a>,</p>
-
-<h2 id="it-s-all-legacy-software">It&rsquo;s All Legacy Software</h2>
-
+<h2 id="its-all-legacy-software">It&rsquo;s All Legacy Software</h2>
 <p>I am thoroughly enjoying Working Effectively With Legacy Code and it made me realize that most applications that I&rsquo;ve
 worked on are more on the <em>legacy</em> end of the software quality spectrum. And even applications that have teams that care
 about quality, often have at least <a href="https://www.sandimetz.com/blog/2017/9/13/breaking-up-the-behemoth">one outlier that is convoluted and hard to reason
 about</a>. In my mind this makes the legacy code change
 algorithm an algorithm for pretty much most code out there.</p>
-
 <p>But with that in mind, I came to realize that any change in a software system is going to degrade its quality, unless
 the code was already open to change. But sadly, in most code bases pretty much all changes require us to shoe-horn
 changes into a structure that doesn&rsquo;t quite support them, making the mess worse. I&rsquo;ve worked on two systems that were
@@ -238,7 +215,6 @@ supposed to be replaced because they were hard to maintain and changes took fore
 because putting effort in these systems was considered wasted effort. Ironically, these systems stayed around for much
 longer than anticipated and their quality deteriorated even more because of how they were treated. Nothing as permanent
 as a temporary fix, right?</p>
-
 <p>I&rsquo;ve come to the conclusion that the sunk cost fallacy is misguided at best when it comes to software &ndash; changing a
 system in the <em>edit and pray</em> way is harmful because you won&rsquo;t get out of the hole by digging deeper. Unless you have a
 very concrete and upcoming date at which your system will be turned off, it&rsquo;s very much worth the effort of adding tests
@@ -248,7 +224,7 @@ and improving it&rsquo;s structure.</p>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

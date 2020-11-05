@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Thoughts on Authorization Schemes &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@ Android has a similar screen when you install an app, IOS probably has one as we
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@ Android has a similar screen when you install an app, IOS probably has one as we
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@ Android has a similar screen when you install an app, IOS probably has one as we
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -107,28 +111,22 @@ Android has a similar screen when you install an app, IOS probably has one as we
 
             </p>
             <div class="divider"></div>
+            
             <h1>Thoughts on Authorization Schemes</h1>
             <p>Today I was experimenting with some new tools (<a href="http://prose.io/">Prose</a>) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&rsquo;s how Github&rsquo;s screen looks like:</p>
-
-<p><img src="/assets/images/github-authorization.png" alt="Github Authorization Screen" /></p>
-
+<p><img src="/assets/images/github-authorization.png" alt="Github Authorization Screen"></p>
 <p>Android has a similar screen when you install an app, IOS probably has one as well. Pretty much every connected system, be it Facebook, Github, Stackoverflow, pretty much everything that uses OAuth or similar technologies will have a screen like this. From a technology and development point of view it makes a lot of sense; at least initially. You break down privileges in a system into a few neat categories and if an application wants to use this service, it has to declare what it uses. Ideally the system would enforce that the application can only use the declared permissions and in theory that would make everything safer…</p>
-
 <p>Reality, unfortunately, is different. Most people don&rsquo;t even read the permissions that the apps they&rsquo;re installing on their phones are requesting. It&rsquo;s just another annoying click. Even if people read the list of permissions that apps wanted, what could they do? They can only approve or reject the application. And often enough, the concerns as &ldquo;What does the Facebook app do with my location and call data?&rdquo; are dismissed in favour of whatever pleasantness the app offers. This opens an interesting question: what good are permissions if people will give out whatever permissions an application asks for?</p>
-
 <p>Every system that has this concept of privileges or permissions will warn its users that they are about to let an application read all their text messages or send location data over the wireless data connection. And just to make sure that your system is secure, it will warn you to only install applications that you <em>trust</em>. But how could you trust an application without installing it? We&rsquo;ve seen malware being distributed by app stores of respectable and <em>trusted</em> companies. So what good is trust if it&rsquo;s given out blindly?</p>
-
 <p>So instead of giving an app blank access to everything it asks for, why not let the user decide how much of the permissions he wants to grant? Lets say you are about to install a social media network&rsquo;s app on your phone. You don&rsquo;t know the app, you don&rsquo;t trust it, and you certainly don&rsquo;t want it to read all your text messages, your location data, your emails, and dig around your photos. But using the data connection is ok, after all, you want to see what your friends are up to. Suddenly the permissions screen makes a lot more sense. It actually benefits the user to take time and read it, and give or reject permissions.</p>
-
 <p>I really hope that user controller permissions will become reality soon. It bugs me that with every app, I have to give away control over my data where it seems that most of that data is not required for running an app.</p>
-
 <p>And now, I&rsquo;ll install Prose…</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

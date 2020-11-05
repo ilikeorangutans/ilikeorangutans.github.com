@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Date Arithmetics in XSLT 2 &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@ First, all your dates will have to be in ISO-8601 format. For dates only it look
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@ First, all your dates will have to be in ISO-8601 format. For dates only it look
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@ First, all your dates will have to be in ISO-8601 format. For dates only it look
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -107,23 +111,20 @@ First, all your dates will have to be in ISO-8601 format. For dates only it look
 
             </p>
             <div class="divider"></div>
+            
             <h1>Date Arithmetics in XSLT 2</h1>
             <p>Now here&rsquo;s something I didn&rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&rsquo;s how it works.</p>
-
 <p>First, all your dates will have to be in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format. For dates only it looks like this: <code>YYYY-MM-DD</code> and for dates and times, like this: <code>YYYY-MM-DDTHH:mm:SS.sssZ</code>. There&rsquo;s a few other formats, but these are the ones that probably cover all use cases.</p>
-
 <p>In order to make use of all the functions regarding date and time, the values will have to be converted into the appropriate types. They data types are defined in the XMLSchema namespace <a href="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema</a> and are:</p>
-
 <ul>
 <li><code>xs:date</code> a single date</li>
 <li><code>xs:time</code> a timestamp</li>
 <li><code>xs:dateTime</code> a combination thereof</li>
 </ul>
-
 <p>In order to use them, declare the <code>xs</code> namespace in your stylesheet:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#309;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#309">xmlns:xsl=</span><span style="color:#c30">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span>
-  <span style="color:#309">version=</span><span style="color:#c30">&#34;2.0&#34;</span> <span style="color:#309">xmlns:xs=</span><span style="color:#c30">&#34;http://www.w3.org/2001/XMLSchema&#34;</span><span style="color:#309;font-weight:bold">&gt;</span></code></pre></div>
-<p>Then you have several ways of creating instances of the above variables:</p>
+  <span style="color:#309">version=</span><span style="color:#c30">&#34;2.0&#34;</span> <span style="color:#309">xmlns:xs=</span><span style="color:#c30">&#34;http://www.w3.org/2001/XMLSchema&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
+</code></pre></div><p>Then you have several ways of creating instances of the above variables:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#09f;font-style:italic">&lt;!-- current date, time, date and time: --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;current-date()&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>     <span style="color:#09f;font-style:italic">&lt;!-- 2013-04-02-04:00 --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;current-time()&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>     <span style="color:#09f;font-style:italic">&lt;!-- 22:18:47.48-04:00--&gt;</span>
@@ -138,28 +139,27 @@ First, all your dates will have to be in ISO-8601 format. For dates only it look
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;xs:dateTime(some/element/birthday)&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>
 
 <span style="color:#09f;font-style:italic">&lt;!-- and you can create variables: --&gt;</span>
-<span style="color:#309;font-weight:bold">&lt;xsl:variable</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;var&#34;</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;some/element/birthday&#34;</span> <span style="color:#309">as=</span><span style="color:#c30">&#34;xs:dateTime&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span></code></pre></div>
-<p>But there&rsquo;s more. In addition of the data types that represent points in time, a data type to represent durations exists: <code>xs:duration</code>. In its string representation it looks a bit funny. The &ldquo;P&rdquo; indicates &ldquo;period&rdquo;, and &ldquo;T&rdquo; stands for &ldquo;time&rdquo;: <code>P1Y2M3DT4H5M13S</code> (meaning: 1 year, 2 months, 3 days, 4 hours, 5 minutes, and 13 seconds). Other than that, I found the <code>xs:duration</code> data type fidgety and hard to use. Part of that has to do with certain <a href="http://www.stylusstudio.com/xsllist/200409/post50020.html">ambiguities</a> that make it almost impossible to use arithmetic operations on them. However, <em>extracting</em> information from duration instances is easy:</p>
+<span style="color:#309;font-weight:bold">&lt;xsl:variable</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;var&#34;</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;some/element/birthday&#34;</span> <span style="color:#309">as=</span><span style="color:#c30">&#34;xs:dateTime&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>
+</code></pre></div><p>But there&rsquo;s more. In addition of the data types that represent points in time, a data type to represent durations exists: <code>xs:duration</code>. In its string representation it looks a bit funny. The &ldquo;P&rdquo; indicates &ldquo;period&rdquo;, and &ldquo;T&rdquo; stands for &ldquo;time&rdquo;: <code>P1Y2M3DT4H5M13S</code> (meaning: 1 year, 2 months, 3 days, 4 hours, 5 minutes, and 13 seconds). Other than that, I found the <code>xs:duration</code> data type fidgety and hard to use. Part of that has to do with certain <a href="http://www.stylusstudio.com/xsllist/200409/post50020.html">ambiguities</a> that make it almost impossible to use arithmetic operations on them. However, <em>extracting</em> information from duration instances is easy:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#09f;font-style:italic">&lt;!-- Put the duration in a variable for better readability: --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:variable</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;duration&#34;</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;xs:duration(&#39;P1Y2M3DT4H5M13S&#39;)&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;hours-from-duration($duration)&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>   <span style="color:#09f;font-style:italic">&lt;!-- 4 --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;days-from-duration($duration)&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>    <span style="color:#09f;font-style:italic">&lt;!-- 3 --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;months-from-duration($duration)&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>  <span style="color:#09f;font-style:italic">&lt;!-- 2 --&gt;</span>
-<span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;years-from-duration($duration)&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>   <span style="color:#09f;font-style:italic">&lt;!-- 1 --&gt;</span></code></pre></div>
-<p>The return values of the <code>*-from-duration()</code> methods can be used to perform calculations.</p>
-
+<span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;years-from-duration($duration)&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>   <span style="color:#09f;font-style:italic">&lt;!-- 1 --&gt;</span>
+</code></pre></div><p>The return values of the <code>*-from-duration()</code> methods can be used to perform calculations.</p>
 <p>Once you have your dates and times in the correct datatype, you can perform arithmetic using the familiar operands <code>+ - * /</code>. Almost all operations return instances of <code>xs:duration</code> that can</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#09f;font-style:italic">&lt;!-- Let&#39;s put the dates in variables for better readability: --&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:variable</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;now&#34;</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;current-dateTime&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>
 <span style="color:#309;font-weight:bold">&lt;xsl:variable</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;past&#34;</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;xs:date(&#39;1983-06-27+02:00&#39;)&#34;</span> <span style="color:#309;font-weight:bold">/&gt;</span>
-<span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;$now - $past&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>    <span style="color:#09f;font-style:italic">&lt;!-- P10872DT15H19M40.125S --&gt;</span></code></pre></div>
-<p>I hope these notes are useful to anybody who has to deal with dates and times in XSLT. Unfortunately, I found most of the documentation on the web incomplete or more confusing than helpful. <a href="http://amzn.to/ZyYJfg">XSLT, 2nd Edition</a> turned out to be very helpful and I recommend it to every developer working with XSLT and XML.</p>
+<span style="color:#309;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#309">select=</span><span style="color:#c30">&#34;$now - $past&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>    <span style="color:#09f;font-style:italic">&lt;!-- P10872DT15H19M40.125S --&gt;</span>
+</code></pre></div><p>I hope these notes are useful to anybody who has to deal with dates and times in XSLT. Unfortunately, I found most of the documentation on the web incomplete or more confusing than helpful. <a href="http://amzn.to/ZyYJfg">XSLT, 2nd Edition</a> turned out to be very helpful and I recommend it to every developer working with XSLT and XML.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

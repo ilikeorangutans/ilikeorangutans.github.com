@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Making Eclipse&#39;s Method Stubs Better and other things &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -102,36 +106,30 @@
 
             </p>
             <div class="divider"></div>
-            <h1>Making Eclipse&#39;s Method Stubs Better and other things</h1>
             
-
-<p>Just downloaded <a href="http://www.eclipse.org/kepler/">Eclipse Kepler</a> and I&rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad. But I digress.</p>
-
+            <h1>Making Eclipse&#39;s Method Stubs Better and other things</h1>
+            <p>Just downloaded <a href="http://www.eclipse.org/kepler/">Eclipse Kepler</a> and I&rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad. But I digress.</p>
 <h3 id="slf4j-logger">SLF4J Logger</h3>
-
 <pre><code>${:import(org.slf4j.Logger,org.slf4j.LoggerFactory)}
 private static final Logger LOGGER = LoggerFactory.getLogger(${enclosing_type}.class);
 </code></pre>
-
 <p>This template will automatically create a new logger for the current type and import the necessary classes. I was unaware of the <code>${:import()}</code> directive until today, but it is really useful.</p>
-
 <h3 id="method-stubs">Method Stubs</h3>
-
 <p>Per default Eclipse creates method stubs that look like this:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Override</span>
 <span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">myFunction</span><span style="color:#555">()</span> <span style="color:#555">{</span>
   <span style="color:#09f;font-style:italic">// TODO Auto-generated method stub
 </span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// return null;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span></code></pre></div>
-<p>This is convenient, but can be cause for bugs because you just get null. More than once I&rsquo;ve been stung by this. So I decided a better way to deal with this is to replace the template with the following:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnsupportedOperationException<span style="color:#555">(</span><span style="color:#c30">&#34;${enclosing_method}()&#34;</span><span style="color:#555">);</span></code></pre></div>
-<p>Instead of returning a default value, the method stubs will now throw an exception. Forgot to implement it? No problem, you&rsquo;ll find out very quickly. It&rsquo;s debatable whether <code>UnsupportedOperationException</code> is the appropriate type for this, but in my opinion it works quite well.</p>
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</code></pre></div><p>This is convenient, but can be cause for bugs because you just get null. More than once I&rsquo;ve been stung by this. So I decided a better way to deal with this is to replace the template with the following:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnsupportedOperationException<span style="color:#555">(</span><span style="color:#c30">&#34;${enclosing_method}()&#34;</span><span style="color:#555">);</span>
+</code></pre></div><p>Instead of returning a default value, the method stubs will now throw an exception. Forgot to implement it? No problem, you&rsquo;ll find out very quickly. It&rsquo;s debatable whether <code>UnsupportedOperationException</code> is the appropriate type for this, but in my opinion it works quite well.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

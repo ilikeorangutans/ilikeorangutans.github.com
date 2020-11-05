@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Slow Ruby Syntax Highlighting in Vim &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -106,37 +110,30 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>Slow Ruby Syntax Highlighting in Vim</h1>
             <p>I recently switched back from MacVim to terminal (<a href="https://github.com/jwilm/alacritty">alacritty</a>) Vim because I&rsquo;m trying
 to step up my tmux game after reading the excellent <a href="https://pragprog.com/book/bhtmux2/tmux-2">tmux 2</a> book from the
 Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that
 editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine
 Vim uses by default in combination with the Ruby syntax highlighter.</p>
-
 <p>The solution was to add this to my <code>.vimrc</code>:</p>
-
 <pre><code>set regexpengine=1
-</code></pre>
-
-<p>The vim docs state:</p>
-
+</code></pre><p>The vim docs state:</p>
 <pre><code>This selects the default regexp engine. |two-engines|
 The possible values are:
   0	automatic selection
   1	old engine
   2	NFA engine
-</code></pre>
-
-<p>Furthermore the docs state that vim would automatically select the better engine, but that does not seem to work so well
+</code></pre><p>Furthermore the docs state that vim would automatically select the better engine, but that does not seem to work so well
 for the regular expressions in the syntax highlighter.</p>
-
 <p>With <code>re=1</code> vim flies again and thanks to my improved tmux skills I feel ever more productive!</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

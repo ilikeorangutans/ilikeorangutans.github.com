@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        gorename and invalid expression &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -10,7 +13,7 @@
     <meta property="og:title" content="gorename and invalid expression">
     <meta property="og:description" content="This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:">
+$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/">
 
@@ -21,6 +24,7 @@ $ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBett
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -33,19 +37,19 @@ $ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBett
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -60,19 +64,19 @@ $ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBett
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -112,22 +116,22 @@ $ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBett
 
             </p>
             <div class="divider"></div>
+            
             <h1>gorename and invalid expression</h1>
             <p>This took me longer to figure out than I care to admit, so here&rsquo;s the solution.</p>
-
 <p>The issue comes up when trying to use <a href="https://godoc.org/golang.org/x/tools/cmd/gorename">gorename</a>:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39;
-gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression</code></pre></div>
-<p>Even though the <code>from</code> query looks normal, <code>gorename</code> just refuses to work. However the issue is not so much with <code>gorename</code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ gorename -from &#39;&#34;github.com/ilikeorangutans/foo&#34;.MyType&#39; -to &#39;MyBetterType&#39;
-Renamed 15 occurrences in 5 files in 1 package.</code></pre></div>
-<p>Notice the single quotes around the entire <code>from</code> parameter.</p>
+<pre><code class="language-console" data-lang="console">$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType'
+gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression
+</code></pre><p>Even though the <code>from</code> query looks normal, <code>gorename</code> just refuses to work. However the issue is not so much with <code>gorename</code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</p>
+<pre><code class="language-console" data-lang="console">$ gorename -from '&quot;github.com/ilikeorangutans/foo&quot;.MyType' -to 'MyBetterType'
+Renamed 15 occurrences in 5 files in 1 package.
+</code></pre><p>Notice the single quotes around the entire <code>from</code> parameter.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

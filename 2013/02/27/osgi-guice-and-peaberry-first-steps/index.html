@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        OSGI, Guice, and Peaberry: first steps &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -111,25 +115,18 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
             </p>
             <div class="divider"></div>
-            <h1>OSGI, Guice, and Peaberry: first steps</h1>
             
-
-<h2 id="introduction">Introduction</h2>
-
+            <h1>OSGI, Guice, and Peaberry: first steps</h1>
+            <h2 id="introduction">Introduction</h2>
 <p>I&rsquo;ve been trying to get <a href="https://code.google.com/p/google-guice/">Google Guice</a> and <a href="https://code.google.com/p/peaberry/">Peaberry</a> to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.</p>
-
 <p>However, getting Peaberry to work was not trivial, mostly because there aren&rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf <a href="https://code.google.com/p/peaberry/downloads/detail?name=peaberry%20-%20blending%20services%20and%20extensions.pdf">Peaberry - blending services and extensions</a>, but it&rsquo;s a lot of information in very little space.</p>
-
 <p>These are my development notes while trying to get Peaberry to work, they are incomplete and might even be incorrect.</p>
-
 <h2 id="setup">Setup</h2>
-
 <ul>
 <li>Deploy Guice jar file (it&rsquo;s a bundle), Peaberry, and javax.inject</li>
 <li>Peaberry shows up as a separate module, exporting a caching registry service</li>
 <li>In your activator, create a Injector with your own module and <code>Peaberry.osgiModule(bundleContext)</code>.</li>
 </ul>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Activator</span> <span style="color:#069;font-weight:bold">implements</span> BundleActivator <span style="color:#555">{</span>
 
 	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">start</span><span style="color:#555">(</span>BundleContext context<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> Exception <span style="color:#555">{</span>
@@ -137,31 +134,22 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 	<span style="color:#555">}</span>
 
 <span style="color:#555">}</span></code></pre></div>
-
 <ul>
 <li>once you have your injector, you can inject into the activator:</li>
 </ul>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">		injector<span style="color:#555">.</span><span style="color:#309">injectMembers</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">);</span></code></pre></div>
-
 <ul>
 <li>Bundle local objects can be created using regular modules:</li>
 </ul>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">MyModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
 	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
 		bind<span style="color:#555">(</span>DemoService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">to</span><span style="color:#555">(</span>DemoServiceImpl<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">);</span>
 	<span style="color:#555">}</span>
 <span style="color:#555">}</span></code></pre></div>
-
 <h2 id="services">Services</h2>
-
 <p>So far we&rsquo;ve only used plain Guice, but Peaberry&rsquo;s real strength is that it allows you to bind to OSGI services in your modules. You can:</p>
-
 <h3 id="consume-existing-osgi-services">Consume existing OSGI services</h3>
-
 <p>Bind them to a special proxy using regular guice syntax:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.Peaberry.service</span><span style="color:#555">;</span>
 <span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.osgi.service.cm.ConfigurationAdmin</span><span style="color:#555">;</span>
 <span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">com.google.inject.AbstractModule</span><span style="color:#555">;</span>
@@ -171,9 +159,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 		bind<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">single</span><span style="color:#555">());</span>
 	<span style="color:#555">}</span>
 <span style="color:#555">}</span></code></pre></div>
-
 <p>This example binds the OSGI ConfigurationAdmin service. Notice how we&rsquo;re binding <code>ConfigurationAdmin</code> to a provider, using the <code>Peaberry.service()</code> method. Because OSGI services are highly dynamic and Guice injectors are immutable, the creators of Peaberry did something smart and created providers that are proxies for the services. And depending if you want only a single instance of the service, or all the registered services for a type, you can use either <code>Peaberry.service().single()</code> or <code>Peaberry.service().multiple()</code>:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">DemoModule</span> <span style="color:#069;font-weight:bold">extends</span> AbstractModule <span style="color:#555">{</span>
 	<span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">()</span> <span style="color:#555">{</span>
 		bind<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>ConfigurationAdmin<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">single</span><span style="color:#555">());</span>
@@ -195,18 +181,12 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 	<span style="color:#99f">@Inject</span>
 	<span style="color:#069;font-weight:bold">private</span> Iterable<span style="color:#555">&lt;</span>SomeService<span style="color:#555">&gt;</span> services<span style="color:#555">;</span>
 <span style="color:#555">}</span></code></pre></div>
-
 <p>You can reference bound OSGI services in your bundle using <code>@Inject</code>, like any other field:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#99f">@Inject</span>
 	<span style="color:#069;font-weight:bold">private</span> ConfigurationAdmin configurationAdmin<span style="color:#555">;</span></code></pre></div>
-
 <h3 id="publish-objects-from-guice-as-osgi-services">Publish objects from Guice as OSGI services</h3>
-
 <p>This step I found somewhat counterintuitive. In order to export a Guice managed object as a OSGI service, you have to bind it using <code>Peaberry.service().export</code> and then inject a member of type <code>Export&lt;YourType&gt;</code> into some other class. As soon as that field gets injected, the service will be exported.</p>
-
 <p>You can use peaberry to export a service to OSGI by creating the following binding:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.Peaberry.service</span><span style="color:#555">;</span>
 <span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">org.ops4j.peaberry.util.TypeLiterals.export</span><span style="color:#555">;</span>
 
@@ -215,9 +195,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 		bind<span style="color:#555">(</span>export<span style="color:#555">(</span>DemoService<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">)).</span><span style="color:#309">toProvider</span><span style="color:#555">(</span>service<span style="color:#555">(</span>DemoServiceImpl<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">).</span><span style="color:#309">export</span><span style="color:#555">());</span>
 	<span style="color:#555">}</span>
 <span style="color:#555">}</span></code></pre></div>
-
 <p>And injecting a member of type <code>Export&lt;YourServiceType&gt;</code> for example on your activator:</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Activator</span> <span style="color:#069;font-weight:bold">implements</span> BundleActivator <span style="color:#555">{</span>
 
 	<span style="color:#09f;font-style:italic">/**
@@ -231,9 +209,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 		injector<span style="color:#555">.</span><span style="color:#309">injectMembers</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">);</span>
 	<span style="color:#555">}</span>
 <span style="color:#555">}</span></code></pre></div>
-
 <h2 id="outstanding-questions">Outstanding Questions</h2>
-
 <ul>
 <li>Exposing an object as an OSGI service won&rsquo;t expose the service to your Guice clients. You&rsquo;ll have to add a regular binding for it. Not sure if the regular bound service is the same instance as the OSGI service. But they appear ot be separate instances.</li>
 <li>Servlets? I&rsquo;ve experimented with guice-servlet, but in Apache Sling it seems to not work very well.</li>
@@ -243,7 +219,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

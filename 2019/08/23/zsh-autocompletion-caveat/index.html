@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        zsh Autocompletion Caveat &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -106,22 +110,19 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>zsh Autocompletion Caveat</h1>
             <p>I spent a good hour trying to get a custom completion script working while porting my app <a href="https://github.com/ilikeorangutans/harbormaster">Harbormaster</a> to <a href="https://github.com/spf13/cobra">Cobra</a>. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions.
 Eventually I stumbled upon a innocent looking <a href="https://github.com/zsh-users/zsh-completions/issues/277#issuecomment-72867242">post</a> on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran <code>rm ~/.zcompdump &amp;&amp; compinit</code> and everything works as expected.</p>
-
 <p>For future reference, I found <a href="https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org">this post on zsh completions</a> very helpful. Also, zsh completions can either be sourced dynamically (currently not working in zsh but <a href="https://github.com/spf13/cobra/issues/881">is coming</a>, until then the completion should be added to a file in the <code>$fpath</code>:</p>
-
 <pre><code>$ harbormaster completion zsh &gt; ~/.zsh/completion/_harbormaster
-</code></pre>
-
-<p>You might have to run <code>compinit</code> or restart your shell.</p>
+</code></pre><p>You might have to run <code>compinit</code> or restart your shell.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

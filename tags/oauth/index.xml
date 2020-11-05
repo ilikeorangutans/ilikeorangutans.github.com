@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Oauth on Jakob Külzer</title>
+    <title>OAuth on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/oauth/</link>
-    <description>Recent content in Oauth on Jakob Külzer</description>
+    <description>Recent content in OAuth on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Thu, 15 Aug 2013 13:59:40 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 15 Aug 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Thoughts on Authorization Schemes</title>
       <link>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>

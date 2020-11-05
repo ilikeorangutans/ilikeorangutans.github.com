@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        commons-logging in OSGI Environments &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -114,23 +118,20 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>commons-logging in OSGI Environments</h1>
             <p>While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the <a href="http://wiki.apache.org/commons/CommonsOsgi">Commons OSGI status page</a>, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why. I haven&rsquo;t dug into why and how it conflicts with the OSGI classloading scheme, but I can see that being a problem. Be it as it may, there is no official OSGI bundle for commons logging.</p>
-
 <p>The problem was that I needed commons-httpclient which requires commons-logging. The solution was rather simple, but took me way too long to figure out. As the Commons OSGI status page indicates, you should go ahead and use the <a href="http://team.ops4j.org/wiki/display/paxlogging/Pax+Logging">Pax Logging</a> bundle. It contains several logging APIs, including log4j, commons-logging, JDK logging, SLF4J, and a few others.</p>
-
 <p>Once you drop the pax logging bundle in your application, you&rsquo;ll notice that it exports a boatload of logging APIs, which will make using libraries like commons-httpclient easy:</p>
-
 <pre><code>Export-Package = org.apache.avalon.framework.logger;provider=paxlogging;uses:=&quot;org.apache.log&quot;;version=&quot;4.3&quot;,org.apache.commons.logging;provider=paxlogging;uses:=&quot;org.ops4j.pax.logging,org.osgi.framework&quot;;version=&quot;1.1.1&quot;, ...
 </code></pre>
-
 <p>Having the actual APIs exposed in the OSGI classspace is already a huge step forward. However, once you start using the httpclient, it will flood your console with log messages. That might be OK in a GUI app (<code>&gt; /dev/null</code>). I&rsquo;ll examine logging configuration in my next post.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

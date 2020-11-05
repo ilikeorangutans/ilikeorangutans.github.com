@@ -20,3 +20,18 @@ code {
 .highlight pre {
   padding: 0.25em;
 }
+
+a:hover, .btn.btn-link:hover {
+  color: darkorange;
+}
+
+.btn:focus {
+  background-color: orange;
+}
+
+.btn:hover {
+  color: darkorange;
+  border: 1px solid orange;
+  background-color: #fffafa;
+  box-shadow: 2px 2px lightgray;
+}

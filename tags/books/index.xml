@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Books on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/books/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/books/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Book Arrival: The Ray Tracer Challenge</title>
       <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
@@ -25,10 +21,10 @@
     
     <item>
       <title>gnuplot - My New Favorite Tool</title>
-      <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot---my-new-favorite-tool/</link>
+      <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</link>
       <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot---my-new-favorite-tool/</guid>
+      <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</guid>
       <description>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data. Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&amp;rsquo;t really scale well. The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the GNU project.</description>
     </item>
     
@@ -47,7 +43,7 @@
       <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</guid>
-      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:  Working Effectivly with Legacy Code by Michael C. Feathers   </description>
+      <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:</description>
     </item>
     
   </channel>

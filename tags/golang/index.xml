@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Jakob Külzer</title>
@@ -9,11 +9,7 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Fri, 23 Aug 2019 14:21:43 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 23 Aug 2019 14:21:43 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zsh Autocompletion Caveat</title>
       <link>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</link>
@@ -51,7 +47,7 @@ What is null? Most programming languages have the concept of null (or nil) that 
       <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
       <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
+$ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
     </item>
     
     <item>
@@ -71,8 +67,8 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes  Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }  The range keyword when used with two return values does not return references, but rather copies.</description>
+Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+ var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.</description>
     </item>
     
     <item>

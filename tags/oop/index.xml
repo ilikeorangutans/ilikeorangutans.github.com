@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Oop on Jakob Külzer</title>
+    <title>OOP on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/oop/</link>
-    <description>Recent content in Oop on Jakob Külzer</description>
+    <description>Recent content in OOP on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 21:20:31 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/oop/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Jun 2018 21:20:31 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/oop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give Me Smarter Objects</title>
       <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
@@ -21,15 +17,6 @@
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
       <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
-    </item>
-    
-    <item>
-      <title>Inheritance and Composition</title>
-      <link>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</link>
-      <pubDate>Thu, 14 Jun 2018 15:58:21 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/14/inheritance-and-composition/</guid>
-      <description>I recently attended an OOP workshop by Sandi Metz and among the wonderful things I took away from it were some great conversations and discussions with coworkers about the content of the course. One of these discussions centred around the concept of inheritance and composition, and how they differ and when to use. I struggled explaining it well but came up with a better explanation later on, on the subway.</description>
     </item>
     
   </channel>

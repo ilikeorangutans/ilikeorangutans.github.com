@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tdd on Jakob Külzer</title>
+    <title>TDD on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/tdd/</link>
-    <description>Recent content in Tdd on Jakob Külzer</description>
+    <description>Recent content in TDD on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 02 Jul 2018 12:02:03 -0400</lastBuildDate>
-    
-	<atom:link href="https://ilikeorangutans.github.io/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 02 Jul 2018 12:02:03 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes on Working Effectively With Legacy Code</title>
       <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>

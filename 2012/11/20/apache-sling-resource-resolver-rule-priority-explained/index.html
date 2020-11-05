@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        Apache Sling Resource Resolver Rules in a Nutshell &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -19,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -31,19 +35,19 @@
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -58,19 +62,19 @@
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -118,6 +122,7 @@
 
             </p>
             <div class="divider"></div>
+            
             <h1>Apache Sling Resource Resolver Rules in a Nutshell</h1>
             <p>If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules.
 In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual
@@ -126,74 +131,54 @@ corresponding node in the JCR. However, sometimes it is not desireable to expose
 repository or the required external structure cannot be represented using the JCR. In that case the resolver
 can be customized by installing resolver rules. Resolver rules can be modified via the OSGI configuration
 editor or the OSGI ConfigurationAdmin.</p>
-
 <p>Each rule consists of three parts. I&rsquo;ll call them the <em>internal path</em>, the <em>operator</em>, and the <em>external path</em>.
 The syntax is always like this:</p>
-
 <pre><code>&lt;internal path&gt;   &lt;operator&gt;   &lt;external path&gt;
 </code></pre>
-
 <p>In order to understand what <em>internal path</em> and <em>external path</em> mean, we need to discuss the <em>operator</em> first.
 However, in order to understand the operators, we&rsquo;ll have to take a quick look at the two fundamental operations
 the resolver performs: <em>resource resolution</em> and the <em>resource mapping</em>.</p>
-
 <p>Resource resolution, as outlined in the introduction, is the process of resolving an incoming request to a
 resource that Sling can provide, usually a node in the JCR. It&rsquo;s important to note that the incoming request&rsquo;s
 path doesn&rsquo;t need to correspond to anything in the JCR.</p>
-
 <p>In order to specify a rule that should be applied to the request URI during resource resolution, you would
 specify a resolver rule using the <code>&gt;</code> operator. For example, to map all requests for <code>/foo</code> to
 <code>/content/bar</code> in the JCR, you would write the following:</p>
-
 <pre><code>/content/bar&gt;/foo
 </code></pre>
-
 <p>With this example it becomes obvious what <em>internal path</em> and <em>external path</em> stand for. In case of a resolver
 rule, <em>internal path</em> is the path the matching external path is replace with. And in order for resolver rules
 to be really useful and scare of the faint of heart, they support regular expressions. So, you can utilize
 character and matching groups and references:</p>
-
 <pre><code>/content/$1/$2$3&gt;/([a-zA-Z]{2})/(en|fr|de)(.*)
 </code></pre>
-
 <p>This resolves requests for <code>/us/en/homepage.html</code> to <code>/content/us/en/homepage.html</code> and <code>/ca/fr/foobar.html</code>
 to <code>/content/ca/fr/foobar.html</code>. Neat.</p>
-
 <p>Resource mapping can be thought of as the opposite of resource resolution. Let&rsquo;s assume the following resolver
 rule:</p>
-
 <pre><code>/content/bar&gt;/foo
 </code></pre>
-
 <p>For incoming requests you are covered, clients will only see <code>/foo</code>. However, in the rendered pages, references
 to <code>/content/bar</code> will stills how up as such. So in order to &ldquo;hide&rdquo; this path, we need to <em>map</em> it to an
 external path. This is where the second operator come in. You can specify a map rule using the <code>&lt;</code> operator.
 For example, to replace <code>/content/bar</code> with <code>/foo</code>, you&rsquo;d specify the following rule:</p>
-
 <pre><code>/content/bar&lt;/foo
 </code></pre>
-
 <p>Notice how the order of the operands is unchanged, which makes these rules somewhat confusing to work with.
 Of course, you can use regular expressions to make your rules more powerful and more confusing to simpler minds:</p>
-
 <pre><code>/content/ca/(en|fr)&lt;/ohcanada/$1
 </code></pre>
-
 <p>Again, the order of the operands is important. And in this case, notice how the regular expressions have
 &ldquo;switched&rdquo; side. The matchers are on the left hand, the refrences on the right hand side. Once applied to
 a path, for example <code>/content/ca/en/homepage</code>, the mapping rule will transform it into <code>/ohcanada/en/homepage</code>.
 Please note that mapping rules are not magically applied. You need to either call <a href="http://sling.apache.org/apidocs/sling5/org/apache/sling/api/resource/ResourceResolver.html#map(java.lang.String)"><code>resourceResolver.map()</code></a> for
 your path, or use an <a href="http://sling.apache.org/site/output-rewriting-pipelines-orgapacheslingrewriter.html">output rewriting pipeline</a>.</p>
-
 <p>The flexibility of specifying resolver and mapper rules separately, is not needed. In most cases you&rsquo;d want
 the resolver rules to be reflected in the mapper rules and vice versa. This can be acchieved with the <code>:</code>
 operator:</p>
-
 <pre><code>/content/bar:/foo
 </code></pre>
-
 <p>This results in both a mapper and a resolver rule. However, regular expression usage here is limited.</p>
-
 <p>Now, let&rsquo;s discuss one last aspect, that I&rsquo;ve been silently ignoring so far. How does Sling behave if there
 are multiple rules? First, Sling orders all rules by the number of regular expression groups it contains.
 (I haven&rsquo;t found any reference to this in the Sling docs, this is knowledge earned through sweat, blood, and
@@ -201,14 +186,11 @@ methodical head banging!)
 The more groups, the higher the priority of the group. For each incoming request, Sling will try to match
 it against all rules in descending order of their priority. First rule that matches, wins. The following
 rules for example, have different priorities:</p>
-
 <pre><code>/content/foo/$1&gt;/(pie|cake)
 /content/bar/$1/$2&gt;/(apples|oranges)/(.*)
 </code></pre>
-
 <p>The first rule has a single group whereas the second group has two groups. During the resource resolution
 process, the second rule would always be matched <em>before</em> the first rule.</p>
-
 <p>Once understood, resolver and mapper rules offer a versatile and flexible tool for masking content structures
 or offering new external URLs for services. However, the road to understand them, is, at least for me,
 a stony if not rocky one. I hope this post will help others to understand and implement them.</p>
@@ -217,7 +199,7 @@ a stony if not rocky one. I hope this post will help others to understand and im
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

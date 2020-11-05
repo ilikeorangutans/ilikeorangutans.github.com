@@ -3,6 +3,9 @@
   <head>
         <meta charset="utf-8">
     <title>
+      
+        A New Theme &mdash;
+      
       Jakob Külzer
     </title>
 
@@ -20,6 +23,7 @@ If you haven&rsquo;t notice, I recently switched my blog from Jekyll to Hugo. Th
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="canonical" href="https://ilikeorangutans.github.io/">
+
   </head>
   <body>
     
@@ -32,19 +36,19 @@ If you haven&rsquo;t notice, I recently switched my blog from Jekyll to Hugo. Th
     </section>
     <section class="navbar-section">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-2">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-2">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-2">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-2">
           About
         </a>
       
@@ -59,19 +63,19 @@ If you haven&rsquo;t notice, I recently switched my blog from Jekyll to Hugo. Th
     </div>
     <div class="column col-12">
       
-        <a href="/" class="btn btn-link">
+        <a href="/" class="mr-2 ml-1">
           Home
         </a>
       
-        <a href="/posts/" class="btn btn-link">
+        <a href="/posts/" class="mr-2 ml-1">
           Blog
         </a>
       
-        <a href="/projects/" class="btn btn-link">
+        <a href="/projects/" class="mr-2 ml-1">
           Projects
         </a>
       
-        <a href="/about/" class="btn btn-link">
+        <a href="/about/" class="mr-2 ml-1">
           About
         </a>
       
@@ -107,36 +111,25 @@ If you haven&rsquo;t notice, I recently switched my blog from Jekyll to Hugo. Th
 
             </p>
             <div class="divider"></div>
-            <h1>A New Theme</h1>
             
-
-<p>After toying around with the really nice <a href="https://github.com/aos/temple">Temple theme</a> I decided there was no better way to spend my afternoon than building my own, new theme for my blog.</p>
-
+            <h1>A New Theme</h1>
+            <p>After toying around with the really nice <a href="https://github.com/aos/temple">Temple theme</a> I decided there was no better way to spend my afternoon than building my own, new theme for my blog.</p>
 <p>If you haven&rsquo;t notice, I recently switched my blog from <a href="https://jekyllrb.com/">Jekyll</a> to <a href="https://gohugo.io/">Hugo</a>. The upgrade path from the really old version of Jekyll to the latest version wasn&rsquo;t quite working as expected, and having to mess around with Gemfiles isn&rsquo;t really something I enjoy. Hugo on the other hand is written in Go and comes as a single, standalone binary. That seemed really appealing and I&rsquo;ve had good experiences when trying to build a little <a href="https://github.com/ilikeorangutans/hugo-photo-scanner">photo gallery builder</a> with it a while ago before Hugo had actual photo support. Moving the content over from the Jekyll frontmatter to the Hugo frontmatter was done easy enough, I even moved some of the good posts from my really old blog on here. I was almost perfectly happy, exception for the theme. The Temple theme is nice, but it wasn&rsquo;t quite what I wanted. So this weekend I built my own (yeah, you&rsquo;re looking at it).</p>
-
 <p>There&rsquo;s a few things I learned:</p>
-
 <h4 id="1-making-things-look-nice-is-hard">1. Making things look nice is hard</h4>
-
 <p>I kind of started with this idea that I wanted to use the colour teal &ndash;I really don&rsquo;t know why, but it just seemed like a good idea&ndash; and I ran with it. The results were terrible. I ended up playing around with more colors and settled on this gray-steel-blue-tone. I guess it&rsquo;s ok.</p>
-
 <h4 id="2-why-are-there-so-many-css-frameworks">2. Why are there so many CSS frameworks?</h4>
-
 <p>But of course I didn&rsquo;t want to just use browser default themes, because what is this, the 90&rsquo;s? So I looked at some CSS frameworks. Searching for <em>lightweight CSS framework</em> brings up a ton of results. I tried some of them, but in the end I picked the terrific <a href="https://picturepan2.github.io/spectre/index.html">spectre</a> framework because it sets a nice, large font and has a good enough grid for my needs. Are there better CSS frameworks? Probably. Does it matter? Not really &ndash; it does what I need and I think it looks pretty enough. I&rsquo;m particularly happy with how legible the blog now is. At the end of the day HTML and especially CSS are not my strength, so this will have to do.</p>
-
-<h4 id="3-hugo-s-themes-and-templates-are-great">3. Hugo&rsquo;s themes and templates are great</h4>
-
+<h4 id="3-hugos-themes-and-templates-are-great">3. Hugo&rsquo;s themes and templates are great</h4>
 <p>I&rsquo;ll admit, it took me a while to understand how Hugo&rsquo;s templates and themes work. In particular the <a href="https://gohugo.io/templates/lookup-order/">template lookup order</a> is initially confusing, but once I had my head wrapped around it, it became straightforward to make Hugo build the markup I wanted. <a href="https://gohugo.io/templates/base/">Blocks</a> make it easy to build base templates and plug different sections in, the taxonomy system is fun to work with, and even the menu system allows for easy creation of tags or other structures. And I <em>love</em> how the <a href="https://gohugo.io/templates/views/"><code>.Render</code></a> function can be used to render different &ldquo;views&rdquo; of an entity.</p>
-
 <p>Oh, and there is many open source themes for Hugo that can serve as inspiration or can be studied to learn more. In a way this reminds me of the time I was learning HTML.</p>
-
 <p>I&rsquo;m excited to use Hugo for more projects now. It seems so flexible, it really is fast, and the possibilities are limitless. I want to play with Hugo&rsquo;s data templates and see if I can build my own little recipe database. Another time.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
