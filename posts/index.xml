@@ -11,12 +11,12 @@
     <copyright>Jakob Külzer</copyright>
     <lastBuildDate>Fri, 22 Jun 2012 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim Digraph</title>
-      <link>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</link>
-      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate>
+      <title>Migrating Raspberry Pi From Sd Card to Usb</title>
+      <link>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</link>
+      <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</guid>
-      <description>Was writing a few posts for my food blog and needed to type some some &amp;ldquo;special&amp;rdquo; characters like é. When on a Mac that&amp;rsquo;s really simple because the keymap supports typing compound keys. But I&amp;rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&amp;rsquo;s digraph support. The documentation is quite good but I&amp;rsquo;ll cherry pick some combos because otherwise I&amp;rsquo;ll forget.</description>
+      <guid>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</guid>
+      <description>I&amp;rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&amp;rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.</description>
     </item>
     
     <item>

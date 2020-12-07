@@ -4,16 +4,16 @@
         <meta charset="utf-8">
     <title>
       
-        buildx &mdash;
+        raspberrypi &mdash;
       
       Jakob Külzer
     </title>
 
     <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="buildx">
+    <meta property="og:title" content="raspberrypi">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/tags/buildx/">
+    <meta property="og:url" content="https://ilikeorangutans.github.io/tags/raspberrypi/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
@@ -86,53 +86,44 @@
     <main class="container grid-lg content">
       
 <h1>
-    Buildx
+    Raspberrypi
 </h1>
 
 <p>
     &larrhk; <a href="/tags">all tags</a>
 </p>
 
-<p>Pages tagged with "buildx":</p>
+<p>Pages tagged with "raspberrypi":</p>
 
     <article class="mb-2">
     <div class="divider"></div>
     <div class="tile">
         <div class="tile-content">
             <p class="tile-title h4">
-                <a href="/2020/01/03/building-docker-containers-for-arm-with-buildx/">
+                <a href="/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/">
                     
-                    Building Docker Containers for ARM with buildx
+                    Migrating Raspberry Pi From Sd Card to Usb
                 </a>
             </p>
             <p class="tile-subtitle">
-                03 Jan 2020
+                07 Dec 2020
 
 
 , tagged:
 
 
-    <a href="/tags/docker" class="">
-        Docker, 
-    </a>
-
-    <a href="/tags/buildx" class="">
-        buildx, 
-    </a>
-
-    <a href="/tags/arm" class="">
-        ARM
+    <a href="/tags/raspberrypi" class="">
+        raspberrypi
     </a>
 
 
 
             </p>
             <p class="tile-subtitle">
-                I&rsquo;ve spent some time over the holidays building a Kubernetes cluster running on raspberry pis. One issue I ran into was that not all docker images I wanted to run were available for arm/linux. Luckily there&rsquo;s a useful tool called buildx that extends Docker to build containers for different platforms and architectures using quemu and binfmt. ARM has a blog post that details the steps needed to build images.
-The steps are:
+                I&rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.
             </p>
             <p class="tile-action">
-                <a href="/2020/01/03/building-docker-containers-for-arm-with-buildx/" class="btn-primary">read more &rarr;</a>
+                <a href="/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/" class="btn-primary">read more &rarr;</a>
             </p>
         </div>
     </div>
