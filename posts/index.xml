@@ -11,12 +11,39 @@
     <copyright>Jakob Külzer</copyright>
     <lastBuildDate>Fri, 22 Jun 2012 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Golang ORM Comparison</title>
+      <link>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</link>
+      <pubDate>Sun, 21 Feb 2021 14:31:37 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</guid>
+      <description>I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that I always found lacking was database access. database/sql is solid if basic and packages like Mastermind/squirrel (really nice query builder) or jmoiron/sqlx (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&amp;rsquo;re on your own again.</description>
+    </item>
+    
+    <item>
       <title>Migrating Raspberry Pi From Sd Card to Usb</title>
       <link>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</link>
       <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</guid>
       <description>I&amp;rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&amp;rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.</description>
+    </item>
+    
+    <item>
+      <title>Matrix Bots with Golang</title>
+      <link>https://ilikeorangutans.github.io/2020/11/22/matrix-bots-with-golang/</link>
+      <pubDate>Sun, 22 Nov 2020 14:14:45 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2020/11/22/matrix-bots-with-golang/</guid>
+      <description>I&amp;rsquo;ve been running a Matrix homeserver for about a year now and I&amp;rsquo;m happy with it. It runs on my Kubernetes cluster on a few Raspberry Pis, doesn&amp;rsquo;t require a lot of attention and is fairly resource efficient. But I always wanted to write my own chatbots to do things for me and recently I finally started looking into matrix bots and how to implement them in Go for easy cross compile and statically linked binaries.</description>
+    </item>
+    
+    <item>
+      <title>Vim Digraph</title>
+      <link>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</link>
+      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</guid>
+      <description>Was writing a few posts for my food blog and needed to type some some &amp;ldquo;special&amp;rdquo; characters like é. When on a Mac that&amp;rsquo;s really simple because the keymap supports typing compound keys. But I&amp;rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&amp;rsquo;s digraph support. The documentation is quite good but I&amp;rsquo;ll cherry pick some combos because otherwise I&amp;rsquo;ll forget.</description>
     </item>
     
     <item>
@@ -45,7 +72,7 @@ The steps are:</description>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</guid>
       <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.
-Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;quot;;&amp;quot; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;quot;An empty line&amp;quot; } END { # Instructions run after the main loop } Invoke awk with a script like so:</description>
+Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;#34;;&amp;#34; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;#34;An empty line&amp;#34; } END { # Instructions run after the main loop } Invoke awk with a script like so:</description>
     </item>
     
     <item>
@@ -90,7 +117,7 @@ Structure of an awk script # Comments begin with a pound sign BEGIN { # Instruct
       <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid>
-      <description>Google recently announced availability of 1.0 preview  of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
+      <description>Google recently announced availability of 1.0 preview of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
     </item>
     
     <item>
@@ -138,9 +165,9 @@ If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
       <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
- We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
-  &amp;ndash; Frank Tibolt
- I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
+We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
+&amp;ndash; Frank Tibolt
+I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
     </item>
     
     <item>
@@ -159,7 +186,7 @@ If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
       <description>I&amp;rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:
-2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go  I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
+2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
     </item>
     
     <item>
@@ -181,7 +208,7 @@ It took me a few times because I didn&amp;rsquo;t read the instructions properly
       <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
       <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &amp;quot;github.com/ilikeorangutans/foo&amp;quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &amp;quot;github.com/ilikeorangutans/foo.MyType&amp;quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
+$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
     </item>
     
     <item>
@@ -212,8 +239,8 @@ Solution Git&amp;rsquo;s output format changed slightly in one of the recent ver
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
       <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
- var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.</description>
+Notes Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType } The range keyword when used with two return values does not return references, but rather copies.</description>
     </item>
     
     <item>
@@ -299,7 +326,7 @@ Android has a similar screen when you install an app, IOS probably has one as we
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid>
       <description>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.
- A happy developer is a productive developer.</description>
+A happy developer is a productive developer.</description>
     </item>
     
     <item>
@@ -329,7 +356,7 @@ However, getting Peaberry to work was not trivial, mostly because there aren&amp
       <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
       <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
-[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
 @Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
     </item>
     
@@ -416,7 +443,7 @@ Full version: Delhi Rooftop Panorama!</description>
       <guid>https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</guid>
       <description>Just figured out how SSH remote tunnels work and wanted to write it down.
 Nomenclature:
- [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
+[Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server. Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
 $ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:</description>
     </item>
     

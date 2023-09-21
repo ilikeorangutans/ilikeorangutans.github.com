@@ -96,17 +96,17 @@
 <p>Pages tagged with "zsh":</p>
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2019/08/23/zsh-autocompletion-caveat/">
-                    
-                    zsh Autocompletion Caveat
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                23 Aug 2019
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2019/08/23/zsh-autocompletion-caveat/">
+          
+          zsh Autocompletion Caveat
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        23 Aug 2019
 
 
 , tagged:
@@ -126,30 +126,30 @@
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;&amp; compinit and everything works as expected.
-            </p>
-            <p class="tile-action">
-                <a href="/2019/08/23/zsh-autocompletion-caveat/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-subtitle">
+        I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;&amp; compinit and everything works as expected.
+      </p>
+      <p class="tile-action">
+        <a href="/2019/08/23/zsh-autocompletion-caveat/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2015/10/23/gorename-and-invalid-expression/">
-                    
-                    gorename and invalid expression
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                23 Oct 2015
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2015/10/23/gorename-and-invalid-expression/">
+          
+          gorename and invalid expression
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        23 Oct 2015
 
 
 , tagged:
@@ -173,17 +173,17 @@
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
+      </p>
+      <p class="tile-subtitle">
+        This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType' gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
-            </p>
-            <p class="tile-action">
-                <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:
+      </p>
+      <p class="tile-action">
+        <a href="/2015/10/23/gorename-and-invalid-expression/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 

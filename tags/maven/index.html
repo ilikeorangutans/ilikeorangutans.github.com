@@ -96,17 +96,17 @@
 <p>Pages tagged with "Maven":</p>
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2014/04/29/maven-release-plugin-and-git-19/">
-                    
-                    Maven Release Plugin and Git 1.9
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                29 Apr 2014
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2014/04/29/maven-release-plugin-and-git-19/">
+          
+          Maven Release Plugin and Git 1.9
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        29 Apr 2014
 
 
 , tagged:
@@ -126,32 +126,32 @@
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
+      </p>
+      <p class="tile-subtitle">
+        Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
 Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.
 Solution Git&rsquo;s output format changed slightly in one of the recent versions and Maven&rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:
-            </p>
-            <p class="tile-action">
-                <a href="/2014/04/29/maven-release-plugin-and-git-19/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-action">
+        <a href="/2014/04/29/maven-release-plugin-and-git-19/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/">
-                    
-                    Type Incompatibility With Maven SCR Plugin
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                06 Feb 2013
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/">
+          
+          Type Incompatibility With Maven SCR Plugin
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        06 Feb 2013
 
 
 , tagged:
@@ -171,17 +171,17 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
-[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+      </p>
+      <p class="tile-subtitle">
+        Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
 @Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &#34;foo&#34;, value = &#34;bar&#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&rsquo;s parameter.
-            </p>
-            <p class="tile-action">
-                <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-action">
+        <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 

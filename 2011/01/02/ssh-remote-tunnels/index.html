@@ -13,7 +13,7 @@
     <meta property="og:title" content="SSH (Remote) Tunnels">
     <meta property="og:description" content="Just figured out how SSH remote tunnels work and wanted to write it down.
 Nomenclature:
- [Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server.  Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
+[Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server. Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
 $ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/">
@@ -127,20 +127,20 @@ $ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel 
 </ul>
 <h3 id="forward-tunnels">Forward Tunnels</h3>
 <p>Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:</p>
-<pre><code>$ ssh -L REMOTEPORT:client:CLIENTPORT user@server
+<pre tabindex="0"><code>$ ssh -L REMOTEPORT:client:CLIENTPORT user@server
 </code></pre><p>Now, that by opening a tunnel in this way:</p>
-<pre><code>$ ssh -L 4040:localhost:8080 user@server
+<pre tabindex="0"><code>$ ssh -L 4040:localhost:8080 user@server
 </code></pre><p>You can now connect to <code>localhost:8080</code> and you&rsquo;ll get, through the tunnel, what&rsquo;s on <code>server:4040</code>.</p>
 <h3 id="remote-tunnels">Remote Tunnels</h3>
 <p>Regular forward tunnels are neat if you want to access a service that runs on a forbidden port through a firewall. But what if you need to map an incoming port on a remote server to a local port? Maybe because your ISP doesn&rsquo;t allow you NAT arbitrary ports?</p>
 <p>Do not fear, remote tunnels are here for your rescue. They work pretty much the same way as regular tunnels, just the other way round. Instead of opening a listening socket on your local box, they open a port on the remote server. So, to open a port on your remote box and forward it to a local port, use the following:</p>
-<pre><code>$ ssh -R REMOTEPORT:client:CLIENTPORT user@server
+<pre tabindex="0"><code>$ ssh -R REMOTEPORT:client:CLIENTPORT user@server
 </code></pre><p>That&rsquo;s it. Well, almost. There&rsquo;s a catch. Per default sshd will now bind the listening socket to the loopback device. Kind of useless if you want to forward incoming connections through the tunnel. If you study the man page, you&rsquo;ll notice that you can specify a binding port for the remote tunnel:</p>
-<pre><code>$ ssh -R BIND_ADDRESS:REMOTEPORT:client:CLIENTPORT user@server
+<pre tabindex="0"><code>$ ssh -R BIND_ADDRESS:REMOTEPORT:client:CLIENTPORT user@server
 </code></pre><p>So, if your server&rsquo;s IP was <code>12.23.34.45</code>, you would specify:</p>
-<pre><code>$ ssh -R 12.23.34.45:8080:localhost:8080 user@server
+<pre tabindex="0"><code>$ ssh -R 12.23.34.45:8080:localhost:8080 user@server
 </code></pre><p>However, depending on your sshd configuration it might or might not work. Per default sshd won&rsquo;t let you just bind sockets to anything. You&rsquo;ll need to allow that, by specifying the GatewayPorts option in your <code>sshd_config</code> and restart sshd:</p>
-<pre><code>GatewayPorts yes
+<pre tabindex="0"><code>GatewayPorts yes
 </code></pre><p>I got slightly confused, as the man page states that you can specify a value <code>clientspecified</code> to allow the client to select a specific interface, but it didn&rsquo;t work for me.</p>
 
             <div class="divider"></div>
@@ -148,7 +148,7 @@ $ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel 
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

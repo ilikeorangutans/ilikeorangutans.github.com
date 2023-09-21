@@ -96,17 +96,17 @@
 <p>Pages tagged with "OSGI":</p>
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2013/02/27/osgi-guice-and-peaberry-first-steps/">
-                    
-                    OSGI, Guice, and Peaberry: first steps
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                27 Feb 2013
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2013/02/27/osgi-guice-and-peaberry-first-steps/">
+          
+          OSGI, Guice, and Peaberry: first steps
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        27 Feb 2013
 
 
 , tagged:
@@ -130,31 +130,31 @@
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                Introduction I&rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
+      </p>
+      <p class="tile-subtitle">
+        Introduction I&rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
 However, getting Peaberry to work was not trivial, mostly because there aren&rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&rsquo;s a lot of information in very little space.
-            </p>
-            <p class="tile-action">
-                <a href="/2013/02/27/osgi-guice-and-peaberry-first-steps/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-action">
+        <a href="/2013/02/27/osgi-guice-and-peaberry-first-steps/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/">
-                    
-                    Type Incompatibility With Maven SCR Plugin
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                06 Feb 2013
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/">
+          
+          Type Incompatibility With Maven SCR Plugin
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        06 Feb 2013
 
 
 , tagged:
@@ -174,32 +174,32 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
-[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List  I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
+      </p>
+      <p class="tile-subtitle">
+        Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
 @Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &#34;foo&#34;, value = &#34;bar&#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&rsquo;s parameter.
-            </p>
-            <p class="tile-action">
-                <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-action">
+        <a href="/2013/02/06/type-incompatibility-with-maven-scr-plugin/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/">
-                    
-                    Apache Sling Resource Resolver Rules in a Nutshell
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                20 Nov 2012
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/">
+          
+          Apache Sling Resource Resolver Rules in a Nutshell
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        20 Nov 2012
 
 
 , tagged:
@@ -231,30 +231,30 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules. In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual resources. For example, if a request for /foo/bar is coming in the resolver will resolve that to a corresponding node in the JCR. However, sometimes it is not desireable to expose the internal structure of the repository or the required external structure cannot be represented using the JCR.
-            </p>
-            <p class="tile-action">
-                <a href="/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-subtitle">
+        If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules. In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual resources. For example, if a request for /foo/bar is coming in the resolver will resolve that to a corresponding node in the JCR. However, sometimes it is not desireable to expose the internal structure of the repository or the required external structure cannot be represented using the JCR.
+      </p>
+      <p class="tile-action">
+        <a href="/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2012/11/14/commons-logging-in-osgi-environments/">
-                    
-                    commons-logging in OSGI Environments
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                14 Nov 2012
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2012/11/14/commons-logging-in-osgi-environments/">
+          
+          commons-logging in OSGI Environments
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        14 Nov 2012
 
 
 , tagged:
@@ -282,30 +282,30 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the Commons OSGI status page, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why.
-            </p>
-            <p class="tile-action">
-                <a href="/2012/11/14/commons-logging-in-osgi-environments/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-subtitle">
+        While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the Commons OSGI status page, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why.
+      </p>
+      <p class="tile-action">
+        <a href="/2012/11/14/commons-logging-in-osgi-environments/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2012/10/23/osgi-bootstrapping/">
-                    
-                    OSGI Bootstrapping
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                23 Oct 2012
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2012/10/23/osgi-bootstrapping/">
+          
+          OSGI Bootstrapping
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        23 Oct 2012
 
 
 , tagged:
@@ -321,30 +321,30 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                I&rsquo;ve been working with OSGI based technology for a while now and it&rsquo;s a great piece of technology. However, so far I&rsquo;ve only worked with OSGI technology that runs in existing instances of the framework. A running framework is easy to deal with, but how do you get to this point? I spent some time today playing with that, and it took me a while to put it all together. So naturally, I&rsquo;ll have to record my findings here.
-            </p>
-            <p class="tile-action">
-                <a href="/2012/10/23/osgi-bootstrapping/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-subtitle">
+        I&rsquo;ve been working with OSGI based technology for a while now and it&rsquo;s a great piece of technology. However, so far I&rsquo;ve only worked with OSGI technology that runs in existing instances of the framework. A running framework is easy to deal with, but how do you get to this point? I spent some time today playing with that, and it took me a while to put it all together. So naturally, I&rsquo;ll have to record my findings here.
+      </p>
+      <p class="tile-action">
+        <a href="/2012/10/23/osgi-bootstrapping/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 
     <article class="mb-2">
-    <div class="divider"></div>
-    <div class="tile">
-        <div class="tile-content">
-            <p class="tile-title h4">
-                <a href="/2012/10/12/osgi-classloading-reading-list/">
-                    
-                    OSGI Classloading Reading List
-                </a>
-            </p>
-            <p class="tile-subtitle">
-                12 Oct 2012
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2012/10/12/osgi-classloading-reading-list/">
+          
+          OSGI Classloading Reading List
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        12 Oct 2012
 
 
 , tagged:
@@ -364,16 +364,16 @@ However, getting Peaberry to work was not trivial, mostly because there aren&rsq
 
 
 
-            </p>
-            <p class="tile-subtitle">
-                I&rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&rsquo;m starting to fully understand and leverage OSGI and I&rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.
+      </p>
+      <p class="tile-subtitle">
+        I&rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&rsquo;m starting to fully understand and leverage OSGI and I&rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.
 In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules.
-            </p>
-            <p class="tile-action">
-                <a href="/2012/10/12/osgi-classloading-reading-list/" class="btn-primary">read more &rarr;</a>
-            </p>
-        </div>
+      </p>
+      <p class="tile-action">
+        <a href="/2012/10/12/osgi-classloading-reading-list/" class="btn-primary">read more &rarr;</a>
+      </p>
     </div>
+  </div>
 </article>
 
 

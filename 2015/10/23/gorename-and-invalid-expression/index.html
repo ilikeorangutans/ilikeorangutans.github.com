@@ -13,7 +13,7 @@
     <meta property="og:title" content="gorename and invalid expression">
     <meta property="og:description" content="This took me longer to figure out than I care to admit, so here&rsquo;s the solution.
 The issue comes up when trying to use gorename:
-$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to &#39;MyBetterType&#39; gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:">
+$ gorename -from &#34;github.com/ilikeorangutans/foo&#34;.MyType -to &#39;MyBetterType&#39; gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/">
 
@@ -120,19 +120,19 @@ $ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to &#39;MyBe
             <h1>gorename and invalid expression</h1>
             <p>This took me longer to figure out than I care to admit, so here&rsquo;s the solution.</p>
 <p>The issue comes up when trying to use <a href="https://godoc.org/golang.org/x/tools/cmd/gorename">gorename</a>:</p>
-<pre><code class="language-console" data-lang="console">$ gorename -from &quot;github.com/ilikeorangutans/foo&quot;.MyType -to 'MyBetterType'
-gorename: -from &quot;github.com/ilikeorangutans/foo.MyType&quot;: invalid expression
-</code></pre><p>Even though the <code>from</code> query looks normal, <code>gorename</code> just refuses to work. However the issue is not so much with <code>gorename</code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</p>
-<pre><code class="language-console" data-lang="console">$ gorename -from '&quot;github.com/ilikeorangutans/foo&quot;.MyType' -to 'MyBetterType'
-Renamed 15 occurrences in 5 files in 1 package.
-</code></pre><p>Notice the single quotes around the entire <code>from</code> parameter.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span><span style="color:#009;font-weight:bold">$</span> gorename -from <span style="color:#c30">&#34;github.com/ilikeorangutans/foo&#34;</span>.MyType -to <span style="color:#c30">&#39;MyBetterType&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">gorename: -from &#34;github.com/ilikeorangutans/foo.MyType&#34;: invalid expression
+</span></span></span></code></pre></div><p>Even though the <code>from</code> query looks normal, <code>gorename</code> just refuses to work. However the issue is not so much with <code>gorename</code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span><span style="color:#009;font-weight:bold">$</span> gorename -from <span style="color:#c30">&#39;&#34;github.com/ilikeorangutans/foo&#34;.MyType&#39;</span> -to <span style="color:#c30">&#39;MyBetterType&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">Renamed 15 occurrences in 5 files in 1 package.
+</span></span></span></code></pre></div><p>Notice the single quotes around the entire <code>from</code> parameter.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

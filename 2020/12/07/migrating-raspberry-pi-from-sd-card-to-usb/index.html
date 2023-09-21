@@ -132,12 +132,12 @@ copy the system myself and that requires a few things:</p>
 <h2 id="step-by-step">Step by Step</h2>
 <h3 id="creating-partitions-and-filesystems">Creating Partitions and Filesystems</h3>
 <p>The ssd is registered as <code>/dev/sda</code>. Use <code>lsblk</code> to identify and check if it&rsquo;s properly running:</p>
-<pre><code>$ sudo lsblk
+<pre tabindex="0"><code>$ sudo lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 111.8G  0 disk
 </code></pre><p>I followed the partition layout of the sdcard (which is <code>/dev/mmcblk0</code>). One small boot partition and one for the
 operating system:</p>
-<pre><code>$ sudo fdisk -l /dev/mmcblk0
+<pre tabindex="0"><code>$ sudo fdisk -l /dev/mmcblk0
 Disk /dev/mmcblk0: 14.9 GiB, 15931539456 bytes, 31116288 sectors
 Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -149,7 +149,7 @@ Device         Boot  Start      End  Sectors  Size Id Type
 /dev/mmcblk0p2      532480 31116287 30583808 14.6G 83 Linux
 </code></pre><p>I created a new dos type partition table, and created a boot partition of type fat32, marked it as bootable, a system
 partition, and I did add a separate partition for <code>/var/</code> and for <code>/data</code>. The final partition table looks like this:</p>
-<pre><code>$ sudo fdisk -l /dev/sda
+<pre tabindex="0"><code>$ sudo fdisk -l /dev/sda
 Disk /dev/sda: 111.8 GiB, 120034123776 bytes, 234441648 sectors
 Disk model:  SUV500MS120G
 Units: sectors of 1 * 512 = 512 bytes
@@ -175,17 +175,17 @@ For <code>/var</code>: <code>sudo mount /dev/sda3 /mnt</code>, <code>sudo rysnc 
 <p>Two files have to be updated to boot from the new drive: <code>/boot/cmdline.txt</code> and <code>/etc/fstab</code>. Note that these files
 live on the new drive, so you&rsquo;ll have to mount the drive and use appropriate paths. Partitions are identified
 by their their PARTUUID which you can get from <code>blkid</code>:</p>
-<pre><code>$ sudo blkid
-/dev/sda1: SEC_TYPE=&quot;msdos&quot; UUID=&quot;45C8-6810&quot; TYPE=&quot;vfat&quot; PARTUUID=&quot;8459def4-01&quot;
-/dev/sda2: LABEL=&quot;ROOT&quot; UUID=&quot;fa266b1d-c288-429c-8efb-674b3ab7510b&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;8459def4-02&quot;
-/dev/sda3: LABEL=&quot;VAR&quot; UUID=&quot;0202f3fc-4997-4d01-ae79-52f1f9d8182a&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;8459def4-03&quot;
-/dev/sda4: LABEL=&quot;DATA&quot; UUID=&quot;28cc5c24-0f23-4224-9a55-a298e34ee9a2&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;8459def4-04&quot;
+<pre tabindex="0"><code>$ sudo blkid
+/dev/sda1: SEC_TYPE=&#34;msdos&#34; UUID=&#34;45C8-6810&#34; TYPE=&#34;vfat&#34; PARTUUID=&#34;8459def4-01&#34;
+/dev/sda2: LABEL=&#34;ROOT&#34; UUID=&#34;fa266b1d-c288-429c-8efb-674b3ab7510b&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;8459def4-02&#34;
+/dev/sda3: LABEL=&#34;VAR&#34; UUID=&#34;0202f3fc-4997-4d01-ae79-52f1f9d8182a&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;8459def4-03&#34;
+/dev/sda4: LABEL=&#34;DATA&#34; UUID=&#34;28cc5c24-0f23-4224-9a55-a298e34ee9a2&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;8459def4-04&#34;
 </code></pre><p>Mount new boot drive via <code>sudo mount /dev/sda1 /mnt</code>.
 Now we can update <code>/mnt/cmdline.txt</code> to set the <code>root</code> field:</p>
-<pre><code>root=PARTUUID=8459def4-02
+<pre tabindex="0"><code>root=PARTUUID=8459def4-02
 </code></pre><p>Unmount drive <code>umount /mnt</code>. Now mount the new root partition: <code>mount /dev/sda2 /mnt</code>.
 Then we have to update <code>/mnt/etc/fstab</code> to mount the correct partitions:</p>
-<pre><code>proc            /proc           proc    defaults          0       0
+<pre tabindex="0"><code>proc            /proc           proc    defaults          0       0
 PARTUUID=8459def4-01  /boot           vfat    defaults          0       2
 PARTUUID=8459def4-02  /               ext4    defaults,noatime  0       1
 PARTUUID=8459def4-03  /var            ext4    defaults,noatime  0       1
@@ -199,7 +199,7 @@ PARTUUID=8459def4-04  /data           ext4    defaults,noatime  0       1
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

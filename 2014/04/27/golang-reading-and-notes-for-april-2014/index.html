@@ -12,8 +12,8 @@
     <meta name="author" value="Jakob Külzer">
     <meta property="og:title" content="Golang Reading and Notes for April 2014">
     <meta property="og:description" content="Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes   Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
- var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType }    The range keyword when used with two return values does not return references, but rather copies.">
+Notes Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
+var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType } The range keyword when used with two return values does not return references, but rather copies.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/">
 
@@ -124,35 +124,35 @@ Notes   Casting in Go is slightly different than in C related languages. Instead
   casted, ok := myVariable.(MoreSpecificType)
   // ok is a bool
   if ok {
-      // Type conversion successful
+  	// Type conversion successful
   } else {
-      // myVariable does not implement MoreSpecificType
+  	// myVariable does not implement MoreSpecificType
   }
 </code></pre>
 </li>
 <li>
 <p>The <code>range</code> keyword when used with two return values does not return references, but rather copies. This had me struggle for a while as my code was not behaving as I thought it would. I had a slice of structs and was happily iterating over it:</p>
 <pre><code>  type Foo struct {
-      a string
+  	a string
   }
 
   func main() {
-      foos := []Foo{
-          Foo{a: &quot;horray&quot;},
-          Foo{a: &quot;yeay&quot;},
-      }
+  	foos := []Foo{
+  		Foo{a: &quot;horray&quot;},
+  		Foo{a: &quot;yeay&quot;},
+  	}
 
-      for i, value := range foos {
-          // This works because we directly access the struct stored
-          foos[i].a = &quot;Changing the value&quot; within the slice
+  	for i, value := range foos {
+  		// This works because we directly access the struct stored
+  		foos[i].a = &quot;Changing the value&quot; within the slice
 
-          // Won't work because value is a *copy* of the struct found in
-          value.a = &quot;this won't work&quot; the slice
-      }
+  		// Won't work because value is a *copy* of the struct found in
+  		value.a = &quot;this won't work&quot; the slice
+  	}
 
-      for _, value := range foos {
-          println(value.a)
-      }
+  	for _, value := range foos {
+  		println(value.a)
+  	}
   }
 </code></pre>
 <p><a href="http://play.golang.org/p/j4tZAKppMn">Executable snippet here</a>. In retrospect it makes sense, Go always passes copies to functions. But initially I was puzzled as my loops wouldn&rsquo;t properly update my structs.</p>
@@ -173,7 +173,7 @@ Notes   Casting in Go is slightly different than in C related languages. Instead
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

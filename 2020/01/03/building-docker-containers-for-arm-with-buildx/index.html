@@ -115,7 +115,7 @@ The steps are:">
             <h1>Building Docker Containers for ARM with buildx</h1>
             <p>I&rsquo;ve spent some time over the holidays building a Kubernetes cluster running on raspberry pis. One issue I ran into was that not all docker images I wanted to run were available for arm/linux. Luckily there&rsquo;s a useful tool called buildx that extends Docker to build containers for different platforms and architectures using quemu and binfmt. ARM has a <a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/getting-started-with-docker-for-arm-on-linux">blog post that details the steps</a> needed to build images.</p>
 <p>The steps are:</p>
-<pre><code>docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+<pre tabindex="0"><code>docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
 docker buildx rm arm-builder
 docker buildx create --name arm-builder
 docker buildx inspect --bootstrap arm-builder
@@ -126,7 +126,7 @@ docker buildx inspect --bootstrap arm-builder
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

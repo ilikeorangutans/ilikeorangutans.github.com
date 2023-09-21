@@ -118,9 +118,9 @@ Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting 
 editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine
 Vim uses by default in combination with the Ruby syntax highlighter.</p>
 <p>The solution was to add this to my <code>.vimrc</code>:</p>
-<pre><code>set regexpengine=1
+<pre tabindex="0"><code>set regexpengine=1
 </code></pre><p>The vim docs state:</p>
-<pre><code>This selects the default regexp engine. |two-engines|
+<pre tabindex="0"><code>This selects the default regexp engine. |two-engines|
 The possible values are:
   0	automatic selection
   1	old engine
@@ -134,7 +134,7 @@ for the regular expressions in the syntax highlighter.</p>
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

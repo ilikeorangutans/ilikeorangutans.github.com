@@ -116,21 +116,21 @@ private static final Logger LOGGER = LoggerFactory.getLogger(${enclosing_type}.c
 <p>This template will automatically create a new logger for the current type and import the necessary classes. I was unaware of the <code>${:import()}</code> directive until today, but it is really useful.</p>
 <h3 id="method-stubs">Method Stubs</h3>
 <p>Per default Eclipse creates method stubs that look like this:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@Override</span>
-<span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">myFunction</span><span style="color:#555">()</span> <span style="color:#555">{</span>
-  <span style="color:#09f;font-style:italic">// TODO Auto-generated method stub
-</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// return null;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
-</code></pre></div><p>This is convenient, but can be cause for bugs because you just get null. More than once I&rsquo;ve been stung by this. So I decided a better way to deal with this is to replace the template with the following:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnsupportedOperationException<span style="color:#555">(</span><span style="color:#c30">&#34;${enclosing_method}()&#34;</span><span style="color:#555">);</span>
-</code></pre></div><p>Instead of returning a default value, the method stubs will now throw an exception. Forgot to implement it? No problem, you&rsquo;ll find out very quickly. It&rsquo;s debatable whether <code>UnsupportedOperationException</code> is the appropriate type for this, but in my opinion it works quite well.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#99f">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">myFunction</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#09f;font-style:italic">// TODO Auto-generated method stub
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// return null;
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</span></span></code></pre></div><p>This is convenient, but can be cause for bugs because you just get null. More than once I&rsquo;ve been stung by this. So I decided a better way to deal with this is to replace the template with the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnsupportedOperationException<span style="color:#555">(</span><span style="color:#c30">&#34;${enclosing_method}()&#34;</span><span style="color:#555">);</span>
+</span></span></code></pre></div><p>Instead of returning a default value, the method stubs will now throw an exception. Forgot to implement it? No problem, you&rsquo;ll find out very quickly. It&rsquo;s debatable whether <code>UnsupportedOperationException</code> is the appropriate type for this, but in my opinion it works quite well.</p>
 
             <div class="divider"></div>
         </div>
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

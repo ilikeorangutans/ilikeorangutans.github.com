@@ -129,8 +129,8 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
 <h3 id="meet-graphviz">Meet Graphviz</h3>
 <p>I discovered my love for the <a href="http://www.graphviz.org/content/dot-language">dot language</a> when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on. In a nutshell, it lets you specify a graph with nodes and edges plus some extra attributes for labels, shapes etc. It&rsquo;s really a concise little language:</p>
 <pre><code>digraph MyGraph {
-    A -&gt; B -&gt; D
-    A -&gt; C
+	A -&gt; B -&gt; D
+	A -&gt; C
 }
 </code></pre>
 <p>Graphviz comes with a handful of tools that allow you to render these graph definitions into different output formats, including PDF, PNG, or SVG. The short sample graph from above would look like this:</p>
@@ -158,7 +158,7 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
 <li>Support different types of artifacts and give them different shapes. Right now I&rsquo;m thinking quartz jobs which play a fairly important role in our application.</li>
 <li>Parse code instead of string searching. Right now I&rsquo;m simply scanning each source file line by line and search for certain patterns. This works reasonably well, but with some apps I get unwanted values. Sometimes from comments, sometimes other values. If I were to actually parse the source into an AST, all these issues would disappear. It would also allow a host of other interesting things, like:</li>
 <li>Calculate the <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic Complexity</a> for each component and use that to colour code the visual representation. Low complexity could be a green tint, high values would be red.</li>
-<li>Support different languages and frameworks. I was able to implement this tool very easily because Grails' service and controller naming follows an entirely name based convention. That makes finding service definitions trivial. I would love to extend this tool to support different languages and frameworks.</li>
+<li>Support different languages and frameworks. I was able to implement this tool very easily because Grails&rsquo; service and controller naming follows an entirely name based convention. That makes finding service definitions trivial. I would love to extend this tool to support different languages and frameworks.</li>
 <li>Have more ideas? Drop me an email or a comment! :)</li>
 </ul>
 <p>The source code for the app is rather messy, but you can find it on <a href="https://github.com/ilikeorangutans/grails-service-visualizer">github.com/ilikeorangutans/grails-service-visualizer</a>.</p>
@@ -168,7 +168,7 @@ Meet Graphviz I discovered my love for the dot language when I used it years ago
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

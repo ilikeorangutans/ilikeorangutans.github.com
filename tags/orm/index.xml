@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ORM on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/orm/</link>
+    <description>Recent content in ORM on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Sun, 21 Feb 2021 14:31:37 -0500</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang ORM Comparison</title>
+      <link>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</link>
+      <pubDate>Sun, 21 Feb 2021 14:31:37 -0500</pubDate>
+      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</guid>
+      <description>I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that I always found lacking was database access. database/sql is solid if basic and packages like Mastermind/squirrel (really nice query builder) or jmoiron/sqlx (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&amp;rsquo;re on your own again.</description>
+    </item>
+    
+  </channel>
+</rss>

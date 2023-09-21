@@ -119,7 +119,7 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
 <p>Maven release plugin successfully completes the <code>release:prepare</code> goal, creates the tag, but fails to commit the changed <code>pom.xml</code>.</p>
 <h3 id="solution">Solution</h3>
 <p>Git&rsquo;s output format changed slightly in one of the recent versions and Maven&rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</p>
-<pre><code>    git config --add status.displayCommentPrefix true
+<pre><code>	git config --add status.displayCommentPrefix true
 </code></pre>
 <p><a href="http://jira.codehaus.org/browse/SCM-740?focusedCommentId=341325&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-341325">As per SCM-740</a></p>
 
@@ -128,7 +128,7 @@ Solution Git&rsquo;s output format changed slightly in one of the recent version
     </div>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
