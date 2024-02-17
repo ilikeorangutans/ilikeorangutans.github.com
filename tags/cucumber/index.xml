@@ -9,15 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/cucumber/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Mar 2019 09:58:18 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/cucumber/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Book Arrival: The Ray Tracer Challenge</title>
       <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
-      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</guid>
       <description>I was browsing the Pragmatic Bookshelf and this book caught my eye: writing a ray tracer from ground up with a test driven approach? This sounds like a fantastic challenge to me. I always was interested in ray tracers but always thought it too complicated a topic to do it myself. However, test driven development has helped me work on some complex and terrible code bases, so this feels reassuring to me.</description>
     </item>
-    
   </channel>
 </rss>

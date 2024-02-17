@@ -8,489 +8,350 @@
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright><atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Jakob Külzer</copyright>
+    <atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Golang ORM Comparison</title>
-      <link>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</link>
-      <pubDate>Sun, 21 Feb 2021 14:31:37 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</guid>
-      <description>I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that I always found lacking was database access. database/sql is solid if basic and packages like Mastermind/squirrel (really nice query builder) or jmoiron/sqlx (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&amp;rsquo;re on your own again.</description>
+      <title>Zig - First Impressions</title>
+      <link>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</link>
+      <pubDate>Mon, 23 Oct 2023 19:50:27 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</guid>
+      <description>I&amp;rsquo;ve been following the zig language for a while ever since I saw Andrew Kelly&amp;rsquo;s talk on Corecursive. The way Andrew describes the design of zig was very engrossing and who doesn&amp;rsquo;t like a language build for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig when I first looked at it.&#xA;But that has changed; I finally found some motivation and ziglearn.</description>
     </item>
-    
     <item>
       <title>Migrating Raspberry Pi From Sd Card to Usb</title>
       <link>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</link>
-      <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</guid>
       <description>I&amp;rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&amp;rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.</description>
     </item>
-    
-    <item>
-      <title>Matrix Bots with Golang</title>
-      <link>https://ilikeorangutans.github.io/2020/11/22/matrix-bots-with-golang/</link>
-      <pubDate>Sun, 22 Nov 2020 14:14:45 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2020/11/22/matrix-bots-with-golang/</guid>
-      <description>I&amp;rsquo;ve been running a Matrix homeserver for about a year now and I&amp;rsquo;m happy with it. It runs on my Kubernetes cluster on a few Raspberry Pis, doesn&amp;rsquo;t require a lot of attention and is fairly resource efficient. But I always wanted to write my own chatbots to do things for me and recently I finally started looking into matrix bots and how to implement them in Go for easy cross compile and statically linked binaries.</description>
-    </item>
-    
     <item>
       <title>Vim Digraph</title>
       <link>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</link>
-      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 05 Nov 2020 13:54:51 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2020/11/05/vim-digraph/</guid>
       <description>Was writing a few posts for my food blog and needed to type some some &amp;ldquo;special&amp;rdquo; characters like é. When on a Mac that&amp;rsquo;s really simple because the keymap supports typing compound keys. But I&amp;rsquo;m on Linux and switching between keyboard layouts is annoying. So I figured vim must have a way for typing these characters, and behold, I learned about Vim&amp;rsquo;s digraph support. The documentation is quite good but I&amp;rsquo;ll cherry pick some combos because otherwise I&amp;rsquo;ll forget.</description>
     </item>
-    
     <item>
       <title>Building Docker Containers for ARM with buildx</title>
       <link>https://ilikeorangutans.github.io/2020/01/03/building-docker-containers-for-arm-with-buildx/</link>
-      <pubDate>Fri, 03 Jan 2020 22:58:33 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 03 Jan 2020 22:58:33 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2020/01/03/building-docker-containers-for-arm-with-buildx/</guid>
-      <description>I&amp;rsquo;ve spent some time over the holidays building a Kubernetes cluster running on raspberry pis. One issue I ran into was that not all docker images I wanted to run were available for arm/linux. Luckily there&amp;rsquo;s a useful tool called buildx that extends Docker to build containers for different platforms and architectures using quemu and binfmt. ARM has a blog post that details the steps needed to build images.
-The steps are:</description>
+      <description>I&amp;rsquo;ve spent some time over the holidays building a Kubernetes cluster running on raspberry pis. One issue I ran into was that not all docker images I wanted to run were available for arm/linux. Luckily there&amp;rsquo;s a useful tool called buildx that extends Docker to build containers for different platforms and architectures using quemu and binfmt. ARM has a blog post that details the steps needed to build images.&#xA;The steps are:</description>
     </item>
-    
     <item>
       <title>zsh Autocompletion Caveat</title>
       <link>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</link>
-      <pubDate>Fri, 23 Aug 2019 14:21:43 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 23 Aug 2019 14:21:43 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</guid>
       <description>I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;amp;&amp;amp; compinit and everything works as expected.</description>
     </item>
-    
     <item>
       <title>awk Cheat Sheet</title>
       <link>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</link>
-      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/</guid>
-      <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.
-Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;#34;;&amp;#34; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;#34;An empty line&amp;#34; } END { # Instructions run after the main loop } Invoke awk with a script like so:</description>
+      <description>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&amp;rsquo;s time for a cheat sheet.&#xA;Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &amp;#34;;&amp;#34; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &amp;#34;An empty line&amp;#34; } END { # Instructions run after the main loop } Invoke awk with a script like so:</description>
     </item>
-    
     <item>
       <title>Book Arrival: The Ray Tracer Challenge</title>
       <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
-      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</guid>
       <description>I was browsing the Pragmatic Bookshelf and this book caught my eye: writing a ray tracer from ground up with a test driven approach? This sounds like a fantastic challenge to me. I always was interested in ray tracers but always thought it too complicated a topic to do it myself. However, test driven development has helped me work on some complex and terrible code bases, so this feels reassuring to me.</description>
     </item>
-    
     <item>
       <title>Slow Ruby Syntax Highlighting in Vim</title>
       <link>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</link>
-      <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</guid>
       <description>I recently switched back from MacVim to terminal (alacritty) Vim because I&amp;rsquo;m trying to step up my tmux game after reading the excellent tmux 2 book from the Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine Vim uses by default in combination with the Ruby syntax highlighter.</description>
     </item>
-    
     <item>
       <title>gnuplot - My New Favorite Tool</title>
       <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</link>
-      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</guid>
       <description>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data. Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&amp;rsquo;t really scale well. The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the GNU project.</description>
     </item>
-    
     <item>
       <title>Notes on Working Effectively With Legacy Code</title>
       <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>
-      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</guid>
       <description>I recently received my copy of Working Effectivly With Legacy Code and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to work with not only legacy systems, but really, any kind of system.</description>
     </item>
-    
     <item>
       <title>First Impressions of Flutter</title>
       <link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link>
-      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid>
       <description>Google recently announced availability of 1.0 preview of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
     </item>
-    
     <item>
       <title>Book Arrival: Working Effectivly With Legacy Code</title>
       <link>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</link>
-      <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 18 Jun 2018 22:58:46 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/</guid>
       <description>I had this book on my wishlist for quite a while, but never thought I needed it. But then it was warmly recommended to me during a fantastic OOP Workshop with Sandi Metz. If Sandi recommends it, it must be good. Excited to dive into this one:</description>
     </item>
-    
     <item>
       <title>Give Me Smarter Objects</title>
       <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
-      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
       <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
     </item>
-    
     <item>
       <title>OMF</title>
       <link>https://ilikeorangutans.github.io/projects/omf/</link>
-      <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 29 May 2018 21:39:00 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/projects/omf/</guid>
       <description>OMF, short for Object Manager Framework, is a Java project that enables annotation driven mapping of POJOs to Java Content Repository structures. Mapped POJOs allow transparent access to the underlying graph storage with support for primitive types, Lists, and Maps. I built OMF while working on Adobe CQ systems; data access was always too cumbersome and led to very brittle, hard to compose code, so a framework that generates bytecode on the fly to abstract away the repetitive data access tasks seemed the obvious choice.</description>
     </item>
-    
     <item>
       <title>Harbormaster</title>
       <link>https://ilikeorangutans.github.io/projects/harbormaster/</link>
-      <pubDate>Tue, 29 May 2018 15:50:06 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 29 May 2018 15:50:06 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/projects/harbormaster/</guid>
       <description>Harbormaster is a tool I wrote because I found the Azkaban web UI too cumbersome and slow for day to day operations. In particular I found checking status of recurring jobs slow, and getting logs was annoying because they&amp;rsquo;re loaded via AJAX, so curling and piping to other tools was not possible either.</description>
     </item>
-    
     <item>
       <title>null, Software Design, and Scala&#39;s Option</title>
       <link>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</link>
-      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</guid>
-      <description>For the past year or so I&amp;rsquo;ve been writing a lot of Scala and fallen in love with its Option type and how it allows me to avoid nulls. I reflected on null, why they are bad, and how optional types allow you to write more expressive code.
-What is null? Most programming languages have the concept of null (or nil) that represents the absence of a given value or object.</description>
+      <description>For the past year or so I&amp;rsquo;ve been writing a lot of Scala and fallen in love with its Option type and how it allows me to avoid nulls. I reflected on null, why they are bad, and how optional types allow you to write more expressive code.&#xA;What is null? Most programming languages have the concept of null (or nil) that represents the absence of a given value or object.</description>
     </item>
-    
     <item>
       <title>A New Theme</title>
       <link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link>
-      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</guid>
-      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.
-If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
+      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.&#xA;If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
     </item>
-    
     <item>
       <title>Inspiration and Action</title>
       <link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
-      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
-      <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:
-We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.
-&amp;ndash; Frank Tibolt
-I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
+      <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:&#xA;We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.&#xA;&amp;ndash; Frank Tibolt&#xA;I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://ilikeorangutans.github.io/about/</link>
-      <pubDate>Wed, 28 Mar 2018 13:56:38 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 28 Mar 2018 13:56:38 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/about/</guid>
-      <description>Hi, my name is Jakob and this is my website and blog. I write about things that I find interesting and about things that I think about. And sometimes just things that took me a long while to figure out.
-If you want to reach out to me find my email address at the bottom of the page. A lot of the stuff I experiment with ends up on Github, link also at the bottom.</description>
+      <description>Hi, my name is Jakob and this is my website and blog. I write about things that I find interesting and about things that I think about. And sometimes just things that took me a long while to figure out.&#xA;If you want to reach out to me find my email address at the bottom of the page. A lot of the stuff I experiment with ends up on Github, link also at the bottom.</description>
     </item>
-    
     <item>
       <title>On Wasted Time</title>
       <link>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
-      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
       <description>Recently I&amp;rsquo;ve been feeling&amp;hellip; unaccomplished. Despite all my achievements, acquired skills, and successes I&amp;rsquo;ve had a thought gnawing at the back of my mind. I realized, after looking at my extensive list of side and toy projects, that none of them are making any progress. In some of them I invested lots of time, others are just ideas, barely sketches. But they all have in common that I grew tired of working on them.</description>
     </item>
-    
     <item>
       <title>Google Appengine, Go, and Vendoring</title>
       <link>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</link>
-      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 22 May 2016 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2016/05/22/google-appengine-go-and-vendoring/</guid>
-      <description>I&amp;rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:
-2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
+      <description>I&amp;rsquo;m working on a small app running on Google App engine using Go and upgraded to the latest version of the GAE SDK. The latest version uses Go 1.6 instead of 1.4 like the older version I had. Upgrading was mostly straightforward, but once I started using vendoring I got strange build errors like this:&#xA;2016/05/22 13:26:47 go-app-builder: Failed parsing input: parser: bad import &amp;quot;syscall&amp;quot; in vendor/golang.org/x/net/ipv4/dgramopt_posix.go I got different variations of this, but all came down to the same problem: some code was importing packages that GAE doesn&amp;rsquo;t want you tu use.</description>
     </item>
-    
     <item>
       <title>Writing an Operating System - Environment Setup</title>
       <link>https://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</link>
-      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 26 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2015/10/26/writing-an-operating-system-cross-compiler-setup/</guid>
-      <description>I&amp;rsquo;ve been reading The little book about OS development and wiki.osdev.org and took some notes along the line. Here&amp;rsquo;s what I wrote on environment setup.
-Environment setup You&amp;rsquo;ll need a cross compile toolchain consisting of GNU Binutils and gcc. The osdev wiki has a great page on setting up a cross compilation toolchain.
-It took me a few times because I didn&amp;rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, gcc-4.</description>
+      <description>I&amp;rsquo;ve been reading The little book about OS development and wiki.osdev.org and took some notes along the line. Here&amp;rsquo;s what I wrote on environment setup.&#xA;Environment setup You&amp;rsquo;ll need a cross compile toolchain consisting of GNU Binutils and gcc. The osdev wiki has a great page on setting up a cross compilation toolchain.&#xA;It took me a few times because I didn&amp;rsquo;t read the instructions properly. It is important to unpack the sources for binutils and gcc and have separate build directories, gcc-4.</description>
     </item>
-    
     <item>
       <title>gorename and invalid expression</title>
       <link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
-      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
-      <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.
-The issue comes up when trying to use gorename:
-$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
+      <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.&#xA;The issue comes up when trying to use gorename:&#xA;$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
     </item>
-    
     <item>
       <title>Using Golang and Graphviz to Visualize Complex Grails Applications</title>
       <link>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
-      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
-      <description>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use Graphviz to help me get a better overview of our applications.
-Meet Graphviz I discovered my love for the dot language when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on.</description>
+      <description>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use Graphviz to help me get a better overview of our applications.&#xA;Meet Graphviz I discovered my love for the dot language when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on.</description>
     </item>
-    
     <item>
       <title>Maven Release Plugin and Git 1.9</title>
       <link>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link>
-      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid>
-      <description>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.
-Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.
-Solution Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</description>
+      <description>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.&#xA;Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.&#xA;Solution Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</description>
     </item>
-    
     <item>
       <title>Golang Reading and Notes for April 2014</title>
       <link>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</link>
-      <pubDate>Sun, 27 Apr 2014 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 27 Apr 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/04/27/golang-reading-and-notes-for-april-2014/</guid>
-      <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType } The range keyword when used with two return values does not return references, but rather copies.</description>
+      <description>Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&amp;rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?&#xA;Notes Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:&#xA;var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType } The range keyword when used with two return values does not return references, but rather copies.</description>
     </item>
-    
     <item>
       <title>Grails 2 Testing Guide</title>
       <link>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link>
-      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid>
-      <description>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.
-I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.</description>
+      <description>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.&#xA;I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.</description>
     </item>
-    
     <item>
       <title>First impressions: Go</title>
       <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
-      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
-      <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.
-So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:
-Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
+      <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.&#xA;So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:&#xA;Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
     </item>
-    
     <item>
       <title>Thoughts on Authorization Schemes</title>
       <link>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>
-      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid>
-      <description>Today I was experimenting with some new tools (Prose) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:
-Android has a similar screen when you install an app, IOS probably has one as well.</description>
+      <description>Today I was experimenting with some new tools (Prose) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:&#xA;Android has a similar screen when you install an app, IOS probably has one as well.</description>
     </item>
-    
     <item>
       <title>JSR-269 Annotation Processing</title>
       <link>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link>
-      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</guid>
       <description>I&amp;rsquo;ve been contemplating compile time bytecode manipulation for the Object Mapper Framework for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered Project Lombok and reading about JSR-269, which was introduced with Java 1.6. It&amp;rsquo;s an API that allows you to plug custom annotation processors into javac.</description>
     </item>
-    
     <item>
       <title>Switched from Eclipse to IntelliJ</title>
       <link>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
-      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
       <description>Over the years I have always been fan and user of the Eclipse platform. I liked the openness, the available plugins, and many of its features, including the CTRL-1 hotkey that does everything, and a few other things. However, over time Eclipse got slower and slower, more unstable, and after a while just a pain to use, especially when using more than one screen. I decided to give IntelliJ another try, as I&amp;rsquo;ve done a few times before.</description>
     </item>
-    
     <item>
       <title>Making Eclipse&#39;s Method Stubs Better and other things</title>
       <link>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</link>
-      <pubDate>Wed, 26 Jun 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 26 Jun 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</guid>
       <description>Just downloaded Eclipse Kepler and I&amp;rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&amp;rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad.</description>
     </item>
-    
     <item>
       <title>The Case for Continuous Integration</title>
       <link>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</link>
-      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</guid>
       <description>In my career as a software developer, I&amp;rsquo;ve come to appreciate the principles of Continuous Integration (CI). It forces you to do the hard things early and often and thus helps you reduce risk during development. It forces you to write tests, and be responsible about what you check in. All in all, good qualities and something that every development team should aspire to. Or so I thought. Reality is different, and so far almost every development team I have interacted with is deadly afraid of doing CI.</description>
     </item>
-    
     <item>
       <title>The Problem with LinkedIn&#39;s Skills Endorsement</title>
       <link>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</link>
-      <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 04 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/04/04/the-problem-with-linkedins-skills-endorsment/</guid>
       <description>A while ago LinkedIn introduced what looked like a really cool feature, an easy way to &amp;ldquo;endorse&amp;rdquo; skills of your contacts. It&amp;rsquo;s really easy to go in and click &amp;ldquo;Endorse&amp;rdquo; on a bunch of skills. However, one thing that kept surprising me was who endorsed what skills. For example, just today I had a ex-coworker from over 4 years ago endorse me for Hibernate. Which by itself is a nice gesture, only thing is, he&amp;rsquo;s an art director.</description>
     </item>
-    
     <item>
       <title>On Developer Happiness and Productivity</title>
       <link>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</link>
-      <pubDate>Wed, 03 Apr 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 03 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid>
-      <description>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.
-A happy developer is a productive developer.</description>
+      <description>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.&#xA;A happy developer is a productive developer.</description>
     </item>
-    
     <item>
       <title>Date Arithmetics in XSLT 2</title>
       <link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
-      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
-      <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.
-First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
+      <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.&#xA;First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
     </item>
-    
     <item>
       <title>OSGI, Guice, and Peaberry: first steps</title>
       <link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>
-      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid>
-      <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
-However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
+      <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.&#xA;However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
     </item>
-    
     <item>
       <title>Type Incompatibility With Maven SCR Plugin</title>
       <link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
-      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
-      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
-[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
-@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
+      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:&#xA;[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:&#xA;@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
     </item>
-    
     <item>
       <title>Google Guice and Scope Mixing</title>
       <link>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</link>
-      <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</guid>
       <description>I&amp;rsquo;ve been working on a small Java application I wrote a few years ago for some bug fixes and in the process of making it better, I introduced Google Guice, my favourite dependency injection framework. On of the great features of Guice is that it supports different scopes for injection. Per default, Guice will return a new object for every request. But sometimes you want to objects to be created a bit less liberally, for example, you want a certain object to be created only once.</description>
     </item>
-    
     <item>
       <title>Reading List: JVM Internals, Rugged Software, and 12 Factor Apps</title>
       <link>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</link>
-      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 04 Dec 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/</guid>
       <description>Recently I&amp;rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the Rugged Manifesto as it emphasizes how software is crucial in our world and the responsibilities that come with it. Another great guide is Twelve-Factor App, a list of 12 principles on how to effectively implement and operate applications. And last but not least, Understanding JVM Internals, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.</description>
     </item>
-    
     <item>
       <title>Apache Sling Resource Resolver Rules in a Nutshell</title>
       <link>https://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</link>
-      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 20 Nov 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/11/20/apache-sling-resource-resolver-rule-priority-explained/</guid>
       <description>If you work with Apache Sling, you have probably encountered the ResourceResolver and its configuration rules. In short, the ResourceResolver is the part of Sling that resolves incoming requests to actual or virtual resources. For example, if a request for /foo/bar is coming in the resolver will resolve that to a corresponding node in the JCR. However, sometimes it is not desireable to expose the internal structure of the repository or the required external structure cannot be represented using the JCR.</description>
     </item>
-    
     <item>
       <title>commons-logging in OSGI Environments</title>
       <link>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</link>
-      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 14 Nov 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/11/14/commons-logging-in-osgi-environments/</guid>
       <description>While working on a small toy project using Apache Felix and commons-httpclient, I kept running into the issue that there is no official OSGI bundle for Apache commons-logging out there. While most Apache commons projects either provide simple bundles or full blown OSGI implementations with Activators and Services, commons-logging is an interesting exception. If you scan the Commons OSGI status page, you will notice that there is no OSGI version for commons-logging available, and a separate section to explain why.</description>
     </item>
-    
     <item>
       <title>OSGI Bootstrapping</title>
       <link>https://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</link>
-      <pubDate>Tue, 23 Oct 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 23 Oct 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/10/23/osgi-bootstrapping/</guid>
       <description>I&amp;rsquo;ve been working with OSGI based technology for a while now and it&amp;rsquo;s a great piece of technology. However, so far I&amp;rsquo;ve only worked with OSGI technology that runs in existing instances of the framework. A running framework is easy to deal with, but how do you get to this point? I spent some time today playing with that, and it took me a while to put it all together. So naturally, I&amp;rsquo;ll have to record my findings here.</description>
     </item>
-    
     <item>
       <title>OSGI Classloading Reading List</title>
       <link>https://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</link>
-      <pubDate>Fri, 12 Oct 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 12 Oct 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/10/12/osgi-classloading-reading-list/</guid>
-      <description>I&amp;rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&amp;rsquo;m starting to fully understand and leverage OSGI and I&amp;rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.
-In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules.</description>
+      <description>I&amp;rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&amp;rsquo;m starting to fully understand and leverage OSGI and I&amp;rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.&#xA;In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules.</description>
     </item>
-    
     <item>
       <title>Horray for Jekyll</title>
       <link>https://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</link>
-      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/06/22/horray-for-jekyll/</guid>
       <description>So I finally got around to play with Jekyll, a static site generator for websites. I was initially sceptical whether a static site generator would be up for running a blog, but after playing with it for a bit, I&amp;rsquo;m in love with this concept. The ability to write my posts in vim (MacVim that is) and version them with Git makes me very happy. As much as I like Wordpress, it&amp;rsquo;s getting more and more sluggish (on my old server at least) and every time I&amp;rsquo;m logging in to it, I spend half an hour installing updates and patches.</description>
     </item>
-    
     <item>
       <title>Panoramas from Delhi, India</title>
       <link>https://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</link>
-      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Fri, 22 Jun 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/06/22/panoramas-from-delhi/</guid>
-      <description>I spent some time in India and at a few spots I took enough pictures to create panoramas. Make sure you click the links to the full version and zoom to the original size of the image. They&amp;rsquo;re huge and you can scroll around for a bit and discover nice details.
-Full version: India Gate Panorama!
-Full version: Delhi Rooftop Panorama!</description>
+      <description>I spent some time in India and at a few spots I took enough pictures to create panoramas. Make sure you click the links to the full version and zoom to the original size of the image. They&amp;rsquo;re huge and you can scroll around for a bit and discover nice details.&#xA;Full version: India Gate Panorama!&#xA;Full version: Delhi Rooftop Panorama!</description>
     </item>
-    
     <item>
       <title>SSH (Remote) Tunnels</title>
       <link>https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</link>
-      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 02 Jan 2011 12:36:58 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/</guid>
-      <description>Just figured out how SSH remote tunnels work and wanted to write it down.
-Nomenclature:
-[Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server. Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
-$ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:</description>
+      <description>Just figured out how SSH remote tunnels work and wanted to write it down.&#xA;Nomenclature:&#xA;[Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server. Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:&#xA;$ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:</description>
     </item>
-    
     <item>
       <title>Antlr Grammars for Fun and Profit</title>
       <link>https://ilikeorangutans.github.io/2010/11/24/antlr-grammars-for-fun-and-profit/</link>
-      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 24 Nov 2010 23:10:35 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2010/11/24/antlr-grammars-for-fun-and-profit/</guid>
       <description>Recently at work I had to work on files in our legacy system. Those files, being part of a proprietary product, are unknown to any editor or pretty printer that you can find. And most of them are not formatted nicely, if at all. Being a lazy developer I really love eclipse&amp;rsquo;s code formatting features, because, hey, it takes away a lot of tedious and annoying formatting. Also, I think properly formatted files are easier to understand, maintain and fix.</description>
     </item>
-    
     <item>
       <title>Building a CMS with XML, XSLT, Ant, and ImageMagik</title>
       <link>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</link>
-      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</guid>
       <description>Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated.</description>
     </item>
-    
   </channel>
 </rss>

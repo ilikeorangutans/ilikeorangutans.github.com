@@ -9,25 +9,21 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Tue, 02 Apr 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Apr 2013 13:59:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Date Arithmetics in XSLT 2</title>
       <link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
-      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
-      <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.
-First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
+      <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.&#xA;First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
     </item>
-    
     <item>
       <title>Building a CMS with XML, XSLT, Ant, and ImageMagik</title>
       <link>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</link>
-      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 03 Jan 2010 11:37:30 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/</guid>
       <description>Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated.</description>
     </item>
-    
   </channel>
 </rss>

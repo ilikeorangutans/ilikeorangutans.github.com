@@ -9,15 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sat, 01 Jun 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jun 2013 13:59:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Case for Continuous Integration</title>
       <link>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</link>
-      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sat, 01 Jun 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/06/01/the-case-for-continuous-integration/</guid>
       <description>In my career as a software developer, I&amp;rsquo;ve come to appreciate the principles of Continuous Integration (CI). It forces you to do the hard things early and often and thus helps you reduce risk during development. It forces you to write tests, and be responsible about what you check in. All in all, good qualities and something that every development team should aspire to. Or so I thought. Reality is different, and so far almost every development team I have interacted with is deadly afraid of doing CI.</description>
     </item>
-    
   </channel>
 </rss>

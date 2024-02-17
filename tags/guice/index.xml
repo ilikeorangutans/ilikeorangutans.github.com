@@ -9,25 +9,21 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 27 Feb 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/guice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Feb 2013 13:59:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/guice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OSGI, Guice, and Peaberry: first steps</title>
       <link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>
-      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid>
-      <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.
-However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
+      <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.&#xA;However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
     </item>
-    
     <item>
       <title>Google Guice and Scope Mixing</title>
       <link>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</link>
-      <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Tue, 11 Dec 2012 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2012/12/11/google-guice-and-scope-mixing/</guid>
       <description>I&amp;rsquo;ve been working on a small Java application I wrote a few years ago for some bug fixes and in the process of making it better, I introduced Google Guice, my favourite dependency injection framework. On of the great features of Guice is that it supports different scopes for injection. Per default, Guice will return a new object for every request. But sometimes you want to objects to be created a bit less liberally, for example, you want a certain object to be created only once.</description>
     </item>
-    
   </channel>
 </rss>

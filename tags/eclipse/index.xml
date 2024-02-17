@@ -9,24 +9,21 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jul 2013 13:59:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switched from Eclipse to IntelliJ</title>
       <link>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</link>
-      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Sun, 28 Jul 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/07/28/making-eclipses-method-stubs-better/</guid>
       <description>Over the years I have always been fan and user of the Eclipse platform. I liked the openness, the available plugins, and many of its features, including the CTRL-1 hotkey that does everything, and a few other things. However, over time Eclipse got slower and slower, more unstable, and after a while just a pain to use, especially when using more than one screen. I decided to give IntelliJ another try, as I&amp;rsquo;ve done a few times before.</description>
     </item>
-    
     <item>
       <title>Making Eclipse&#39;s Method Stubs Better and other things</title>
       <link>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</link>
-      <pubDate>Wed, 26 Jun 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 26 Jun 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/06/26/making-eclipses-method-stubs-better-and-other-things/</guid>
       <description>Just downloaded Eclipse Kepler and I&amp;rsquo;m quite happy with it. It appears fast and stable so far, but that could be just that it&amp;rsquo;s a brand new install. Anyways, I re-added some of my usual code templates and while doing so, I discovered a few useful things. And because I keep doing this on every Eclipse installation, I decided to write this down here. On a related note, an Eclipse plugin to share your Eclipse templates would be pretty rad.</description>
     </item>
-    
   </channel>
 </rss>

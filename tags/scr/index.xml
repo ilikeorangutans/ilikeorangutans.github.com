@@ -9,17 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 06 Feb 2013 13:59:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/scr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Feb 2013 13:59:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/scr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Type Incompatibility With Maven SCR Plugin</title>
       <link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
-      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
-      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
-[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:
-@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
+      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:&#xA;[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:&#xA;@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
     </item>
-    
   </channel>
 </rss>

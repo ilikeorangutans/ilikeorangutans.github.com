@@ -9,16 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 21 May 2018 22:58:40 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 May 2018 22:58:40 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A New Theme</title>
       <link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link>
-      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</guid>
-      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.
-If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
+      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.&#xA;If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
     </item>
-    
   </channel>
 </rss>

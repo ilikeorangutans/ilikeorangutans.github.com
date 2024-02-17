@@ -2,32 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ilikeorangutans.github.io/tags/golang/</loc>
-    <lastmod>2021-02-21T14:31:37-05:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/</loc>
-    <lastmod>2021-02-21T14:31:37-05:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/orm/</loc>
-    <lastmod>2021-02-21T14:31:37-05:00</lastmod>
+    <loc>https://ilikeorangutans.github.io/tags/first-impression/</loc>
+    <lastmod>2023-10-24T14:43:56-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/</loc>
-    <lastmod>2023-09-21T10:29:30-04:00</lastmod>
+    <lastmod>2023-10-24T14:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://ilikeorangutans.github.io/tags/zig/</loc>
+    <lastmod>2023-10-24T14:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</loc>
+    <lastmod>2023-10-24T14:43:56-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</loc>
     <lastmod>2020-12-07T14:29:31-05:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/raspberrypi/</loc>
     <lastmod>2020-12-07T14:29:31-05:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/bot/</loc>
-    <lastmod>2020-11-22T14:14:45-05:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/matrix/</loc>
-    <lastmod>2020-11-22T14:14:45-05:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/2020/11/22/matrix-bots-with-golang/</loc>
-    <lastmod>2020-11-22T14:14:45-05:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/vim/</loc>
     <lastmod>2023-09-21T10:29:30-04:00</lastmod>
@@ -48,6 +39,9 @@
     <lastmod>2020-01-03T23:13:39-05:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/go/</loc>
+    <lastmod>2019-08-23T14:32:19-04:00</lastmod>
+  </url><url>
+    <loc>https://ilikeorangutans.github.io/tags/golang/</loc>
     <lastmod>2019-08-23T14:32:19-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/zsh/</loc>
@@ -117,9 +111,6 @@
     <lastmod>2018-06-24T22:22:55-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/dart/</loc>
-    <lastmod>2018-06-24T22:22:55-04:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/first-impression/</loc>
     <lastmod>2018-06-24T22:22:55-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</loc>

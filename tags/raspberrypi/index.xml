@@ -9,15 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 07 Dec 2020 12:52:07 -0500</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Dec 2020 12:52:07 -0500</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrating Raspberry Pi From Sd Card to Usb</title>
       <link>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</link>
-      <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Mon, 07 Dec 2020 12:52:07 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/</guid>
       <description>I&amp;rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&amp;rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.</description>
     </item>
-    
   </channel>
 </rss>

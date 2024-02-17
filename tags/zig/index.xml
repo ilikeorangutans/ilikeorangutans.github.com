@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zig on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/zig/</link>
+    <description>Recent content in zig on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Mon, 23 Oct 2023 19:50:27 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/zig/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zig - First Impressions</title>
+      <link>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</link>
+      <pubDate>Mon, 23 Oct 2023 19:50:27 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</guid>
+      <description>I&amp;rsquo;ve been following the zig language for a while ever since I saw Andrew Kelly&amp;rsquo;s talk on Corecursive. The way Andrew describes the design of zig was very engrossing and who doesn&amp;rsquo;t like a language build for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig when I first looked at it.&#xA;But that has changed; I finally found some motivation and ziglearn.</description>
+    </item>
+  </channel>
+</rss>

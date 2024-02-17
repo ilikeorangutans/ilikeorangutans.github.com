@@ -9,15 +9,14 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Thu, 21 Mar 2019 12:07:08 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2019 12:07:08 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slow Ruby Syntax Highlighting in Vim</title>
       <link>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</link>
-      <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate>
-      <author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <pubDate>Thu, 21 Mar 2019 12:07:08 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/2019/03/21/slow-ruby-syntax-highlighting-in-vim/</guid>
       <description>I recently switched back from MacVim to terminal (alacritty) Vim because I&amp;rsquo;m trying to step up my tmux game after reading the excellent tmux 2 book from the Pragmatic Bookshelf. But anyways, I noticed incredibly slow syntax highlighting for larger ruby files, so slow that editing code was almost impossible. After lots of searching and debugging I found it was the regular expression engine Vim uses by default in combination with the Ruby syntax highlighter.</description>
     </item>
-    
   </channel>
 </rss>
