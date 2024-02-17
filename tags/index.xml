@@ -9,8 +9,29 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 23 Oct 2023 19:50:27 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2024 23:05:21 -0500</lastBuildDate>
     <atom:link href="https://ilikeorangutans.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Books</title>
+      <link>https://ilikeorangutans.github.io/tags/books/</link>
+      <pubDate>Fri, 16 Feb 2024 23:05:21 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/books/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mkdocs</title>
+      <link>https://ilikeorangutans.github.io/tags/mkdocs/</link>
+      <pubDate>Fri, 16 Feb 2024 23:05:21 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/mkdocs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>software</title>
+      <link>https://ilikeorangutans.github.io/tags/software/</link>
+      <pubDate>Fri, 16 Feb 2024 23:05:21 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/software/</guid>
+      <description></description>
+    </item>
     <item>
       <title>First Impression</title>
       <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
@@ -100,13 +121,6 @@
       <link>https://ilikeorangutans.github.io/tags/unix/</link>
       <pubDate>Tue, 26 Mar 2019 11:36:48 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/unix/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Books</title>
-      <link>https://ilikeorangutans.github.io/tags/books/</link>
-      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/tags/books/</guid>
       <description></description>
     </item>
     <item>
