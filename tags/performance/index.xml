@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on Jakob Külzer</title>
+    <link>https://ilikeorangutans.github.io/tags/performance/</link>
+    <description>Recent content in Performance on Jakob Külzer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Sun, 05 May 2024 14:35:01 -0400</lastBuildDate>
+    <atom:link href="https://ilikeorangutans.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One Billion Row Challenge in Zig</title>
+      <link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link>
+      <pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</guid>
+      <description>I finally got around to looking into The One Billion Row Challenge. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a challenge to how fast a program can read and process one billion rows. It&amp;rsquo;s fascinating because it&amp;rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.&#xA;So one Saturday evening I started reading up on the challenge. The first thing that struck me was the top entries&amp;rsquo; time: 1.</description>
+    </item>
+  </channel>
+</rss>

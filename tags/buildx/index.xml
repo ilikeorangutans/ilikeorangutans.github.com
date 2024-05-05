@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>buildx on Jakob Külzer</title>
+    <title>Buildx on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/buildx/</link>
-    <description>Recent content in buildx on Jakob Külzer</description>
+    <description>Recent content in Buildx on Jakob Külzer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Fri, 03 Jan 2020 22:58:33 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 23:13:39 -0500</lastBuildDate>
     <atom:link href="https://ilikeorangutans.github.io/tags/buildx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building Docker Containers for ARM with buildx</title>
