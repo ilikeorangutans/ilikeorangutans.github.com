@@ -138,7 +138,9 @@ So one Saturday evening I started reading up on the challenge. The first thing t
 Benchmark 1: ./zig-out/bin/1brc measurements.txt
   Time (mean ± σ):      2.658 s ±  0.021 s    [User: 0.167 s, System: 2.483 s]
   Range (min … max):    2.640 s …  2.701 s    10 runs
-</code></pre><p>My initial reaction was that the slow program is likely executing a lot more reads than it should and not knowing how to better measure reads I figured I&rsquo;d check the number of syscalls emitted by the program. The slow program raked up 3.5 million syscalls.</p>
+</code></pre><p>My initial reaction was that the slow program is likely executing a lot more reads than it should. I figured the number of syscalls emitted by the program is a good indicator for the number of reads.  I collected the this metric like so:</p>
+<pre tabindex="0"><code>$ perf stat -e raw_syscalls:sys_enter,user_time,system_time -a ./zig-out/bin/1brc measurements.txt
+</code></pre><p>The slow program raked up 5.6 million syscalls.</p>
 <pre tabindex="0"><code> Performance counter stats for &#39;system wide&#39;:
 
          5,596,331      raw_syscalls:sys_enter
@@ -146,9 +148,8 @@ Benchmark 1: ./zig-out/bin/1brc measurements.txt
      2,827,345,000 ns   system_time
 
       50.702825947 seconds time elapsed
-</code></pre><p>The fast one did only 5.6 million:</p>
-<pre tabindex="0"><code>$ perf stat -e raw_syscalls:sys_enter,user_time,system_time -a ./zig-out/bin/1brc measurements.txt
-loading measurements.txt
+</code></pre><p>The fast one did only 3.5 million syscalls:</p>
+<pre tabindex="0"><code>loading measurements.txt
 Read 13795239670 bytes
 
  Performance counter stats for &#39;system wide&#39;:
@@ -158,7 +159,7 @@ Read 13795239670 bytes
      2,713,290,000 ns   system_time
 
        2.930230893 seconds time elapsed
-</code></pre><p>Unfortunately the increase in syscalls (5.6 vs 3.5 million) does not quite scale with the program runtime (50 vs 2.5 seconds). My next observation was that the number of executed branches was significantly higher for my first implementation:</p>
+</code></pre><p>Unfortunately the increase in syscalls (5.6 vs 3.5 million) does not quite scale with the program runtime (50 vs 2.5 seconds). My next observation was that the number of executed branches was significantly higher for my first implementation.</p>
 <pre tabindex="0"><code>   188,650,271,726      branches:u                       #    3.640 G/sec
      1,510,203,162      branch-misses:u                  #    0.80% of all branches
 
