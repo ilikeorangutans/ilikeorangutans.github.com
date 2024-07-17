@@ -17,7 +17,8 @@ So one Saturday evening I started reading up on the challenge. The first thing t
     <meta property="og:url" content="https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
+
+    
 
     <link rel="stylesheet" href="/css/spectre.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -120,7 +121,7 @@ So one Saturday evening I started reading up on the challenge. The first thing t
             <p>I finally got around to looking into <a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge</a>. If you&rsquo;re unfamiliar, it&rsquo;s a challenge to how fast a program can read and process one billion rows. It&rsquo;s fascinating because it&rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.</p>
 <p>So one Saturday evening I started reading up on the challenge. The first thing that struck me was the <a href="https://www.morling.dev/blog/1brc-results-are-in/">top entries&rsquo;</a> time: 1.535 seconds! For reference, the input is 13 GB. I can&rsquo;t even dump the whole file to <code>/dev/null</code> in that short of a time. So clearly, lots to learn.</p>
 <p>My first thought was to implement it in Go, but this kind of algorithmic challenge is perfect to learn new languages, and I haven&rsquo;t done enough in <a href="https://ziglang.org/">Zig</a> recently. The initial, naive implementation didn&rsquo;t go so well. With a reduced subset of 100,000,000 rows without any processing I was already at 4.8 seconds. This led to the next rabbit hole, how does one profile where your program spends your time. I have a lot of experience profiling Go programs with <a href="https://github.com/google/pprof">pprof</a> but not much with Linux&rsquo; <code>perf</code>. So here I go spelunking in another cavernous rabbit hole.</p>
-<p>Initial readings tell me that I&rsquo;m not sure what to make of this at all. Conceptually I understand ~all~ most of these, but in practice I have no intuition for these numbers.
+<p>Initial readings tell me that I&rsquo;m not sure what to make of this at all. Conceptually I understand <del>all</del> most of these, but in practice I have no intuition for these numbers.
 <img src="./perf-01.png" alt=""></p>
 <p>After some poking around and cursory reading I found the right incantation to get perf to record and unwind the callstacks such that I can make sense of the output:</p>
 <pre tabindex="0"><code>$ perf record -F99 --call-graph dwarf -- ./zig-out/bin/1brc measurements_100000.txt
@@ -210,7 +211,8 @@ Read 13795239670 bytes
             <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
             <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
             <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-            <a href="/index.xml" class="btn btn-link">RSS</a>
+
+            
         </section>
         <section class="navbar-section"></section>
     </footer>

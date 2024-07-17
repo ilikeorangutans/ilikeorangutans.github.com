@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+    <title>
+      
+        Internal Quality of Software &mdash;
+      
+      Jakob Külzer
+    </title>
+
+    <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Internal Quality of Software">
+    <meta property="og:description" content="Goal: describe internal quality
+Introduction A Tale of Every Software Project Observation: what seems to happen in a lot of projects - internal quality deteriorates, changes become harder and longer, people do not want to touch code The classic excuse: &ldquo;but it works&rdquo;! there&rsquo;s actually a lot to it. describe symptoms of deteriorating software quality in every project you&rsquo;ve been in: hard to change code, frequent failures on releases/deploys, bug fixes/new features take much longer than anticipated, ripple effects.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/2018/05/25/internal-quality-of-software/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <link rel="stylesheet" href="/css/spectre.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="canonical" href="http://localhost:1313/">
+
+  </head>
+  <body>
+    
+    <div class="container grid-lg">
+  <header class="navbar hide-sm">
+    <section class="navbar-section">
+      <a href="/" class="navbar-brand">
+        Jakob Külzer
+      </a>
+    </section>
+    <section class="navbar-section">
+      
+        <a href="/" class="mr-2 ml-2">
+          Home
+        </a>
+      
+        <a href="/posts/" class="mr-2 ml-2">
+          Blog
+        </a>
+      
+        <a href="/projects/" class="mr-2 ml-2">
+          Projects
+        </a>
+      
+        <a href="/about/" class="mr-2 ml-2">
+          About
+        </a>
+      
+    </section>
+  </header>
+
+  <header class="show-sm columns">
+    <div class="column col-12">
+      <a href="/" class="navbar-brand">
+        Jakob Külzer
+      </a>
+    </div>
+    <div class="column col-12">
+      
+        <a href="/" class="mr-2 ml-1">
+          Home
+        </a>
+      
+        <a href="/posts/" class="mr-2 ml-1">
+          Blog
+        </a>
+      
+        <a href="/projects/" class="mr-2 ml-1">
+          Projects
+        </a>
+      
+        <a href="/about/" class="mr-2 ml-1">
+          About
+        </a>
+      
+    </div>
+  </header>
+</div>
+<div class="divider"></div>
+    
+    <main class="container grid-lg content">
+      
+    <div class="columns mb-2">
+        <div class="column">
+            <p class="text-gray">
+                25 May 2018
+
+
+, tagged:
+
+
+    <a href="/tags/software-development" class="">
+        Software Development
+    </a>
+
+
+
+            </p>
+            <div class="divider"></div>
+             <h2>[DRAFT]</h2> 
+            <h1>Internal Quality of Software</h1>
+            <p>Goal: describe internal quality</p>
+<h2 id="introduction">Introduction</h2>
+<h2 id="a-tale-of-every-software-project">A Tale of Every Software Project</h2>
+<ol>
+<li>Observation: what seems to happen in a lot of projects - internal quality deteriorates, changes become harder and longer, people do not want to touch code</li>
+<li>The classic excuse: &ldquo;but it works&rdquo;! there&rsquo;s actually a lot to it.</li>
+</ol>
+<p>describe symptoms of deteriorating software quality in every project you&rsquo;ve been in: hard to change code, frequent failures on releases/deploys, bug fixes/new features take much longer than anticipated, ripple effects. Projects with test coverage usually fare better, but tend to have similar issues.</p>
+<p>What did all these projects have in common? - low internal quality</p>
+<h2 id="what-is-internal-quality">What is Internal Quality?</h2>
+<ol>
+<li>Let&rsquo;s define internal quality. It&rsquo;s the quality of software design/architecture that enables change</li>
+<li>It&rsquo;s not just about unit tests either</li>
+<li>It&rsquo;s not just about following SOLID or implementing design patterns</li>
+</ol>
+<p>internal quality describes how well the structure of the code enables change.</p>
+<h2 id="erosion">Erosion</h2>
+<ol>
+<li>Why does code quality deteriorate over time?</li>
+<li>Code quality always deteriorates in a living project</li>
+</ol>
+<h2 id="not-too-much-not-too-little">Not too Much, Not too Little</h2>
+<ol>
+<li>The cost of over-designing. naturally developers try to do every thing right</li>
+<li>Cost over-designing and finding the right balance</li>
+<li><a href="https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction">https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction</a></li>
+</ol>
+<h1 id="idea-pile">idea pile:</h1>
+<ol>
+<li>Introduction bla bla</li>
+<li>Why is internal quality hard to achieve?</li>
+<li>Why is it hard to teach internal quality?</li>
+<li>Idea of frequency of change</li>
+<li>Frequently combined with bad infrastructure or insufficient or absent build processes</li>
+</ol>
+
+            <div class="divider"></div>
+        </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </main>
+    
+    <div class="divider"></div>
+<div class="container grid-lg mb-2">
+    <footer class="navbar text-gray">
+        <section class="navbar-section">
+            &copy; 2018 Jakob Külzer
+        </section>
+        <section class="navbar-center">
+            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
+            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
+            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
+
+            
+        </section>
+        <section class="navbar-section"></section>
+    </footer>
+</div>
+
+    
+  </body>
+</html>

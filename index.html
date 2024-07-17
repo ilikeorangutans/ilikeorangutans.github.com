@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.128.2">
         <meta charset="utf-8">
     <title>
       
@@ -15,7 +15,9 @@
     <meta property="og:url" content="https://ilikeorangutans.github.io/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
+
+    <link rel="alternate" type="application/rss+xml" href="https://ilikeorangutans.github.io/index.xml" title="Jakob Külzer">
+    
 
     <link rel="stylesheet" href="/css/spectre.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -94,6 +96,44 @@
     <div class="column">
 
         <h4>Recent Blog Posts</h4>
+
+        
+        <article class="mb-2">
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2024/07/17/zig-fetch/">
+          
+          Zig Fetch
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        17 Jul 2024
+
+
+, tagged:
+
+
+    <a href="/tags/zig" class="">
+        zig
+    </a>
+
+
+
+      </p>
+      <p class="tile-subtitle">
+        Zig&rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&rsquo;t have them unless they have a release. There&rsquo;s a trick to fetch any commit as a tarball though:
+https://api.github.com/repos/&lt;repo-owner&gt;/&lt;repo&gt;/tarball/&lt;ref&gt; zig fetch can than download the code:
+zig fetch --save https://api.github.com/repos/&lt;repo-owner&gt;/&lt;repo&gt;/tarball/&lt;ref&gt; Once the code is downloaded, it still has to be added to your exe or libray in build.zig:
+const exe = b.addExecutable(.{ .
+      </p>
+      <p class="tile-action">
+        <a href="/2024/07/17/zig-fetch/" class="btn-primary">read more &rarr;</a>
+      </p>
+    </div>
+  </div>
+</article>
 
         
         <article class="mb-2">
@@ -227,41 +267,6 @@ But that has changed; I finally found some motivation and ziglearn.
 </article>
 
         
-        <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/">
-          
-          Migrating Raspberry Pi From Sd Card to Usb
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        07 Dec 2020
-
-
-, tagged:
-
-
-    <a href="/tags/raspberrypi" class="">
-        raspberrypi
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        I&rsquo;ve been running my Kubernetes cluster on Raspberry Pis for about a year now. Overall the cluster is stable and needs little attention and by now many useful and important services are now running on it. With more reliance on these services I need to ensure that the cluster doesn&rsquo;t fail from preventable errors. One of the common failure modes for Raspberry Pis are sdcards. They are not very fast, they are of limited size, and worst, they tend to fail.
-      </p>
-      <p class="tile-action">
-        <a href="/2020/12/07/migrating-raspberry-pi-from-sd-card-to-usb/" class="btn-primary">read more &rarr;</a>
-      </p>
-    </div>
-  </div>
-</article>
-
-        
 
         <div class="text-right">
             <a href="/posts">
@@ -284,7 +289,9 @@ But that has changed; I finally found some motivation and ziglearn.
             <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
             <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
             <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-            <a href="/index.xml" class="btn btn-link">RSS</a>
+
+             <a href="https://ilikeorangutans.github.io/index.xml" target="_blank" class="btn btn-link">RSS</a>
+            
         </section>
         <section class="navbar-section"></section>
     </footer>

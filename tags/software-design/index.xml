@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Design on Jakob Külzer</title>
+    <link>http://localhost:1313/tags/software-design/</link>
+    <description>Recent content in Software Design on Jakob Külzer</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Mon, 02 Jul 2018 12:06:44 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Driven Development</title>
+      <link>http://localhost:1313/2018/04/29/test-driven-development/</link>
+      <pubDate>Sun, 29 Apr 2018 11:18:55 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2018/04/29/test-driven-development/</guid>
+      <description>Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth, complexity, and utility is Test Driven Development (TDD). But it&amp;rsquo;s been a long journey, and looking back, I realize that TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things. The mechanics are important, but blindly applying the mechanics without understanding the motivations leads to tests that just add more complexity without the benefits of TDD.</description>
+    </item>
+    <item>
+      <title>Hierarchy of Software Quality</title>
+      <link>http://localhost:1313/2018/03/31/hierarchy-of-software-quality/</link>
+      <pubDate>Sat, 31 Mar 2018 11:18:16 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2018/03/31/hierarchy-of-software-quality/</guid>
+      <description>This is a topic I&amp;rsquo;ve been thinking and reading about for a long time. And then in the past months I&amp;rsquo;ve been challenged to elaborate why I think code given in one way is better than written in a different way. While unpleasant, this has set me on a course to introspect on software quality, what makes it worthwhile to pursue it, and how to communicate it.&#xA;Before we go any further, we need to discuss what quality in software even means.</description>
+    </item>
+  </channel>
+</rss>

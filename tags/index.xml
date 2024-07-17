@@ -4,13 +4,20 @@
     <title>Tags on Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/tags/</link>
     <description>Recent content in Tags on Jakob Külzer</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Tue, 07 May 2024 08:54:44 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2024 12:45:27 -0400</lastBuildDate>
     <atom:link href="https://ilikeorangutans.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zig</title>
+      <link>https://ilikeorangutans.github.io/tags/zig/</link>
+      <pubDate>Wed, 17 Jul 2024 12:18:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/tags/zig/</guid>
+      <description></description>
+    </item>
     <item>
       <title>One Billion Row Challenge</title>
       <link>https://ilikeorangutans.github.io/tags/one-billion-row-challenge/</link>
@@ -30,13 +37,6 @@
       <link>https://ilikeorangutans.github.io/tags/simd/</link>
       <pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>https://ilikeorangutans.github.io/tags/simd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Zig</title>
-      <link>https://ilikeorangutans.github.io/tags/zig/</link>
-      <pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/tags/zig/</guid>
       <description></description>
     </item>
     <item>

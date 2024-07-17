@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ilikeorangutans.github.io/tags/</loc>
+    <lastmod>2024-07-17T12:45:27-04:00</lastmod>
+  </url><url>
+    <loc>https://ilikeorangutans.github.io/tags/zig/</loc>
+    <lastmod>2024-07-17T12:45:27-04:00</lastmod>
+  </url><url>
+    <loc>https://ilikeorangutans.github.io/2024/07/17/zig-fetch/</loc>
+    <lastmod>2024-07-17T12:45:27-04:00</lastmod>
+  </url><url>
     <loc>https://ilikeorangutans.github.io/tags/one-billion-row-challenge/</loc>
     <lastmod>2024-05-07T08:54:44-04:00</lastmod>
   </url><url>
@@ -12,12 +21,6 @@
     <lastmod>2024-05-07T08:54:44-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/simd/</loc>
-    <lastmod>2024-05-07T08:54:44-04:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/</loc>
-    <lastmod>2024-05-07T08:54:44-04:00</lastmod>
-  </url><url>
-    <loc>https://ilikeorangutans.github.io/tags/zig/</loc>
     <lastmod>2024-05-07T08:54:44-04:00</lastmod>
   </url><url>
     <loc>https://ilikeorangutans.github.io/tags/books/</loc>

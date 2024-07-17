@@ -16,7 +16,8 @@
     <meta property="og:url" content="https://ilikeorangutans.github.io/404.html">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
+
+    
 
     <link rel="stylesheet" href="/css/spectre.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -88,6 +89,44 @@
 
   <h1>404 - File not Found</h1>
   <p>Yeah, the page you're looking for is not here! But maybe I can interest you in some of the other stuff I have here?</p>
+
+  
+    <article class="mb-2">
+  <div class="divider"></div>
+  <div class="tile">
+    <div class="tile-content">
+      <p class="tile-title h4">
+        <a href="/2024/07/17/zig-fetch/">
+          
+          Zig Fetch
+        </a>
+      </p>
+      <p class="tile-subtitle">
+        17 Jul 2024
+
+
+, tagged:
+
+
+    <a href="/tags/zig" class="">
+        zig
+    </a>
+
+
+
+      </p>
+      <p class="tile-subtitle">
+        Zig&rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&rsquo;t have them unless they have a release. There&rsquo;s a trick to fetch any commit as a tarball though:
+https://api.github.com/repos/&lt;repo-owner&gt;/&lt;repo&gt;/tarball/&lt;ref&gt; zig fetch can than download the code:
+zig fetch --save https://api.github.com/repos/&lt;repo-owner&gt;/&lt;repo&gt;/tarball/&lt;ref&gt; Once the code is downloaded, it still has to be added to your exe or libray in build.zig:
+const exe = b.addExecutable(.{ .
+      </p>
+      <p class="tile-action">
+        <a href="/2024/07/17/zig-fetch/" class="btn-primary">read more &rarr;</a>
+      </p>
+    </div>
+  </div>
+</article>
 
   
     
@@ -195,8 +234,6 @@ So one Saturday evening I started reading up on the challenge. The first thing t
 </article>
 
   
-    
-  
 
 
 
@@ -212,7 +249,8 @@ So one Saturday evening I started reading up on the challenge. The first thing t
             <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
             <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
             <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-            <a href="/index.xml" class="btn btn-link">RSS</a>
+
+            
         </section>
         <section class="navbar-section"></section>
     </footer>

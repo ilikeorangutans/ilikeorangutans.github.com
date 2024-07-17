@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
     <title>
       
@@ -13,15 +13,16 @@
     <meta property="og:title" content="Golang ORM Comparison">
     <meta property="og:description" content="I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that I always found lacking was database access. database/sql is solid if basic and packages like Mastermind/squirrel (really nice query builder) or jmoiron/sqlx (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&rsquo;re on your own again.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2021/02/21/golang-orm-comparison/">
+    <meta property="og:url" content="http://localhost:1313/2021/02/21/golang-orm-comparison/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="https://ilikeorangutans.github.io/index.xml" type="application/rss+xml" title="Jakob Külzer">
+
+    
 
     <link rel="stylesheet" href="/css/spectre.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
+    <link rel="canonical" href="http://localhost:1313/">
 
   </head>
   <body>
@@ -106,7 +107,7 @@
 
             </p>
             <div class="divider"></div>
-            
+             <h2>[DRAFT]</h2> 
             <h1>Golang ORM Comparison</h1>
             <p>I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that
 I always found lacking was database access. <code>database/sql</code> is solid if basic and packages like <a href="https://github.com/Masterminds/squirrel">Mastermind/squirrel</a> (really nice query builder) or <a href="https://github.com/jmoiron/sqlx">jmoiron/sqlx</a> (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&rsquo;re on your own again. This is not to say that it can&rsquo;t be done but that it&rsquo;s tedious and error prone. Recently I began prototyping something and needed a quicker way of iterating on a data model and started using <a href="go-pg/pg">go-pg/pg</a>, a nice little ORM-like library for PostgreSQL. And for all it&rsquo;s roughness, it worked quite well. This made me re-evaluate my stance on ORMs in go and I took a closer look at some options out there.</p>
@@ -197,7 +198,8 @@ I always found lacking was database access. <code>database/sql</code> is solid i
             <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
             <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
             <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-            <a href="/index.xml" class="btn btn-link">RSS</a>
+
+            
         </section>
         <section class="navbar-section"></section>
     </footer>

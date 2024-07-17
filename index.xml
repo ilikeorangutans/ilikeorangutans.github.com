@@ -4,12 +4,19 @@
     <title>Jakob Külzer</title>
     <link>https://ilikeorangutans.github.io/</link>
     <description>Recent content on Jakob Külzer</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-ca</language>
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
     <atom:link href="https://ilikeorangutans.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zig Fetch</title>
+      <link>https://ilikeorangutans.github.io/2024/07/17/zig-fetch/</link>
+      <pubDate>Wed, 17 Jul 2024 12:18:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>https://ilikeorangutans.github.io/2024/07/17/zig-fetch/</guid>
+      <description>Zig&amp;rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&amp;rsquo;t have them unless they have a release. There&amp;rsquo;s a trick to fetch any commit as a tarball though:&#xA;https://api.github.com/repos/&amp;lt;repo-owner&amp;gt;/&amp;lt;repo&amp;gt;/tarball/&amp;lt;ref&amp;gt; zig fetch can than download the code:&#xA;zig fetch --save https://api.github.com/repos/&amp;lt;repo-owner&amp;gt;/&amp;lt;repo&amp;gt;/tarball/&amp;lt;ref&amp;gt; Once the code is downloaded, it still has to be added to your exe or libray in build.zig:&#xA;const exe = b.addExecutable(.{ .</description>
+    </item>
     <item>
       <title>One Billion Row Challenge in Zig</title>
       <link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link>
