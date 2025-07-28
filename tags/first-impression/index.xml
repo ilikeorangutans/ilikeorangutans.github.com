@@ -1,36 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>First Impression on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/first-impression/</link>
-    <description>Recent content in First Impression on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Tue, 24 Oct 2023 14:43:56 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/first-impression/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Zig - First Impressions</title>
-      <link>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</link>
-      <pubDate>Mon, 23 Oct 2023 19:50:27 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</guid>
-      <description>I&amp;rsquo;ve been following the zig language for a while ever since I saw Andrew Kelly&amp;rsquo;s talk on Corecursive. The way Andrew describes the design of zig was very engrossing and who doesn&amp;rsquo;t like a language build for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig when I first looked at it.&#xA;But that has changed; I finally found some motivation and ziglearn.</description>
-    </item>
-    <item>
-      <title>First Impressions of Flutter</title>
-      <link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link>
-      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid>
-      <description>Google recently announced availability of 1.0 preview of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
-    </item>
-    <item>
-      <title>First impressions: Go</title>
-      <link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link>
-      <pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid>
-      <description>Ever since Google release Go I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.&#xA;So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:&#xA;Language The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>First Impression on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/first-impression/</link><description>Recent content in First Impression on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Tue, 24 Oct 2023 14:43:56 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/first-impression/index.xml" rel="self" type="application/rss+xml"/><item><title>Zig - First Impressions</title><link>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</link><pubDate>Mon, 23 Oct 2023 19:50:27 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</guid><description>&lt;p>I&amp;rsquo;ve been following the zig language for a while ever since I saw &lt;a href="https://corecursive.com/067-zig-with-andrew-kelley/">Andrew Kelly&amp;rsquo;s talk&lt;/a> on &lt;a href="https://corecursive.com/">Corecursive&lt;/a>.
+The way Andrew describes the design of zig was very engrossing and who doesn&amp;rsquo;t like a language build
+for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig
+when I first looked at it.&lt;/p>
+&lt;p>But that has changed; I finally found some motivation and &lt;a href="https://ziglearn.org/">ziglearn.org&lt;/a> which
+is a good introduction to zig. I have only managed to read the first two chapters, much less understand
+them but it&amp;rsquo;s enough to be dangerous (to myself?).&lt;/p></description></item><item><title>First Impressions of Flutter</title><link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link><pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid><description>&lt;p>Google recently announced &lt;a href="https://medium.com/flutter-io/flutter-release-preview-1-943a9b6ee65a">availability of 1.0 preview
+&lt;/a> of &lt;a href="https://flutter.io/">Flutter&lt;/a>, a new
+framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been
+interested in building apps for mobile devices in general and Android in particular thanks to the number of Android
+devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store
+that got too unwieldy to work on and I eventually had to cease development due to time constraints. Now with flutter
+closing in on its first release build I got interested, not only because it is a new beginning to building mobile apps
+&amp;ndash; and we all know that developers love newly built things &amp;ndash; but also because it uses
+&lt;a href="https://www.dartlang.org/">Dart&lt;/a>, Googles attempt to create a language to replace JavaScript that, sadly, went not far.&lt;/p></description></item><item><title>First impressions: Go</title><link>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</link><pubDate>Tue, 12 Nov 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/11/12/first-impressions-go/</guid><description>&lt;p>Ever since Google release &lt;a href="http://www.golang.org/">Go&lt;/a> I&amp;rsquo;ve been curious. Many good things were said and I always read bits and pieces here and there. Last week I decided to dive deeper and write some small things and get to know the language.&lt;/p>
+&lt;p>So far I&amp;rsquo;m really impressed. This is a quick list of things I&amp;rsquo;ve noticed:&lt;/p>
+&lt;h3 id="language">Language&lt;/h3>
+&lt;p>The go language is full of nice surprises. I haven&amp;rsquo;t seen everything, but just a few things that really impressed me:&lt;/p></description></item></channel></rss>

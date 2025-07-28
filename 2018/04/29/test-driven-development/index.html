@@ -11,7 +11,11 @@
 
     <meta name="author" value="Jakob Külzer">
     <meta property="og:title" content="Test Driven Development">
-    <meta property="og:description" content="Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth, complexity, and utility is Test Driven Development (TDD). But it&rsquo;s been a long journey, and looking back, I realize that TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things. The mechanics are important, but blindly applying the mechanics without understanding the motivations leads to tests that just add more complexity without the benefits of TDD.">
+    <meta property="og:description" content="Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth,
+complexity, and utility is Test Driven Development (TDD). But it&rsquo;s been a long journey, and looking back, I realize that
+TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things.
+The mechanics are important, but blindly applying the mechanics without understanding the motivations leads to tests
+that just add more complexity without the benefits of TDD.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://localhost:1313/2018/04/29/test-driven-development/">
 
@@ -19,108 +23,86 @@
 
     
 
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/output.css">
 
     <link rel="canonical" href="http://localhost:1313/">
 
   </head>
-  <body>
+  <body class="bg-gray-50 text-gray-900">
     
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
+    <header class="bg-white shadow-sm border-b">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <a href="/" class="navbar-brand">
+                <h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1>
+            </a>
+            <div class="space-x-6">
+                
+                <a href="/" class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+                
+                <a href="/posts/" class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+                
+                <a href="/projects/" class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+                
+                <a href="/about/" class="text-gray-600 hover:text-orange-400 transition-colors">About</a>
+                
+            </div>
+        </nav>
+    </div>
+</header>
 
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
     
-    <main class="container grid-lg content">
+    <main class="max-w-4xl mx-auto px-4 py-8">
       
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
+<article class="bg-white rounded-lg shadow-sm overflow-hidden">
+    
+    
+
+    
+    <div class="p-6">
+        <div class="text-sm text-gray-500 ">
+            <time datetime="2018-04-29">
                 29 Apr 2018
+            </time>
+             
+            <time datetime="2018-07-01">
+               • updated 1 Jul 2018
+            </time>
+            
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+             [DRAFT] 
+            Test Driven Development
+        </h1>
 
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+            <div class="flex flex-wrap gap-2 mb-4">
+                 
+                <a href="/tags/tdd" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    TDD
+                </a>
+                 
+                <a href="/tags/test-driven-development" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Test Driven Development
+                </a>
+                 
+                <a href="/tags/oop" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    OOP
+                </a>
+                 
+                <a href="/tags/object-oriented" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Object Oriented
+                </a>
+                 
+                <a href="/tags/software-design" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Software Design
+                </a>
+                
+            </div>
+        </div>
 
-, tagged:
-
-
-    <a href="/tags/tdd" class="">
-        TDD, 
-    </a>
-
-    <a href="/tags/test-driven-development" class="">
-        Test Driven Development, 
-    </a>
-
-    <a href="/tags/oop" class="">
-        OOP, 
-    </a>
-
-    <a href="/tags/object-oriented" class="">
-        Object Oriented, 
-    </a>
-
-    <a href="/tags/software-design" class="">
-        Software Design
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-             <h2>[DRAFT]</h2> 
-            <h1>Test Driven Development</h1>
+        <div class="prose prose-lg max-w-none">
             <p>Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth,
 complexity, and utility is Test Driven Development (TDD). But it&rsquo;s been a long journey, and looking back, I realize that
 TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things.
@@ -260,9 +242,9 @@ doesn&rsquo;t mean your food is delicious.</p>
 <li>testing distributed systems <a href="https://asatarin.github.io/testing-distributed-systems/">https://asatarin.github.io/testing-distributed-systems/</a></li>
 </ul>
 
-            <div class="divider"></div>
         </div>
     </div>
+</article>
     <div id="disqus_thread"></div>
 <script>
     window.disqus_config = function () {
@@ -286,22 +268,20 @@ doesn&rsquo;t mean your food is delicious.</p>
 
     </main>
     
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
+    <footer class="bg-white border-t mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center text-gray-600">
+            <p>&copy; 2025 Jakob Külzer. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="mailto:jakob.kuelzer@gmail.com" class="hover:text-teal-600 transition-colors">Email</a>
+                <a href="https://github.com/ilikeorangutans" target="_blank" class="hover:text-teal-600 transition-colors">Github</a> 
+                <a href="https://sr.ht/~ilikeorangutans/" target="_blank" class="hover:text-teal-600 transition-colors">Sourcehut</a> 
+                <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="hover:text-teal-600 transition-colors">LinkedIn</a> 
+                
+            </div>
+        </div>
+    </div>
+</footer>
 
     
   </body>

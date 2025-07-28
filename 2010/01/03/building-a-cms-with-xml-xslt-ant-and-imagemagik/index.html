@@ -1,172 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        Building a CMS with XML, XSLT, Ant, and ImageMagik &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="Building a CMS with XML, XSLT, Ant, and ImageMagik">
-    <meta property="og:description" content="Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                03 Jan 2010
-
-
-, tagged:
-
-
-    <a href="/tags/xslt" class="">
-        XSLT, 
-    </a>
-
-    <a href="/tags/xml" class="">
-        XML, 
-    </a>
-
-    <a href="/tags/ant" class="">
-        Ant, 
-    </a>
-
-    <a href="/tags/air" class="">
-        Air, 
-    </a>
-
-    <a href="/tags/cms" class="">
-        CMS, 
-    </a>
-
-    <a href="/tags/content-management" class="">
-        Content Management, 
-    </a>
-
-    <a href="/tags/imagemagik" class="">
-        ImageMagik, 
-    </a>
-
-    <a href="/tags/saxon" class="">
-        Saxon, 
-    </a>
-
-    <a href="/tags/web-development" class="">
-        Web Development, 
-    </a>
-
-    <a href="/tags/xhtml" class="">
-        XHTML, 
-    </a>
-
-    <a href="/tags/xslt2.0" class="">
-        XSLT2.0
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>Building a CMS with XML, XSLT, Ant, and ImageMagik</h1>
-            <p>Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated. The same day I stumbled randomly over the <a href="http://www.w3.org/TR/xslt20/">xsl:result-document</a> function in XSLT 2.0 which allows you to transform a single XML file into several output files. That sparked an idea with me: why not use that to build a CMS system using XML technologies? I&rsquo;ve toyed around with <a href="http://cocoon.apache.org/">Cocoon</a> a couple of years ago but that was not what I was looking for. So I looked for other technologies&hellip;</p>
-<p>This post is a write-down of my experiences building a XML/XSLT driven simple CMS system. In it I will show you the required technologies, my approaches and my solutions to problems I&rsquo;ve encountered. You&rsquo;ll need a solid understanding of XML at least, understanding of Ant and XSLT helps a lot, too.</p>
-<p>This post contains tons of XML and I tried my best to format it in a readable way — in fact I&rsquo;ve spent hours to get everything nicely on the screen.</p>
-<h2 id="requirements-to-the-cms">Requirements to the CMS</h2>
-<p>I had several objectives when I built my system:</p>
-<ul>
-<li>All mundane and repetitive tasks should be automated, including thumbnail generation, creation of a global navigation, synchronizing with a live site</li>
-<li>Flexible enough to support new &ldquo;content types&rdquo; and new views</li>
-<li>Versionable with Git, Subversion or other SCMs</li>
-<li>Creation of output artifacts should be a single command</li>
-</ul>
-<h2 id="technologies">Technologies</h2>
-<p>The most prominent and important technology I used is XSLT 2.0. If you don&rsquo;t know what XSLT is, here is XSLT in a nutshell.</p>
-<p>XSLT stands for eXtensible Stylesheet Language Transformations. What it does is surprisingly simple. It takes a piece of XML as input (aka source tree or input tree), applies some transformations on it and outputs a new piece of XML. Sounds simple in theory, however in practice it is usually somewhat more complicated because XSLT is a functional language and sometimes requires you to solve problems backwards and don&rsquo;t even get me started on XML <a href="http://www.w3.org/TR/xml-names11/">namespaces</a>&hellip;</p>
-<p>Traditionally you&rsquo;d have one input XML file, one XSL stylesheet and accordingly one single XML output file. However with the new xsl:result-document I can suddenly output into several files.</p>
-<p>As I&rsquo;m using XSLT the next technology used is XML of course. Not much to say about this except that it is involved in pretty much every step. To bind everything together I&rsquo;m using <a href="http://ant.apache.org/">Apache Ant</a>, an incredibly flexible tool. Interestingly enough Ant uses XML files for its build files which comes in handy later on. Also it solves one of my requirements: it is just plain text and therefor versionable.</p>
-<p>Last there is image manipulation. I&rsquo;ve experimented a bit with the Ant image tasks that use JAI to perform manipulation but quickly dropped that approach as this task won&rsquo;t even let you specify a quality parameter for image manipulations. I&rsquo;ve ended up using an old friend: <a href="http://www.imagemagick.org/script/index.php">ImageMagick</a>. ImageMagick is an amazing toolkit of versatile command line tools to modify images. It allows to modify images in many different ways from resizing to colour correction or combining them.</p>
-<h2 id="basic-structure">Basic Structure</h2>
-<p>The basic structure of an XML/XSLT driven CMS contains one or more XML files that contain the &ldquo;raw&rdquo; data for the website, XSLT to transform it into XHTML and assets. More on assets later.</p>
-<h3 id="the-xml-part">The XML Part</h3>
-<p>The XML file used in my project is a very simple one. It defines &ldquo;pages&rdquo; that get translated into real HTML pages. Each page has a section called contents which in turn contain the actual page contents. Let&rsquo;s have a look at a short sample:</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+<!doctype html><html><head><meta charset=utf-8><title>Building a CMS with XML, XSLT, Ant, and ImageMagik &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Building a CMS with XML, XSLT, Ant, and ImageMagik"><meta property="og:description" content="Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated. The same day I stumbled randomly over the xsl:result-document function in XSLT 2.0 which allows you to transform a single XML file into several output files. That sparked an idea with me: why not use that to build a CMS system using XML technologies? I&rsquo;ve toyed around with Cocoon a couple of years ago but that was not what I was looking for. So I looked for other technologies&mldr;"><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2010/01/03/building-a-cms-with-xml-xslt-ant-and-imagemagik/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2010-01-03>3 Jan 2010
+</time><time datetime=2018-04-15>• updated 15 Apr 2018</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">Building a CMS with XML, XSLT, Ant, and ImageMagik</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/xslt class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">XSLT
+</a><a href=/tags/xml class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">XML
+</a><a href=/tags/ant class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Ant
+</a><a href=/tags/air class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Air
+</a><a href=/tags/cms class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">CMS
+</a><a href=/tags/content-management class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Content Management
+</a><a href=/tags/imagemagik class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">ImageMagik
+</a><a href=/tags/saxon class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Saxon
+</a><a href=/tags/web-development class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Web Development
+</a><a href=/tags/xhtml class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">XHTML
+</a><a href=/tags/xslt2.0 class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">XSLT2.0</a></div></div><div class="prose prose-lg max-w-none"><p>Not so long ago a freelance client approached me with some updates for their website. The site has been growing organically since 2000 and therefore was a big mess. Several attempts to port the site to a CMS driven system failed largely because those CMS systems are usually to complex for our needs (Typo3) or not flexible enough (Joomla, WordPress). So as I was faced with updates to all the updates including image updates which in turn needed thumbnails to be generated. The same day I stumbled randomly over the <a href=http://www.w3.org/TR/xslt20/>xsl:result-document</a> function in XSLT 2.0 which allows you to transform a single XML file into several output files. That sparked an idea with me: why not use that to build a CMS system using XML technologies? I&rsquo;ve toyed around with <a href=http://cocoon.apache.org/>Cocoon</a> a couple of years ago but that was not what I was looking for. So I looked for other technologies&mldr;</p><p>This post is a write-down of my experiences building a XML/XSLT driven simple CMS system. In it I will show you the required technologies, my approaches and my solutions to problems I&rsquo;ve encountered. You&rsquo;ll need a solid understanding of XML at least, understanding of Ant and XSLT helps a lot, too.</p><p>This post contains tons of XML and I tried my best to format it in a readable way — in fact I&rsquo;ve spent hours to get everything nicely on the screen.</p><h2 id=requirements-to-the-cms>Requirements to the CMS</h2><p>I had several objectives when I built my system:</p><ul><li>All mundane and repetitive tasks should be automated, including thumbnail generation, creation of a global navigation, synchronizing with a live site</li><li>Flexible enough to support new &ldquo;content types&rdquo; and new views</li><li>Versionable with Git, Subversion or other SCMs</li><li>Creation of output artifacts should be a single command</li></ul><h2 id=technologies>Technologies</h2><p>The most prominent and important technology I used is XSLT 2.0. If you don&rsquo;t know what XSLT is, here is XSLT in a nutshell.</p><p>XSLT stands for eXtensible Stylesheet Language Transformations. What it does is surprisingly simple. It takes a piece of XML as input (aka source tree or input tree), applies some transformations on it and outputs a new piece of XML. Sounds simple in theory, however in practice it is usually somewhat more complicated because XSLT is a functional language and sometimes requires you to solve problems backwards and don&rsquo;t even get me started on XML <a href=http://www.w3.org/TR/xml-names11/>namespaces</a>&mldr;</p><p>Traditionally you&rsquo;d have one input XML file, one XSL stylesheet and accordingly one single XML output file. However with the new xsl:result-document I can suddenly output into several files.</p><p>As I&rsquo;m using XSLT the next technology used is XML of course. Not much to say about this except that it is involved in pretty much every step. To bind everything together I&rsquo;m using <a href=http://ant.apache.org/>Apache Ant</a>, an incredibly flexible tool. Interestingly enough Ant uses XML files for its build files which comes in handy later on. Also it solves one of my requirements: it is just plain text and therefor versionable.</p><p>Last there is image manipulation. I&rsquo;ve experimented a bit with the Ant image tasks that use JAI to perform manipulation but quickly dropped that approach as this task won&rsquo;t even let you specify a quality parameter for image manipulations. I&rsquo;ve ended up using an old friend: <a href=http://www.imagemagick.org/script/index.php>ImageMagick</a>. ImageMagick is an amazing toolkit of versatile command line tools to modify images. It allows to modify images in many different ways from resizing to colour correction or combining them.</p><h2 id=basic-structure>Basic Structure</h2><p>The basic structure of an XML/XSLT driven CMS contains one or more XML files that contain the &ldquo;raw&rdquo; data for the website, XSLT to transform it into XHTML and assets. More on assets later.</p><h3 id=the-xml-part>The XML Part</h3><p>The XML file used in my project is a very simple one. It defines &ldquo;pages&rdquo; that get translated into real HTML pages. Each page has a section called contents which in turn contain the actual page contents. Let&rsquo;s have a look at a short sample:</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;s:site title=&#34;My XSLT Generated website&#34;
    xmlns:s=&#34;http://www.jakusys.de/xslt-cms&#34;
    xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
@@ -188,8 +35,7 @@
         &lt;/s:contents&gt;
     &lt;/s:page&gt;
 &lt;/s:site&gt;
-</code></pre><p>Well, so far nothing impressive. Actually it looks like more work compared to typing out the actual pages themselves. But behold, here comes the stylesheet to actually turn the above XML into nice websites (XHTML):</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</code></pre><p>Well, so far nothing impressive. Actually it looks like more work compared to typing out the actual pages themselves. But behold, here comes the stylesheet to actually turn the above XML into nice websites (XHTML):</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 &lt;xsl:stylesheet xmlns:xsl=&#34;http://www.w3.org/1999/XSL/Transform&#34;
    version=&#34;2.0&#34; exclude-result-prefixes=&#34;#all&#34;
    xmlns=&#34;http://www.w3.org/1999/xhtml&#34;
@@ -237,45 +83,34 @@
      &lt;/xsl:template&gt;
 
 &lt;/xsl:stylesheet&gt;
-</code></pre><p>Now it get&rsquo;s more interesting. Let&rsquo;s dissect what the above XSLT does. The blocks in line 10 to 12 are a template that matches the root level element in the source XML tree. All it does is to call the next matching stylesheets which are in lines 14 to 19. This template does exactly the same and passes on. Then we reach line 18 with the template matching page elements.</p>
-<pre tabindex="0"><code>18
+</code></pre><p>Now it get&rsquo;s more interesting. Let&rsquo;s dissect what the above XSLT does. The blocks in line 10 to 12 are a template that matches the root level element in the source XML tree. All it does is to call the next matching stylesheets which are in lines 14 to 19. This template does exactly the same and passes on. Then we reach line 18 with the template matching page elements.</p><pre tabindex=0><code>18
 &lt;xsl:variable name=&#34;filename&#34; select=&#34;@filename&#34;/&gt;
 &lt;xsl:result-document omit-xml-declaration=&#34;yes&#34;
   indent=&#34;yes&#34; href=&#34;{$filename}&#34; format=&#34;html&#34;
   doctype-public=&#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34;
   doctype-system=&#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;
   encoding=&#34;UTF-8&#34;&gt;
-</code></pre><p>Line 18 defines a variable called filename which is prefilled with with the filename attribute from the XML page element. The next line sports the so much praised (at least by me) <code>xsl:result-document</code> element. If you read the line it gets clear very fast that it should output a new HTML file (<code>format=&quot;html&quot; href=&quot;$filename&quot;</code>), nicely formatted (<code>indent=&quot;yes&quot;</code>) and with the appropriate DOCTYPE declaration. The  next lines are just an HTML boilerplate with head and content type. Please note that this is a very minimalistic example. Usually you would include stylesheets, JavaScript includes and other additional headers there. For simplicity they are omitted.</p>
-<pre tabindex="0"><code>28
+</code></pre><p>Line 18 defines a variable called filename which is prefilled with with the filename attribute from the XML page element. The next line sports the so much praised (at least by me) <code>xsl:result-document</code> element. If you read the line it gets clear very fast that it should output a new HTML file (<code>format="html" href="$filename"</code>), nicely formatted (<code>indent="yes"</code>) and with the appropriate DOCTYPE declaration. The next lines are just an HTML boilerplate with head and content type. Please note that this is a very minimalistic example. Usually you would include stylesheets, JavaScript includes and other additional headers there. For simplicity they are omitted.</p><pre tabindex=0><code>28
 &lt;title&gt;
     &lt;xsl:value-of select=&#34;@title&#34;/&gt; - &lt;xsl:value-of select=&#34;/site/@title&#34;/&gt;
 &lt;/title&gt;
-</code></pre><p>Lines 28 to 31 output a new title tag populated with the title attribute from our source attribute. Convenient. The CMS is starting to take shape.</p>
-<pre tabindex="0"><code>33
+</code></pre><p>Lines 28 to 31 output a new title tag populated with the title attribute from our source attribute. Convenient. The CMS is starting to take shape.</p><pre tabindex=0><code>33
 &lt;div class=&#34;container&#34;&gt;
     &lt;xsl:apply-templates select=&#34;contents/*&#34;/&gt;
 &lt;/div&gt;
-</code></pre><p>And finally lines 33 to 35 will call another template lines 41 to 46 which just copies the HTML into the output document.</p>
-<p>So far so good. What have we achieved? The stylesheet creates a new page based on boilerplate HTML - which can be arbitrarily complex with CSS stylesheets, JavaScript and more - and pre-fills the title and the actual body. Now let&rsquo;s add more functionality. Every good website needs a navigation. We can achieve that easily by adding another template that matches all page elements. We add a few new lines to the boilerplate HTML:</p>
-<pre tabindex="0"><code>&lt;div class=&#34;navigation&#34;&gt;
+</code></pre><p>And finally lines 33 to 35 will call another template lines 41 to 46 which just copies the HTML into the output document.</p><p>So far so good. What have we achieved? The stylesheet creates a new page based on boilerplate HTML - which can be arbitrarily complex with CSS stylesheets, JavaScript and more - and pre-fills the title and the actual body. Now let&rsquo;s add more functionality. Every good website needs a navigation. We can achieve that easily by adding another template that matches all page elements. We add a few new lines to the boilerplate HTML:</p><pre tabindex=0><code>&lt;div class=&#34;navigation&#34;&gt;
     &lt;ul&gt;
         &lt;xsl:apply-templates select=&#34;/site/page&#34; mode=&#34;navigation&#34;/&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
-</code></pre><p>Looks simple enough. This will output a new DIV, fill it with a unordered list and calls another template.  The interesting part is the select attribute: it tells the XSLT processor to select all root level page elements. Now let&rsquo;s have a look at how the called template looks like:</p>
-<pre tabindex="0"><code>&lt;xsl:template match=&#34;page&#34; mode=&#34;navigation&#34;&gt;
+</code></pre><p>Looks simple enough. This will output a new DIV, fill it with a unordered list and calls another template. The interesting part is the select attribute: it tells the XSLT processor to select all root level page elements. Now let&rsquo;s have a look at how the called template looks like:</p><pre tabindex=0><code>&lt;xsl:template match=&#34;page&#34; mode=&#34;navigation&#34;&gt;
     &lt;li&gt;
         &lt;a href=&#34;{@filename}&#34; title=&#34;{@title}&#34;&gt;
             &lt;xsl:value-of select=&#34;@title&#34;/&gt;
         &lt;/a&gt;
     &lt;/li&gt;
 &lt;/xsl:template&gt;
-</code></pre><p>The XSLT processor will translate this into global navigation of our site. All top level pages will be listed with the correct title and the correct filename.</p>
-<h3 id="the-ant-part">The Ant Part</h3>
-<p>Now that we have the stylesheets and the input XML files in place, we&rsquo;ll need an elegant way to transform the whole site with on simple command. As discussed earlier Ant is a good choice for this. I won&rsquo;t delve into the actual ANT buildfile as it is pretty straightforward. What I want to show is how to use XSLT to generate ANT buildfiles from other XML. This is actually a pretty powerful technique as I can custom tailor ANT files to whatever need I have. In this particular example I want to show how to create image thumbnails.</p>
-<p>Here is what we have. In our input XML file, we reference images. For those images, let&rsquo;s say, product shots, we have the originals lying in some location in the filesystem. Those images need to be scaled down to a high res view (800×600) and to a thumbnail (128×128). We could do that with an ANT pathmatcher, but that would just take all the images it can find, not just the referenced ones. Bad and slow. And how do we keep the build directory free of old and unused pictures then?</p>
-<p>What we&rsquo;ll do instead is we&rsquo;ll take the input XML file, create a XSLT stylesheet that will grab all the image references and put them into a custom ANT build file which in turn calls an image manipulation program (ImageMagick) to scale down the pictures. There&rsquo;s a few other goodies in here too, e.g. automatic file name cleanup. Here is the images.xsl:</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</code></pre><p>The XSLT processor will translate this into global navigation of our site. All top level pages will be listed with the correct title and the correct filename.</p><h3 id=the-ant-part>The Ant Part</h3><p>Now that we have the stylesheets and the input XML files in place, we&rsquo;ll need an elegant way to transform the whole site with on simple command. As discussed earlier Ant is a good choice for this. I won&rsquo;t delve into the actual ANT buildfile as it is pretty straightforward. What I want to show is how to use XSLT to generate ANT buildfiles from other XML. This is actually a pretty powerful technique as I can custom tailor ANT files to whatever need I have. In this particular example I want to show how to create image thumbnails.</p><p>Here is what we have. In our input XML file, we reference images. For those images, let&rsquo;s say, product shots, we have the originals lying in some location in the filesystem. Those images need to be scaled down to a high res view (800×600) and to a thumbnail (128×128). We could do that with an ANT pathmatcher, but that would just take all the images it can find, not just the referenced ones. Bad and slow. And how do we keep the build directory free of old and unused pictures then?</p><p>What we&rsquo;ll do instead is we&rsquo;ll take the input XML file, create a XSLT stylesheet that will grab all the image references and put them into a custom ANT build file which in turn calls an image manipulation program (ImageMagick) to scale down the pictures. There&rsquo;s a few other goodies in here too, e.g. automatic file name cleanup. Here is the images.xsl:</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 &lt;xsl:stylesheet xmlns:xsl=&#34;http://www.w3.org/1999/XSL/Transform&#34;
   version=&#34;2.0&#34; xpath-default-namespace=&#34;http://www.jakusys.de/&#34;&gt;
 
@@ -317,9 +152,7 @@
     &lt;/xsl:template&gt;
 
 &lt;/xsl:stylesheet&gt;
-</code></pre><h3 id="google-sitemaps">Google Sitemaps</h3>
-<p>Most people that have used Google&rsquo;s Webmaster Tools know about the sitemap. No need to write them manually any more, you can easily use the XML representation and a XSLT stylesheet to generate it for you:</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</code></pre><h3 id=google-sitemaps>Google Sitemaps</h3><p>Most people that have used Google&rsquo;s Webmaster Tools know about the sitemap. No need to write them manually any more, you can easily use the XML representation and a XSLT stylesheet to generate it for you:</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 &lt;xsl:stylesheet xmlns:xsl=&#34;http://www.w3.org/1999/XSL/Transform&#34;
    version=&#34;2.0&#34; xpath-default-namespace=&#34;http://www.jakusys.de/&#34;
    xmlns=&#34;http://www.sitemaps.org/schemas/sitemap/0.9&#34;&gt;
@@ -341,74 +174,19 @@
     &lt;/xsl:template&gt;
 
 &lt;/xsl:stylesheet&gt;
-</code></pre><h2 id="issues">Issues</h2>
-<p>So with all the technologies in place, I ran into some issues but all of them could be solved quickly. I&rsquo;m listing them here hoping they&rsquo;ll help other people.</p>
-<h3 id="xslt-20-with-ant">XSLT 2.0 with Ant</h3>
-<p>This one was most annoying. Per default Ant has an <a href="http://ant.apache.org/manual/CoreTasks/style.html">xslt-task</a> which allows you to transform XML but it is limited to XSLT 1.0. If you read the documentation you&rsquo;ll find out that you can plug in different XSLT processors but you are still quite limited. If you want to use XSLT 2.0 with Ant get the amazing <a href="http://saxon.sourceforge.net/">Saxon processor</a> and use their Ant task which is a bit hidden on their page. Get it from the Sourceforge <a href="http://sourceforge.net/projects/saxon/files/saxon%20ant%20task/">download site</a>. This task lets you leverage the full functionality of XSLT 2.0 including the xsl:result-document.</p>
-<h3 id="xml-namespaces-in-html">XML Namespaces in HTML</h3>
-<p>This was a tricky one. The problem was that in my custom XML I had snippets of HTML which I wanted to mirror into the output documents. I used the xsl:copy-of function which basically did what it was supposed to. It copied the (X)HTML over but by doing so, it had to adjust the namespaces for the XML. The input document had no namespace declarations at all and the output document was bound to the XHTML namespace. So the processor did exactly what it is supposed to: it added null namespace  declarations to the copied elements which looked like this:</p>
-<pre tabindex="0"><code>&lt;p xmlns=&#34;null&#34;&gt;Bla bla bla&lt;/p&gt;
-</code></pre><p>Not a problem per se but unfortunately invalid XHTML. The solution to this problem is surprisingly simple: Add namespace declarations to the input document:</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+</code></pre><h2 id=issues>Issues</h2><p>So with all the technologies in place, I ran into some issues but all of them could be solved quickly. I&rsquo;m listing them here hoping they&rsquo;ll help other people.</p><h3 id=xslt-20-with-ant>XSLT 2.0 with Ant</h3><p>This one was most annoying. Per default Ant has an <a href=http://ant.apache.org/manual/CoreTasks/style.html>xslt-task</a> which allows you to transform XML but it is limited to XSLT 1.0. If you read the documentation you&rsquo;ll find out that you can plug in different XSLT processors but you are still quite limited. If you want to use XSLT 2.0 with Ant get the amazing <a href=http://saxon.sourceforge.net/>Saxon processor</a> and use their Ant task which is a bit hidden on their page. Get it from the Sourceforge <a href=http://sourceforge.net/projects/saxon/files/saxon%20ant%20task/>download site</a>. This task lets you leverage the full functionality of XSLT 2.0 including the xsl:result-document.</p><h3 id=xml-namespaces-in-html>XML Namespaces in HTML</h3><p>This was a tricky one. The problem was that in my custom XML I had snippets of HTML which I wanted to mirror into the output documents. I used the xsl:copy-of function which basically did what it was supposed to. It copied the (X)HTML over but by doing so, it had to adjust the namespaces for the XML. The input document had no namespace declarations at all and the output document was bound to the XHTML namespace. So the processor did exactly what it is supposed to: it added null namespace declarations to the copied elements which looked like this:</p><pre tabindex=0><code>&lt;p xmlns=&#34;null&#34;&gt;Bla bla bla&lt;/p&gt;
+</code></pre><p>Not a problem per se but unfortunately invalid XHTML. The solution to this problem is surprisingly simple: Add namespace declarations to the input document:</p><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;s:site title=&#34;My XSLT Generated website&#34;
    xmlns:s=&#34;http://www.jakusys.de/xslt-cms&#34;
    xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
-</code></pre><p>The above lines will put the input document per default into the XHTML namespace and everything else in my own, personal namespace. Regular (X)HTML markup however does not get any namespace prefixes, so it will be put into the XHTML namespace:</p>
-<pre tabindex="0"><code>    &lt;s:page title=&#34;Home&#34; filename=&#34;index.html&#34; showTitle=&#34;false&#34;&gt;
+</code></pre><p>The above lines will put the input document per default into the XHTML namespace and everything else in my own, personal namespace. Regular (X)HTML markup however does not get any namespace prefixes, so it will be put into the XHTML namespace:</p><pre tabindex=0><code>    &lt;s:page title=&#34;Home&#34; filename=&#34;index.html&#34; showTitle=&#34;false&#34;&gt;
         &lt;s:contents&gt;
             &lt;s:html&gt;
                 &lt;h1&gt;Welcome to my XSLT generated page!&lt;/h1&gt;
             &lt;/s:html&gt;
         &lt;/s:contents&gt;
     &lt;/s:page&gt;
-</code></pre><h2 id="conclusion">Conclusion</h2>
-<p>The one big problem I still have with this system is that it does not support hierarchical pages yet. But if the need arises it could be added without too much effort. Another moose with the system is that it still requires editing XML which is neither user-friendly nor easy for non technical users. But one could easily create a Flex or AIR app to modify and edit those files. Thanks to Flex&rsquo; really good XML support it should not be hard to do that. I could even think of a Grails Webapp generating the XML for this (using the brilliant XML markup builder).</p>
-<p>In general it is a really powerful and flexible system. As I am running this on a UNIX system I can harness all the tools and goodies that are there. Ant and Java give me whatever power and libraries I need. So I can steer this thing in whichever direction I want.</p>
-<p>If you have any questions feel free to comment below or drop me an email.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+</code></pre><h2 id=conclusion>Conclusion</h2><p>The one big problem I still have with this system is that it does not support hierarchical pages yet. But if the need arises it could be added without too much effort. Another moose with the system is that it still requires editing XML which is neither user-friendly nor easy for non technical users. But one could easily create a Flex or AIR app to modify and edit those files. Thanks to Flex&rsquo; really good XML support it should not be hard to do that. I could even think of a Grails Webapp generating the XML for this (using the brilliant XML markup builder).</p><p>In general it is a really powerful and flexible system. As I am running this on a UNIX system I can harness all the tools and goodies that are there. Ant and Java give me whatever power and libraries I need. So I can steer this thing in whichever direction I want.</p><p>If you have any questions feel free to comment below or drop me an email.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Visualization on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/visualization/</link>
-    <description>Recent content in Visualization on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 21:39:38 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Using Golang and Graphviz to Visualize Complex Grails Applications</title>
-      <link>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link>
-      <pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid>
-      <description>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use Graphviz to help me get a better overview of our applications.&#xA;Meet Graphviz I discovered my love for the dot language when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Visualization on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/visualization/</link><description>Recent content in Visualization on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 21:39:38 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/visualization/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Golang and Graphviz to Visualize Complex Grails Applications</title><link>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</link><pubDate>Sat, 03 May 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2014/05/03/using-golang-and-graphviz-to-visualize-complex-grails-applications/</guid><description>&lt;p>At work we are maintaining several large and complex grails applications. In order to improve stability and reliability, we&amp;rsquo;re trying to increase test coverage. But as with all projects, time and resources are limited. In order to get a better understanding of what parts of the application are more important than others, I decided to use &lt;a href="http://www.graphviz.org/">Graphviz&lt;/a> to help me get a better overview of our applications.&lt;/p>
+&lt;h3 id="meet-graphviz">Meet Graphviz&lt;/h3>
+&lt;p>I discovered my love for the &lt;a href="http://www.graphviz.org/content/dot-language">dot language&lt;/a> when I used it years ago to analyze template hierarchies in a proprietary CMS system I worked on. In a nutshell, it lets you specify a graph with nodes and edges plus some extra attributes for labels, shapes etc. It&amp;rsquo;s really a concise little language:&lt;/p></description></item></channel></rss>

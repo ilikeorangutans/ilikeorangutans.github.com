@@ -1,29 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Refactoring on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/refactoring/</link>
-    <description>Recent content in Refactoring on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Give Me Smarter Objects</title>
-      <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
-      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
-      <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
-    </item>
-    <item>
-      <title>gorename and invalid expression</title>
-      <link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
-      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
-      <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.&#xA;The issue comes up when trying to use gorename:&#xA;$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Refactoring on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/refactoring/</link><description>Recent content in Refactoring on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/refactoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Give Me Smarter Objects</title><link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link><pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid><description>&lt;p>A coding exercise I do once in a while is writing &lt;a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship&lt;/a>. It&amp;rsquo;s a
+fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
+candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was
+doing the exercise and I contemplated on the &lt;em>primitive obsession&lt;/em> code smell that always seems to creep into my code
+and saw a beautiful way to apply the &lt;em>extract class&lt;/em> refactoring that very succinctly shows how nice object oriented
+programming can be.&lt;/p></description></item><item><title>gorename and invalid expression</title><link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link><pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid><description>&lt;p>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.&lt;/p>
+&lt;p>The issue comes up when trying to use &lt;a href="https://godoc.org/golang.org/x/tools/cmd/gorename">gorename&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2c5dcd;font-weight:bold">$&lt;/span> gorename -from &lt;span style="color:#0c6">&amp;#34;github.com/ilikeorangutans/foo&amp;#34;&lt;/span>.MyType -to &lt;span style="color:#0c6">&amp;#39;MyBetterType&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#aaa">gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Even though the &lt;code>from&lt;/code> query looks normal, &lt;code>gorename&lt;/code> just refuses to work. However the issue is not so much with &lt;code>gorename&lt;/code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2c5dcd;font-weight:bold">$&lt;/span> gorename -from &lt;span style="color:#0c6">&amp;#39;&amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType&amp;#39;&lt;/span> -to &lt;span style="color:#0c6">&amp;#39;MyBetterType&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#aaa">Renamed 15 occurrences in 5 files in 1 package.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Notice the single quotes around the entire &lt;code>from&lt;/code> parameter.&lt;/p></description></item></channel></rss>

@@ -1,29 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Scala on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/scala/</link>
-    <description>Recent content in Scala on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/scala/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Give Me Smarter Objects</title>
-      <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
-      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
-      <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
-    </item>
-    <item>
-      <title>null, Software Design, and Scala&#39;s Option</title>
-      <link>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</link>
-      <pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</guid>
-      <description>For the past year or so I&amp;rsquo;ve been writing a lot of Scala and fallen in love with its Option type and how it allows me to avoid nulls. I reflected on null, why they are bad, and how optional types allow you to write more expressive code.&#xA;What is null? Most programming languages have the concept of null (or nil) that represents the absence of a given value or object.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scala on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/scala/</link><description>Recent content in Scala on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/scala/index.xml" rel="self" type="application/rss+xml"/><item><title>Give Me Smarter Objects</title><link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link><pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid><description>&lt;p>A coding exercise I do once in a while is writing &lt;a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship&lt;/a>. It&amp;rsquo;s a
+fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
+candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was
+doing the exercise and I contemplated on the &lt;em>primitive obsession&lt;/em> code smell that always seems to creep into my code
+and saw a beautiful way to apply the &lt;em>extract class&lt;/em> refactoring that very succinctly shows how nice object oriented
+programming can be.&lt;/p></description></item><item><title>null, Software Design, and Scala's Option</title><link>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</link><pubDate>Sat, 26 May 2018 12:13:10 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/05/26/null-software-design-and-scalas-option/</guid><description>&lt;p>For the past year or so I&amp;rsquo;ve been writing a lot of Scala and fallen in love with its &lt;code>Option&lt;/code> type and how it allows me to avoid &lt;code>null&lt;/code>s. I reflected on &lt;code>null&lt;/code>, why they are bad, and how optional types allow you to write more expressive code.&lt;/p>
+&lt;h2 id="what-is-null">What is null?&lt;/h2>
+&lt;p>Most programming languages have the concept of &lt;code>null&lt;/code> (or &lt;code>nil&lt;/code>) that represents the absence of a given value or object. At it&amp;rsquo;s surface the absence of a value probably just translates into a pointer of value &lt;code>0x0&lt;/code> or in languages that do not zero variables, a pointer anywhere into the memory. But aside from the implementation details the more interesting question is how &lt;code>null&lt;/code> fits into a language&amp;rsquo;s type system.&lt;/p></description></item></channel></rss>

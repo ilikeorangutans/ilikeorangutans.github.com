@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>XPATH on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/xpath/</link>
-    <description>Recent content in XPATH on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/xpath/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Date Arithmetics in XSLT 2</title>
-      <link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link>
-      <pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid>
-      <description>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.&#xA;First, all your dates will have to be in ISO-8601 format. For dates only it looks like this: YYYY-MM-DD and for dates and times, like this: YYYY-MM-DDTHH:mm:SS.sssZ. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XPATH on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/xpath/</link><description>Recent content in XPATH on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/xpath/index.xml" rel="self" type="application/rss+xml"/><item><title>Date Arithmetics in XSLT 2</title><link>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</link><pubDate>Tue, 02 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/04/02/date-arithmetics-in-xslt-2/</guid><description>&lt;p>Now here&amp;rsquo;s something I didn&amp;rsquo;t know: XSLT 2 and XPath actually support date arithmetic! Took me a while to figure it out, but here&amp;rsquo;s how it works.&lt;/p>
+&lt;p>First, all your dates will have to be in &lt;a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601&lt;/a> format. For dates only it looks like this: &lt;code>YYYY-MM-DD&lt;/code> and for dates and times, like this: &lt;code>YYYY-MM-DDTHH:mm:SS.sssZ&lt;/code>. There&amp;rsquo;s a few other formats, but these are the ones that probably cover all use cases.&lt;/p>
+&lt;p>In order to make use of all the functions regarding date and time, the values will have to be converted into the appropriate types. They data types are defined in the XMLSchema namespace &lt;a href="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema&lt;/a> and are:&lt;/p></description></item></channel></rss>

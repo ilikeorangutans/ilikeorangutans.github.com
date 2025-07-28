@@ -1,22 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>CSV on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/csv/</link>
-    <description>Recent content in CSV on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sat, 21 Jul 2018 23:31:12 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/csv/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>gnuplot - My New Favorite Tool</title>
-      <link>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</link>
-      <pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</guid>
-      <description>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data. Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&amp;rsquo;t really scale well. The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the GNU project.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CSV on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/csv/</link><description>Recent content in CSV on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Sat, 21 Jul 2018 23:31:12 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/csv/index.xml" rel="self" type="application/rss+xml"/><item><title>gnuplot - My New Favorite Tool</title><link>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</link><pubDate>Sat, 21 Jul 2018 20:50:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/</guid><description>&lt;p>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data.
+Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&amp;rsquo;t really scale well.
+The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point
+I faintly recalled reading about &lt;a href="http://www.gnuplot.info/">gnuplot&lt;/a> which, despite its name, has no affiliation with the
+GNU project.&lt;/p></description></item></channel></rss>

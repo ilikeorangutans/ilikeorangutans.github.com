@@ -20,72 +20,36 @@
     <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/orm/index.xml" title="Jakob Külzer">
     
 
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/output.css">
 
     <link rel="canonical" href="http://localhost:1313/">
 
   </head>
-  <body>
+  <body class="bg-gray-50 text-gray-900">
     
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
+    <header class="bg-white shadow-sm border-b">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <a href="/" class="navbar-brand">
+                <h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1>
+            </a>
+            <div class="space-x-6">
+                
+                <a href="/" class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+                
+                <a href="/posts/" class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+                
+                <a href="/projects/" class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+                
+                <a href="/about/" class="text-gray-600 hover:text-orange-400 transition-colors">About</a>
+                
+            </div>
+        </nav>
+    </div>
+</header>
 
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
     
-    <main class="container grid-lg content">
+    <main class="max-w-4xl mx-auto px-4 py-8">
       
 <h1>
     ORM
@@ -97,42 +61,49 @@
 
 <p>Pages tagged with "ORM":</p>
 
-    <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2021/02/21/golang-orm-comparison/">
-           [DRAFT] 
-          Golang ORM Comparison
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        21 Feb 2021
-
-
-, tagged:
-
-
-    <a href="/tags/golang" class="">
-        golang, 
-    </a>
-
-    <a href="/tags/orm" class="">
-        ORM
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that I always found lacking was database access. database/sql is solid if basic and packages like Mastermind/squirrel (really nice query builder) or jmoiron/sqlx (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&rsquo;re on your own again.
-      </p>
-      <p class="tile-action">
-        <a href="/2021/02/21/golang-orm-comparison/" class="btn-primary">read more &rarr;</a>
-      </p>
+    
+<article class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden">
+    <div class="p-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors">
+            <a href="/2021/02/21/golang-orm-comparison/">
+                 [DRAFT] 
+                Golang ORM Comparison
+            </a>
+        </h2>
+        <div class="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+            <time datetime="2021-02-21">
+                21 Feb 2021
+            </time>
+            <span>1 min read</span>
+            <div class="flex items-center">
+                <div class="flex flex-wrap gap-2">
+                     
+                    <a href="/tags/golang" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                        golang
+                    </a>
+                     
+                    <a href="/tags/orm" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                        ORM
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="prose">
+            <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            <p>I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that
+I always found lacking was database access. <code>database/sql</code> is solid if basic and packages like <a href="https://github.com/Masterminds/squirrel">Mastermind/squirrel</a> (really nice query builder) or <a href="https://github.com/jmoiron/sqlx">jmoiron/sqlx</a> (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&rsquo;re on your own again. This is not to say that it can&rsquo;t be done but that it&rsquo;s tedious and error prone. Recently I began prototyping something and needed a quicker way of iterating on a data model and started using <a href="go-pg/pg">go-pg/pg</a>, a nice little ORM-like library for PostgreSQL. And for all it&rsquo;s roughness, it worked quite well. This made me re-evaluate my stance on ORMs in go and I took a closer look at some options out there.</p>
+            </p>
+        </div>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2"></div>
+             
+            <a href="/2021/02/21/golang-orm-comparison/" class="text-teal-600 hover:text-teal-800 font-medium transition-colors">
+                Read more →
+            </a>
+            
+        </div>
     </div>
-  </div>
 </article>
 
 
@@ -141,23 +112,21 @@
 
     </main>
     
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-             <a href="http://localhost:1313/tags/orm/index.xml" target="_blank" class="btn btn-link">RSS</a>
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
+    <footer class="bg-white border-t mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center text-gray-600">
+            <p>&copy; 2025 Jakob Külzer. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="mailto:jakob.kuelzer@gmail.com" class="hover:text-teal-600 transition-colors">Email</a>
+                <a href="https://github.com/ilikeorangutans" target="_blank" class="hover:text-teal-600 transition-colors">Github</a> 
+                <a href="https://sr.ht/~ilikeorangutans/" target="_blank" class="hover:text-teal-600 transition-colors">Sourcehut</a> 
+                <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="hover:text-teal-600 transition-colors">LinkedIn</a> 
+                 <a href="http://localhost:1313/tags/orm/index.xml" target="_blank" class="hover:text-teal-600 transition-colors">RSS</a>
+                
+            </div>
+        </div>
+    </div>
+</footer>
 
     
   </body>

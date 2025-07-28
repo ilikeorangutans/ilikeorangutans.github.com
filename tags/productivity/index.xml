@@ -1,36 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Productivity on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/productivity/</link>
-    <description>Recent content in Productivity on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Fri, 30 Mar 2018 12:01:13 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Inspiration and Action</title>
-      <link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
-      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
-      <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:&#xA;We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.&#xA;&amp;ndash; Frank Tibolt&#xA;I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
-    </item>
-    <item>
-      <title>On Wasted Time</title>
-      <link>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link>
-      <pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid>
-      <description>Recently I&amp;rsquo;ve been feeling&amp;hellip; unaccomplished. Despite all my achievements, acquired skills, and successes I&amp;rsquo;ve had a thought gnawing at the back of my mind. I realized, after looking at my extensive list of side and toy projects, that none of them are making any progress. In some of them I invested lots of time, others are just ideas, barely sketches. But they all have in common that I grew tired of working on them.</description>
-    </item>
-    <item>
-      <title>On Developer Happiness and Productivity</title>
-      <link>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</link>
-      <pubDate>Wed, 03 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid>
-      <description>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.&#xA;A happy developer is a productive developer.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Productivity on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/productivity/</link><description>Recent content in Productivity on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Fri, 30 Mar 2018 12:01:13 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml"/><item><title>Inspiration and Action</title><link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link><pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid><description>&lt;p>I&amp;rsquo;m currently re-reading &lt;a href="https://www.amazon.com/gp/product/0321503627/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;amp;tag=jakkuesblo-20&amp;amp;creative=9325&amp;amp;linkCode=as2&amp;amp;creativeASIN=0321503627&amp;amp;linkId=a9bf101a0a7973e0d0d78406aa41dc23">Growing Object-Oriented Software, Guided by Tests&lt;/a>, and this quote really spoke to me:&lt;/p>
+&lt;blockquote>
+&lt;p>We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ndash; Frank Tibolt&lt;/p>&lt;/blockquote>
+&lt;p>I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating. I&amp;rsquo;ve often noticed that while I had great ideas, I would often fail to implement them because I would try to over engineer my approach so it would solve everything perfectly. Obviously, many of these ideas and projects never went anywhere. But then on the contrary, ideas where I just started hacking something together often went much further and produced something usable and new.&lt;/p></description></item><item><title>On Wasted Time</title><link>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</link><pubDate>Wed, 23 Aug 2017 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2017/08/23/on-wasted-time/</guid><description>&lt;p>Recently I&amp;rsquo;ve been feeling&amp;hellip; unaccomplished. Despite all my achievements, acquired skills, and successes I&amp;rsquo;ve had a thought gnawing at the back of my mind. I realized, after looking at my extensive list of side and toy projects, that none of them are making any progress. In some of them I invested lots of time, others are just ideas, barely sketches. But they all have in common that I grew tired of working on them. Either because after a day at work my brain is tired, or because other things are taking precedence. I&amp;rsquo;ve moved into a house that requires constant upkeep. Things break or wear out and before your know it you&amp;rsquo;ve spent an afternoon fixing something. And then I&amp;rsquo;ve finally picked up a regular workout routine. Generally I&amp;rsquo;m proud of that, and because these things take time, I had no time for my side projects. Or at least that&amp;rsquo;s what I thought and told myself.&lt;/p></description></item><item><title>On Developer Happiness and Productivity</title><link>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</link><pubDate>Wed, 03 Apr 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/04/03/on-developer-happiness-and-productivity/</guid><description>&lt;p>I&amp;rsquo;ve had the idea for this blog post in my mind for a long time. It is based on all my personal experiences and observations over the past years and is in no way scientific. It is my personal opinion, and even though this is how I perceive the world, it might not be true for other people. With that said, let&amp;rsquo;s jump to the core of things.&lt;/p>
+&lt;blockquote>
+&lt;p>A happy developer is a productive developer.&lt;/p></description></item></channel></rss>

@@ -1,244 +1,83 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        Give Me Smarter Objects &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="Give Me Smarter Objects">
-    <meta property="og:description" content="A coding exercise I do once in a while is writing Battleship. It&rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                18 Jun 2018
-
-
-, tagged:
-
-
-    <a href="/tags/scala" class="">
-        Scala, 
-    </a>
-
-    <a href="/tags/oop" class="">
-        OOP, 
-    </a>
-
-    <a href="/tags/object-oriented-design" class="">
-        Object Oriented Design, 
-    </a>
-
-    <a href="/tags/code-smells" class="">
-        Code Smells, 
-    </a>
-
-    <a href="/tags/refactoring" class="">
-        Refactoring
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>Give Me Smarter Objects</h1>
-            <p>A coding exercise I do once in a while is writing <a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship</a>. It&rsquo;s a
+<!doctype html><html><head><meta charset=utf-8><title>Give Me Smarter Objects &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Give Me Smarter Objects"><meta property="og:description" content="A coding exercise I do once in a while is writing Battleship. It&rsquo;s a
+fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
+candidate as part of the interview process. It&rsquo;s always exciting to see what other developers come up with. Today I was
+doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code
+and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented
+programming can be."><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2018-06-18>18 Jun 2018
+</time><time datetime=2018-06-18>• updated 18 Jun 2018</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">Give Me Smarter Objects</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/scala class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Scala
+</a><a href=/tags/oop class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">OOP
+</a><a href=/tags/object-oriented-design class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Object Oriented Design
+</a><a href=/tags/code-smells class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Code Smells
+</a><a href=/tags/refactoring class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Refactoring</a></div></div><div class="prose prose-lg max-w-none"><p>A coding exercise I do once in a while is writing <a href=https://en.wikipedia.org/wiki/Battleship_(game)>Battleship</a>. It&rsquo;s a
 fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
 candidate as part of the interview process. It&rsquo;s always exciting to see what other developers come up with. Today I was
 doing the exercise and I contemplated on the <em>primitive obsession</em> code smell that always seems to creep into my code
 and saw a beautiful way to apply the <em>extract class</em> refactoring that very succinctly shows how nice object oriented
-programming can be.</p>
-<p>When implementing Battleship one inevitably reaches the point where it has to be decided how the orientation of a ship
+programming can be.</p><p>When implementing Battleship one inevitably reaches the point where it has to be decided how the orientation of a ship
 on the board is being represented in the code. Most programmers naturally decide to use a Boolean flag, after all a ship
-can only be either horizontal or vertical. In Scala this could look like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">case</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Ship</span><span style="color:#555">(</span>orientation<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Boolean</span><span style="color:#555">)</span>
-</span></span></code></pre></div><p>Later on when decisions have to be made based on the orientation, you&rsquo;d go use an <code>if</code> block like so:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">if</span> ship<span style="color:#555">.</span>orientation <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// Do stuff with a horizontal ship
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span> <span style="color:#069;font-weight:bold">else</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// Do stuff with a vertical ship
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span>
+can only be either horizontal or vertical. In Scala this could look like this:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>case</span> <span style=color:#2c5dcd;font-weight:700>class</span> <span style=text-decoration:underline>Ship</span><span style=color:#2c5dcd>(</span>orientation<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Boolean</span><span style=color:#2c5dcd>)</span>
+</span></span></code></pre></div><p>Later on when decisions have to be made based on the orientation, you&rsquo;d go use an <code>if</code> block like so:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=display:flex><span>  <span style=color:#2c5dcd;font-weight:700>if</span> ship<span style=color:#2c5dcd>.</span>orientation <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#0080ff;font-style:italic>// Do stuff with a horizontal ship
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span>  <span style=color:#2c5dcd>}</span> <span style=color:#2c5dcd;font-weight:700>else</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#0080ff;font-style:italic>// Do stuff with a vertical ship
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span>  <span style=color:#2c5dcd>}</span>
 </span></span></code></pre></div><p>This reads a bit awkward, particularly because it&rsquo;s not clear what <code>orientation == true</code> even means. This <em>could</em> be
 improved by renaming <code>orientation</code> to <code>horizontal</code> or <code>vertical</code>. In the end this makes it only marginally
 better, because whoever inquires what the orientation is will then have to invoke appropriate functionality based on
 the result. That sucks because we&rsquo;re leaking implementation details &ndash; the caller will have to understand the meaning of
-the value returned. What we really want is the orientation to do whatever it does for us.</p>
-<p>After thinking about what orientation in this game implies, we realize that it is entirely about picking a direction,
+the value returned. What we really want is the orientation to do whatever it does for us.</p><p>After thinking about what orientation in this game implies, we realize that it is entirely about picking a direction,
 and that could be described as producing a next coordinate based on a given coordinate. In other words, given an
 orientation, I could send it a message with a coordinate and it would return me a new coordinate that is in the
-direction of the orientation. In Scala it could look like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">case</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Coordinate</span><span style="color:#555">(</span>x<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Int</span><span style="color:#555">,</span> y<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Int</span><span style="color:#555">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">val</span> c1 <span style="color:#069;font-weight:bold">=</span> <span style="color:#0a8;font-weight:bold">Coordinate</span><span style="color:#555">(</span><span style="color:#f60">3</span><span style="color:#555">,</span> <span style="color:#f60">5</span><span style="color:#555">)</span> <span style="color:#09f;font-style:italic">// =&gt; x=3,y=5
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">val</span> orientation <span style="color:#069;font-weight:bold">=</span> <span style="color:#0a8;font-weight:bold">Orientation</span><span style="color:#555">.</span>vertical
-</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">val</span> c2 <span style="color:#069;font-weight:bold">=</span> orientation<span style="color:#555">.</span>next<span style="color:#555">(</span>c1<span style="color:#555">)</span> <span style="color:#09f;font-style:italic">// =&gt; x=3,y=6
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">...</span>
+direction of the orientation. In Scala it could look like this:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>case</span> <span style=color:#2c5dcd;font-weight:700>class</span> <span style=text-decoration:underline>Coordinate</span><span style=color:#2c5dcd>(</span>x<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Int</span><span style=color:#2c5dcd>,</span> y<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Int</span><span style=color:#2c5dcd>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>val</span> c1 <span style=color:#2c5dcd;font-weight:700>=</span> <span style=text-decoration:underline>Coordinate</span><span style=color:#2c5dcd>(</span><span style=color:#5918bb;font-weight:700>3</span><span style=color:#2c5dcd>,</span> <span style=color:#5918bb;font-weight:700>5</span><span style=color:#2c5dcd>)</span> <span style=color:#0080ff;font-style:italic>// =&gt; x=3,y=5
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span><span style=color:#2c5dcd;font-weight:700>val</span> orientation <span style=color:#2c5dcd;font-weight:700>=</span> <span style=text-decoration:underline>Orientation</span><span style=color:#2c5dcd>.</span>vertical
+</span></span><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>val</span> c2 <span style=color:#2c5dcd;font-weight:700>=</span> orientation<span style=color:#2c5dcd>.</span>next<span style=color:#2c5dcd>(</span>c1<span style=color:#2c5dcd>)</span> <span style=color:#0080ff;font-style:italic>// =&gt; x=3,y=6
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span><span style=color:#2c5dcd>...</span>
 </span></span></code></pre></div><p>This example shows nicely how a client of Orientation doesn&rsquo;t need to understand any of the details of how orientation
 impacts the coordinate calculation. It just asks the orientation to do it. And to complete the picture, let&rsquo;s take a
 look at how we could implement orientation. The naive approach would be to pull the boolean into a separate class,
-like so:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">case</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Orientation</span><span style="color:#555">(</span>horizontal<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Boolean</span><span style="color:#555">)</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">def</span> next<span style="color:#555">(</span>coordinate<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span><span style="color:#555">)</span><span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span> <span style="color:#555">=</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">(</span>horizontal<span style="color:#555">)</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>      coordinate<span style="color:#555">.</span>copy<span style="color:#555">(</span>coordinate<span style="color:#555">.</span>x <span style="color:#555">+</span> <span style="color:#f60">1</span><span style="color:#555">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#555">}</span> <span style="color:#069;font-weight:bold">else</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>      coordinate<span style="color:#555">.</span>copy<span style="color:#555">(</span>coordinate<span style="color:#555">.</span>y <span style="color:#555">+</span> <span style="color:#f60">1</span><span style="color:#555">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#555">}</span>
+like so:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>case</span> <span style=color:#2c5dcd;font-weight:700>class</span> <span style=text-decoration:underline>Orientation</span><span style=color:#2c5dcd>(</span>horizontal<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Boolean</span><span style=color:#2c5dcd>)</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd;font-weight:700>def</span> next<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span><span style=color:#2c5dcd>)</span><span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span> <span style=color:#2c5dcd>=</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#2c5dcd;font-weight:700>if</span> <span style=color:#2c5dcd>(</span>horizontal<span style=color:#2c5dcd>)</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>      coordinate<span style=color:#2c5dcd>.</span>copy<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd>.</span>x <span style=color:#2c5dcd>+</span> <span style=color:#5918bb;font-weight:700>1</span><span style=color:#2c5dcd>)</span>
+</span></span><span style=display:flex><span>    <span style=color:#2c5dcd>}</span> <span style=color:#2c5dcd;font-weight:700>else</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>      coordinate<span style=color:#2c5dcd>.</span>copy<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd>.</span>y <span style=color:#2c5dcd>+</span> <span style=color:#5918bb;font-weight:700>1</span><span style=color:#2c5dcd>)</span>
+</span></span><span style=display:flex><span>    <span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd>}</span>
 </span></span></code></pre></div><p>Not bad, but we can do better. Every <code>if-else</code> block is your code telling you that there is a hidden class hierarchy in
 your code that just waits to be unearthed. In this case we can very easily embed the value of the boolean in the class
-hierarchy by introducting one class that represents the horizontal orientation and one that implements the vertical one:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Horizontal</span> <span style="color:#069;font-weight:bold">extends</span> <span style="color:#0a8;font-weight:bold">Orientation</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">def</span> next<span style="color:#555">(</span>coordinate<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span><span style="color:#555">)</span><span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span> <span style="color:#555">=</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>    coordinate<span style="color:#555">.</span>copy<span style="color:#555">(</span>coordinate<span style="color:#555">.</span>x <span style="color:#555">+</span> <span style="color:#f60">1</span><span style="color:#555">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Vertical</span> <span style="color:#069;font-weight:bold">extends</span> <span style="color:#0a8;font-weight:bold">Orientation</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">def</span> next<span style="color:#555">(</span>coordinate<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span><span style="color:#555">)</span><span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span> <span style="color:#555">=</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>    coordinate<span style="color:#555">.</span>copy<span style="color:#555">(</span>coordinate<span style="color:#555">.</span>y <span style="color:#555">+</span> <span style="color:#f60">1</span><span style="color:#555">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#555">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">// The sealed trait ensures that scala recognizes only Horizontal and Vertical as Orientations
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">sealed</span> <span style="color:#069;font-weight:bold">trait</span> <span style="color:#0a8;font-weight:bold">Orientation</span> <span style="color:#555">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">def</span> next<span style="color:#555">(</span>coordinate<span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span><span style="color:#555">)</span><span style="color:#069;font-weight:bold">:</span> <span style="color:#078;font-weight:bold">Coordinate</span>
-</span></span><span style="display:flex;"><span><span style="color:#555">}</span>
+hierarchy by introducting one class that represents the horizontal orientation and one that implements the vertical one:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>final</span> <span style=color:#2c5dcd;font-weight:700>class</span> <span style=text-decoration:underline>Horizontal</span> <span style=color:#2c5dcd;font-weight:700>extends</span> <span style=text-decoration:underline>Orientation</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd;font-weight:700>def</span> next<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span><span style=color:#2c5dcd>)</span><span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span> <span style=color:#2c5dcd>=</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>    coordinate<span style=color:#2c5dcd>.</span>copy<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd>.</span>x <span style=color:#2c5dcd>+</span> <span style=color:#5918bb;font-weight:700>1</span><span style=color:#2c5dcd>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd;font-weight:700>final</span> <span style=color:#2c5dcd;font-weight:700>class</span> <span style=text-decoration:underline>Vertical</span> <span style=color:#2c5dcd;font-weight:700>extends</span> <span style=text-decoration:underline>Orientation</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd;font-weight:700>def</span> next<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span><span style=color:#2c5dcd>)</span><span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span> <span style=color:#2c5dcd>=</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>    coordinate<span style=color:#2c5dcd>.</span>copy<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd>.</span>y <span style=color:#2c5dcd>+</span> <span style=color:#5918bb;font-weight:700>1</span><span style=color:#2c5dcd>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic>// The sealed trait ensures that scala recognizes only Horizontal and Vertical as Orientations
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span><span style=color:#2c5dcd;font-weight:700>sealed</span> <span style=color:#2c5dcd;font-weight:700>trait</span> <span style=text-decoration:underline>Orientation</span> <span style=color:#2c5dcd>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#2c5dcd;font-weight:700>def</span> next<span style=color:#2c5dcd>(</span>coordinate<span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span><span style=color:#2c5dcd>)</span><span style=color:#2c5dcd;font-weight:700>:</span> <span style=color:#5918bb;font-weight:700>Coordinate</span>
+</span></span><span style=display:flex><span><span style=color:#2c5dcd>}</span>
 </span></span></code></pre></div><p>Much better. Now we have very specific, easy to understand, and almost fool-proof classes representing this concept that
 we named <code>Orientation</code>. To some programmers this seems weird, overly complicated, and wasteful even. Which path to
 choose comes down to cost. The object oriented approach as outlined above consists of more classes, more (explicit)
 concepts, and took considerably more effort to implement than our first approach. But the object oriented code makes up for
 the cost by providing better readability &ndash; and we all know that as programmers we mostly don&rsquo;t write code, we read code
 &ndash; and improved maintainability. It might be slightly less efficient, but each building block is so simple that it&rsquo;s
-almost impossible to introduce a bug. In most cases: worth it.</p>
-<p>Be on the watch for primitive obsession, a code smell named so by
-<a href="https://martinfowler.com/books/refactoring.html">Refactoring</a>, where you pass around &ldquo;primitive&rdquo; types and the act on
+almost impossible to introduce a bug. In most cases: worth it.</p><p>Be on the watch for primitive obsession, a code smell named so by
+<a href=https://martinfowler.com/books/refactoring.html>Refactoring</a>, where you pass around &ldquo;primitive&rdquo; types and the act on
 their value. These are prime candidates to apply the <em>extract class</em> refactoring, also conveniently describe in
-Refactoring. You will be rewarded with easier to understand and composable code.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+Refactoring. You will be rewarded with easier to understand and composable code.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

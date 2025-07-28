@@ -16,7 +16,7 @@
       <link>http://localhost:1313/2020/11/22/matrix-bots-with-golang/</link>
       <pubDate>Sun, 22 Nov 2020 14:14:45 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>http://localhost:1313/2020/11/22/matrix-bots-with-golang/</guid>
-      <description>I&amp;rsquo;ve been running a Matrix homeserver for about a year now and I&amp;rsquo;m happy with it. It runs on my Kubernetes cluster on a few Raspberry Pis, doesn&amp;rsquo;t require a lot of attention and is fairly resource efficient. But I always wanted to write my own chatbots to do things for me and recently I finally started looking into matrix bots and how to implement them in Go for easy cross compile and statically linked binaries.</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been running a Matrix homeserver for about a year now and I&amp;rsquo;m happy with&#xA;it. It runs on my Kubernetes cluster on a few Raspberry Pis, doesn&amp;rsquo;t require a&#xA;lot of attention and is fairly resource efficient. But I always wanted to write&#xA;my own chatbots to do things for me and recently I finally started looking into&#xA;matrix bots and how to implement them in Go for easy cross compile and&#xA;statically linked binaries.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

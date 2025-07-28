@@ -1,122 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        awk Cheat Sheet &mdash;
-      
-      Jakob Külzer
-    </title>
+<!doctype html><html><head><meta charset=utf-8><title>awk Cheat Sheet &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="awk Cheat Sheet"><meta property="og:description" content='I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&rsquo;s time for a cheat sheet.
+Structure of an awk script
+# Comments begin with a pound sign
+BEGIN {
+  # Instructions run before the main loop
+  FS = ";" # Set a Field Separator
+}
 
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="awk Cheat Sheet">
-    <meta property="og:description" content="I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&rsquo;s time for a cheat sheet.
-Structure of an awk script # Comments begin with a pound sign BEGIN { # Instructions run before the main loop FS = &#34;;&#34; # Set a Field Separator } # Each line of input is applied against all the following # regular expressions and runs the instructions in the # block: /^$/ { print &#34;An empty line&#34; } END { # Instructions run after the main loop } Invoke awk with a script like so:">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/">
+# Each line of input is applied against all the following
+# regular expressions and runs the instructions in the
+# block:
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+/^$/ { print "An empty line" }
 
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                26 Mar 2019
-
-
-, tagged:
-
-
-    <a href="/tags/awk" class="">
-        awk, 
-    </a>
-
-    <a href="/tags/unix" class="">
-        unix, 
-    </a>
-
-    <a href="/tags/cheat-sheet" class="">
-        cheat sheet
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>awk Cheat Sheet</h1>
-            <p>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&rsquo;s time for a cheat sheet.</p>
-<h3 id="structure-of-an-awk-script">Structure of an awk script</h3>
-<pre tabindex="0"><code># Comments begin with a pound sign
+END {
+  # Instructions run after the main loop
+}
+Invoke awk with a script like so:'><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2019/03/26/awk-cheat-sheet/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2019-03-26>26 Mar 2019
+</time><time datetime=2019-03-29>• updated 29 Mar 2019</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">awk Cheat Sheet</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/awk class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">awk
+</a><a href=/tags/unix class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">unix
+</a><a href=/tags/cheat-sheet class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">cheat sheet</a></div></div><div class="prose prose-lg max-w-none"><p>I needed to crunch some data quickly and decided awk was the right tool to do so. But every time I use awk, I have to go read the manual, so I decided it&rsquo;s time for a cheat sheet.</p><h3 id=structure-of-an-awk-script>Structure of an awk script</h3><pre tabindex=0><code># Comments begin with a pound sign
 BEGIN {
   # Instructions run before the main loop
   FS = &#34;;&#34; # Set a Field Separator
@@ -131,106 +37,34 @@ BEGIN {
 END {
   # Instructions run after the main loop
 }
-</code></pre><p>Invoke awk with a script like so:</p>
-<pre tabindex="0"><code>$ awk -F script &lt;input file&gt;
-</code></pre><h3 id="matching">Matching</h3>
-<p><strong>Match every line:</strong> awk will match each record against the instructions in the script. It will execute <strong>all</strong> matching instructions.</p>
-<pre tabindex="0"><code>{ print $0 }           # print every single line
-</code></pre><p><strong>Match blank lines:</strong></p>
-<pre tabindex="0"><code>/^$/ { print &#34;blank&#34; } # print &#34;blank&#34; for every blank line
-</code></pre><p><strong>Match on columns:</strong></p>
-<pre tabindex="0"><code>$2 ~ /[0-9]+/ { print $2 } # print column 2 if it contains a number
-</code></pre><p><strong>Relational operators to match columns:</strong></p>
-<pre tabindex="0"><code>$2 &lt; 3 { print &#34;less than three&#34; } # print &#34;less than three&#34; if column two&#39;s value is less than three
-</code></pre><p><strong>Negate match:</strong></p>
-<pre tabindex="0"><code>$1 !~ /[0-9]+/ { print &#34;no number&#34; } # print &#34;no number if the first column contains no numbers
-</code></pre><h3 id="input-and-output">Input and Output</h3>
-<p>Awk splits the input into records on the <code>RS</code> (RecordSeparator).
+</code></pre><p>Invoke awk with a script like so:</p><pre tabindex=0><code>$ awk -F script &lt;input file&gt;
+</code></pre><h3 id=matching>Matching</h3><p><strong>Match every line:</strong> awk will match each record against the instructions in the script. It will execute <strong>all</strong> matching instructions.</p><pre tabindex=0><code>{ print $0 }           # print every single line
+</code></pre><p><strong>Match blank lines:</strong></p><pre tabindex=0><code>/^$/ { print &#34;blank&#34; } # print &#34;blank&#34; for every blank line
+</code></pre><p><strong>Match on columns:</strong></p><pre tabindex=0><code>$2 ~ /[0-9]+/ { print $2 } # print column 2 if it contains a number
+</code></pre><p><strong>Relational operators to match columns:</strong></p><pre tabindex=0><code>$2 &lt; 3 { print &#34;less than three&#34; } # print &#34;less than three&#34; if column two&#39;s value is less than three
+</code></pre><p><strong>Negate match:</strong></p><pre tabindex=0><code>$1 !~ /[0-9]+/ { print &#34;no number&#34; } # print &#34;no number if the first column contains no numbers
+</code></pre><h3 id=input-and-output>Input and Output</h3><p>Awk splits the input into records on the <code>RS</code> (RecordSeparator).
 Each input record is split into fields via the <code>FS</code> variable (FieldSeparator)
 or via <code>-F</code> command line flag.
-Individual fields can be addressed with <code>$&lt;field index&gt;</code>, for example <code>$1</code> returns
-the first field, <code>$2</code> the second and so on. <code>$0</code> returns the whole record.</p>
-<pre tabindex="0"><code>$ echo &#39;a;b;c&#39; | awk -F&#39;;&#39; &#39;{ print $1 &#34; - &#34; $2 &#34; - &#34; $3 }&#39;
+Individual fields can be addressed with <code>$&lt;field index></code>, for example <code>$1</code> returns
+the first field, <code>$2</code> the second and so on. <code>$0</code> returns the whole record.</p><pre tabindex=0><code>$ echo &#39;a;b;c&#39; | awk -F&#39;;&#39; &#39;{ print $1 &#34; - &#34; $2 &#34; - &#34; $3 }&#39;
 a - b - c
 </code></pre><p>Similarly to <code>RS</code> and <code>FS</code> awk supports record and field separators for output formatting
-called <code>ORS</code> (OutputRecordSeparator) and <code>OFS</code> (OutputFieldSeparator).</p>
-<p>The <code>printf</code> function allows more control over formatting:</p>
-<pre tabindex="0"><code>$ echo &#39;3.1415, hello&#39; | awk &#39;{ printf(&#34;a float: %f, a string: %s\n&#34;, $1, $2) }&#39;
+called <code>ORS</code> (OutputRecordSeparator) and <code>OFS</code> (OutputFieldSeparator).</p><p>The <code>printf</code> function allows more control over formatting:</p><pre tabindex=0><code>$ echo &#39;3.1415, hello&#39; | awk &#39;{ printf(&#34;a float: %f, a string: %s\n&#34;, $1, $2) }&#39;
 a float: 3.141500, a string: hello
-</code></pre><h3 id="variables">Variables</h3>
-<p>Variables can simply be assigned by a name, the assignment operator, and an expression:</p>
-<pre tabindex="0"><code>variable_name = 1 + 2
+</code></pre><h3 id=variables>Variables</h3><p>Variables can simply be assigned by a name, the assignment operator, and an expression:</p><pre tabindex=0><code>variable_name = 1 + 2
 </code></pre><p>Variables have both a numeric and string value and awk will use whatever is appropriate. Strings
-have a numeric value of <code>0</code>.</p>
-<p>Variables can be passed into awk at the beginning of the execution as a parameter:</p>
-<pre tabindex="0"><code>$ awk &#39;{ print foo }&#39; foo=bar
+have a numeric value of <code>0</code>.</p><p>Variables can be passed into awk at the beginning of the execution as a parameter:</p><pre tabindex=0><code>$ awk &#39;{ print foo }&#39; foo=bar
 bar
-</code></pre><p>These variables are not available in <code>BEGIN</code> blocks, but you can specify variable bindings at startup with <code>-v var=value</code>:</p>
-<pre tabindex="0"><code>$ awk -v foo=bar &#39;BEGIN { print foo }`
+</code></pre><p>These variables are not available in <code>BEGIN</code> blocks, but you can specify variable bindings at startup with <code>-v var=value</code>:</p><pre tabindex=0><code>$ awk -v foo=bar &#39;BEGIN { print foo }`
 bar
-</code></pre><p>Arrays can be used just like variables and don&rsquo;t require initialization. Arrays are associative, i.e. both numbers and strings can be used as index.</p>
-<h3 id="predefined-variables">Predefined Variables</h3>
-<p><code>RS</code>: Record separator</p>
-<p><code>FS</code>: Field separator</p>
-<p><code>NR</code>: number of records in input processed so far, aka line number</p>
-<p><code>NF</code>: number of fields in current record</p>
-<p><code>ORS</code>: Output record separator</p>
-<p><code>OFS</code>: Output field separator</p>
-<h3 id="control-flow">Control Flow</h3>
-<p>Awk supports <code>if</code>, <code>if-else</code>, <code>if-else-if-else</code>, and the ternary operator <code>expr ? action : other action</code>:</p>
-<pre tabindex="0"><code>if $1 &gt; 20 { print &#34;many!&#34; }
-</code></pre><p>In terms of loops awk has <code>while</code>, <code>do-while</code>, and <code>for</code> loops. The <code>for</code> loop can be used like a traditional C style for loop:</p>
-<pre tabindex="0"><code>for (i = 0; i &lt; NF; i++)
+</code></pre><p>Arrays can be used just like variables and don&rsquo;t require initialization. Arrays are associative, i.e. both numbers and strings can be used as index.</p><h3 id=predefined-variables>Predefined Variables</h3><p><code>RS</code>: Record separator</p><p><code>FS</code>: Field separator</p><p><code>NR</code>: number of records in input processed so far, aka line number</p><p><code>NF</code>: number of fields in current record</p><p><code>ORS</code>: Output record separator</p><p><code>OFS</code>: Output field separator</p><h3 id=control-flow>Control Flow</h3><p>Awk supports <code>if</code>, <code>if-else</code>, <code>if-else-if-else</code>, and the ternary operator <code>expr ? action : other action</code>:</p><pre tabindex=0><code>if $1 &gt; 20 { print &#34;many!&#34; }
+</code></pre><p>In terms of loops awk has <code>while</code>, <code>do-while</code>, and <code>for</code> loops. The <code>for</code> loop can be used like a traditional C style for loop:</p><pre tabindex=0><code>for (i = 0; i &lt; NF; i++)
   print $i # prints each field in the current record
-</code></pre><p>or as in a simplified form for traversing array&rsquo;s indexes:</p>
-<pre tabindex="0"><code>for (x in my_array) { print x &#34;: &#34; my_array[x] }
+</code></pre><p>or as in a simplified form for traversing array&rsquo;s indexes:</p><pre tabindex=0><code>for (x in my_array) { print x &#34;: &#34; my_array[x] }
 </code></pre><p>Furthermore awk has the <code>continue</code> and <code>break</code> keywords which do exactly what you would think. There&rsquo;s also the <code>exit</code> and <code>next</code>
 keywords. <code>exit</code> does what you would expect and exits the script, <code>END</code> blocks will still be executed though.. <code>next</code> causes the
-next record to be read.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+next record to be read.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

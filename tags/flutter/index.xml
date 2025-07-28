@@ -1,22 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Flutter on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/flutter/</link>
-    <description>Recent content in Flutter on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 24 Jun 2018 22:22:55 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>First Impressions of Flutter</title>
-      <link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link>
-      <pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid>
-      <description>Google recently announced availability of 1.0 preview of Flutter, a new framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been interested in building apps for mobile devices in general and Android in particular thanks to the number of Android devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store that got too unwieldy to work on and I eventually had to cease development due to time constraints.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/flutter/</link><description>Recent content in Flutter on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Sun, 24 Jun 2018 22:22:55 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>First Impressions of Flutter</title><link>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</link><pubDate>Sun, 24 Jun 2018 16:23:34 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/06/24/first-impressions-of-flutter/</guid><description>&lt;p>Google recently announced &lt;a href="https://medium.com/flutter-io/flutter-release-preview-1-943a9b6ee65a">availability of 1.0 preview
+&lt;/a> of &lt;a href="https://flutter.io/">Flutter&lt;/a>, a new
+framework for building mobile apps, written from scratch with performance and beautiful UIs in mind. I&amp;rsquo;ve always been
+interested in building apps for mobile devices in general and Android in particular thanks to the number of Android
+devices I own, but was always discouraged by the complexity of building Android apps. I have one on the Android store
+that got too unwieldy to work on and I eventually had to cease development due to time constraints. Now with flutter
+closing in on its first release build I got interested, not only because it is a new beginning to building mobile apps
+&amp;ndash; and we all know that developers love newly built things &amp;ndash; but also because it uses
+&lt;a href="https://www.dartlang.org/">Dart&lt;/a>, Googles attempt to create a language to replace JavaScript that, sadly, went not far.&lt;/p></description></item></channel></rss>

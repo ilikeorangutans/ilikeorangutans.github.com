@@ -1,246 +1,59 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        gnuplot - My New Favorite Tool &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="gnuplot - My New Favorite Tool">
-    <meta property="og:description" content="I recently had the need to quickly visualize some data and none of the systems I usually work with had the data. Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&rsquo;t really scale well. The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the GNU project.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                21 Jul 2018
-
-
-, tagged:
-
-
-    <a href="/tags/gnuplot" class="">
-        gnuplot, 
-    </a>
-
-    <a href="/tags/books" class="">
-        books, 
-    </a>
-
-    <a href="/tags/csv" class="">
-        CSV
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>gnuplot - My New Favorite Tool</h1>
-            <p>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data.
+<!doctype html><html><head><meta charset=utf-8><title>gnuplot - My New Favorite Tool &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="gnuplot - My New Favorite Tool"><meta property="og:description" content="I recently had the need to quickly visualize some data and none of the systems I usually work with had the data.
 Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&rsquo;t really scale well.
 The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point
-I faintly recalled reading about <a href="http://www.gnuplot.info/">gnuplot</a> which, despite its name, has no affiliation with the
-GNU project.</p>
-<p>After some hacking I got some graphs working, but it took me a while to get what I wanted. The syntax was not initially
+I faintly recalled reading about gnuplot which, despite its name, has no affiliation with the
+GNU project."><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2018/07/21/gnuplot-my-new-favorite-tool/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2018-07-21>21 Jul 2018
+</time><time datetime=2018-07-21>• updated 21 Jul 2018</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">gnuplot - My New Favorite Tool</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/gnuplot class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">gnuplot
+</a><a href=/tags/books class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">books
+</a><a href=/tags/csv class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">CSV</a></div></div><div class="prose prose-lg max-w-none"><p>I recently had the need to quickly visualize some data and none of the systems I usually work with had the data.
+Initially I dumped the data in Google Sheets and created a chart there, but that was slow and didn&rsquo;t really scale well.
+The data had to be cleaned, brought into the right format, columns had to be selected and charts created. At this point
+I faintly recalled reading about <a href=http://www.gnuplot.info/>gnuplot</a> which, despite its name, has no affiliation with the
+GNU project.</p><p>After some hacking I got some graphs working, but it took me a while to get what I wanted. The syntax was not initially
 intuitive, partially because I decided to go straight to the tool without reading any docs first. I liked what I had at
-my hands, but I wanted to learn more so I picked up <a href="https://www.manning.com/books/gnuplot-in-action-second-edition">Gnuplot in Action, Second
+my hands, but I wanted to learn more so I picked up <a href=https://www.manning.com/books/gnuplot-in-action-second-edition>Gnuplot in Action, Second
 Edition</a> and started reading. The book is fantastic so
-far and I&rsquo;m condensing some notes here about this magnificent tool, so I can quickly go back and find them.</p>
-<h2 id="its-interactive">It&rsquo;s Interactive!</h2>
-<p>The first thing I got realized is that gnuplot is actually meant to be used interactively. I&rsquo;ve only used it by calling
+far and I&rsquo;m condensing some notes here about this magnificent tool, so I can quickly go back and find them.</p><h2 id=its-interactive>It&rsquo;s Interactive!</h2><p>The first thing I got realized is that gnuplot is actually meant to be used interactively. I&rsquo;ve only used it by calling
 it from the command line and feeding data straight into it, which is good if you&rsquo;re scripting something, but it made
 getting the graphs a really cumbersome trial and error. Using it interactively is pretty great as every plot you issue
-is automatically rendered on the current terminal.</p>
-<p>To get you started, install gnuplot (you know how to do that) and start it. You&rsquo;ll get an interactive terminal:</p>
-<pre tabindex="0"><code>gnuplot&gt; plot sin(x)
-</code></pre><p>Depending on you version it might help to specify a range:</p>
-<pre tabindex="0"><code>gnuplot&gt; plot [-6:6] sin(x)
-</code></pre><p>You&rsquo;ll get a little window with your plotted function:</p>
-<!-- raw HTML omitted -->
-<h2 id="plotting-data-from-files">Plotting Data From Files</h2>
-<p>Plotting functions is fun and the nerd in me enjoys it, but there&rsquo;s only so much use in plotting random polynomials. The
-real power of gnuplot is by reading data from files. Reading input from files is trivially easy:</p>
-<pre tabindex="0"><code>gnuplot&gt; plot &#34;file-white-space-separated-content&#34; using 1:2
+is automatically rendered on the current terminal.</p><p>To get you started, install gnuplot (you know how to do that) and start it. You&rsquo;ll get an interactive terminal:</p><pre tabindex=0><code>gnuplot&gt; plot sin(x)
+</code></pre><p>Depending on you version it might help to specify a range:</p><pre tabindex=0><code>gnuplot&gt; plot [-6:6] sin(x)
+</code></pre><p>You&rsquo;ll get a little window with your plotted function:</p><h2 id=plotting-data-from-files>Plotting Data From Files</h2><p>Plotting functions is fun and the nerd in me enjoys it, but there&rsquo;s only so much use in plotting random polynomials. The
+real power of gnuplot is by reading data from files. Reading input from files is trivially easy:</p><pre tabindex=0><code>gnuplot&gt; plot &#34;file-white-space-separated-content&#34; using 1:2
 </code></pre><p>This will read the file <code>file-white-space-separated-content</code> and plot the first column on the x-axis and the second
-column on the y-axis. Note that the filename has to be in quotes.</p>
-<h2 id="anatomy-of-the-plot-command">Anatomy of the Plot Command</h2>
-<p>This is my understanding of the plot command using semi-regular expressions:</p>
-<pre tabindex="0"><code>plot [[X-RANGE]:[Y-RANGE]] &#34;&lt;DATAFILE&gt;&#34; using &lt;X-DATA&gt;:&lt;Y-DATA&gt; title &lt;TITLE&gt; [with &lt;DRAW-METHOD&gt;] [, using &lt;X-DATA&gt;:&lt;Y-DATA&gt; [with &lt;DRAW-METHOD&gt;]]*
-</code></pre><p>Let me break down the pieces:</p>
-<dl>
-<dt>X-RANGE and Y-RANGE</dt>
-<dd>Optional, specifies the x and y range to be plotted. If not specified gnuplot will pick based on the data. You can use
+column on the y-axis. Note that the filename has to be in quotes.</p><h2 id=anatomy-of-the-plot-command>Anatomy of the Plot Command</h2><p>This is my understanding of the plot command using semi-regular expressions:</p><pre tabindex=0><code>plot [[X-RANGE]:[Y-RANGE]] &#34;&lt;DATAFILE&gt;&#34; using &lt;X-DATA&gt;:&lt;Y-DATA&gt; title &lt;TITLE&gt; [with &lt;DRAW-METHOD&gt;] [, using &lt;X-DATA&gt;:&lt;Y-DATA&gt; [with &lt;DRAW-METHOD&gt;]]*
+</code></pre><p>Let me break down the pieces:</p><dl><dt>X-RANGE and Y-RANGE</dt><dd>Optional, specifies the x and y range to be plotted. If not specified gnuplot will pick based on the data. You can use
 this to filter by specifying only one part of the range, for example <code>plot [][1000:]</code> will only plot y values larger
-than <code>1000</code>.</dd>
-<dt>DATAFILE</dt>
-<dd>The source from which gnuplot reads data. Can be a filename or a <code>-</code> (dash) for stdin or an empty string <code>&quot;&quot;</code> to use
-the previously used file, very useful when plotting more than one series.</dd>
-<dt>TITLE</dt>
-<dd>Label for this series. gnuplot will always label a series, but it might not pick the best title.</dd>
-<dt>X-DATA,Y-DATA</dt>
-<dd>Specify the columns that we want gnuplot to render, with <code>1</code> being the first column and <code>0</code> and implicit, increasing
+than <code>1000</code>.</dd><dt>DATAFILE</dt><dd>The source from which gnuplot reads data. Can be a filename or a <code>-</code> (dash) for stdin or an empty string <code>""</code> to use
+the previously used file, very useful when plotting more than one series.</dd><dt>TITLE</dt><dd>Label for this series. gnuplot will always label a series, but it might not pick the best title.</dd><dt>X-DATA,Y-DATA</dt><dd>Specify the columns that we want gnuplot to render, with <code>1</code> being the first column and <code>0</code> and implicit, increasing
 column. If an argument is enclosed in parentheses it&rsquo;s evaluated as an expression with <code>$1</code> being the first column, and
-so on.</dd>
-<dt>DRAW-METHOD</dt>
-<dd>Tells gnuplot how you would like it to visualize your series. Among the available options are <code>lines</code>, <code>boxes</code>,
-<code>dots</code>, and many more. See <code>help plot with</code> for a full list of available styles.</dd>
-</dl>
-<h2 id="useful-gnuplot-snippets">Useful gnuplot Snippets</h2>
-<p>Here&rsquo;s a bunch of useful snippets I regularly use to quickly crunch some numbers and visualize them:</p>
-<h3 id="reading-csv-files">Reading CSV Files</h3>
-<pre tabindex="0"><code>gnuplot&gt; set datafile separator &#34;,&#34;
-</code></pre><p>or</p>
-<pre tabindex="0"><code>gnuplot&gt; set datafile separator comma
-</code></pre><h3 id="reading-time-series-data">Reading Time Series Data</h3>
-<p>The data I was dealing with as pulled from a running system and had memory consumption stats and a Unix timestamp.
-Reading time series data with gnuplot is straightforward: you set the data format for the x-axis and the time format.</p>
-<pre tabindex="0"><code>gnuplot&gt; set xdata time
+so on.</dd><dt>DRAW-METHOD</dt><dd>Tells gnuplot how you would like it to visualize your series. Among the available options are <code>lines</code>, <code>boxes</code>,
+<code>dots</code>, and many more. See <code>help plot with</code> for a full list of available styles.</dd></dl><h2 id=useful-gnuplot-snippets>Useful gnuplot Snippets</h2><p>Here&rsquo;s a bunch of useful snippets I regularly use to quickly crunch some numbers and visualize them:</p><h3 id=reading-csv-files>Reading CSV Files</h3><pre tabindex=0><code>gnuplot&gt; set datafile separator &#34;,&#34;
+</code></pre><p>or</p><pre tabindex=0><code>gnuplot&gt; set datafile separator comma
+</code></pre><h3 id=reading-time-series-data>Reading Time Series Data</h3><p>The data I was dealing with as pulled from a running system and had memory consumption stats and a Unix timestamp.
+Reading time series data with gnuplot is straightforward: you set the data format for the x-axis and the time format.</p><pre tabindex=0><code>gnuplot&gt; set xdata time
 gnuplot&gt; set timefmt &#34;%s&#34; # %s is for Unix timestamps, see all formats with help set timefmt
 gnuplot&gt; plot &#34;job1.csv&#34; using 1:4 with lines
-</code></pre><h3 id="human-readable-sizes">Human Readable Sizes</h3>
-<p>I deal with byte counts and I find the scientific notation not as intuitive. I prefer the traditionally used prefixes
-(from this helpful <a href="https://stackoverflow.com/questions/25123624/gnuplot-y-axis-format-convert-bytes-to-megabytes#25125788">StackOverflow
-answer</a>):</p>
-<pre tabindex="0"><code>gnuplot&gt; set format y &#34;%.0s%cB&#34;
-</code></pre><h3 id="rendering-pngs">Rendering PNGs</h3>
-<pre tabindex="0"><code>gnuplot&gt; set terminal pngcairo size &lt;WIDTH&gt;,&lt;HEIGHT&gt; # or just png
+</code></pre><h3 id=human-readable-sizes>Human Readable Sizes</h3><p>I deal with byte counts and I find the scientific notation not as intuitive. I prefer the traditionally used prefixes
+(from this helpful <a href=https://stackoverflow.com/questions/25123624/gnuplot-y-axis-format-convert-bytes-to-megabytes#25125788>StackOverflow
+answer</a>):</p><pre tabindex=0><code>gnuplot&gt; set format y &#34;%.0s%cB&#34;
+</code></pre><h3 id=rendering-pngs>Rendering PNGs</h3><pre tabindex=0><code>gnuplot&gt; set terminal pngcairo size &lt;WIDTH&gt;,&lt;HEIGHT&gt; # or just png
 gnuplot&gt; set output &#34;filename.png&#34;
 gnuplot&gt; plot ...
-</code></pre><p>The <code>pngcairo</code> terminal supports more options, see <code>help set terminal pngcairo</code> for more details.</p>
-<h2 id="neat-example">Neat Example</h2>
-<p>Here&rsquo;s a graph that I generated from some JVM memory statistics from an app that I work with. I know, one could use
+</code></pre><p>The <code>pngcairo</code> terminal supports more options, see <code>help set terminal pngcairo</code> for more details.</p><h2 id=neat-example>Neat Example</h2><p>Here&rsquo;s a graph that I generated from some JVM memory statistics from an app that I work with. I know, one could use
 visualvm, but in a distributed system I find it easier to just scrape the stats from JSON and plot them because it is so
-fast and gives me a really quick overview of what&rsquo;s happening:</p>
-<!-- raw HTML omitted -->
-<p>Here are the necessary gnuplot commands:</p>
-<pre tabindex="0"><code>set xdata times
+fast and gives me a really quick overview of what&rsquo;s happening:</p><p>Here are the necessary gnuplot commands:</p><pre tabindex=0><code>set xdata times
 set timeformat &#34;%s&#34;
 set terminal pngcairo size 967,500
 set output &#34;mem-graph.png&#34;
 set format y &#34;%.0s%cB&#34;
 plot &#34;job1.csv&#34; using 1:4 title &#34;used&#34; with lines, &#34;&#34; using 1:5 title &#34;committed&#34; with lines, &#34;&#34; using 1:3 title
 &#34;max&#34; with lines
-</code></pre>
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+</code></pre></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

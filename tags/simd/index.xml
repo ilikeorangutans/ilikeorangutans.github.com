@@ -1,22 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>SIMD on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/simd/</link>
-    <description>Recent content in SIMD on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Tue, 07 May 2024 08:54:44 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/simd/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>One Billion Row Challenge in Zig</title>
-      <link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link>
-      <pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</guid>
-      <description>I finally got around to looking into The One Billion Row Challenge. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a challenge to how fast a program can read and process one billion rows. It&amp;rsquo;s fascinating because it&amp;rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.&#xA;So one Saturday evening I started reading up on the challenge. The first thing that struck me was the top entries&amp;rsquo; time: 1.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SIMD on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/simd/</link><description>Recent content in SIMD on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Tue, 07 May 2024 08:54:44 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/simd/index.xml" rel="self" type="application/rss+xml"/><item><title>One Billion Row Challenge in Zig</title><link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link><pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</guid><description>&lt;p>I finally got around to looking into &lt;a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge&lt;/a>. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a challenge to how fast a program can read and process one billion rows. It&amp;rsquo;s fascinating because it&amp;rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.&lt;/p>
+&lt;p>So one Saturday evening I started reading up on the challenge. The first thing that struck me was the &lt;a href="https://www.morling.dev/blog/1brc-results-are-in/">top entries&amp;rsquo;&lt;/a> time: 1.535 seconds! For reference, the input is 13 GB. I can&amp;rsquo;t even dump the whole file to &lt;code>/dev/null&lt;/code> in that short of a time. So clearly, lots to learn.&lt;/p></description></item></channel></rss>

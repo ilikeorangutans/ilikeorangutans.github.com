@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Peaberry on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/peaberry/</link>
-    <description>Recent content in Peaberry on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/peaberry/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OSGI, Guice, and Peaberry: first steps</title>
-      <link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link>
-      <pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid>
-      <description>Introduction I&amp;rsquo;ve been trying to get Google Guice and Peaberry to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.&#xA;However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf Peaberry - blending services and extensions, but it&amp;rsquo;s a lot of information in very little space.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Peaberry on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/peaberry/</link><description>Recent content in Peaberry on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/peaberry/index.xml" rel="self" type="application/rss+xml"/><item><title>OSGI, Guice, and Peaberry: first steps</title><link>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</link><pubDate>Wed, 27 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/02/27/osgi-guice-and-peaberry-first-steps/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>I&amp;rsquo;ve been trying to get &lt;a href="https://code.google.com/p/google-guice/">Google Guice&lt;/a> and &lt;a href="https://code.google.com/p/peaberry/">Peaberry&lt;/a> to work in my OSGI projects for a while. Google Guice is a great dependency injection framework, and Peaberry promises to bridge the gap between OSGI services and dependency injection.&lt;/p>
+&lt;p>However, getting Peaberry to work was not trivial, mostly because there aren&amp;rsquo;t many docs and the quality of the docs is somewhat lacking. The best piece is still this pdf &lt;a href="https://code.google.com/p/peaberry/downloads/detail?name=peaberry%20-%20blending%20services%20and%20extensions.pdf">Peaberry - blending services and extensions&lt;/a>, but it&amp;rsquo;s a lot of information in very little space.&lt;/p></description></item></channel></rss>

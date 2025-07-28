@@ -1,22 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Code Smells on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/code-smells/</link>
-    <description>Recent content in Code Smells on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/code-smells/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Give Me Smarter Objects</title>
-      <link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link>
-      <pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid>
-      <description>A coding exercise I do once in a while is writing Battleship. It&amp;rsquo;s a fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was doing the exercise and I contemplated on the primitive obsession code smell that always seems to creep into my code and saw a beautiful way to apply the extract class refactoring that very succinctly shows how nice object oriented programming can be.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code Smells on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/code-smells/</link><description>Recent content in Code Smells on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Mon, 18 Jun 2018 22:46:07 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/code-smells/index.xml" rel="self" type="application/rss+xml"/><item><title>Give Me Smarter Objects</title><link>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</link><pubDate>Mon, 18 Jun 2018 21:20:31 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/06/18/give-me-smarter-objects/</guid><description>&lt;p>A coding exercise I do once in a while is writing &lt;a href="https://en.wikipedia.org/wiki/Battleship_(game)">Battleship&lt;/a>. It&amp;rsquo;s a
+fun little exercise, comes with a slew of interesting decisions, and every once in a while I do this exercise with a
+candidate as part of the interview process. It&amp;rsquo;s always exciting to see what other developers come up with. Today I was
+doing the exercise and I contemplated on the &lt;em>primitive obsession&lt;/em> code smell that always seems to creep into my code
+and saw a beautiful way to apply the &lt;em>extract class&lt;/em> refactoring that very succinctly shows how nice object oriented
+programming can be.&lt;/p></description></item></channel></rss>

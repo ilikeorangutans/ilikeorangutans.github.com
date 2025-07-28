@@ -1,37 +1,56 @@
-a, .btn.btn-link {
-  color: #2978a0;
+@import "tailwindcss";
+
+.prose p {
+    margin-bottom: 1em;
 }
 
-body {
-  background-color: #fbfbff;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+.prose pre {
+    background-color: #CCC;
+    padding: 0.5em;
+    margin-bottom: 1em;
 }
 
-.content {
-  flex: 1;
+.prose div.highlight { 
+    border-left: 2px dashed grey;
 }
 
-code {
-  background-color: transparent;
+.prose h1,h2,h3 { 
+    color: oklch(38.6% 0.063 188.416);
+
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid black;
 }
 
-.highlight pre {
-  padding: 0.25em;
+.prose h1 { 
+    font-size: 150%;
+}
+.prose h2 {
+    font-size: 130%;
 }
 
-a:hover, .btn.btn-link:hover {
-  color: darkorange;
+.prose h3 {
+    font-size: 110%;
 }
 
-.btn:focus {
-  background-color: orange;
+.prose ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 1.5em;
 }
 
-.btn:hover {
-  color: darkorange;
-  border: 1px solid orange;
-  background-color: #fffafa;
-  box-shadow: 2px 2px lightgray;
+.prose ul li {
+    margin-bottom: 0.5em;
 }
+    
+
+.prose ol {
+    list-style-type: number;
+    list-style-position: outside;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.prose code {
+}
+
+

@@ -16,7 +16,7 @@
       <link>http://localhost:1313/2018/06/17/inheritance-and-composition/</link>
       <pubDate>Sun, 17 Jun 2018 13:18:08 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>http://localhost:1313/2018/06/17/inheritance-and-composition/</guid>
-      <description>I was lucky enough to attend an Object Oriented Programming workshop by Sandi Metz this month. The workshop itself was fantastic and showed me a beautiful side of OOP that I haven&amp;rsquo;t seen before. It also spurred some great discussions with coworkers and one of the topics we talked about is inheritance over composition. Based on my experience I generally favour composition over inheritance, but that has mostly to do with poor inheritance hierarchies I&amp;rsquo;ve had the pleasure of working with.</description>
+      <description>&lt;p&gt;I was lucky enough to attend an Object Oriented Programming workshop by &lt;a href=&#34;https://www.sandimetz.com/&#34;&gt;Sandi Metz&lt;/a&gt; this&#xA;month. The workshop itself was fantastic and showed me a beautiful side of OOP that I haven&amp;rsquo;t seen before. It also&#xA;spurred some great discussions with coworkers and one of the topics we talked about is inheritance over composition.&#xA;Based on my experience I generally favour composition over inheritance, but that has mostly to do with poor inheritance&#xA;hierarchies I&amp;rsquo;ve had the pleasure of working with. Nevertheless we were shown a great example of composition during the&#xA;workshop and I wanted to organize my thoughts around this.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

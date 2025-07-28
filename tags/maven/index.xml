@@ -1,29 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Maven on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/maven/</link>
-    <description>Recent content in Maven on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 22:50:25 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Maven Release Plugin and Git 1.9</title>
-      <link>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link>
-      <pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid>
-      <description>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.&#xA;Symptoms Maven release plugin successfully completes the release:prepare goal, creates the tag, but fails to commit the changed pom.xml.&#xA;Solution Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:</description>
-    </item>
-    <item>
-      <title>Type Incompatibility With Maven SCR Plugin</title>
-      <link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link>
-      <pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid>
-      <description>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:&#xA;[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:&#xA;@Service(value = { MyService.class, ManagedService.class }) @Component(immediate = true) @Properties(@Property(name = &amp;#34;foo&amp;#34;, value = &amp;#34;bar&amp;#34;)) public class NissanAutoDataUrlGenerator implements ManagedService { } The mistake is that the @Properties annotation takes an array as it&amp;rsquo;s parameter.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Maven on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/maven/</link><description>Recent content in Maven on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 22:50:25 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml"/><item><title>Maven Release Plugin and Git 1.9</title><link>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</link><pubDate>Tue, 29 Apr 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2014/04/29/maven-release-plugin-and-git-19/</guid><description>&lt;p>Ran into this issue today and wasted a good hour on figuring out what happened. Seems to be an issue with Git 1.9.x.&lt;/p>
+&lt;h3 id="symptoms">Symptoms&lt;/h3>
+&lt;p>Maven release plugin successfully completes the &lt;code>release:prepare&lt;/code> goal, creates the tag, but fails to commit the changed &lt;code>pom.xml&lt;/code>.&lt;/p>
+&lt;h3 id="solution">Solution&lt;/h3>
+&lt;p>Git&amp;rsquo;s output format changed slightly in one of the recent versions and Maven&amp;rsquo;s SCM provider expects output in a certain way. Luckily you can force git to use the old output style:&lt;/p></description></item><item><title>Type Incompatibility With Maven SCR Plugin</title><link>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</link><pubDate>Wed, 06 Feb 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/02/06/type-incompatibility-with-maven-scr-plugin/</guid><description>&lt;p>Yesterday I ran into a most strange error when compiling one of my OSGI bundles:&lt;/p>
+&lt;pre>&lt;code>[ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List
+&lt;/code>&lt;/pre>
+&lt;p>I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff8000;font-weight:bold">@Service&lt;/span>(value&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>{&lt;span style="color:#cbcbcb"> &lt;/span>MyService.&lt;span style="color:#2c5dcd;font-style:italic">class&lt;/span>,&lt;span style="color:#cbcbcb"> &lt;/span>ManagedService.&lt;span style="color:#2c5dcd;font-style:italic">class&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>})&lt;span style="color:#cbcbcb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb">&lt;/span>&lt;span style="color:#ff8000;font-weight:bold">@Component&lt;/span>(immediate&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">true&lt;/span>)&lt;span style="color:#cbcbcb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb">&lt;/span>&lt;span style="color:#ff8000;font-weight:bold">@Properties&lt;/span>(&lt;span style="color:#ff8000;font-weight:bold">@Property&lt;/span>(name&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#0c6">&amp;#34;foo&amp;#34;&lt;/span>,&lt;span style="color:#cbcbcb"> &lt;/span>value&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#0c6">&amp;#34;bar&amp;#34;&lt;/span>))&lt;span style="color:#cbcbcb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb">&lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">public&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">class&lt;/span> &lt;span style="text-decoration:underline">NissanAutoDataUrlGenerator&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">implements&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>ManagedService&lt;span style="color:#cbcbcb"> &lt;/span>{&lt;span style="color:#cbcbcb"> &lt;/span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>The mistake is that the &lt;code>@Properties&lt;/code> annotation takes an array as it&amp;rsquo;s parameter. Eclipse does not mark the above as an error, however, the Maven plugin is not happy about it. Here&amp;rsquo;s the correct code:&lt;/p></description></item></channel></rss>

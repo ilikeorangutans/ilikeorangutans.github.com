@@ -1,43 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Test Driven Development on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/test-driven-development/</link>
-    <description>Recent content in Test Driven Development on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 24 Mar 2019 10:21:14 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/test-driven-development/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Book Arrival: The Ray Tracer Challenge</title>
-      <link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link>
-      <pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</guid>
-      <description>I was browsing the Pragmatic Bookshelf and this book caught my eye: writing a ray tracer from ground up with a test driven approach? This sounds like a fantastic challenge to me. I always was interested in ray tracers but always thought it too complicated a topic to do it myself. However, test driven development has helped me work on some complex and terrible code bases, so this feels reassuring to me.</description>
-    </item>
-    <item>
-      <title>Notes on Working Effectively With Legacy Code</title>
-      <link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link>
-      <pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</guid>
-      <description>I recently received my copy of Working Effectivly With Legacy Code and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to work with not only legacy systems, but really, any kind of system.</description>
-    </item>
-    <item>
-      <title>Inspiration and Action</title>
-      <link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link>
-      <pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid>
-      <description>I&amp;rsquo;m currently re-reading Growing Object-Oriented Software, Guided by Tests, and this quote really spoke to me:&#xA;We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.&#xA;&amp;ndash; Frank Tibolt&#xA;I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating.</description>
-    </item>
-    <item>
-      <title>Grails 2 Testing Guide</title>
-      <link>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link>
-      <pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid>
-      <description>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.&#xA;I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Test Driven Development on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/test-driven-development/</link><description>Recent content in Test Driven Development on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Sun, 24 Mar 2019 10:21:14 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/test-driven-development/index.xml" rel="self" type="application/rss+xml"/><item><title>Book Arrival: The Ray Tracer Challenge</title><link>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</link><pubDate>Sun, 24 Mar 2019 09:58:18 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2019/03/24/book-arrival-the-ray-tracer-challenge/</guid><description>&lt;p>I was browsing the Pragmatic Bookshelf and this book caught my eye: &lt;a href="https://pragprog.com/book/jbtracer/the-ray-tracer-challenge">writing a ray tracer from ground up with a test
+driven approach&lt;/a>? This sounds like a fantastic challenge
+to me. I always was interested in ray tracers but always
+thought it too complicated a topic to do it myself. However, test driven development has helped me work on some
+complex and terrible code bases, so this feels reassuring to me.&lt;/p></description></item><item><title>Notes on Working Effectively With Legacy Code</title><link>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</link><pubDate>Mon, 02 Jul 2018 12:02:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/07/02/notes-on-working-effectively-with-legacy-code/</guid><description>&lt;p>I &lt;a href="https://ilikeorangutans.github.io/2018/06/18/book-arrival-working-effectivly-with-legacy-code/">recently received&lt;/a> my copy
+of &lt;a href="https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code">Working Effectivly With Legacy Code&lt;/a>
+and have been busy reading it. The book, as a product of its time, has examples of not only Java, but also C++, probably
+to show concepts and techniques that apply to languages that behave differently in terms of linking and building. But
+regardless of its examples not really applying to what I work with, it was full of useful vocabulary and techniques to
+work with not only legacy systems, but really, any kind of system.&lt;/p></description></item><item><title>Inspiration and Action</title><link>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</link><pubDate>Fri, 30 Mar 2018 11:27:01 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/03/30/inspiration-and-action/</guid><description>&lt;p>I&amp;rsquo;m currently re-reading &lt;a href="https://www.amazon.com/gp/product/0321503627/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;amp;tag=jakkuesblo-20&amp;amp;creative=9325&amp;amp;linkCode=as2&amp;amp;creativeASIN=0321503627&amp;amp;linkId=a9bf101a0a7973e0d0d78406aa41dc23">Growing Object-Oriented Software, Guided by Tests&lt;/a>, and this quote really spoke to me:&lt;/p>
+&lt;blockquote>
+&lt;p>We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ndash; Frank Tibolt&lt;/p>&lt;/blockquote>
+&lt;p>I think of myself as a perfectionist, the kind of person that hates to produce anything short of flawless. And while this is great quality to have because it drives me to improve and progress, it&amp;rsquo;s also incredibly crippling and frustrating. I&amp;rsquo;ve often noticed that while I had great ideas, I would often fail to implement them because I would try to over engineer my approach so it would solve everything perfectly. Obviously, many of these ideas and projects never went anywhere. But then on the contrary, ideas where I just started hacking something together often went much further and produced something usable and new.&lt;/p></description></item><item><title>Grails 2 Testing Guide</title><link>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</link><pubDate>Thu, 06 Feb 2014 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2014/02/06/grails-2-testing-guide/</guid><description>&lt;p>&lt;strong>Note: I&amp;rsquo;m still working on this post, but I already use it as a reference so there&amp;rsquo;ll be more content over time.&lt;/strong>&lt;/p>
+&lt;p>I&amp;rsquo;ve been quite busy at work with updating a Grails 1.3 application to 2.3.4. While writing a test harness it became apparent that lots of things have changed since I&amp;rsquo;ve last worked with Grails. Many changes are for the better, especially the integration of Spock framework. However, there were some issues that took me a while to figure out. The Grails docs on &lt;a href="http://grails.org/doc/latest/guide/testing.html">testing&lt;/a> are comprehensive, but long. Here&amp;rsquo;s my cheat sheet.&lt;/p></description></item></channel></rss>

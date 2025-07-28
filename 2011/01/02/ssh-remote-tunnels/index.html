@@ -1,192 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        SSH (Remote) Tunnels &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="SSH (Remote) Tunnels">
-    <meta property="og:description" content="Just figured out how SSH remote tunnels work and wanted to write it down.
+<!doctype html><html><head><meta charset=utf-8><title>SSH (Remote) Tunnels &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="SSH (Remote) Tunnels"><meta property="og:description" content="Just figured out how SSH remote tunnels work and wanted to write it down.
 Nomenclature:
-[Local] Client: your local computer. In fact, if I say local, I mean the client. [Remote] Server: the server you connect to. If I say remote, I mean server. Forward Tunnels Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
-$ ssh -L REMOTEPORT:client:CLIENTPORT user@server Now, that by opening a tunnel in this way:">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+[Local] Client: your local computer. In fact, if I say local, I mean the client.
+[Remote] Server: the server you connect to. If I say remote, I mean server.
 
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                02 Jan 2011
-
-
-, tagged:
-
-
-    <a href="/tags/ssh" class="">
-        SSH, 
-    </a>
-
-    <a href="/tags/networking" class="">
-        Networking, 
-    </a>
-
-    <a href="/tags/nat" class="">
-        NAT, 
-    </a>
-
-    <a href="/tags/firewall" class="">
-        Firewall
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>SSH (Remote) Tunnels</h1>
-            <p>Just figured out how SSH remote tunnels work and wanted to write it down.</p>
-<p>Nomenclature:</p>
-<ul>
-<li><em>[Local] Client</em>: your local computer. In fact, if I say local, I mean the client.</li>
-<li><em>[Remote] Server</em>: the server you connect to. If I say remote, I mean server.</li>
-</ul>
-<h3 id="forward-tunnels">Forward Tunnels</h3>
-<p>Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:</p>
-<pre tabindex="0"><code>$ ssh -L REMOTEPORT:client:CLIENTPORT user@server
-</code></pre><p>Now, that by opening a tunnel in this way:</p>
-<pre tabindex="0"><code>$ ssh -L 4040:localhost:8080 user@server
-</code></pre><p>You can now connect to <code>localhost:8080</code> and you&rsquo;ll get, through the tunnel, what&rsquo;s on <code>server:4040</code>.</p>
-<h3 id="remote-tunnels">Remote Tunnels</h3>
-<p>Regular forward tunnels are neat if you want to access a service that runs on a forbidden port through a firewall. But what if you need to map an incoming port on a remote server to a local port? Maybe because your ISP doesn&rsquo;t allow you NAT arbitrary ports?</p>
-<p>Do not fear, remote tunnels are here for your rescue. They work pretty much the same way as regular tunnels, just the other way round. Instead of opening a listening socket on your local box, they open a port on the remote server. So, to open a port on your remote box and forward it to a local port, use the following:</p>
-<pre tabindex="0"><code>$ ssh -R REMOTEPORT:client:CLIENTPORT user@server
-</code></pre><p>That&rsquo;s it. Well, almost. There&rsquo;s a catch. Per default sshd will now bind the listening socket to the loopback device. Kind of useless if you want to forward incoming connections through the tunnel. If you study the man page, you&rsquo;ll notice that you can specify a binding port for the remote tunnel:</p>
-<pre tabindex="0"><code>$ ssh -R BIND_ADDRESS:REMOTEPORT:client:CLIENTPORT user@server
-</code></pre><p>So, if your server&rsquo;s IP was <code>12.23.34.45</code>, you would specify:</p>
-<pre tabindex="0"><code>$ ssh -R 12.23.34.45:8080:localhost:8080 user@server
-</code></pre><p>However, depending on your sshd configuration it might or might not work. Per default sshd won&rsquo;t let you just bind sockets to anything. You&rsquo;ll need to allow that, by specifying the GatewayPorts option in your <code>sshd_config</code> and restart sshd:</p>
-<pre tabindex="0"><code>GatewayPorts yes
-</code></pre><p>I got slightly confused, as the man page states that you can specify a value <code>clientspecified</code> to allow the client to select a specific interface, but it didn&rsquo;t work for me.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+Forward Tunnels
+Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:
+$ ssh -L REMOTEPORT:client:CLIENTPORT user@server
+Now, that by opening a tunnel in this way:"><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2011/01/02/ssh-remote-tunnels/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2011-01-02>2 Jan 2011
+</time><time datetime=2018-04-13>• updated 13 Apr 2018</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">SSH (Remote) Tunnels</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/ssh class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">SSH
+</a><a href=/tags/networking class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Networking
+</a><a href=/tags/nat class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">NAT
+</a><a href=/tags/firewall class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Firewall</a></div></div><div class="prose prose-lg max-w-none"><p>Just figured out how SSH remote tunnels work and wanted to write it down.</p><p>Nomenclature:</p><ul><li><em>[Local] Client</em>: your local computer. In fact, if I say local, I mean the client.</li><li><em>[Remote] Server</em>: the server you connect to. If I say remote, I mean server.</li></ul><h3 id=forward-tunnels>Forward Tunnels</h3><p>Your standard tunnel, allows you to take a local port and redirect it to a remote port on the server:</p><pre tabindex=0><code>$ ssh -L REMOTEPORT:client:CLIENTPORT user@server
+</code></pre><p>Now, that by opening a tunnel in this way:</p><pre tabindex=0><code>$ ssh -L 4040:localhost:8080 user@server
+</code></pre><p>You can now connect to <code>localhost:8080</code> and you&rsquo;ll get, through the tunnel, what&rsquo;s on <code>server:4040</code>.</p><h3 id=remote-tunnels>Remote Tunnels</h3><p>Regular forward tunnels are neat if you want to access a service that runs on a forbidden port through a firewall. But what if you need to map an incoming port on a remote server to a local port? Maybe because your ISP doesn&rsquo;t allow you NAT arbitrary ports?</p><p>Do not fear, remote tunnels are here for your rescue. They work pretty much the same way as regular tunnels, just the other way round. Instead of opening a listening socket on your local box, they open a port on the remote server. So, to open a port on your remote box and forward it to a local port, use the following:</p><pre tabindex=0><code>$ ssh -R REMOTEPORT:client:CLIENTPORT user@server
+</code></pre><p>That&rsquo;s it. Well, almost. There&rsquo;s a catch. Per default sshd will now bind the listening socket to the loopback device. Kind of useless if you want to forward incoming connections through the tunnel. If you study the man page, you&rsquo;ll notice that you can specify a binding port for the remote tunnel:</p><pre tabindex=0><code>$ ssh -R BIND_ADDRESS:REMOTEPORT:client:CLIENTPORT user@server
+</code></pre><p>So, if your server&rsquo;s IP was <code>12.23.34.45</code>, you would specify:</p><pre tabindex=0><code>$ ssh -R 12.23.34.45:8080:localhost:8080 user@server
+</code></pre><p>However, depending on your sshd configuration it might or might not work. Per default sshd won&rsquo;t let you just bind sockets to anything. You&rsquo;ll need to allow that, by specifying the GatewayPorts option in your <code>sshd_config</code> and restart sshd:</p><pre tabindex=0><code>GatewayPorts yes
+</code></pre><p>I got slightly confused, as the man page states that you can specify a value <code>clientspecified</code> to allow the client to select a specific interface, but it didn&rsquo;t work for me.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

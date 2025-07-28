@@ -1,164 +1,42 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        Zig - First Impressions &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="Zig - First Impressions">
-    <meta property="og:description" content="I&rsquo;ve been following the zig language for a while ever since I saw Andrew Kelly&rsquo;s talk on Corecursive. The way Andrew describes the design of zig was very engrossing and who doesn&rsquo;t like a language build for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig when I first looked at it.
-But that has changed; I finally found some motivation and ziglearn.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                23 Oct 2023
-
-
-, tagged:
-
-
-    <a href="/tags/zig" class="">
-        zig, 
-    </a>
-
-    <a href="/tags/first-impression" class="">
-        First Impression
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>Zig - First Impressions</h1>
-            <p>I&rsquo;ve been following the zig language for a while ever since I saw <a href="https://corecursive.com/067-zig-with-andrew-kelley/">Andrew Kelly&rsquo;s talk</a> on <a href="https://corecursive.com/">Corecursive</a>.
+<!doctype html><html><head><meta charset=utf-8><title>Zig - First Impressions &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Zig - First Impressions"><meta property="og:description" content="I&rsquo;ve been following the zig language for a while ever since I saw Andrew Kelly&rsquo;s talk on Corecursive.
 The way Andrew describes the design of zig was very engrossing and who doesn&rsquo;t like a language build
 for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig
-when I first looked at it.</p>
-<p>But that has changed; I finally found some motivation and <a href="https://ziglearn.org/">ziglearn.org</a> which
+when I first looked at it.
+But that has changed; I finally found some motivation and ziglearn.org which
 is a good introduction to zig. I have only managed to read the first two chapters, much less understand
-them but it&rsquo;s enough to be dangerous (to myself?).</p>
-<h2 id="language">Language</h2>
-<p>Observations for Zig 0.11, in no particular order:</p>
-<ul>
-<li>looks and feels like C; requires a lot of parentheses and curly braces, statements end with semicolon.
-At times it feels like a much more low-level Go.</li>
-<li>imports are done via <code>@import</code> and assigned to <code>const</code> fields: <code>const std = @import(&quot;std&quot;);</code>. Importing sub
-packages is done via previously imported packages, I think: <code>const fs = std.fs;</code></li>
-<li>I find the <a href="https://ziglang.org/documentation/0.11.0/std/#A;std">standard library documentation</a> a bit hard
-to parse. It&rsquo;s serviceable but I feel like I get lost often.</li>
-<li>There&rsquo;s no (real) string type in the standard library or language. Everything is done via <code>[]u8</code>, essentially
+them but it&rsquo;s enough to be dangerous (to myself?)."><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2023-10-23>23 Oct 2023
+</time><time datetime=2023-10-24>• updated 24 Oct 2023</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">Zig - First Impressions</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/zig class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">zig
+</a><a href=/tags/first-impression class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">First Impression</a></div></div><div class="prose prose-lg max-w-none"><p>I&rsquo;ve been following the zig language for a while ever since I saw <a href=https://corecursive.com/067-zig-with-andrew-kelley/>Andrew Kelly&rsquo;s talk</a> on <a href=https://corecursive.com/>Corecursive</a>.
+The way Andrew describes the design of zig was very engrossing and who doesn&rsquo;t like a language build
+for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig
+when I first looked at it.</p><p>But that has changed; I finally found some motivation and <a href=https://ziglearn.org/>ziglearn.org</a> which
+is a good introduction to zig. I have only managed to read the first two chapters, much less understand
+them but it&rsquo;s enough to be dangerous (to myself?).</p><h2 id=language>Language</h2><p>Observations for Zig 0.11, in no particular order:</p><ul><li>looks and feels like C; requires a lot of parentheses and curly braces, statements end with semicolon.
+At times it feels like a much more low-level Go.</li><li>imports are done via <code>@import</code> and assigned to <code>const</code> fields: <code>const std = @import("std");</code>. Importing sub
+packages is done via previously imported packages, I think: <code>const fs = std.fs;</code></li><li>I find the <a href=https://ziglang.org/documentation/0.11.0/std/#A;std>standard library documentation</a> a bit hard
+to parse. It&rsquo;s serviceable but I feel like I get lost often.</li><li>There&rsquo;s no (real) string type in the standard library or language. Everything is done via <code>[]u8</code>, essentially
 byte arrays. Super fast but if you need to handle anything non-ASCII, you&rsquo;ll have to pull in an external
-library.</li>
-<li>You bring your own allocator. Unlike other languages where the act of requesting memory is hidden away,
-you must create your own <a href="https://ziglang.org/documentation/0.11.0/std/#A;std:mem.Allocator">allocator</a> and pass it to code that needs to allocate memory. There&rsquo;s several
-different kind of allocators available in <a href="https://ziglang.org/documentation/0.11.0/std/#A;std:heap"><code>std.heap</code></a>.</li>
-<li>zig has structs. They&rsquo;re defined pretty much how you&rsquo;d expect, with the exception that the type is
+library.</li><li>You bring your own allocator. Unlike other languages where the act of requesting memory is hidden away,
+you must create your own <a href=https://ziglang.org/documentation/0.11.0/std/#A;std:mem.Allocator>allocator</a> and pass it to code that needs to allocate memory. There&rsquo;s several
+different kind of allocators available in <a href=https://ziglang.org/documentation/0.11.0/std/#A;std:heap><code>std.heap</code></a>.</li><li>zig has structs. They&rsquo;re defined pretty much how you&rsquo;d expect, with the exception that the type is
 assigned to a const (this is a theme): <code>const MyStruct = struct { number: u32, name: []const u8 }</code>.
-Struct literal on the other hand look a bit different: <code>const my_struct = MyStruct{ .number = 13, .name = &quot;Jakob&quot;};</code>.
-Prefixing the field names with a dot keeps throwing me off.</li>
-<li>Zig can build really small binaries. <code>zig build --release-safe=true</code> spits out a hello-world binary
-that&rsquo;s only a few kilobytes.</li>
-<li>There&rsquo;s also enums and unions. Enums are what you&rsquo;d expect: <code>const Flavors = enum {Sweet, Savoury};</code>.
-Unions look very similar to enums and I haven&rsquo;t fully grokked the difference.</li>
-<li>There&rsquo;s modules but there doesn&rsquo;t seem to be a language level mechanism to define one, unlike
-go&rsquo;s <code>package</code>. You simply create a file and <code>@import</code> it.</li>
-<li>Functions are defined with the <code>fn</code> keyword. They can be <code>pub</code> which makes them available outside of
-module. They must define a return type which can be <code>void</code>. Function parameters are read-only.</li>
-<li>Zig has <em>payload capturing</em> which looks a little bit like Ruby&rsquo;s block statements:
-<pre tabindex="0"><code>someFunc() catch |err| {
+Struct literal on the other hand look a bit different: <code>const my_struct = MyStruct{ .number = 13, .name = "Jakob"};</code>.
+Prefixing the field names with a dot keeps throwing me off.</li><li>Zig can build really small binaries. <code>zig build --release-safe=true</code> spits out a hello-world binary
+that&rsquo;s only a few kilobytes.</li><li>There&rsquo;s also enums and unions. Enums are what you&rsquo;d expect: <code>const Flavors = enum {Sweet, Savoury};</code>.
+Unions look very similar to enums and I haven&rsquo;t fully grokked the difference.</li><li>There&rsquo;s modules but there doesn&rsquo;t seem to be a language level mechanism to define one, unlike
+go&rsquo;s <code>package</code>. You simply create a file and <code>@import</code> it.</li><li>Functions are defined with the <code>fn</code> keyword. They can be <code>pub</code> which makes them available outside of
+module. They must define a return type which can be <code>void</code>. Function parameters are read-only.</li><li>Zig has <em>payload capturing</em> which looks a little bit like Ruby&rsquo;s block statements:<pre tabindex=0><code>someFunc() catch |err| {
   // handle error
 };
-</code></pre></li>
-<li>Errors are values and can be grouped via Error sets: <code>const MyError = error { StuffWentWrongError, OutOfMemoryError };</code></li>
-<li>Any type can be turned into a union with an error with <code>!</code>. For example, <code>MyError!u32</code> means it&rsquo;s either
+</code></pre></li><li>Errors are values and can be grouped via Error sets: <code>const MyError = error { StuffWentWrongError, OutOfMemoryError };</code></li><li>Any type can be turned into a union with an error with <code>!</code>. For example, <code>MyError!u32</code> means it&rsquo;s either
 <code>MyError</code> or <code>u32</code>. From what I can tell, simply prefixing any type with <code>!</code> means it can be any
-error. This is a really nice take on error handling.</li>
-<li>Complementary to error unions there are the <code>try</code> and <code>catch</code> keywords. <code>try</code> accepts an error union
-and if it&rsquo;s an error, returns that. <code>catch</code> can be used to handle errors using payload capturing.</li>
-<li>Unused variables and parameters are an error. Annoying at times but good.</li>
-<li>You can add methods to structs and enums and presumably unions. You do so by adding the function
-definition into the curly braces of the struct/enum definition:
-<pre tabindex="0"><code>const MyStruct = struct {
+error. This is a really nice take on error handling.</li><li>Complementary to error unions there are the <code>try</code> and <code>catch</code> keywords. <code>try</code> accepts an error union
+and if it&rsquo;s an error, returns that. <code>catch</code> can be used to handle errors using payload capturing.</li><li>Unused variables and parameters are an error. Annoying at times but good.</li><li>You can add methods to structs and enums and presumably unions. You do so by adding the function
+definition into the curly braces of the struct/enum definition:<pre tabindex=0><code>const MyStruct = struct {
   name: []const u8,
   length: u32,
 
@@ -166,75 +44,17 @@ definition into the curly braces of the struct/enum definition:
 
   pub fn method() {} // I can be called on the MyStruct namespace
 }
-</code></pre></li>
-<li>I have only glanced at threads so far but there seems to be a package that bring
-<a href="https://ziglang.org/documentation/0.11.0/std/#A;std:event">channels and event loops</a>. I haven&rsquo;t tested
-it yet but it looks promising.</li>
-<li>Interop with C is supposedly great, but I haven&rsquo;t tried it yet.</li>
-<li>Some people use zig just to compile c projects because the zig tool bundles many common header libraries
-making builds super easy. Again, haven&rsquo;t tried it yet, but it sure is enticing.</li>
-<li>The language has this really fascinating concept of <code>comptime</code> that I haven&rsquo;t even begun
-to understand. But it&rsquo;s supposedly very powerful and Zig implements generics through it.</li>
-</ul>
-<h2 id="ecosystem">Ecosystem</h2>
-<p>I really don&rsquo;t know much yet, but the few things I&rsquo;ve picked up so far:</p>
-<ul>
-<li>The <code>zls</code> language server is decent. It integrates well with <code>vim</code>.</li>
-<li><a href="https://ziglearn.org/">ziglearn.org</a> is a great resource.</li>
-<li>I&rsquo;m not sure what the state of package managers is. There is a <a href="https://github.com/ziglang/zig/projects/4">project board</a>
+</code></pre></li><li>I have only glanced at threads so far but there seems to be a package that bring
+<a href=https://ziglang.org/documentation/0.11.0/std/#A;std:event>channels and event loops</a>. I haven&rsquo;t tested
+it yet but it looks promising.</li><li>Interop with C is supposedly great, but I haven&rsquo;t tried it yet.</li><li>Some people use zig just to compile c projects because the zig tool bundles many common header libraries
+making builds super easy. Again, haven&rsquo;t tried it yet, but it sure is enticing.</li><li>The language has this really fascinating concept of <code>comptime</code> that I haven&rsquo;t even begun
+to understand. But it&rsquo;s supposedly very powerful and Zig implements generics through it.</li></ul><h2 id=ecosystem>Ecosystem</h2><p>I really don&rsquo;t know much yet, but the few things I&rsquo;ve picked up so far:</p><ul><li>The <code>zls</code> language server is decent. It integrates well with <code>vim</code>.</li><li><a href=https://ziglearn.org/>ziglearn.org</a> is a great resource.</li><li>I&rsquo;m not sure what the state of package managers is. There is a <a href=https://github.com/ziglang/zig/projects/4>project board</a>
 but it looks like an official release is still some time away. Until then I&rsquo;m not sure how
-I would pull external libraries like <a href="https://github.com/JakubSzark/zig-string">zig-string</a>
-into my project. I guess I&rsquo;ll have to vendor it.</li>
-</ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>Zig seems like a fun language. It brings many things I&rsquo;ve come to enjoy in other languages and the syntax is
+I would pull external libraries like <a href=https://github.com/JakubSzark/zig-string>zig-string</a>
+into my project. I guess I&rsquo;ll have to vendor it.</li></ul><h2 id=conclusion>Conclusion</h2><p>Zig seems like a fun language. It brings many things I&rsquo;ve come to enjoy in other languages and the syntax is
 similar enough to Go that I can mostly just read it (unlike Elm). I&rsquo;ve only scratched the surface but it already
 feels much less of a fight than Rust. It&rsquo;s definitely a candidate for the next
-Advent of Code and/or for a personal project.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+Advent of Code and/or for a personal project.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

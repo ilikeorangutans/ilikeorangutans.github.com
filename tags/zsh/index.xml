@@ -1,29 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Zsh on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/zsh/</link>
-    <description>Recent content in Zsh on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Fri, 23 Aug 2019 14:32:19 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>zsh Autocompletion Caveat</title>
-      <link>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</link>
-      <pubDate>Fri, 23 Aug 2019 14:21:43 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</guid>
-      <description>I spent a good hour trying to get a custom completion script working while porting my app Harbormaster to Cobra. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions. Eventually I stumbled upon a innocent looking post on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran rm ~/.zcompdump &amp;amp;&amp;amp; compinit and everything works as expected.</description>
-    </item>
-    <item>
-      <title>gorename and invalid expression</title>
-      <link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link>
-      <pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid>
-      <description>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.&#xA;The issue comes up when trying to use gorename:&#xA;$ gorename -from &amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType -to &amp;#39;MyBetterType&amp;#39; gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression Even though the from query looks normal, gorename just refuses to work. However the issue is not so much with gorename but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zsh on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/zsh/</link><description>Recent content in Zsh on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Fri, 23 Aug 2019 14:32:19 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/zsh/index.xml" rel="self" type="application/rss+xml"/><item><title>zsh Autocompletion Caveat</title><link>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</link><pubDate>Fri, 23 Aug 2019 14:21:43 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2019/08/23/zsh-autocompletion-caveat/</guid><description>&lt;p>I spent a good hour trying to get a custom completion script working while porting my app &lt;a href="https://github.com/ilikeorangutans/harbormaster">Harbormaster&lt;/a> to &lt;a href="https://github.com/spf13/cobra">Cobra&lt;/a>. It would and would not work. I retried writing the file, restarting the shell and it would just not offer any completions.
+Eventually I stumbled upon a innocent looking &lt;a href="https://github.com/zsh-users/zsh-completions/issues/277#issuecomment-72867242">post&lt;/a> on Github that held the solution: remove the .zcompdump file which holds the cached completions. So I ran &lt;code>rm ~/.zcompdump &amp;amp;&amp;amp; compinit&lt;/code> and everything works as expected.&lt;/p></description></item><item><title>gorename and invalid expression</title><link>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</link><pubDate>Fri, 23 Oct 2015 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2015/10/23/gorename-and-invalid-expression/</guid><description>&lt;p>This took me longer to figure out than I care to admit, so here&amp;rsquo;s the solution.&lt;/p>
+&lt;p>The issue comes up when trying to use &lt;a href="https://godoc.org/golang.org/x/tools/cmd/gorename">gorename&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2c5dcd;font-weight:bold">$&lt;/span> gorename -from &lt;span style="color:#0c6">&amp;#34;github.com/ilikeorangutans/foo&amp;#34;&lt;/span>.MyType -to &lt;span style="color:#0c6">&amp;#39;MyBetterType&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#aaa">gorename: -from &amp;#34;github.com/ilikeorangutans/foo.MyType&amp;#34;: invalid expression
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Even though the &lt;code>from&lt;/code> query looks normal, &lt;code>gorename&lt;/code> just refuses to work. However the issue is not so much with &lt;code>gorename&lt;/code> but rahter my shell, zsh. Turns out properly escaping your from query, fixes the issue:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2c5dcd;font-weight:bold">$&lt;/span> gorename -from &lt;span style="color:#0c6">&amp;#39;&amp;#34;github.com/ilikeorangutans/foo&amp;#34;.MyType&amp;#39;&lt;/span> -to &lt;span style="color:#0c6">&amp;#39;MyBetterType&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#aaa">Renamed 15 occurrences in 5 files in 1 package.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Notice the single quotes around the entire &lt;code>from&lt;/code> parameter.&lt;/p></description></item></channel></rss>

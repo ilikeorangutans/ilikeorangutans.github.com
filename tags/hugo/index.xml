@@ -1,22 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Mon, 21 May 2018 23:37:41 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A New Theme</title>
-      <link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link>
-      <pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</guid>
-      <description>After toying around with the really nice Temple theme I decided there was no better way to spend my afternoon than building my own, new theme for my blog.&#xA;If you haven&amp;rsquo;t notice, I recently switched my blog from Jekyll to Hugo. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/hugo/</link><description>Recent content in Hugo on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Mon, 21 May 2018 23:37:41 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>A New Theme</title><link>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</link><pubDate>Mon, 21 May 2018 22:58:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2018/05/21/a-new-theme/</guid><description>&lt;p>After toying around with the really nice &lt;a href="https://github.com/aos/temple">Temple theme&lt;/a> I decided there was no better way to spend my afternoon than building my own, new theme for my blog.&lt;/p>
+&lt;p>If you haven&amp;rsquo;t notice, I recently switched my blog from &lt;a href="https://jekyllrb.com/">Jekyll&lt;/a> to &lt;a href="https://gohugo.io/">Hugo&lt;/a>. The upgrade path from the really old version of Jekyll to the latest version wasn&amp;rsquo;t quite working as expected, and having to mess around with Gemfiles isn&amp;rsquo;t really something I enjoy. Hugo on the other hand is written in Go and comes as a single, standalone binary. That seemed really appealing and I&amp;rsquo;ve had good experiences when trying to build a little &lt;a href="https://github.com/ilikeorangutans/hugo-photo-scanner">photo gallery builder&lt;/a> with it a while ago before Hugo had actual photo support. Moving the content over from the Jekyll frontmatter to the Hugo frontmatter was done easy enough, I even moved some of the good posts from my really old blog on here. I was almost perfectly happy, exception for the theme. The Temple theme is nice, but it wasn&amp;rsquo;t quite what I wanted. So this weekend I built my own (yeah, you&amp;rsquo;re looking at it).&lt;/p></description></item></channel></rss>

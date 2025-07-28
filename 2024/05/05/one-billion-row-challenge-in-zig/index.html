@@ -1,156 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        One Billion Row Challenge in Zig &mdash;
-      
-      Jakob Külzer
-    </title>
-
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="One Billion Row Challenge in Zig">
-    <meta property="og:description" content="I finally got around to looking into The One Billion Row Challenge. If you&rsquo;re unfamiliar, it&rsquo;s a challenge to how fast a program can read and process one billion rows. It&rsquo;s fascinating because it&rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.
-So one Saturday evening I started reading up on the challenge. The first thing that struck me was the top entries&rsquo; time: 1.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
-                05 May 2024
-
-
-, tagged:
-
-
-    <a href="/tags/one-billion-row-challenge" class="">
-        one billion row challenge, 
-    </a>
-
-    <a href="/tags/zig" class="">
-        zig, 
-    </a>
-
-    <a href="/tags/simd" class="">
-        SIMD, 
-    </a>
-
-    <a href="/tags/performance" class="">
-        performance
-    </a>
-
-
-
-            </p>
-            <div class="divider"></div>
-            
-            <h1>One Billion Row Challenge in Zig</h1>
-            <p>I finally got around to looking into <a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge</a>. If you&rsquo;re unfamiliar, it&rsquo;s a challenge to how fast a program can read and process one billion rows. It&rsquo;s fascinating because it&rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.</p>
-<p>So one Saturday evening I started reading up on the challenge. The first thing that struck me was the <a href="https://www.morling.dev/blog/1brc-results-are-in/">top entries&rsquo;</a> time: 1.535 seconds! For reference, the input is 13 GB. I can&rsquo;t even dump the whole file to <code>/dev/null</code> in that short of a time. So clearly, lots to learn.</p>
-<p>My first thought was to implement it in Go, but this kind of algorithmic challenge is perfect to learn new languages, and I haven&rsquo;t done enough in <a href="https://ziglang.org/">Zig</a> recently. The initial, naive implementation didn&rsquo;t go so well. With a reduced subset of 100,000,000 rows without any processing I was already at 4.8 seconds. This led to the next rabbit hole, how does one profile where your program spends your time. I have a lot of experience profiling Go programs with <a href="https://github.com/google/pprof">pprof</a> but not much with Linux&rsquo; <code>perf</code>. So here I go spelunking in another cavernous rabbit hole.</p>
-<p>Initial readings tell me that I&rsquo;m not sure what to make of this at all. Conceptually I understand <del>all</del> most of these, but in practice I have no intuition for these numbers.
-<img src="./perf-01.png" alt=""></p>
-<p>After some poking around and cursory reading I found the right incantation to get perf to record and unwind the callstacks such that I can make sense of the output:</p>
-<pre tabindex="0"><code>$ perf record -F99 --call-graph dwarf -- ./zig-out/bin/1brc measurements_100000.txt
-</code></pre><p>Still not too clear on all the details here, but at least I recognize the symbols:</p>
-<p><img src="./perf-callstacks.png" alt=""></p>
-<p>What&rsquo;s surprising is the amount of time spent parsing floats for example is much lower than I would have expected. What&rsquo;s even more surprising is the amount of time spent in the reader, maybe I&rsquo;m using it wrong. I double checked the buffer sizes, but they were ok and doubling or tripling them made no difference. And then I spotted the problem: I was using <code>instream.readUntilDelimiterOrEof</code> which will read only a single line at best:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">var</span><span style="color:#bbb"> </span>instream<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span>buffered_reader.reader();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">var</span><span style="color:#bbb"> </span>buffer<span style="color:#555">:</span><span style="color:#bbb"> </span>[<span style="color:#f60">8192</span>]<span style="color:#078;font-weight:bold">u8</span><span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">undefined</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">while</span><span style="color:#bbb"> </span>(<span style="color:#069;font-weight:bold">try</span><span style="color:#bbb"> </span>instream.readUntilDelimiterOrEof(buf<span style="color:#555">:</span><span style="color:#bbb"> </span><span style="color:#555">&amp;</span>buffer,<span style="color:#bbb"> </span>delimiter<span style="color:#555">:</span><span style="color:#bbb"> </span><span style="color:#c30;font-weight:bold">&#39;\n&#39;</span>))<span style="color:#bbb"> </span><span style="color:#555">|</span>line<span style="color:#555">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#09f;font-style:italic">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">    </span>}<span style="color:#bbb">
-</span></span></span></code></pre></div><p>I rewrote the function to always read a full buffer of 8KB, and, without any processing, I got reading the entire file down to 2.5 seconds:</p>
-<pre tabindex="0"><code>$ hyperfine &#39;./zig-out/bin/1brc measurements.txt&#39;
+<!doctype html><html><head><meta charset=utf-8><title>One Billion Row Challenge in Zig &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="One Billion Row Challenge in Zig"><meta property="og:description" content="I finally got around to looking into The One Billion Row Challenge. If you&rsquo;re unfamiliar, it&rsquo;s a challenge to how fast a program can read and process one billion rows. It&rsquo;s fascinating because it&rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.
+So one Saturday evening I started reading up on the challenge. The first thing that struck me was the top entries&rsquo; time: 1.535 seconds! For reference, the input is 13 GB. I can&rsquo;t even dump the whole file to /dev/null in that short of a time. So clearly, lots to learn."><meta property="og:type" content="article"><meta property="og:url" content="https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><article class="bg-white rounded-lg shadow-sm overflow-hidden"><div class=p-6><div class="text-sm text-gray-500"><time datetime=2024-05-05>5 May 2024
+</time><time datetime=2024-05-07>• updated 7 May 2024</time></div><h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">One Billion Row Challenge in Zig</h1><div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200"><div class="flex flex-wrap gap-2 mb-4"><a href=/tags/one-billion-row-challenge class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">one billion row challenge
+</a><a href=/tags/zig class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">zig
+</a><a href=/tags/simd class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">SIMD
+</a><a href=/tags/performance class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">performance</a></div></div><div class="prose prose-lg max-w-none"><p>I finally got around to looking into <a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge</a>. If you&rsquo;re unfamiliar, it&rsquo;s a challenge to how fast a program can read and process one billion rows. It&rsquo;s fascinating because it&rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.</p><p>So one Saturday evening I started reading up on the challenge. The first thing that struck me was the <a href=https://www.morling.dev/blog/1brc-results-are-in/>top entries&rsquo;</a> time: 1.535 seconds! For reference, the input is 13 GB. I can&rsquo;t even dump the whole file to <code>/dev/null</code> in that short of a time. So clearly, lots to learn.</p><p>My first thought was to implement it in Go, but this kind of algorithmic challenge is perfect to learn new languages, and I haven&rsquo;t done enough in <a href=https://ziglang.org/>Zig</a> recently. The initial, naive implementation didn&rsquo;t go so well. With a reduced subset of 100,000,000 rows without any processing I was already at 4.8 seconds. This led to the next rabbit hole, how does one profile where your program spends your time. I have a lot of experience profiling Go programs with <a href=https://github.com/google/pprof>pprof</a> but not much with Linux&rsquo; <code>perf</code>. So here I go spelunking in another cavernous rabbit hole.</p><p>Initial readings tell me that I&rsquo;m not sure what to make of this at all. Conceptually I understand <del>all</del> most of these, but in practice I have no intuition for these numbers.
+<img src=./perf-01.png alt></p><p>After some poking around and cursory reading I found the right incantation to get perf to record and unwind the callstacks such that I can make sense of the output:</p><pre tabindex=0><code>$ perf record -F99 --call-graph dwarf -- ./zig-out/bin/1brc measurements_100000.txt
+</code></pre><p>Still not too clear on all the details here, but at least I recognize the symbols:</p><p><img src=./perf-callstacks.png alt></p><p>What&rsquo;s surprising is the amount of time spent parsing floats for example is much lower than I would have expected. What&rsquo;s even more surprising is the amount of time spent in the reader, maybe I&rsquo;m using it wrong. I double checked the buffer sizes, but they were ok and doubling or tripling them made no difference. And then I spotted the problem: I was using <code>instream.readUntilDelimiterOrEof</code> which will read only a single line at best:</p><div class=highlight><pre tabindex=0 style=color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zig data-lang=zig><span style=display:flex><span><span style=color:#cbcbcb>    </span><span style=color:#2c5dcd;font-weight:700>var</span><span style=color:#cbcbcb> </span>instream<span style=color:#cbcbcb> </span><span style=color:#2c5dcd>=</span><span style=color:#cbcbcb> </span>buffered_reader.<span style=color:#ff8000;font-weight:700>reader</span>();<span style=color:#cbcbcb>
+</span></span></span><span style=display:flex><span><span style=color:#cbcbcb>    </span><span style=color:#2c5dcd;font-weight:700>var</span><span style=color:#cbcbcb> </span>buffer<span style=color:#2c5dcd>:</span><span style=color:#cbcbcb> </span>[<span style=color:#5918bb;font-weight:700>8192</span>]<span style=color:#5918bb;font-weight:700>u8</span><span style=color:#cbcbcb> </span><span style=color:#2c5dcd>=</span><span style=color:#cbcbcb> </span><span style=color:#2c5dcd;font-weight:700>undefined</span>;<span style=color:#cbcbcb>
+</span></span></span><span style=display:flex><span><span style=color:#cbcbcb>
+</span></span></span><span style=display:flex><span><span style=color:#cbcbcb>    </span><span style=color:#2c5dcd;font-weight:700>while</span><span style=color:#cbcbcb> </span>(<span style=color:#2c5dcd;font-weight:700>try</span><span style=color:#cbcbcb> </span>instream.<span style=color:#ff8000;font-weight:700>readUntilDelimiterOrEof</span>(buf<span style=color:#2c5dcd>:</span><span style=color:#cbcbcb> </span><span style=color:#2c5dcd>&amp;</span>buffer,<span style=color:#cbcbcb> </span>delimiter<span style=color:#2c5dcd>:</span><span style=color:#cbcbcb> </span><span style=color:#c5060b;font-weight:700>&#39;\n&#39;</span>))<span style=color:#cbcbcb> </span><span style=color:#2c5dcd>|</span>line<span style=color:#2c5dcd>|</span><span style=color:#cbcbcb> </span>{<span style=color:#cbcbcb>
+</span></span></span><span style=display:flex><span><span style=color:#cbcbcb>      </span><span style=color:#0080ff;font-style:italic>// ...
+</span></span></span><span style=display:flex><span><span style=color:#0080ff;font-style:italic></span><span style=color:#cbcbcb>    </span>}<span style=color:#cbcbcb>
+</span></span></span></code></pre></div><p>I rewrote the function to always read a full buffer of 8KB, and, without any processing, I got reading the entire file down to 2.5 seconds:</p><pre tabindex=0><code>$ hyperfine &#39;./zig-out/bin/1brc measurements.txt&#39;
 Benchmark 1: ./zig-out/bin/1brc measurements.txt
   Time (mean ± σ):      2.658 s ±  0.021 s    [User: 0.167 s, System: 2.483 s]
   Range (min … max):    2.640 s …  2.701 s    10 runs
-</code></pre><p>My initial reaction was that the slow program is likely executing a lot more reads than it should. I figured the number of syscalls emitted by the program is a good indicator for the number of reads.  I collected the this metric like so:</p>
-<pre tabindex="0"><code>$ perf stat -e raw_syscalls:sys_enter,user_time,system_time -a ./zig-out/bin/1brc measurements.txt
-</code></pre><p>The slow program raked up 5.6 million syscalls.</p>
-<pre tabindex="0"><code> Performance counter stats for &#39;system wide&#39;:
+</code></pre><p>My initial reaction was that the slow program is likely executing a lot more reads than it should. I figured the number of syscalls emitted by the program is a good indicator for the number of reads. I collected the this metric like so:</p><pre tabindex=0><code>$ perf stat -e raw_syscalls:sys_enter,user_time,system_time -a ./zig-out/bin/1brc measurements.txt
+</code></pre><p>The slow program raked up 5.6 million syscalls.</p><pre tabindex=0><code> Performance counter stats for &#39;system wide&#39;:
 
          5,596,331      raw_syscalls:sys_enter
     47,825,420,000 ns   user_time
      2,827,345,000 ns   system_time
 
       50.702825947 seconds time elapsed
-</code></pre><p>The fast one did only 3.5 million syscalls:</p>
-<pre tabindex="0"><code>loading measurements.txt
+</code></pre><p>The fast one did only 3.5 million syscalls:</p><pre tabindex=0><code>loading measurements.txt
 Read 13795239670 bytes
 
  Performance counter stats for &#39;system wide&#39;:
@@ -160,64 +37,16 @@ Read 13795239670 bytes
      2,713,290,000 ns   system_time
 
        2.930230893 seconds time elapsed
-</code></pre><p>Unfortunately the increase in syscalls (5.6 vs 3.5 million) does not quite scale with the program runtime (50 vs 2.5 seconds). My next observation was that the number of executed branches was significantly higher for my first implementation.</p>
-<pre tabindex="0"><code>   188,650,271,726      branches:u                       #    3.640 G/sec
+</code></pre><p>Unfortunately the increase in syscalls (5.6 vs 3.5 million) does not quite scale with the program runtime (50 vs 2.5 seconds). My next observation was that the number of executed branches was significantly higher for my first implementation.</p><pre tabindex=0><code>   188,650,271,726      branches:u                       #    3.640 G/sec
      1,510,203,162      branch-misses:u                  #    0.80% of all branches
 
       51.841402841 seconds time elapsed
-</code></pre><p>That&rsquo;s 189 billion branches executed. Whereas the fast version only executed&hellip; 37 million.</p>
-<pre tabindex="0"><code>        37,048,268      branches:u                       #   14.025 M/sec
+</code></pre><p>That&rsquo;s 189 billion branches executed. Whereas the fast version only executed&mldr; 37 million.</p><pre tabindex=0><code>        37,048,268      branches:u                       #   14.025 M/sec
          3,370,939      branch-misses:u                  #    9.10% of all branches
 
        2.755307734 seconds time elapsed
-</code></pre><p>That&rsquo;ll do it. I don&rsquo;t know yet why <code>readUntilDelimiterOrEof</code> is so much slower, but having replaced it my program was already much faster. Took me some time to get it all tied together because Zig is different in several ways. But I got an initial working version and processing the full one billion rows and writing the output clocks in at 1:21. Not too shabby:</p>
-<pre tabindex="0"><code>./zig-out/bin/1brc measurements.txt  56.07s user 25.11s system 99% cpu 1:21.86 total
-</code></pre><p>Still a far cry from the winner of the challenge, but already way better than the baseline implementation of 5 minutes. These numbers are not directly comparable because they were produced on different hardware, but at least I&rsquo;m in the right wheelhouse.</p>
-<p>Now the next challenge is to actually profile, analyze, and optimize my implementation. Which leads me to the next challenge: while I conceptually understand SIMD and cache locality, I have not a lot of mechanical intuition in this area. I don&rsquo;t even have much experience in the tools measuring these parameters. For now there&rsquo;s lots to read and learn. It&rsquo;s humbling to see how little I still understand, even after years and years of building software.</p>
-
-            <div class="divider"></div>
-        </div>
-    </div>
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+</code></pre><p>That&rsquo;ll do it. I don&rsquo;t know yet why <code>readUntilDelimiterOrEof</code> is so much slower, but having replaced it my program was already much faster. Took me some time to get it all tied together because Zig is different in several ways. But I got an initial working version and processing the full one billion rows and writing the output clocks in at 1:21. Not too shabby:</p><pre tabindex=0><code>./zig-out/bin/1brc measurements.txt  56.07s user 25.11s system 99% cpu 1:21.86 total
+</code></pre><p>Still a far cry from the winner of the challenge, but already way better than the baseline implementation of 5 minutes. These numbers are not directly comparable because they were produced on different hardware, but at least I&rsquo;m in the right wheelhouse.</p><p>Now the next challenge is to actually profile, analyze, and optimize my implementation. Which leads me to the next challenge: while I conceptually understand SIMD and cache locality, I have not a lot of mechanical intuition in this area. I don&rsquo;t even have much experience in the tools measuring these parameters. For now there&rsquo;s lots to read and learn. It&rsquo;s humbling to see how little I still understand, even after years and years of building software.</p></div></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//ilikeorangutans.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a></div></div></div></footer></body></html>

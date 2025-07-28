@@ -1,312 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <meta charset="utf-8">
-    <title>
-      
-        Reading List &mdash;
-      
-      Jakob Külzer
-    </title>
+<!doctype html><html><head><meta charset=utf-8><title>Reading List &mdash;
+Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Reading List"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://ilikeorangutans.github.io/tags/reading-list/"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=alternate type=application/rss+xml href=https://ilikeorangutans.github.io/tags/reading-list/index.xml title="Jakob Külzer"><link rel=stylesheet href=/css/output.css><link rel=canonical href=https://ilikeorangutans.github.io/></head><body class="bg-gray-50 text-gray-900"><header class="bg-white shadow-sm border-b"><div class="max-w-4xl mx-auto px-4 py-6"><nav class="flex justify-between items-center"><a href=/ class=navbar-brand><h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1></a><div class=space-x-6><a href=/ class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+<a href=/posts/ class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+<a href=/projects/ class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+<a href=/about/ class="text-gray-600 hover:text-orange-400 transition-colors">About</a></div></nav></div></header><main class="max-w-4xl mx-auto px-4 py-8"><h1>Reading List</h1><p>&#8617; <a href=/tags>all tags</a></p><p>Pages tagged with "Reading List":</p><article class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden"><div class=p-6><h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors"><a href=/2014/04/27/golang-reading-and-notes-for-april-2014/>Golang Reading and Notes for April 2014</a></h2><div class="flex items-center space-x-4 text-sm text-gray-500 mb-3"><time datetime=2014-04-27>27 Apr 2014
+</time><span>2 min read</span><div class="flex items-center"><div class="flex flex-wrap gap-2"><a href=/tags/go class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Go
+</a><a href=/tags/golang class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Golang
+</a><a href=/tags/reading-list class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Reading List</a></div></div></div><div class=prose><p class="text-gray-600 text-lg leading-relaxed mb-4"><p>Last week I attended the <a href=http://golang.meetup.com/cities/ca/on/toronto/>Toronto Golang Usergroup Meetup</a> and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?</p><h3 id=notes>Notes</h3><ul><li><p>Casting in Go is slightly different than in C related languages. Instead of a cast, you perform <a href=http://golang.org/doc/effective_go.html#interface_conversions>a type conversion</a>:</p><pre><code>  var myVariable SomeGenericType = ...
 
-    <meta name="author" value="Jakob Külzer">
-    <meta property="og:title" content="Reading List">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ilikeorangutans.github.io/tags/reading-list/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="alternate" type="application/rss+xml" href="https://ilikeorangutans.github.io/tags/reading-list/index.xml" title="Jakob Külzer">
-    
-
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="canonical" href="https://ilikeorangutans.github.io/">
-
-  </head>
-  <body>
-    
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
-
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
-    
-    <main class="container grid-lg content">
-      
-<h1>
-    Reading List
-</h1>
-
-<p>
-    &larrhk; <a href="/tags">all tags</a>
-</p>
-
-<p>Pages tagged with "Reading List":</p>
-
-    <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2014/04/27/golang-reading-and-notes-for-april-2014/">
-          
-          Golang Reading and Notes for April 2014
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        27 Apr 2014
-
-
-, tagged:
-
-
-    <a href="/tags/go" class="">
-        Go, 
-    </a>
-
-    <a href="/tags/golang" class="">
-        Golang, 
-    </a>
-
-    <a href="/tags/reading-list" class="">
-        Reading List
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        Last week I attended the Toronto Golang Usergroup Meetup and it was plenty of fun. If you&rsquo;re in or near Toronto and like to dabble with Go, come out. Oh, and did I mention free pizza?
-Notes Casting in Go is slightly different than in C related languages. Instead of a cast, you perform a type conversion:
-var myVariable SomeGenericType = ... casted, ok := myVariable.(MoreSpecificType) // ok is a bool if ok { // Type conversion successful } else { // myVariable does not implement MoreSpecificType } The range keyword when used with two return values does not return references, but rather copies.
-      </p>
-      <p class="tile-action">
-        <a href="/2014/04/27/golang-reading-and-notes-for-april-2014/" class="btn-primary">read more &rarr;</a>
-      </p>
-    </div>
-  </div>
-</article>
-
-
-    <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2013/08/13/jsr-269-annotation-processing/">
-          
-          JSR-269 Annotation Processing
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        13 Aug 2013
-
-
-, tagged:
-
-
-    <a href="/tags/java" class="">
-        Java, 
-    </a>
-
-    <a href="/tags/annotation" class="">
-        Annotation, 
-    </a>
-
-    <a href="/tags/jsr-269" class="">
-        JSR-269, 
-    </a>
-
-    <a href="/tags/reading-list" class="">
-        Reading List
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        I&rsquo;ve been contemplating compile time bytecode manipulation for the Object Mapper Framework for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered Project Lombok and reading about JSR-269, which was introduced with Java 1.6. It&rsquo;s an API that allows you to plug custom annotation processors into javac.
-      </p>
-      <p class="tile-action">
-        <a href="/2013/08/13/jsr-269-annotation-processing/" class="btn-primary">read more &rarr;</a>
-      </p>
-    </div>
-  </div>
-</article>
-
-
-    <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/">
-          
-          Reading List: JVM Internals, Rugged Software, and 12 Factor Apps
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        04 Dec 2012
-
-
-, tagged:
-
-
-    <a href="/tags/reading-list" class="">
-        Reading List, 
-    </a>
-
-    <a href="/tags/java" class="">
-        Java, 
-    </a>
-
-    <a href="/tags/jvm" class="">
-        JVM, 
-    </a>
-
-    <a href="/tags/software-engineering" class="">
-        Software Engineering, 
-    </a>
-
-    <a href="/tags/rugged-manifesto" class="">
-        Rugged Manifesto
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        Recently I&rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the Rugged Manifesto as it emphasizes how software is crucial in our world and the responsibilities that come with it. Another great guide is Twelve-Factor App, a list of 12 principles on how to effectively implement and operate applications. And last but not least, Understanding JVM Internals, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.
-      </p>
-      <p class="tile-action">
-        <a href="/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/" class="btn-primary">read more &rarr;</a>
-      </p>
-    </div>
-  </div>
-</article>
-
-
-    <article class="mb-2">
-  <div class="divider"></div>
-  <div class="tile">
-    <div class="tile-content">
-      <p class="tile-title h4">
-        <a href="/2012/10/12/osgi-classloading-reading-list/">
-          
-          OSGI Classloading Reading List
-        </a>
-      </p>
-      <p class="tile-subtitle">
-        12 Oct 2012
-
-
-, tagged:
-
-
-    <a href="/tags/java" class="">
-        Java, 
-    </a>
-
-    <a href="/tags/osgi" class="">
-        OSGI, 
-    </a>
-
-    <a href="/tags/reading-list" class="">
-        Reading List
-    </a>
-
-
-
-      </p>
-      <p class="tile-subtitle">
-        I&rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&rsquo;m starting to fully understand and leverage OSGI and I&rsquo;m trying to keep my framework Object Mapper as compatible with OSGI as I can.
-In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules.
-      </p>
-      <p class="tile-action">
-        <a href="/2012/10/12/osgi-classloading-reading-list/" class="btn-primary">read more &rarr;</a>
-      </p>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-    </main>
-    
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-             <a href="https://ilikeorangutans.github.io/tags/reading-list/index.xml" target="_blank" class="btn btn-link">RSS</a>
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
-
-    
-  </body>
-</html>
+  casted, ok := myVariable.(MoreSpecificType)
+  // ok is a bool
+  if ok {
+  	// Type conversion successful
+  } else {
+  	// myVariable does not implement MoreSpecificType
+  }
+</code></pre></li><li><p>The <code>range</code> keyword when used with two return values does not return references, but rather copies. This had me struggle for a while as my code was not behaving as I thought it would. I had a slice of structs and was happily iterating over it:</p></p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-2"></div><a href=/2014/04/27/golang-reading-and-notes-for-april-2014/ class="text-teal-600 hover:text-teal-800 font-medium transition-colors">Read more →</a></div></div></article><article class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden"><div class=p-6><h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors"><a href=/2013/08/13/jsr-269-annotation-processing/>JSR-269 Annotation Processing</a></h2><div class="flex items-center space-x-4 text-sm text-gray-500 mb-3"><time datetime=2013-08-13>13 Aug 2013
+</time><span>1 min read</span><div class="flex items-center"><div class="flex flex-wrap gap-2"><a href=/tags/java class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Java
+</a><a href=/tags/annotation class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Annotation
+</a><a href=/tags/jsr-269 class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">JSR-269
+</a><a href=/tags/reading-list class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Reading List</a></div></div></div><div class=prose><p class="text-gray-600 text-lg leading-relaxed mb-4"><p>I&rsquo;ve been contemplating compile time bytecode manipulation for the <a href=http://www.objectmapper.org/>Object Mapper Framework</a> for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered <a href=http://projectlombok.org/>Project Lombok</a> and reading about <a href="http://jcp.org/en/jsr/detail?id=269">JSR-269</a>, which was introduced with Java 1.6. It&rsquo;s an API that allows you to plug custom annotation processors into javac.</p><p>After experimenting and reading a bit, here is my reading list:</p></p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-2"></div><a href=/2013/08/13/jsr-269-annotation-processing/ class="text-teal-600 hover:text-teal-800 font-medium transition-colors">Read more →</a></div></div></article><article class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden"><div class=p-6><h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors"><a href=/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/>Reading List: JVM Internals, Rugged Software, and 12 Factor Apps</a></h2><div class="flex items-center space-x-4 text-sm text-gray-500 mb-3"><time datetime=2012-12-04>4 Dec 2012
+</time><span>1 min read</span><div class="flex items-center"><div class="flex flex-wrap gap-2"><a href=/tags/reading-list class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Reading List
+</a><a href=/tags/java class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Java
+</a><a href=/tags/jvm class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">JVM
+</a><a href=/tags/software-engineering class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Software Engineering
+</a><a href=/tags/rugged-manifesto class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Rugged Manifesto</a></div></div></div><div class=prose><p class="text-gray-600 text-lg leading-relaxed mb-4"><p>Recently I&rsquo;ve been reading a lot about software development and philosophies on how to write better software. I really enjoyed the <a href=https://www.ruggedsoftware.org/>Rugged Manifesto</a> as it emphasizes how software is crucial in our world and the responsibilities that come with it.
+Another great guide is <a href=http://www.12factor.net/>Twelve-Factor App</a>, a list of 12 principles on how to effectively implement and operate applications.
+And last but not least, <a href=http://www.cubrid.org/blog/dev-platform/understanding-jvm-internals>Understanding JVM Internals</a>, a really well written cross cut through the JVM, including class file format, JVM structure and stack memory layouts.</p></p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-2"></div><a href=/2012/12/04/reading-list-jvm-internals-rugged-software-and-12-factor-apps/ class="text-teal-600 hover:text-teal-800 font-medium transition-colors">Read more →</a></div></div></article><article class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden"><div class=p-6><h2 class="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors"><a href=/2012/10/12/osgi-classloading-reading-list/>OSGI Classloading Reading List</a></h2><div class="flex items-center space-x-4 text-sm text-gray-500 mb-3"><time datetime=2012-10-12>12 Oct 2012
+</time><span>1 min read</span><div class="flex items-center"><div class="flex flex-wrap gap-2"><a href=/tags/java class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Java
+</a><a href=/tags/osgi class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">OSGI
+</a><a href=/tags/reading-list class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">Reading List</a></div></div></div><div class=prose><p class="text-gray-600 text-lg leading-relaxed mb-4"><p>I&rsquo;ve been doing a lot of reading on how OSGI handles class loading. I&rsquo;m starting to fully understand and leverage OSGI and I&rsquo;m trying to keep my framework <a href=https://github.com/ilikeorangutans/omf>Object Mapper</a> as compatible with OSGI as I can.</p><p>In OSGI classloading is very restricted, similar to what happens in enterprisy Java application servers, and completely unlike traditional Java applications where everything shares a single classloader. In OSGI each bundle has its own classloader and what is visible accross the bundle boundaries is subject to strict export rules. In order to use a class outside of a bundle you&rsquo;ll have to explicitly declare its package as exported. There are many benefits to this strict architecture, clean architectures, reusable components and the ability to update bundles at runtime are probably the most important ones.</p></p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-2"></div><a href=/2012/10/12/osgi-classloading-reading-list/ class="text-teal-600 hover:text-teal-800 font-medium transition-colors">Read more →</a></div></div></article></main><footer class="bg-white border-t mt-12"><div class="max-w-4xl mx-auto px-4 py-8"><div class="text-center text-gray-600"><p>&copy; 2025 Jakob Külzer. All rights reserved.</p><div class="mt-4 space-x-6"><a href=mailto:jakob.kuelzer@gmail.com class="hover:text-teal-600 transition-colors">Email</a>
+<a href=https://github.com/ilikeorangutans target=_blank class="hover:text-teal-600 transition-colors">Github</a>
+<a href=https://sr.ht/~ilikeorangutans/ target=_blank class="hover:text-teal-600 transition-colors">Sourcehut</a>
+<a href=https://www.linkedin.com/in/jakobkuelzer/ target=_blank class="hover:text-teal-600 transition-colors">LinkedIn</a>
+<a href=https://ilikeorangutans.github.io/tags/reading-list/index.xml target=_blank class="hover:text-teal-600 transition-colors">RSS</a></div></div></div></footer></body></html>

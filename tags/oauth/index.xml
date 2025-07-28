@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>OAuth on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/oauth/</link>
-    <description>Recent content in OAuth on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Thoughts on Authorization Schemes</title>
-      <link>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link>
-      <pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid>
-      <description>Today I was experimenting with some new tools (Prose) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:&#xA;Android has a similar screen when you install an app, IOS probably has one as well.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OAuth on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/oauth/</link><description>Recent content in OAuth on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/oauth/index.xml" rel="self" type="application/rss+xml"/><item><title>Thoughts on Authorization Schemes</title><link>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</link><pubDate>Thu, 15 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/08/15/thoughts-on-authorization-schemes/</guid><description>&lt;p>Today I was experimenting with some new tools (&lt;a href="http://prose.io/">Prose&lt;/a>) and was confronted with a screen that probably everybody that owns a smartphone or uses any kind of connected online service has seen before: an authorization screen where the user is expected to either approve or deny an application based on list of permissions. Here&amp;rsquo;s how Github&amp;rsquo;s screen looks like:&lt;/p>
+&lt;p>&lt;img src="https://ilikeorangutans.github.io/assets/images/github-authorization.png" alt="Github Authorization Screen">&lt;/p>
+&lt;p>Android has a similar screen when you install an app, IOS probably has one as well. Pretty much every connected system, be it Facebook, Github, Stackoverflow, pretty much everything that uses OAuth or similar technologies will have a screen like this. From a technology and development point of view it makes a lot of sense; at least initially. You break down privileges in a system into a few neat categories and if an application wants to use this service, it has to declare what it uses. Ideally the system would enforce that the application can only use the declared permissions and in theory that would make everything safer…&lt;/p></description></item></channel></rss>

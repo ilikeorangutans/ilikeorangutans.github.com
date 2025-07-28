@@ -19,90 +19,71 @@
 
     
 
-    <link rel="stylesheet" href="/css/spectre.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/output.css">
 
     <link rel="canonical" href="http://localhost:1313/">
 
   </head>
-  <body>
+  <body class="bg-gray-50 text-gray-900">
     
-    <div class="container grid-lg">
-  <header class="navbar hide-sm">
-    <section class="navbar-section">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </section>
-    <section class="navbar-section">
-      
-        <a href="/" class="mr-2 ml-2">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-2">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-2">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-2">
-          About
-        </a>
-      
-    </section>
-  </header>
+    <header class="bg-white shadow-sm border-b">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <a href="/" class="navbar-brand">
+                <h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1>
+            </a>
+            <div class="space-x-6">
+                
+                <a href="/" class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+                
+                <a href="/posts/" class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+                
+                <a href="/projects/" class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+                
+                <a href="/about/" class="text-gray-600 hover:text-orange-400 transition-colors">About</a>
+                
+            </div>
+        </nav>
+    </div>
+</header>
 
-  <header class="show-sm columns">
-    <div class="column col-12">
-      <a href="/" class="navbar-brand">
-        Jakob Külzer
-      </a>
-    </div>
-    <div class="column col-12">
-      
-        <a href="/" class="mr-2 ml-1">
-          Home
-        </a>
-      
-        <a href="/posts/" class="mr-2 ml-1">
-          Blog
-        </a>
-      
-        <a href="/projects/" class="mr-2 ml-1">
-          Projects
-        </a>
-      
-        <a href="/about/" class="mr-2 ml-1">
-          About
-        </a>
-      
-    </div>
-  </header>
-</div>
-<div class="divider"></div>
     
-    <main class="container grid-lg content">
+    <main class="max-w-4xl mx-auto px-4 py-8">
       
-    <div class="columns mb-2">
-        <div class="column">
-            <p class="text-gray">
+<article class="bg-white rounded-lg shadow-sm overflow-hidden">
+    
+    
+
+    
+    <div class="p-6">
+        <div class="text-sm text-gray-500 ">
+            <time datetime="2018-05-25">
                 25 May 2018
+            </time>
+             
+            <time datetime="2018-07-02">
+               • updated 2 Jul 2018
+            </time>
+            
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+             [DRAFT] 
+            2018 05 25 the Operational Burden of Gcp
+        </h1>
 
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+            <div class="flex flex-wrap gap-2 mb-4">
+                
+            </div>
+        </div>
 
-
-
-            </p>
-            <div class="divider"></div>
-             <h2>[DRAFT]</h2> 
-            <h1>2018 05 25 the Operational Burden of Gcp</h1>
+        <div class="prose prose-lg max-w-none">
             <p>post idea: talk about how great k8s is, but at the same time the cost of it</p>
 
-            <div class="divider"></div>
         </div>
     </div>
+</article>
     <div id="disqus_thread"></div>
 <script>
     window.disqus_config = function () {
@@ -126,22 +107,20 @@
 
     </main>
     
-    <div class="divider"></div>
-<div class="container grid-lg mb-2">
-    <footer class="navbar text-gray">
-        <section class="navbar-section">
-            &copy; 2018 Jakob Külzer
-        </section>
-        <section class="navbar-center">
-            <a href="mailto:jakob.kuelzer@gmail.com" class="btn btn-link">Email</a> |
-            <a href="https://github.com/ilikeorangutans" target="_blank" class="btn btn-link">Github</a> |
-            <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="btn btn-link">LinkedIn</a> |
-
-            
-        </section>
-        <section class="navbar-section"></section>
-    </footer>
-</div>
+    <footer class="bg-white border-t mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center text-gray-600">
+            <p>&copy; 2025 Jakob Külzer. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="mailto:jakob.kuelzer@gmail.com" class="hover:text-teal-600 transition-colors">Email</a>
+                <a href="https://github.com/ilikeorangutans" target="_blank" class="hover:text-teal-600 transition-colors">Github</a> 
+                <a href="https://sr.ht/~ilikeorangutans/" target="_blank" class="hover:text-teal-600 transition-colors">Sourcehut</a> 
+                <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="hover:text-teal-600 transition-colors">LinkedIn</a> 
+                
+            </div>
+        </div>
+    </div>
+</footer>
 
     
   </body>

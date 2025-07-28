@@ -16,7 +16,7 @@
       <link>http://localhost:1313/2018/04/29/test-driven-development/</link>
       <pubDate>Sun, 29 Apr 2018 11:18:55 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
       <guid>http://localhost:1313/2018/04/29/test-driven-development/</guid>
-      <description>Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth, complexity, and utility is Test Driven Development (TDD). But it&amp;rsquo;s been a long journey, and looking back, I realize that TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things. The mechanics are important, but blindly applying the mechanics without understanding the motivations leads to tests that just add more complexity without the benefits of TDD.</description>
+      <description>&lt;p&gt;Recently I reflected on my practices as a software developer. One topic that continues to surprise me with its depth,&#xA;complexity, and utility is Test Driven Development (TDD). But it&amp;rsquo;s been a long journey, and looking back, I realize that&#xA;TDD was always explained in terms of the mechanics, as in what to do, but never in the more important why to do things.&#xA;The mechanics are important, but blindly applying the mechanics without understanding the motivations leads to tests&#xA;that just add more complexity without the benefits of TDD.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,22 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Annotation on Jakob Külzer</title>
-    <link>https://ilikeorangutans.github.io/tags/annotation/</link>
-    <description>Recent content in Annotation on Jakob Külzer</description>
-    <generator>Hugo</generator>
-    <language>en-ca</language>
-    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
-    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
-    <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate>
-    <atom:link href="https://ilikeorangutans.github.io/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>JSR-269 Annotation Processing</title>
-      <link>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link>
-      <pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
-      <guid>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</guid>
-      <description>I&amp;rsquo;ve been contemplating compile time bytecode manipulation for the Object Mapper Framework for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered Project Lombok and reading about JSR-269, which was introduced with Java 1.6. It&amp;rsquo;s an API that allows you to plug custom annotation processors into javac.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Annotation on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/annotation/</link><description>Recent content in Annotation on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/annotation/index.xml" rel="self" type="application/rss+xml"/><item><title>JSR-269 Annotation Processing</title><link>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</link><pubDate>Tue, 13 Aug 2013 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2013/08/13/jsr-269-annotation-processing/</guid><description>&lt;p>I&amp;rsquo;ve been contemplating compile time bytecode manipulation for the &lt;a href="http://www.objectmapper.org/">Object Mapper Framework&lt;/a> for a while now. Compile time instrumentation of classes seems to be a better approach and does away a whole lot of class loading issues, especially in OSGI environments. In any case, I remembered &lt;a href="http://projectlombok.org/">Project Lombok&lt;/a> and reading about &lt;a href="http://jcp.org/en/jsr/detail?id=269">JSR-269&lt;/a>, which was introduced with Java 1.6. It&amp;rsquo;s an API that allows you to plug custom annotation processors into javac.&lt;/p>
+&lt;p>After experimenting and reading a bit, here is my reading list:&lt;/p></description></item></channel></rss>
