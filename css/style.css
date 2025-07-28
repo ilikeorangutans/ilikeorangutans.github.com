@@ -14,6 +14,15 @@
     border-left: 2px dashed grey;
 }
 
+.prose a {
+    color: oklch(38.6% 0.063 188.416);
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: oklch(75% .183 55.934);
+}
+    
 .prose h1,h2,h3 { 
     color: oklch(38.6% 0.063 188.416);
 
