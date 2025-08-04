@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Yarn on Jakob Külzer</title>
+    <link>http://localhost:1313/tags/apache-yarn/</link>
+    <description>Recent content in Apache Yarn on Jakob Külzer</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Wed, 28 Mar 2018 21:05:46 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/apache-yarn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anatomy of a Yarn Job</title>
+      <link>http://localhost:1313/2017/11/20/anatomy-of-a-yarn-job/</link>
+      <pubDate>Mon, 20 Nov 2017 13:59:40 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2017/11/20/anatomy-of-a-yarn-job/</guid>
+      <description>&lt;p&gt;Yarn is a resource manager for Hadoop and it&amp;rsquo;s convenient for running things like Apache Spark. Spark applications can easily be scheduled using the &lt;code&gt;spark-sumbit&lt;/code&gt; application. Running non spark applications however is trickier, as all you&amp;rsquo;re given are the building blocks and only a &lt;a href=&#34;https://hadoop.apache.org/docs/r2.7.3/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html&#34;&gt;rudimentary guide&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve dug through the docs and some source code and these are my notes about what&amp;rsquo;s important. Let&amp;rsquo;s start with what makes a Yarn job.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

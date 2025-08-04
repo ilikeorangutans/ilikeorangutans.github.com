@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Liskov Substitution Principle on Jakob Külzer</title>
+    <link>http://localhost:1313/tags/liskov-substitution-principle/</link>
+    <description>Recent content in Liskov Substitution Principle on Jakob Külzer</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Sun, 17 Jun 2018 23:10:26 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/liskov-substitution-principle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inheritance and Composition</title>
+      <link>http://localhost:1313/2018/06/17/inheritance-and-composition/</link>
+      <pubDate>Sun, 17 Jun 2018 13:18:08 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2018/06/17/inheritance-and-composition/</guid>
+      <description>&lt;p&gt;I was lucky enough to attend an Object Oriented Programming workshop by &lt;a href=&#34;https://www.sandimetz.com/&#34;&gt;Sandi Metz&lt;/a&gt; this&#xA;month. The workshop itself was fantastic and showed me a beautiful side of OOP that I haven&amp;rsquo;t seen before. It also&#xA;spurred some great discussions with coworkers and one of the topics we talked about is inheritance over composition.&#xA;Based on my experience I generally favour composition over inheritance, but that has mostly to do with poor inheritance&#xA;hierarchies I&amp;rsquo;ve had the pleasure of working with. Nevertheless we were shown a great example of composition during the&#xA;workshop and I wanted to organize my thoughts around this.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

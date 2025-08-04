@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ORM on Jakob Külzer</title>
+    <link>http://localhost:1313/tags/orm/</link>
+    <description>Recent content in ORM on Jakob Külzer</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Tue, 29 Jul 2025 19:01:05 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang ORM Comparison</title>
+      <link>http://localhost:1313/2021/02/21/golang-orm-comparison/</link>
+      <pubDate>Sun, 21 Feb 2021 14:31:37 -0500</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2021/02/21/golang-orm-comparison/</guid>
+      <description>&lt;p&gt;I very much like writing apps in Go. The language is small, the compiler is pretty fast, and statically linked binaries are just nice. But one thing that&#xA;I always found lacking was database access. &lt;code&gt;database/sql&lt;/code&gt; is solid if basic and packages like &lt;a href=&#34;https://github.com/Masterminds/squirrel&#34;&gt;Mastermind/squirrel&lt;/a&gt; (really nice query builder) or &lt;a href=&#34;https://github.com/jmoiron/sqlx&#34;&gt;jmoiron/sqlx&lt;/a&gt; (niceties like structscan) get you pretty far for querying tables. But as soon as you need to join tables or want to traverse associations, you&amp;rsquo;re on your own again. This is not to say that it can&amp;rsquo;t be done but that it&amp;rsquo;s tedious and error prone. Recently I began prototyping something and needed a quicker way of iterating on a data model and started using &lt;a href=&#34;go-pg/pg&#34;&gt;go-pg/pg&lt;/a&gt;, a nice little ORM-like library for PostgreSQL. And for all it&amp;rsquo;s roughness, it worked quite well. This made me re-evaluate my stance on ORMs in go and I took a closer look at some options out there.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+    <title>
+      
+        Inheritance and Composition &mdash;
+      
+      Jakob Külzer
+    </title>
+
+    <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="Inheritance and Composition">
+    <meta property="og:description" content="I was lucky enough to attend an Object Oriented Programming workshop by Sandi Metz this
+month. The workshop itself was fantastic and showed me a beautiful side of OOP that I haven&rsquo;t seen before. It also
+spurred some great discussions with coworkers and one of the topics we talked about is inheritance over composition.
+Based on my experience I generally favour composition over inheritance, but that has mostly to do with poor inheritance
+hierarchies I&rsquo;ve had the pleasure of working with. Nevertheless we were shown a great example of composition during the
+workshop and I wanted to organize my thoughts around this.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/2018/06/17/inheritance-and-composition/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <link rel="stylesheet" href="/css/output.css">
+
+    <link rel="canonical" href="http://localhost:1313/">
+
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    
+    <header class="bg-white shadow-sm border-b">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <a href="/" class="navbar-brand">
+                <h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1>
+            </a>
+            <div class="space-x-6">
+                
+                <a href="/" class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+                
+                <a href="/posts/" class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+                
+                <a href="/projects/" class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+                
+                <a href="/about/" class="text-gray-600 hover:text-orange-400 transition-colors">About</a>
+                
+            </div>
+        </nav>
+    </div>
+</header>
+
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      
+<article class="bg-white rounded-lg shadow-sm overflow-hidden">
+    
+    
+
+    
+    <div class="p-6">
+        <div class="text-sm text-gray-500 ">
+            <time datetime="2018-06-17">
+                17 Jun 2018
+            </time>
+             
+            <time datetime="2018-06-17">
+               • updated 17 Jun 2018
+            </time>
+            
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+             [DRAFT] 
+            Inheritance and Composition
+        </h1>
+
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+            <div class="flex flex-wrap gap-2 mb-4">
+                 
+                <a href="/tags/oop" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    OOP
+                </a>
+                 
+                <a href="/tags/software-development" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Software Development
+                </a>
+                 
+                <a href="/tags/object-oriented-design" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Object Oriented Design
+                </a>
+                 
+                <a href="/tags/liskov-substitution-principle" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Liskov Substitution Principle
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <p>I was lucky enough to attend an Object Oriented Programming workshop by <a href="https://www.sandimetz.com/">Sandi Metz</a> this
+month. The workshop itself was fantastic and showed me a beautiful side of OOP that I haven&rsquo;t seen before. It also
+spurred some great discussions with coworkers and one of the topics we talked about is inheritance over composition.
+Based on my experience I generally favour composition over inheritance, but that has mostly to do with poor inheritance
+hierarchies I&rsquo;ve had the pleasure of working with. Nevertheless we were shown a great example of composition during the
+workshop and I wanted to organize my thoughts around this.</p>
+<h2 id="what-is-inheritance">What is Inheritance?</h2>
+<p>The core building block of OOP is the class. It holds related data and methods to perform some function in a program and
+allows you to invoke it&rsquo;s methods by sending messages to it. This <em>anthropomorphic</em> nature of objects makes using them
+simple and obvious &ndash; you treat the object like something that you can ask to do things for you.</p>
+<p>But then you realize that a method on your existing class is not quite sufficient to do the work you need it to do. The
+<em>obvious</em> way to deal with it would be to introduce a parameter that switches the functionality. If the parameter is not
+set, you use the more general behaviour; if it is set, you use the more specialized behaviour. Don&rsquo;t do this though,
+unless in a pinch.  There is a better way to deal with this.</p>
+<p>First lets recognize that we have two similar behaviours. On the one hand, we have the existing, <em>general</em> behaviour and
+on the other hand we have the new, <em>specialized</em> behaviour. It&rsquo;s important to note that both the general and the
+specialized behaviour expose the same interface and are invoked by sending the same message. The way you implement this
+in an object-oriented language is by creating a subclass that represents the <em>specialization</em>. This subclass looks like
+its superclass but changes how it does things by overwriting methods. And because they both expose the same interface, I
+can interact with them without knowing which one I am actually talking to. This is called <em>Polymorphism</em> because both
+classes have the same shape but are actually different things. But in order for this to work, you should adhere to the
+<a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov Substitution Principle</a> which states that an
+instance of a class should be replaceable by any of its subclasses without breaking the program. In other words,
+subclasses shouldn&rsquo;t alter the client facing behaviour compared to their superclass. If a method on the superclass takes
+a number and returns a number, a subclass shouldn&rsquo;t take a number and suddenly return a string. This change in behaviour
+won&rsquo;t only make the compiler unhappy (if a compiled language) but it will also cause strange bugs and make the code
+harder to understand.</p>
+<p>What we haven&rsquo;t answered yet is how we switch the functionality. Previously we introduced a parameter to do so. That
+means somewhere further up in the call chain something knows which behaviour we need. What we change now is that
+depending on the situation we just create either the generalization or the specialization of our class and <em>inject</em> it
+where it is needed. No other change should be necessary as both super and subclass expose the same interface.</p>
+<p>This is inheritance in a nutshell. It works well if you have different behaviour that fulfills the same role. But what
+if you need the same behaviour across different branches of you inheritance tree? In this case inheritance might not be
+the best tool.</p>
+<h2 id="what-is-composition">What is Composition?</h2>
+<p>Generally composition refers to a class providing functionality by <em>composing</em> the behaviour of other classes instead of
+providing the same functionality itself. This by itself is probably not a foreign concept; much of your code relies on
+standard libraries and other libraries. Surely your application&rsquo;s classes functionality is built by composing standard
+library classes and others into much more complex behaviours. But maybe because it is so common and so mundane
+composition is often hard to grasp.</p>
+
+        </div>
+    </div>
+</article>
+
+<div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </main>
+    
+    <footer class="bg-white border-t mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center text-gray-600">
+            <p>&copy; 2025 Jakob Külzer. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="mailto:jakob.kuelzer@gmail.com" class="hover:text-teal-600 transition-colors">Email</a>
+                <a href="https://github.com/ilikeorangutans" target="_blank" class="hover:text-teal-600 transition-colors">Github</a> 
+                <a href="https://sr.ht/~ilikeorangutans/" target="_blank" class="hover:text-teal-600 transition-colors">Sourcehut</a> 
+                <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="hover:text-teal-600 transition-colors">LinkedIn</a> 
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+  </body>
+</html>
