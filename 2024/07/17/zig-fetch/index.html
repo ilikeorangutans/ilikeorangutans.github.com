@@ -1,5 +1,6 @@
 <!doctype html><html><head><meta charset=utf-8><title>Zig Fetch &mdash;
-Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Zig Fetch"><meta property="og:description" content='Zig&rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&rsquo;t have them unless they have a release. There&rsquo;s a trick to fetch any commit as a tarball though:
+Jakob Külzer
+</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Zig Fetch"><meta property="og:description" content='Zig&rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&rsquo;t have them unless they have a release. There&rsquo;s a trick to fetch any commit as a tarball though:
 https://api.github.com/repos/<repo-owner>/<repo>/tarball/<ref>
 zig fetch can than download the code:
 zig fetch --save https://api.github.com/repos/<repo-owner>/<repo>/tarball/<ref>

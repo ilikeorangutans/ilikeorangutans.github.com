@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.steelblue {
+    background-color: rgb(0, 101, 150);
+}
+
 .prose p {
     margin-bottom: 1em;
 }
