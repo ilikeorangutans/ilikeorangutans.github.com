@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+    <title>
+      
+        The Neovim Introduction I Wish Read &mdash;
+      
+      Jakob Külzer
+    </title>
+
+    <meta name="author" value="Jakob Külzer">
+    <meta property="og:title" content="The Neovim Introduction I Wish Read">
+    <meta property="og:description" content="I&rsquo;ve been an avid user of vim for years and was happy with it. I spent a good amount of time setting up my vim configuration to my liking and even understood some of it. But then recently I felt compelled to give LLM agents a try and found avante.nvim highly recommended. Except it&rsquo;s a Neovim plugin. So far I&rsquo;ve been pretty indifferent towards Neovim but this was enough of a motivator to give it a try. Hubris and how-hard-can-it-be thinking got the better of me and I set out to create a blank init.lua. I learned a lot about how Neovim works. This post is a collection of fundamentals that are obvious in hindsight but irritating and surprising to figure out as a beginner.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/2025/07/29/the-neovim-introduction-i-wish-read/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <link rel="stylesheet" href="/css/output.css">
+
+    <link rel="canonical" href="http://localhost:1313/">
+
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    
+    <header class="bg-white shadow-sm border-b">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <a href="/" class="navbar-brand">
+                <h1 class="text-2xl font-bold text-teal-900 hover:text-orange-400 transition-colors">Jakob Külzer</h1>
+            </a>
+            <div class="space-x-6">
+                
+                <a href="/" class="text-gray-600 hover:text-orange-400 transition-colors">Home</a>
+                
+                <a href="/posts/" class="text-gray-600 hover:text-orange-400 transition-colors">Blog</a>
+                
+                <a href="/projects/" class="text-gray-600 hover:text-orange-400 transition-colors">Projects</a>
+                
+                <a href="/about/" class="text-gray-600 hover:text-orange-400 transition-colors">About</a>
+                
+            </div>
+        </nav>
+    </div>
+</header>
+
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      
+<article class="bg-white rounded-lg shadow-sm overflow-hidden">
+    
+    
+
+    
+    <div class="p-6">
+        <div class="text-sm text-gray-500 ">
+            <time datetime="2025-07-29">
+                29 Jul 2025
+            </time>
+             
+            <time datetime="2025-08-07">
+               • updated 7 Aug 2025
+            </time>
+            
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+             [DRAFT] 
+            The Neovim Introduction I Wish Read
+        </h1>
+
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+            <div class="flex flex-wrap gap-2 mb-4">
+                 
+                <a href="/tags/neovim" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    neovim
+                </a>
+                 
+                <a href="/tags/vim" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    vim
+                </a>
+                 
+                <a href="/tags/lua" class="bg-gray-100 hover:bg-teal-100 text-gray-700 hover:text-teal-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    lua
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <p>I&rsquo;ve been an avid user of vim for years and was happy with it. I spent a good amount of time setting up my vim configuration to my liking and even understood some of it. But then recently I felt compelled to give LLM agents a try and found <a href="https://github.com/yetone/avante.nvim">avante.nvim</a> highly recommended. Except it&rsquo;s a Neovim plugin. So far I&rsquo;ve been pretty indifferent towards Neovim but this was enough of a motivator to give it a try. Hubris and how-hard-can-it-be thinking got the better of me and I set out to create a blank <code>init.lua</code>. I learned a lot about how Neovim works. This post is a collection of fundamentals that are obvious in hindsight but irritating and surprising to figure out as a beginner.</p>
+<h2 id="neovim-and-lua">Neovim and lua</h2>
+<p>Neovim offers a lua api to configure and script and it&rsquo;s powerful and flexible, but it was confusing initially. The realization that <code>init.lua</code> is interpreted at startup made a lot of things click. Neovim starts, executes the Lua script, and then it&rsquo;s ready for you.</p>
+<p>This means that you&rsquo;re just writing lua code that runs in your editor and you can use the APIs it offers to configure your editor, install plugins, script utilities, set up key bindings, and much more. On the flip side, if you leave your <code>init.lua</code> empty, Neovim starts with the <a href="https://neovim.io/doc/user/vim_diff.html#_defaults">default settings</a>.</p>
+<p>In your <code>init.lua</code> you&rsquo;ll want to do a few things:</p>
+<ul>
+<li>change Neovim&rsquo;s settings around a bit. Things like show line numbers, tab stop, etc. These settings come from vim and vim global settings are exposed as <code>vim.opt.&lt;name&gt;</code>. For example, you want Neovim to expand tabs to spaces, you&rsquo;d set <code>vim.opt.expandtab = true</code>. You can learn more about this with <code>:help vim.opt</code>.</li>
+<li>run some vim commands, e.g. change your colorscheme. It&rsquo;s curious that this is a command and not a setting, but that&rsquo;s the mystery of vim for you. In any case, vim commands are exposed via <code>vim.cmd.&lt;command&gt;</code>. The biggest difference that these are (I believe) actual lua functions, so you don&rsquo;t assign, you call them with a parameter, like so: <code>vim.cmd.colorscheme 'ayu'</code></li>
+<li>set global variables, which in vim used to be something like let <code>g:MyVariable=&quot;Value&quot;</code>. In neovim, that&rsquo;s <code>vim.g.&lt;name&gt; = value</code>. This is mostly used by plugins.</li>
+</ul>
+<p>Aside from that, you can include other lua scripts via <code>require</code>, which is heavily used by plugin managers. But you could also easily split your configuration into multiple files and require them to keep things neat. <a href="https://neovim.io/doc/user/lua-guide.html">Neovim&rsquo;s lua guide</a> has a good summary of these concepts and some useful tips.</p>
+<p>A starter <code>init.lua</code> could look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#2c5dcd">#</span> <span style="color:#2c5dcd">~/</span>.config<span style="color:#2c5dcd">/</span>nvim<span style="color:#2c5dcd">/</span>init.lua
+</span></span><span style="display:flex;"><span>vim.cmd.colorscheme <span style="color:#0c6">&#39;evening&#39;</span>
+</span></span><span style="display:flex;"><span>vim.opt.number <span style="color:#2c5dcd">=</span> <span style="color:#2c5dcd;font-weight:bold">true</span>      <span style="color:#0080ff;font-style:italic">-- show line numbers</span>
+</span></span><span style="display:flex;"><span>vim.opt.scrolloff <span style="color:#2c5dcd">=</span> <span style="color:#5918bb;font-weight:bold">5</span>      <span style="color:#0080ff;font-style:italic">-- don&#39;t let the cursor hit top/bottom of the screen</span>
+</span></span><span style="display:flex;"><span>vim.opt.cursorline <span style="color:#2c5dcd">=</span> <span style="color:#2c5dcd;font-weight:bold">true</span>  <span style="color:#0080ff;font-style:italic">-- show a line to show where the cursor is</span>
+</span></span></code></pre></div><p>Place this in <code>~/.config/nvim/init.lua</code>, restart your editor, and behold your changes. If you want to learn more about Neovim&rsquo;s startup procedure, check <a href="https://neovim.io/doc/user/starting.html#_initialization"><code>:help initialization</code></a>.</p>
+<h2 id="neovim-and-plugins">Neovim and plugins</h2>
+<p>Neovim has tons of nice things built in, but let&rsquo;s face it, you&rsquo;ll probably want all the shiny toys; nice code completion for example. Maybe some auto formatting, etc. Installing plugins is usually done by plugin managers, and for no other reason than avante recommending it, I went with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a>.</p>
+<p>Fundamentally, plugin managers are just more lua code that gets executed by Neovim, and as such, their configuration is just more lua. To install lazy.nvim, you follow their instructions. The gist is to create <code>~/.config/nvim/lua/config/lazy.lua</code> with enough code to bootstrap the plugin manager lua code itself. Neovim will automatically load Lua files in <code>~/config/nvim/lua/*/*/*.lua</code>. Once the plugin manager is installed and you&rsquo;ve restarted Neovim, you should be able to launch the plugin manager via <code>:Lazy</code>. Find the detailed steps in the <a href="https://lazy.folke.io/installation">installation section</a> in lazy&rsquo;s manual.</p>
+<p>Installing plugins is done via files in <code>~/.config/nvim/lua/plugins/&lt;name&gt;.lua</code>. These files return a Lua table that contains the URL (or path) to load the plugin from, and some settings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#0080ff;font-style:italic">-- ~/.config/nvim/lua/plugins/vim-surround.lua</span>
+</span></span><span style="display:flex;"><span><span style="color:#2c5dcd;font-weight:bold">return</span> { 
+</span></span><span style="display:flex;"><span>	<span style="color:#0c6">&#34;tpope/vim-surround&#34;</span>, 
+</span></span><span style="display:flex;"><span>	event <span style="color:#2c5dcd">=</span> { <span style="color:#0c6">&#34;BufReadPost&#34;</span>, <span style="color:#0c6">&#34;BufNewFile&#34;</span> },
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The table returned by this file can contain many other elements, as documented in <a href="https://lazy.folke.io/spec">https://lazy.folke.io/spec</a> . I found the spec a bit hard to parse, but after writing a few of these, I understand how it&rsquo;s composed. The properties described in each section can all show up in the table and be used to configure how and when to load the plugin, configure it, set keybindings, and other things.</p>
+<p>As example that uses some more features, here&rsquo;s how I use fzf with the following settings to set it up with its keybindings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#0080ff;font-style:italic">-- ~/.config/nvim/lua/plugins/fzf.lua</span>
+</span></span><span style="display:flex;"><span><span style="color:#2c5dcd;font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#0c6">&#34;junegunn/fzf.vim&#34;</span>,
+</span></span><span style="display:flex;"><span>    build <span style="color:#2c5dcd">=</span> <span style="color:#0c6">&#34;./install --all&#34;</span>,
+</span></span><span style="display:flex;"><span>    lazy <span style="color:#2c5dcd">=</span> <span style="color:#2c5dcd;font-weight:bold">false</span>,
+</span></span><span style="display:flex;"><span>    init <span style="color:#2c5dcd">=</span> <span style="color:#2c5dcd;font-weight:bold">function</span>()
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;ff&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;Files&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;ft&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;Tags&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fT&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;BTags&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fb&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;Buffers&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fc&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;Rg&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fl&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;BLines&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fh&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;History&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>        vim.keymap.set(<span style="color:#0c6">&#39;n&#39;</span>, <span style="color:#0c6">&#39;fw&#39;</span>, <span style="color:#0c6">&#39;&lt;cmd&gt;Windows&lt;cr&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#2c5dcd;font-weight:bold">end</span>,
+</span></span><span style="display:flex;"><span>    dependencies <span style="color:#2c5dcd">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#0c6">&#34;junegunn/fzf&#34;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now you&rsquo;re ready to install plugins!</p>
+<h2 id="neovim-and-lsp">Neovim and LSP</h2>
+<p>Before we get to completion we&rsquo;ll have to talk about LSP. Even though Neovim has builtin completion via omnifunc, you&rsquo;ll probably want to use a language server to get language specific completions. The good news is that Neovim has a builtin LSP client. The bad news is that you&rsquo;ll have to configure it. One way of going about it is to set up according to the <a href="https://neovim.io/doc/user/lsp.html#_quickstart">LSP quickstart</a> docs by manually setting up a LSP config or using <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>.</p>
+<p>Manually you can configure a LSP by adding this to your <code>init.lua</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#2c5dcd">#</span> <span style="color:#2c5dcd">~/</span>.config<span style="color:#2c5dcd">/</span>nvim<span style="color:#2c5dcd">/</span>init.lua
+</span></span><span style="display:flex;"><span>vim.lsp.config[<span style="color:#0c6">&#39;gopls&#39;</span>] <span style="color:#2c5dcd">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#0080ff;font-style:italic">-- Command and arguments to start the server.</span>
+</span></span><span style="display:flex;"><span>  cmd <span style="color:#2c5dcd">=</span> { <span style="color:#0c6">&#39;gopls&#39;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#0080ff;font-style:italic">-- Filetypes to automatically attach to.</span>
+</span></span><span style="display:flex;"><span>  filetypes <span style="color:#2c5dcd">=</span> { <span style="color:#0c6">&#39;go&#39;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#0080ff;font-style:italic">-- Sets the &#34;workspace&#34; to the directory where any of these files is found.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0080ff;font-style:italic">-- Files that share a root directory will reuse the LSP server connection.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0080ff;font-style:italic">-- Nested lists indicate equal priority, see |vim.lsp.Config|.</span>
+</span></span><span style="display:flex;"><span>  root_markers <span style="color:#2c5dcd">=</span> { { <span style="color:#0c6">&#39;go.mod&#39;</span>, <span style="color:#0c6">&#39;go.sum&#39;</span> }, <span style="color:#0c6">&#39;.git&#39;</span> },
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This works, but you have to ensure that the your lsp binary is installed and available. This is where <a href="https://github.com/mason-org/mason.nvim"><code>mason.nvim</code></a> comes in. This plugin installs language servers, formatters, etc for you. Set up mason as a plugin, and add the following line to your <code>init.lua</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#2c5dcd">#</span> <span style="color:#2c5dcd">~/</span>.config<span style="color:#2c5dcd">/</span>nvim<span style="color:#2c5dcd">/</span>init.lua
+</span></span><span style="display:flex;"><span>require(<span style="color:#0c6">&#34;mason&#34;</span>).setup()
+</span></span></code></pre></div><p>Once installed, you can open Mason with the <code>:Mason</code> command. From here you can install/update/etc lots of goodies.</p>
+<p><img src="mason.png" alt=""></p>
+<p>But we can do even better. The <a href="https://github.com/mason-org/mason-lspconfig.nvim"><code>mason-lspconfig</code></a> plugin will automatically configure and enable installed LSP servers for you.</p>
+<h2 id="neovim-and-completion">Neovim and Completion</h2>
+<h2 id="treesitter">Treesitter</h2>
+
+        </div>
+    </div>
+</article>
+
+<div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ilikeorangutans" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </main>
+    
+    <footer class="bg-white border-t mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center text-gray-600">
+            <p>&copy; 2025 Jakob Külzer. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="mailto:jakob.kuelzer@gmail.com" class="hover:text-teal-600 transition-colors">Email</a>
+                <a href="https://github.com/ilikeorangutans" target="_blank" class="hover:text-teal-600 transition-colors">Github</a> 
+                <a href="https://sr.ht/~ilikeorangutans/" target="_blank" class="hover:text-teal-600 transition-colors">Sourcehut</a> 
+                <a href="https://www.linkedin.com/in/jakobkuelzer/" target="_blank" class="hover:text-teal-600 transition-colors">LinkedIn</a> 
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+  </body>
+</html>

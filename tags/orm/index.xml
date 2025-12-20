@@ -9,8 +9,15 @@
     <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
     <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
     <copyright>Jakob Külzer</copyright>
-    <lastBuildDate>Sun, 21 Feb 2021 14:31:37 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 19 Sep 2025 11:08:56 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Really Want to Love sqlc</title>
+      <link>http://localhost:1313/2025/09/19/i-really-want-to-love-sqlc/</link>
+      <pubDate>Fri, 19 Sep 2025 11:08:56 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2025/09/19/i-really-want-to-love-sqlc/</guid>
+      <description>&lt;p&gt;I really, really like &lt;a href=&#34;https://sqlc.dev/&#34;&gt;sqlc&lt;/a&gt;. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a tool that takes (slightly) annotated SQL and generates Go code to execute these queries. I prefer it over ORMs as I don&amp;rsquo;t have to learn another specific DSL that always tends to break down when I have to write specific joins or other aggregations. Instead, I write raw SQL.&#xA;Another nice property of the custom tailored go code is that it&amp;rsquo;s not making use of &lt;code&gt;any&lt;/code&gt;. Instead everything is a concrete type giving you extra type safety.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Golang ORM Comparison</title>
       <link>http://localhost:1313/2021/02/21/golang-orm-comparison/</link>

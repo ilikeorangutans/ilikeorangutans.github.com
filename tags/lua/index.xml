@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on Jakob Külzer</title>
+    <link>http://localhost:1313/tags/lua/</link>
+    <description>Recent content in Lua on Jakob Külzer</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor>
+    <webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster>
+    <copyright>Jakob Külzer</copyright>
+    <lastBuildDate>Thu, 07 Aug 2025 15:02:41 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Neovim Introduction I Wish Read</title>
+      <link>http://localhost:1313/2025/07/29/the-neovim-introduction-i-wish-read/</link>
+      <pubDate>Tue, 29 Jul 2025 11:32:17 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author>
+      <guid>http://localhost:1313/2025/07/29/the-neovim-introduction-i-wish-read/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been an avid user of vim for years and was happy with it. I spent a good amount of time setting up my vim configuration to my liking and even understood some of it. But then recently I felt compelled to give LLM agents a try and found &lt;a href=&#34;https://github.com/yetone/avante.nvim&#34;&gt;avante.nvim&lt;/a&gt; highly recommended. Except it&amp;rsquo;s a Neovim plugin. So far I&amp;rsquo;ve been pretty indifferent towards Neovim but this was enough of a motivator to give it a try. Hubris and how-hard-can-it-be thinking got the better of me and I set out to create a blank &lt;code&gt;init.lua&lt;/code&gt;. I learned a lot about how Neovim works. This post is a collection of fundamentals that are obvious in hindsight but irritating and surprising to figure out as a beginner.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
