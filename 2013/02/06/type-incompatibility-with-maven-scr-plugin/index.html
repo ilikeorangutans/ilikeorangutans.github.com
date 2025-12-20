@@ -1,5 +1,6 @@
 <!doctype html><html><head><meta charset=utf-8><title>Type Incompatibility With Maven SCR Plugin &mdash;
-Jakob Külzer</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Type Incompatibility With Maven SCR Plugin"><meta property="og:description" content='Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
+Jakob Külzer
+</title><meta name=author value="Jakob Külzer"><meta property="og:title" content="Type Incompatibility With Maven SCR Plugin"><meta property="og:description" content='Yesterday I ran into a most strange error when compiling one of my OSGI bundles:
 [ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) on project XXX: A type incompatibility occured while executing org.apache.felix:maven-scr-plugin:1.7.4:scr: com.thoughtworks.qdox.model.Annotation cannot be cast to java.util.List
 
 I saw several variations of that error and was initially clueless as how to fix it. However, I eventually found the problem:

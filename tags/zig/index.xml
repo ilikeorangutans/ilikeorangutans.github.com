@@ -1,21 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zig on Jakob Külzer</title><link>https://ilikeorangutans.github.io/tags/zig/</link><description>Recent content in Zig on Jakob Külzer</description><generator>Hugo</generator><language>en-ca</language><managingEditor>jakob.kuelzer@gmail.com (Jakob Külzer)</managingEditor><webMaster>jakob.kuelzer@gmail.com (Jakob Külzer)</webMaster><copyright>Jakob Külzer</copyright><lastBuildDate>Mon, 28 Jul 2025 11:20:12 -0400</lastBuildDate><atom:link href="https://ilikeorangutans.github.io/tags/zig/index.xml" rel="self" type="application/rss+xml"/><item><title>Zig Fetch</title><link>https://ilikeorangutans.github.io/2024/07/17/zig-fetch/</link><pubDate>Wed, 17 Jul 2024 12:18:03 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2024/07/17/zig-fetch/</guid><description>&lt;p>Zig&amp;rsquo;s package manager is still a bit rough. It only supports fetching tarballs, but many github projects don&amp;rsquo;t have them unless they have a release. There&amp;rsquo;s a &lt;a href="https://www.baeldung.com/linux/github-download-tarball">trick to fetch any commit as a tarball though&lt;/a>:&lt;/p>
-&lt;pre tabindex="0">&lt;code>https://api.github.com/repos/&amp;lt;repo-owner&amp;gt;/&amp;lt;repo&amp;gt;/tarball/&amp;lt;ref&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>&lt;code>zig fetch&lt;/code> can than download the code:&lt;/p>
-&lt;pre tabindex="0">&lt;code>zig fetch --save https://api.github.com/repos/&amp;lt;repo-owner&amp;gt;/&amp;lt;repo&amp;gt;/tarball/&amp;lt;ref&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>Once the code is downloaded, it still has to be added to your exe or libray in &lt;code>build.zig&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zig" data-lang="zig">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">const&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>exe&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>b.&lt;span style="color:#ff8000;font-weight:bold">addExecutable&lt;/span>(.{&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>.name&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#0c6">&amp;#34;zlox&amp;#34;&lt;/span>,&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>.root_source_file&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>b.&lt;span style="color:#ff8000;font-weight:bold">path&lt;/span>(&lt;span style="color:#0c6">&amp;#34;src/main.zig&amp;#34;&lt;/span>),&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>.target&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>target,&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>.optimize&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>optimize,&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>});&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd;font-weight:bold">const&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>my_dep&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>b.&lt;span style="color:#ff8000;font-weight:bold">dependency&lt;/span>(&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#0c6">&amp;#34;&amp;lt;name of dependency&amp;gt;&amp;#34;&lt;/span>,&lt;span style="color:#cbcbcb"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>.{&lt;span style="color:#cbcbcb"> &lt;/span>.target&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>target,&lt;span style="color:#cbcbcb"> &lt;/span>.optimize&lt;span style="color:#cbcbcb"> &lt;/span>&lt;span style="color:#2c5dcd">=&lt;/span>&lt;span style="color:#cbcbcb"> &lt;/span>optimize&lt;span style="color:#cbcbcb"> &lt;/span>},&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>);&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cbcbcb"> &lt;/span>exe.root_module.&lt;span style="color:#ff8000;font-weight:bold">addImport&lt;/span>(&lt;span style="color:#0c6">&amp;#34;regex&amp;#34;&lt;/span>,&lt;span style="color:#cbcbcb"> &lt;/span>regex_dep.&lt;span style="color:#ff8000;font-weight:bold">module&lt;/span>(&lt;span style="color:#0c6">&amp;#34;regex&amp;#34;&lt;/span>));&lt;span style="color:#cbcbcb">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>One Billion Row Challenge in Zig</title><link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link><pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</guid><description>&lt;p>I finally got around to looking into &lt;a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge&lt;/a>. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a challenge to how fast a program can read and process one billion rows. It&amp;rsquo;s fascinating because it&amp;rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.&lt;/p>
+
+
+
+&lt;div class="goat svg-container ">
+ 
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ font-family="Menlo,Lucida Console,monospace"
+ 
+ viewBox="0 0 504 25"
+ >
+ &lt;g transform='translate(8,16)'>
+&lt;text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>h&lt;/text>
+&lt;text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>t&lt;/text>
+&lt;text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>t&lt;/text>
+&lt;text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>p&lt;/text>
+&lt;text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>s&lt;/text>
+&lt;text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>:&lt;/text>
+&lt;text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>a&lt;/text>
+&lt;text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>p&lt;/text>
+&lt;text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>i&lt;/text>
+&lt;text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>.&lt;/text>
+&lt;text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>g&lt;/text>
+&lt;text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>i&lt;/text>
+&lt;text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>t&lt;/text>
+&lt;text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>h&lt;/text>
+&lt;text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>u&lt;/text>
+&lt;text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>b&lt;/text>
+&lt;text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>.&lt;/text>
+&lt;text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>c&lt;/text>
+&lt;text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>o&lt;/text>
+&lt;text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>m&lt;/text>
+&lt;text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>e&lt;/text>
+&lt;text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>p&lt;/text>
+&lt;text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>o&lt;/text>
+&lt;text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>s&lt;/text>
+&lt;text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>&amp;lt;&lt;/text>
+&lt;text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>e&lt;/text>
+&lt;text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>p&lt;/text>
+&lt;text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>o&lt;/text>
+&lt;text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>-&lt;/text>
+&lt;text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>o&lt;/text>
+&lt;text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>w&lt;/text>
+&lt;text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>n&lt;/text>
+&lt;text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>e&lt;/text>
+&lt;text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>&amp;gt;&lt;/text>
+&lt;text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>&amp;lt;&lt;/text>
+&lt;text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>e&lt;/text>
+&lt;text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>p&lt;/text>
+&lt;text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>o&lt;/text>
+&lt;text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>&amp;gt;&lt;/text>
+&lt;text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>t&lt;/text>
+&lt;text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>a&lt;/text>
+&lt;text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>b&lt;/text>
+&lt;text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>a&lt;/text>
+&lt;text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>l&lt;/text>
+&lt;text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>l&lt;/text>
+&lt;text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>/&lt;/text>
+&lt;text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>&amp;lt;&lt;/text>
+&lt;text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>r&lt;/text>
+&lt;text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>e&lt;/text>
+&lt;text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>f&lt;/text>
+&lt;text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>&amp;gt;&lt;/text>
+&lt;/g>
+
+ &lt;/svg>
+ 
+&lt;/div>
+&lt;p>&lt;code>zig fetch&lt;/code> can than download the code:&lt;/p></description></item><item><title>One Billion Row Challenge in Zig</title><link>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</link><pubDate>Sun, 05 May 2024 13:54:44 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2024/05/05/one-billion-row-challenge-in-zig/</guid><description>&lt;p>I finally got around to looking into &lt;a href="https://github.com/gunnarmorling/1brc?tab=readme-ov-file">The One Billion Row Challenge&lt;/a>. If you&amp;rsquo;re unfamiliar, it&amp;rsquo;s a challenge to how fast a program can read and process one billion rows. It&amp;rsquo;s fascinating because it&amp;rsquo;s all about raw performance including algorithms, CPU instructions, and profiling and benchmarking. All things I enjoy dabbling with.&lt;/p>
 &lt;p>So one Saturday evening I started reading up on the challenge. The first thing that struck me was the &lt;a href="https://www.morling.dev/blog/1brc-results-are-in/">top entries&amp;rsquo;&lt;/a> time: 1.535 seconds! For reference, the input is 13 GB. I can&amp;rsquo;t even dump the whole file to &lt;code>/dev/null&lt;/code> in that short of a time. So clearly, lots to learn.&lt;/p></description></item><item><title>Zig - First Impressions</title><link>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</link><pubDate>Mon, 23 Oct 2023 19:50:27 -0400</pubDate><author>jakob.kuelzer@gmail.com (Jakob Külzer)</author><guid>https://ilikeorangutans.github.io/2023/10/23/zig-first-impressions/</guid><description>&lt;p>I&amp;rsquo;ve been following the zig language for a while ever since I saw &lt;a href="https://corecursive.com/067-zig-with-andrew-kelley/">Andrew Kelly&amp;rsquo;s talk&lt;/a> on &lt;a href="https://corecursive.com/">Corecursive&lt;/a>.
 The way Andrew describes the design of zig was very engrossing and who doesn&amp;rsquo;t like a language build
 for speed. But I have struggled with picking it up; time is in short supply and so were docs for zig
